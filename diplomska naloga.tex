@@ -58,8 +58,8 @@
 \begin{document}
 
 \section{Uvod}
-Znotraj diplomske naloge bomo spoznali osnovne lastnosti harmoničnih fukcij, ki jih bomo proti koncu diplomske naloge s pridom uporabili za dokaz glavnega izreka, katerega ime nosi naslov diplomske naloge.
-Skozi diplomsko nalogo, se bomo opirali in vlekli številne vzporednice s kompleksno analizo. Gre za področje, ki je s študijo harmoničnih funkcij močno povezano.
+Znotraj diplomske naloge bomo spoznali osnovne lastnosti harmoničnih fukcij, ki jih bomo proti koncu s pridom uporabili za dokaz glavnega izreka, katerega ime nosi naslov naloge.
+Ves čas se bomo opirali in vlekli številne vzporednice s kompleksno analizo. Gre za področje, močno povezano s študijo harmoničnih funkcij.
 \newline
 V prvem poglavju, bomo spoznali kaj so harmonične funkcije in poudarili, katere njihove lastnosti bodo za nadaljevanje pomembne. Ogledali si bomo tudi njihov odnos s holomorfnimi funkcijami. 
 Znotraj drugega poglavja bomo spoznali Dirichletov problem za enostki disk, ki nam bo dal osnovo za definicijo Poissonovega jedra in Poissonovega integrala. Ogledali si bomo nekaj lastnosti obeh definiranih pojmov in z njuno pomočjo rešili na začetku poglavja zastavljen Dirichletov problem.
@@ -126,7 +126,7 @@ V zadnjem poglavju, bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nav
     \begin{opomba}
         \label{op1}
         Po lemi \ref{enolicno}, opazimo, da je rešitev problema največ ena, zato se je dovolj posvetiti konstrukciji potencialne rešitve. 
-        Opazimo, da lahko spremenljivko $z \in \partial \mathbb{D}$, funkcije $h$ zamenjamo z $e^{i \theta} \in \partial \mathbb{D}$, ter funkcijo $h(z)$ pišemo kot kompozitum $h(e^{i \theta})$.
+        Opazimo, da lahko spremenljivko $z \in \partial \mathbb{D}$, funkcije $h$, zamenjamo z $e^{i \theta} \in \partial \mathbb{D}$, ter funkcijo $h(z)$ pišemo kot kompozitum $h(e^{i \theta})$.
         Poskusimo sedaj skonstruirati (harmonično) razširitev, ki bo zadoščala Dirichletovemu problemu za zvezno funkcijo $h(e^{i \theta})$.
     \end{opomba}
 
@@ -136,9 +136,9 @@ V zadnjem poglavju, bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nav
     Tako konstruirana razširitev je harmonična na $\mathbb{D}$, zvezna na $\overline{\mathbb{D}}$ in se na $\partial \mathbb{D}$ res ujema z $h(e^{i \theta})$, torej reši problem. Sedaj uporabimo linearnost in na podoben način skonstruiramo tudi rešitve problema za primere, ko je $h(e^{i \theta})$ trigonometrični polinom. 
     S pomočjo nekaj Fourierove analize in računanja pridemo do eksplicitne formule, za del funkcije definirane na $\mathbb{D}$, tudi v tem primeru:
     $$
-        \widetilde{h}(r e^{i \theta}) = \int_{-\pi}^{\pi}{h(e^{i \phi}) \bigg[\sum_{k = - \infty}^{\infty} r^{|k|} e^{- i k \phi} e^{i k \theta}} \bigg]\frac{d \phi}{2 \pi}, ~~~ r e^{i\theta} \in \mathbb{D}
+        \widetilde{h}(r e^{i \theta}) = \int_{-\pi}^{\pi}{h(e^{i \phi}) \bigg[\sum_{k = - \infty}^{\infty} r^{|k|} e^{- i k \phi} e^{i k \theta}} \bigg]\frac{d \phi}{2 \pi}, ~~~ r e^{i\theta} \in \mathbb{D}.
     $$
-    Tako funkcijo, ki smo jo na intuititev način konstruirirali za primer, ko je $h$ trigonometričen polinom, bomo sedaj vzeli za definicijo in pokazali, da res za vsako zvezno funkcijo $h$ predpis omogoča definicijo razširitve, ki zadošča pogojem Dirichletovega problema za enotski disk. 
+    Tako funkcijo, ki smo jo na intuitiven način konstruirali za primer, ko je $h$ trigonometričen polinom, bomo sedaj vzeli za definicijo in pokazali, da res za vsako zvezno funkcijo $h$ predpis omogoča definicijo razširitve, ki zadošča pogojem Dirichletovega problema za enotski disk. 
 
     \begin{definicija}
         \textbf{Poissonovo jedro} je funkcija definirana s predpisom
@@ -160,7 +160,7 @@ V zadnjem poglavju, bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nav
         $$
      \end{definicija}
      \begin{trditev}
-        Naj bo $h$ zvezna kompleksna funkcija definirano na $\partial \mathbb{D}$. Rešitev Dirichletovega problema obstaja in ima vrednosti na $\mathbb{D}$ definirane kot Poissonov integral funkcije $h$.
+        Naj bo $h$ zvezna kompleksna funkcija definirana na $\partial \mathbb{D}$. Rešitev Dirichletovega problema obstaja in ima vrednosti na $\mathbb{D}$ definirane kot Poissonov integral funkcije $h$.
         \newline
         Rečeno drugače, Poissonov integral zvezne kompleksne funkcije, definirane na $\partial \mathbb{D}$ je zvezna harmonična funkcija, definirana na $\mathbb{D}$, ki nam ponuja zvezno harmonično razširitev $h$ na $\overline{\mathbb{D}}$, če jo dodefiniramo na $\mathbb{D}$ z njenim Poissonovim integralom.
      \end{trditev}
@@ -214,7 +214,7 @@ V zadnjem poglavju, bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nav
     Slika prikazuje glede na $\R$ simetrično območje $D \subseteq \C$. $D^{+}$ označuje  območje na katerem harmonično funkcijo $u$ poznamo, $D^{-}$ pa območje na katerem lahko po izreku eksplicitno konstruiramo razširitev.
     Točka $z_0$ in "majhen" disk okoli nje, nakazujeta, da se bomo dokaza lotili z lastnostjo povprečne vrednosti.
     \begin{proof}
-        Dokaz temelji na uporabi karakterizacije harmoničnih funkcij s pomočjo lastnosti povprečne vrednosti, oziroma uporabi le-tega, za dokaz harmoničnosti eksplicitno podane razširitve, za katero trdimo, da je harmonična $D$.
+        Dokaz temelji na uporabi karakterizacije harmoničnih funkcij s pomočjo lastnosti povprečne vrednosti, oziroma uporabi le-tega, za dokaz harmoničnosti eksplicitno podane razširitve, za katero trdimo, da je harmonična na $D$.
     \end{proof}
 
 \newpage
