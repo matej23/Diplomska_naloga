@@ -163,22 +163,22 @@ Ljubljana, \@letnica}
 \thispagestyle{empty}
 \tableofcontents
 \pagebreak
-%%%%%  PAZI!!!  
-%%%%%  PAZI!!!  \thispagestyle{empty}
-%%%%%  PAZI!!!  \begin{center}
-%%%%%  PAZI!!!  {\bf \@naslov}\\[3mm]
-%%%%%  PAZI!!!  {\sc Povzetek}
-%%%%%  PAZI!!!  \end{center}
-%%%%%  PAZI!!!  \@povzetek
-%%%%%  PAZI!!!  \vfill
-%%%%%  PAZI!!!  \begin{center}
-%%%%%  PAZI!!!  {\bf \@title}\\[3mm]
-%%%%%  PAZI!!!  {\sc Abstract}
-%%%%%  PAZI!!!  \end{center}
-%%%%%  PAZI!!!  \@abstract
-%%%%%  PAZI!!!  \vfill\noindent
-%%%%%  PAZI!!!  {\bf Math. Subj. Class. (2020):} \@klasifikacija \\[1mm]
-%%%%%  PAZI!!!  {\bf Ključne besede:} \@kljucnebesede \\[1mm]
-%%%%%  PAZI!!!  {\bf Keywords:} \@keywords
-%%%%%  PAZI!!!  \pagebreak
+
+\thispagestyle{empty}
+\begin{center}
+{\bf \@naslov}\\[3mm]
+{\sc Povzetek}
+\end{center}
+\@povzetek
+\vfill
+\begin{center}
+{\bf \@title}\\[3mm]
+{\sc Abstract}
+\end{center}
+\@abstract
+\vfill\noindent
+{\bf Math. Subj. Class. (2020):} \@klasifikacija \\[1mm]
+{\bf Ključne besede:} \@kljucnebesede \\[1mm]
+{\bf Keywords:} \@keywords
+\pagebreak
 }

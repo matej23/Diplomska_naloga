@@ -1,5 +1,7 @@
 \documentclass[mat1]{fmfdelo}
 \usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage[shortlabels]{enumitem}
 % \documentclass[fin1]{fmfdelo}
 % \documentclass[isrm1]{fmfdelo}
 % \documentclass[mat2]{fmfdelo}
@@ -73,6 +75,7 @@ V zadnjem poglavju, bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nav
 %------------------------------------------------------------
 \section{Harmonične funkcije}
     \begin{definicija}
+        \label{harm}
         Funkcija $u(x_1, x_2, \dots, x_n)$ je \textbf{harmonična}, če velja
         $$
         \frac{\partial^2 u}{\partial x_1 ^ 2} +  \frac{\partial^2 u}{\partial x_2 ^ 2} + \dots + \frac{\partial^2 u}{\partial x_n ^ 2} = 0.
@@ -83,25 +86,36 @@ V zadnjem poglavju, bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nav
         $$
     \end{definicija}
 
-    Pogoj za harmoničnost funkcije podaja parcialno diferencialno enačbo, zapisano bodisi s Laplaceovim operatorjem ali razpisano s parcialnimi odvodi drugega reda. Drugače rečeno, funkcija je harmonična, če zadošča zgoraj zapisani parcialni diferencialni enačbi. 
+    Pogoj za harmoničnost funkcije podaja (Laplaceovo) parcialno diferencialno enačbo, zapisano bodisi s Laplaceovim operatorjem ali razpisano s parcialnimi odvodi drugega reda. 
+    Drugače rečeno, funkcija je harmonična, če zadošča zgoraj zapisani parcialni diferencialni enačbi. 
     Po tihem tu seveda privzemamo obstoj (vsaj) drugih parcialnih odvodov, saj drugače o harmoničnosti funkcije ne moremo govoriti.
 
     \begin{opomba}
-        Vredno je omeniti, da nismo specificirali ali gre pri funkciji $u$, harmoničnost katere bi radi opazovali, za realno ali kompleksno funkcijo. 
+        Vredno je omeniti, da nismo specificirali ali gre pri funkciji $u$ (harmoničnost katere bi radi opazovali) za realno ali kompleksno funkcijo. 
         Pojem harmoničnosti smo definirali v splošnem, torej tako za kompleksne, kot tudi realne funkcije.
-    \end{opomba}
-
-    \begin{opomba}
-        Znotraj diplomske naloge, se bomo omejili na funkcije dveh realnih spremenljivk, ali funkcijo ene kompleksne spremenljivke, pri čemer bomo nato kompleksno spremenljivko delili na realni in imaginarni del ($z = x + iy $) in na ta način prešli nazaj na funkcije dveh spremenljivk.
+        Znotraj diplomske naloge, se bomo omejili na funkcije dveh realnih spremenljivk ali funkcijo ene kompleksne spremenljivke, ki jo bomo nato delili na realni in imaginarni del ($z = x + iy $) in na ta način prešli nazaj na funkcije dveh realnih spremenljivk.
         \newline
         Pogoj za harmoničnost takrat zapišemo kot: 
             $$
                 \Delta u = \frac{\partial^2 u}{\partial x ^ 2} +  \frac{\partial^2 u}{\partial y ^ 2}= 0.
             $$
     \end{opomba}
-    V duhu zgornjih dveh opomb, opazimo, da lahko kompleksno funkcijo $f$, zapišemo v obliki realnega in imaginarnega dela oziroma kot $f = u + i v$, s pomočjo nekih realnih funkcij (dveh spremenljivk) $u$ in $v$, ter lahko zaradi linearnosti parcialnih odvodov sklepamo, da je za harmoničnost $f$ kot kompleksne funkcije, dovolj zahtevati harmoničnost $u$ in $v$ kot realnih funkcij.
-    Podoben argument nam da vedeti, da nam harmoničnost $f = u + iv$, implicira tudi harmoničnost $u$ in $v$. 
+    \begin{trditev}
+        Naj bo $f = u + iv$ holomorfna funkcija. Potem sta funkciji $u$ in $v$ harmonični.
+    \end{trditev}
+    \begin{dokaz}
+        Z uporabo Cauchy-Riemannovega sistema enačb lahko bralec sam hitro preveri, da trditev drži.
+    \end{dokaz}
 
+    \begin{opomba}
+        V duhu zgornje trditve, je velikokrat smiselno na harmonične funkcije gledati kot na realne dele holomorfnih funkcij. Prav to že nekako nakazuje, da se bodo vsaj nekatere "lepe/željene" lastnosti, ki jih holomorfne funkcije imajo, prenesle tudi na harmonične funkcije.
+    \end{opomba}
+    %%V duhu zgornjih dveh opomb, opazimo, da lahko kompleksno funkcijo $f$, zapišemo v obliki realnega in imaginarnega dela oziroma kot $f = u + i v$, s pomočjo nekih realnih funkcij (dveh spremenljivk) $u$ in $v$, ter lahko zaradi linearnosti parcialnih odvodov sklepamo, da je za harmoničnost $f$ kot kompleksne funkcije, dovolj zahtevati harmoničnost $u$ in $v$ kot realnih funkcij.
+    %%Podoben argument nam da vedeti, da nam harmoničnost $f = u + iv$, implicira tudi harmoničnost $u$ in $v$. 
+    \begin{opomba}
+        \label{lin}
+        Očitno, vendar le vredno spomniti, je da je zaradi linearnosti parcialnih odvodov tudi linearna kombinacija harmoničnih funkcij harmonična. To bomo pri reševanju enega izmed glavnih problemov diplomskega dela s pridom uporabili.
+    \end{opomba}
     \begin{opomba}
         V literaturi se v definiciji harmoničnosti za funkcijo $u$ pojavlja tudi zahteva, da je funkcija gladka, oziroma $u \in C^{\infty}$. V zgornji definiciji zahtevamo le obstoj drugih parcialnih odvodov, oziroma $u \in C^2$. 
         Nekoliko kasneje v diplomskem delu, bomo pokazali, da gladkost $u$ ni potrebna predpostavka, saj lahko z nekaj znanja kompleksne analize gladkost $u$ izpeljemo iz harmoničnosti $u$ in s tem pokažemo ekvivalentnost definicij. 
@@ -113,16 +127,32 @@ V zadnjem poglavju, bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nav
         Naj bo $\mathbb{D}$ enotski disk. Zvezno kompleksno funkcijo $h$, definirano na $\partial \mathbb{D}$, razširi do zvezne funkcije $\widetilde{h}$, tako da bo $\widetilde{h}$ harmonična na $\mathbb{D}$ in zvezna na $\overline{\mathbb{D}}$, ter se bo zožitev $\widetilde{h}$ na $\partial \mathbb{D}$ ujemala s $h$.
     \end{pro}
 
+    \begin{opomba}
+        Kot je bilo to že komentirano po definiciji \ref{harm}, so funkcije harmonične, natanko tedaj ko zadoščajo Laplaceovi parcialno diferencialni enačbi. 
+        Vredno je omeniti, da lahko na Direchletov problem za enotski disk gledamo tudi iz stališča teorije diferencialnih enačb. Gre za problem iskanja funkcije, ki na notranjosti območja (v našem primeru kar notranjost enotskega diska), reši Laplaceovo diferencialno enačbo, ob robnem pogoju, ki ga določa v naprej podana funkcija na robu območja (v našem primeru začetna zvezna funkcija, podana na enotski krožnici). 
+        Navadno se v teoriji parcialnih diferencialnih enačb srečamo s tako imenovanimi dobro postavljenimi matematičnimi problemi, o katerih si bralec več lahko prebere na REFERENCA. 
+        Spodaj se bomo le seznanili z njihovo definicijo in pokazali, da zgoraj zastavljen Dirichletov problem ustreza definiciji. 
+    \end{opomba}
+
+    \begin{definicija}[J. Hadamard 1902]
+        Pravimo, da je matematičen problem (parcialno diferencialnih enačb z robnimi in začetnimi pogoji) \textbf{dobro postavljen}, če zanj velja:
+        \begin{itemize}
+            \item rešitev problema obstaja,
+            \item rešitev problema je ena sama, oziroma rešitev je enolično določena,
+            \item rešitev je zvezno odvisna od začetnih podatkov problema.
+        \end{itemize}
+    \end{definicija}
+
     \begin{lema}
         \label{enolicno}
         Če rešitev za Dirichletov problem na enotskem disku obstaja, je enolično določena.
     \end{lema}
-    \begin{proof}
+    \begin{dokaz}
         Denimo, da obstajata dve rešitvi Dirichletovega problema za enotski disk, $h_1$ in $h_2$.
         Oglejmo si razliko $h_1 - h_2$. Vemo, da je njuna razlika na $\partial \mathbb{D}$ enaka $0$, saj so njune vrednosti (kot rešitvi problema) enake vrednostim $h$. 
         Zaradi harmoničnosti $h_1$ in $h_2$ po principu o maksimu za harmonične funkcije vemo, da je njuna razlika ničelna tudi na $\mathbb{D}$. Sledi enakost $h_1$ in $h_2$ tudi na $\mathbb{D}$ in protislovje. 
-    \end{proof}
-
+    \end{dokaz}
+    
     \begin{opomba}
         \label{op1}
         Po lemi \ref{enolicno}, opazimo, da je rešitev problema največ ena, zato se je dovolj posvetiti konstrukciji potencialne rešitve. 
@@ -131,42 +161,110 @@ V zadnjem poglavju, bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nav
     \end{opomba}
 
     \paragraph[short]{\textbf{Konstrukcija}}
-    Poskusimo željeno razširitev konstruirati za preproste zvezne funkcije $h$. Oglejmo si primer, ko je funkcija $h$ monom, ter razmislimo ali lahko konstrukcijo posplošimo na polinome, ter nato potencialno na vse zvezne funkcije. 
-    V duhu opombe \ref{op1}, si oglejmo funkcije oblike $h(e^{i \theta}) = e^{i k \theta}, k \in \mathbb{Z}$ oziroma primer, ko je funkcija $h$ trigonometrični monom. Hitro vidimo, da lahko eksplicitno konstruiramo razširitev $\widetilde{h}(r e^{i \theta}) = r^{|k|}e^{i k \theta},~r \in [0, 1]$. 
-    Tako konstruirana razširitev je harmonična na $\mathbb{D}$, zvezna na $\overline{\mathbb{D}}$ in se na $\partial \mathbb{D}$ res ujema z $h(e^{i \theta})$, torej reši problem. Sedaj uporabimo linearnost in na podoben način skonstruiramo tudi rešitve problema za primere, ko je $h(e^{i \theta})$ trigonometrični polinom. 
-    S pomočjo nekaj Fourierove analize in računanja pridemo do eksplicitne formule, za del funkcije definirane na $\mathbb{D}$, tudi v tem primeru:
-    $$
-        \widetilde{h}(r e^{i \theta}) = \int_{-\pi}^{\pi}{h(e^{i \phi}) \bigg[\sum_{k = - \infty}^{\infty} r^{|k|} e^{- i k \phi} e^{i k \theta}} \bigg]\frac{d \phi}{2 \pi}, ~~~ r e^{i\theta} \in \mathbb{D}.
-    $$
-    Tako funkcijo, ki smo jo na intuitiven način konstruirali za primer, ko je $h$ trigonometričen polinom, bomo sedaj vzeli za definicijo in pokazali, da res za vsako zvezno funkcijo $h$ predpis omogoča definicijo razširitve, ki zadošča pogojem Dirichletovega problema za enotski disk. 
+    Kot velikokrat v matematiki, se najprej posvetimo enostavnim primerom in si nato teorijo oziroma konstrukcijo oglejmo v splošnem. 
+    Naravno je za enostavne zvezne funkcije, definirane na $\partial \mathbb{D}$, vzeti kar polinome. V luči opombe \ref{op1} je polinomska spremenljivka lahko kar $e^{i\theta}$, s pomočjo opombe \ref{lin}, pa vidimo, da zadošča rešitve poiskati za posamezne faktorje polinoma, oziroma monome. 
+    Zato si oglejmo funkcije oblike $h(e^{i \theta}) = e^{i k \theta}, k \in \mathbb{Z}$, ter za njih poskusimo skonstruirati željeno razširitev. 
+    Brez večjih težav opazimo, da se nam v te primeru pojavlja preprosta eksplicitna razširitev s predpisom $\widetilde{h}(r e^{i \theta}) = r^{|k|}e^{i k \theta},~\text{za}~r\in [0, 1]~\text{in}~~\theta \in [0, 2\pi]$. 
+    Tako predpisana razširitev je za $k \geq 0$ očitno harmonična na $\mathbb{D}$ ($r^k e^{ik\theta} = z^k$ je namreč celo holomorfna funkcija), pri $k < 0$ pa dobimo razširitev, ki v splošnem ni holomorfna, a kljub temu je harmonična ($r^{-k} e^{ik\theta} = \overline{z}^{-k}$, kar je monom v konjugirani spremenljivki, ki je harmoničen).
+    Prav tako je za vsak $k \in \mathbb{D}$ razširitev očitno zvezna na $\overline{\mathbb{D}}$ in se na $\partial \mathbb{D}$ ujema z začetnimi pogoji (robnimi vrednosti podane funckije $h$), zato je res po lemi \ref{enolicno} enolična rešitev Dirichletovega problema. 
+    Kot že omenjeno, lahko sedaj postopamo po linearnosti in za začetne funkcije oblike $h(e^{i\theta}) = \sum_{k = -N}^{N}{a_k e^{ik\theta}}$, konstruiramo razširitev s predpisom
+    $\widetilde{h}(r e^{i \theta}) = \sum_{k = -N}^{N}{a_k r^{|k|}e^{ik\theta}}$. Smiselno bi bilo, predvsem v eksplicitnem predpisu razširitve, koeficiente $a_k$ izraziti direktno prek funkcije $h$. 
+    V ta namen si oglejmo $\int_{-\pi}^{\pi}{e^{ij\theta} e^{-ik\theta}d\theta}$. S hitrim izračunom hitro preverimo tako imenovano ortogonalno relacijo med kompleksnimi eksponenti:
+        $$
+        \int_{-\pi}^{\pi}{e^{ij\theta} e^{-ik\theta}\frac{d\theta}{2\pi}} = 
+        \begin{cases}
+            1;~j=k\\
+            0;~ j \neq k\\
+        \end{cases}
+        .$$
 
+        Zgornja relacija nam pri $h(e^{i\theta}) = \sum_{k = -N}^{N}{a_k e^{ik\theta}}$, omogoča izražavo koeficientov $a_k$ kot:
+        $$
+            a_ k = \int_{-\pi}^{\pi}{h(e^{i\theta}) e^{-ik\theta}\frac{d\theta}{2\pi}}.
+        $$
+    Sedaj lahko koeficiente izrazimo:
+    $$
+        \sum_{k = - N}^{N}{ a_k r^{|k|}e^{ik\theta}} = \sum_{k = - N}^{N} \bigg(\int_{-\pi}^{\pi}{h(e^{i \varphi}) e^{- i k \varphi} \frac{d \varphi}{2 \pi}}\bigg) r^{|k|} e^{i k \theta},
+    $$
+    zamenjamo vsoto in integral, ter brez škode iteracijsko območje vsote razširimo na vsa cela števila (pri dodanih indeksih je člen vsote ničeln). Dobimo željeni ekspliciten zapis:
+    $$
+        \widetilde{h}(r e^{i \theta}) = \int_{-\pi}^{\pi}{h(e^{i \varphi}) \bigg[\sum_{k = - \infty}^{\infty} r^{|k|} e^{- i k \varphi} e^{i k \theta}} \bigg]\frac{d \varphi}{2 \pi}, ~~~ r e^{i\theta} \in \overline{\mathbb{D}}.
+    $$
+    Že iz načina konstrukcije in sprotnih komentarjev je jasno, da funkcija te oblike, za primere, ko je $h$ (trigonometričen) polinom reši Dirichletov problem.
+    Sedaj bomo zgornjo funkcijo, ki smo jo na intuitiven način konstruirali s pomočjo začetnega pogoja preprostih zveznih funkcij $h$ (katere vrednosti poznamo na $\partial \mathbb{D}$) vzeli za definicijo novega pojma in z njegovo pomočjo prišli do rešitve/razširitve za splošno začetno zvezno funkcijo $h$.
     \begin{definicija}
         \textbf{Poissonovo jedro} je funkcija definirana s predpisom
         $$
            P_r(\theta) = \sum_{k = -\infty}^{\infty}{r^{|k|} e^{i k \theta}}\text{, kjer je}~\theta \in [-\pi, \pi]~\text{in}~ r < 1.
         $$
     \end{definicija}
+    Smiselno se je vprašati, ali je za vsako vrednost iz zapisanega definicijskega območje Poissonovega jedra vrsta na desni strani definicijske enakosti sploh konvergira. Potencialne strahove pomiri naslednja trditev.
     \begin{trditev}
-        Za vsak fiksen $\rho < 1$, vrsta, definirana s Poissonovim jedrom konvergira enakomerno za vsak $\phi \leq \rho < 1$ in vsak $ -\pi \leq \theta \leq \pi$.
+        Za vsak fiksen $\rho < 1$, vrsta, definirana s Poissonovim jedrom konvergira enakomerno za vsak $r\leq \rho < 1$ in vsak $ -\pi \leq \theta \leq \pi$.
     \end{trditev}
-    \begin{proof}
-        Za vsak člen vrste velja $|r^{|k|} e^{i k \phi}| \leq \rho^{|k|} < 1$, zato po Weierstrassovem M-testu velja, da vrsta konvergira enakomerno.
-    \end{proof}
+    \begin{dokaz}
+        Za vsak člen vrste velja $|r^{|k|} e^{i k \phi}| \leq \rho^{|k|}$, zato po Weierstrassovem M-testu velja, da vrsta konvergira enakomerno.
+    \end{dokaz}
+
+    Definicijo Poissonovega jedra, bi lahko ekvivalentno zapisali tudi kot:
+        \begin{equation}
+            \label{eq1}
+            P_r(\theta) = 1 + \sum_{k=1}^{\infty}{z^k} + \sum_{j=1}^{\infty}{\overline{z}^{j}},~\text{kjer}~z = r e^{i\theta} \in \mathbb{D},~~~\text{oziroma}
+        \end{equation}
+        \begin{equation}
+            \label{eq2}
+            P_r(\theta) = \frac{1 - |z|^2}{|1-z|^2} = \frac{1-r^2}{1+ r^2 - 2r \cos(\theta)},~\text{kjer}~z= re^{i\theta} \in \mathbb{D}.
+        \end{equation}
+    Pokazati ekvivalentnost definicije z zapisom \ref{eq1} je dokaj trivialno, vrsto v definiciji le razbijemo na tri dele, glede na predznačenost iterativnega indeksa in člen vsake izmed vsot zapišemo s kompleksno spremenljivko. 
+    Za dokaz ekvivalence z drugo alternativno definicijo se moramo nekoliko bolj potruditi in pomagati z \ref{eq1}. Vrsti v \ref{eq1} sta definirani za notranjost enoskega diska (kjer je absolutna vrednost manjša od 1), zato obe vrsti konvergirata in ju lahko seštejemo s pomočjo formule za geometrijsko vrsto. 
+    Prek enakosti $|1 - z|^2 = (\overline{1 - z})(1 - z) = (1 - \overline{z})(1 - z) = 1 + r^2 - 2r \cos(\theta)$ dobimo ekvivalenco z zapisom \ref{eq2}:
+    $$
+        P_r(\theta) = 1 + \frac{z}{1 - z} + \frac{\overline{z}}{1 - \overline{z}} = \frac{1 - |z|^2}{|1 - z|^2} = \frac{1 - r^2}{1 + r^2 - 2r\cos(\theta)}.
+    $$
+    Preden se lotimo uporabe novo definiranega pojma, si oglejmo še nekaj njegovih lastnosti. 
+    
+    \begin{trditev}
+        Funkcija Poissonovega jedra ima naslednje lastnosti:
+        \begin{enumerate}
+            \item funkcija Poissonovega jedra je periodična s periodo $2\pi$, 
+            \item za vsak fiksen $r \in [0,1): \int_{-\pi}^{\pi}{P_r(\theta) \frac{d\theta}{2\pi}} = 1$,
+            \item za vsak fiksen $r \in [0,1)~\text{in}~-\pi \leq \theta \leq \pi: P_r(\theta) > 0$,
+            \item za vsak fiksen $r \in [0,1)~\text{in}~-\pi \leq \theta \leq \pi: P_r( - \theta) = P_r(\theta)$,
+            \item za vsak fiksen $r \in [0,1): P_r(\theta)~\text{na}~-\pi \leq \theta \leq 0~\text{narašča in na}~0 \leq \theta \leq \pi~\text{pada}$,
+            \item za vsak fiksen $\delta > 0: max\{P_r(\theta)| \delta \leq |\theta| \leq \pi\} \to 0$ ko gre $r \to 1$.
+        \end{enumerate}
+    \end{trditev}
+
+    \begin{opomba}
+        Opazimo, da lahko zgoraj konstruirano razširitev za polinomske funkcije $h$ na notranjosti enotskega diska zapišemo tudi s pomočjo Poissonovega jedra:
+        $$
+        \widetilde{h}(r e^{i \theta}) = \int_{-\pi}^{\pi}{h(e^{i \varphi}) \bigg[\sum_{k = - \infty}^{\infty} r^{|k|} e^{- i k \varphi} e^{i k \theta}} \bigg]\frac{d \varphi}{2 \pi} = 
+        \int_{-\pi}^{\pi}{h(e^{i \varphi}) P_r(\theta - \varphi)\frac{d \varphi}{2 \pi}}.
+        $$
+        Sedaj bomo prav ta zapis vzeli za definicijo novega pojma v splošnem. 
+    \end{opomba}
 
     \begin{definicija}
-        \textbf{Poissonov integral}, ki ga označimo z~$\widetilde{h}(z)$, od $h(e^{i\theta})$ je funkcija, definirana na enotskem disku s predpisom
+        \textbf{Poissonov integral}, ki ga označimo z~$\widetilde{h}(z)$, od zvezne funkcije $h(e^{i\theta})$ je funkcija, definirana na enotskem disku s predpisom
         $$
         \widetilde{h}(z) = \int_{-\pi}^{\pi}{h(e^{i\phi}) P_r(\theta - \phi)~\frac{d\phi}{2 \pi}}~\text{, kjer}~~z = r e^{i\theta} \in \mathbb{D}.
         $$
      \end{definicija}
      \begin{trditev}
+        \label{obstoj}
         Naj bo $h$ zvezna kompleksna funkcija definirana na $\partial \mathbb{D}$. Rešitev Dirichletovega problema obstaja in ima vrednosti na $\mathbb{D}$ definirane kot Poissonov integral funkcije $h$.
         \newline
         Rečeno drugače, Poissonov integral zvezne kompleksne funkcije, definirane na $\partial \mathbb{D}$ je zvezna harmonična funkcija, definirana na $\mathbb{D}$, ki nam ponuja zvezno harmonično razširitev $h$ na $\overline{\mathbb{D}}$, če jo dodefiniramo na $\mathbb{D}$ z njenim Poissonovim integralom.
      \end{trditev}
-     \begin{proof}
+     \begin{dokaz}
         Diplomska naloga
-     \end{proof}
+     \end{dokaz}
+     \begin{posledica}
+        Dirichletov problem za enostki disk, je dobro postavljen matematičen problem. 
+    \end{posledica}
+    \begin{dokaz}
+        Obstoj rešitve za vsako zvezno začetno podano funkcijo, nam (eksplicitno) zagotavlja trditev \ref{obstoj}. Enoličnost rešitve, nam zaradi že zagotovoljenega obstoja zagotavlja lema \ref{enolicno}, zvezna odvisnost rešitve od začetnih podatkov, pa je predpostavka problem (funkcija reši problem le v primeru, ko je zvezna na zaprtju enotskega diska, kar nam zagotavlja zvezno odvisnost od pogojev na robu diska oziroma zvezno odvisnost od začetnih pogojev).
+    \end{dokaz}
 
 \section{Lastnost povprečne vrednosti}
      \begin{definicija}
@@ -186,9 +284,9 @@ V zadnjem poglavju, bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nav
                 u(z_0) = \frac{1}{2 \pi} \int_{0}^{2 \pi}{u(z_0 + r e^{i \theta}) d\theta},~~\text{kjer}~~ 0 < r < \rho.
             $$
     \end{trditev}
-    \begin{proof}
+    \begin{dokaz}
         Diplomska naloga
-    \end{proof}
+    \end{dokaz}
     \begin{opomba}
         Iz kompleksne analize vemo, da imajo holomorfne funkcije lastnost povprečne vrednosti, zgornja trditev pa nam pove, da imajo lastnost povprečne vrednosti tudi harmonične funkcije. 
         Za harmonične funkcije velja celo več, da se jih namreč karakterizirati s pomočjo lastnosti povprečne vrednosti. 
@@ -196,9 +294,9 @@ V zadnjem poglavju, bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nav
     \begin{trditev}
         Naj bo $h$ zvezna funkcija, definirana na območju $D \subseteq \C$. Velja, da je $h$ harmonična funkcija, natanko tedaj, ko ima lastnost povprečne vrednosti.
     \end{trditev}
-    \begin{proof}
+    \begin{dokaz}
         Diplomska naloga
-    \end{proof}
+    \end{dokaz}
 
 \newpage
 \section{Schwarzov princip zrcaljenja za harmonične funkcije}
@@ -213,9 +311,9 @@ V zadnjem poglavju, bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nav
     \end{center}
     Slika prikazuje glede na $\R$ simetrično območje $D \subseteq \C$. $D^{+}$ označuje  območje na katerem harmonično funkcijo $u$ poznamo, $D^{-}$ pa območje na katerem lahko po izreku eksplicitno konstruiramo razširitev.
     Točka $z_0$ in "majhen" disk okoli nje, nakazujeta, da se bomo dokaza lotili z lastnostjo povprečne vrednosti.
-    \begin{proof}
+    \begin{dokaz}
         Dokaz temelji na uporabi karakterizacije harmoničnih funkcij s pomočjo lastnosti povprečne vrednosti, oziroma uporabi le-tega, za dokaz harmoničnosti eksplicitno podane razširitve, za katero trdimo, da je harmonična na $D$.
-    \end{proof}
+    \end{dokaz}
 
 \newpage
 
