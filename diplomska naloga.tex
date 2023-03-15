@@ -101,7 +101,8 @@ V zadnjem poglavju, bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nav
             $$
     \end{opomba}
     \begin{trditev}
-        Naj bo $f = u + iv$ holomorfna funkcija. Potem sta funkciji $u$ in $v$ harmonični.
+        \label{hh}
+        Naj bo $f = u + iv$ holomorfna funkcija. Potem sta funkciji $u$ in $v$ harmonični. Rečeno drugače, realni in imaginarni del holomorfne sta harmonični funkciji. 
     \end{trditev}
     \begin{dokaz}
         Z uporabo Cauchy-Riemannovega sistema enačb lahko bralec sam hitro preveri, da trditev drži.
@@ -187,9 +188,11 @@ V zadnjem poglavju, bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nav
         \sum_{k = - N}^{N}{ a_k r^{|k|}e^{ik\theta}} = \sum_{k = - N}^{N} \bigg(\int_{-\pi}^{\pi}{h(e^{i \varphi}) e^{- i k \varphi} \frac{d \varphi}{2 \pi}}\bigg) r^{|k|} e^{i k \theta},
     $$
     zamenjamo vsoto in integral, ter brez škode iteracijsko območje vsote razširimo na vsa cela števila (pri dodanih indeksih je člen vsote ničeln). Dobimo željeni ekspliciten zapis:
-    $$
+    \begin{equation}
+        \label{int1}
+        \tag{P}
         \widetilde{h}(r e^{i \theta}) = \int_{-\pi}^{\pi}{h(e^{i \varphi}) \bigg[\sum_{k = - \infty}^{\infty} r^{|k|} e^{- i k \varphi} e^{i k \theta}} \bigg]\frac{d \varphi}{2 \pi}, ~~~ r e^{i\theta} \in \overline{\mathbb{D}}.
-    $$
+    \end{equation}
     Že iz načina konstrukcije in sprotnih komentarjev je jasno, da funkcija te oblike, za primere, ko je $h$ (trigonometričen) polinom reši Dirichletov problem.
     Sedaj bomo zgornjo funkcijo, ki smo jo na intuitiven način konstruirali s pomočjo začetnega pogoja preprostih zveznih funkcij $h$ (katere vrednosti poznamo na $\partial \mathbb{D}$) vzeli za definicijo novega pojma in z njegovo pomočjo prišli do rešitve/razširitve za splošno začetno zvezno funkcijo $h$.
     \begin{definicija}
@@ -198,6 +201,8 @@ V zadnjem poglavju, bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nav
            P_r(\theta) = \sum_{k = -\infty}^{\infty}{r^{|k|} e^{i k \theta}}\text{, kjer je}~\theta \in [-\pi, \pi]~\text{in}~ r < 1.
         $$
     \end{definicija}
+    Na Poissonovo jedro lahko gledamo kot funkcijo dveh spremenljivk ($\theta$ in $r$) ali pa kot družino funkcij, indeksiranih s parametrom $r$.
+    \newline
     Smiselno se je vprašati, ali je za vsako vrednost iz zapisanega definicijskega območje Poissonovega jedra vrsta na desni strani definicijske enakosti sploh konvergira. Potencialne strahove pomiri naslednja trditev.
     \begin{trditev}
         Za vsak fiksen $\rho < 1$, vrsta, definirana s Poissonovim jedrom konvergira enakomerno za vsak $r\leq \rho < 1$ in vsak $ -\pi \leq \theta \leq \pi$.
@@ -215,8 +220,8 @@ V zadnjem poglavju, bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nav
             \label{eq2}
             P_r(\theta) = \frac{1 - |z|^2}{|1-z|^2} = \frac{1-r^2}{1+ r^2 - 2r \cos(\theta)},~\text{kjer}~z= re^{i\theta} \in \mathbb{D}.
         \end{equation}
-    Pokazati ekvivalentnost definicije z zapisom \ref{eq1} je dokaj trivialno, vrsto v definiciji le razbijemo na tri dele, glede na predznačenost iterativnega indeksa in člen vsake izmed vsot zapišemo s kompleksno spremenljivko. 
-    Za dokaz ekvivalence z drugo alternativno definicijo se moramo nekoliko bolj potruditi in pomagati z \ref{eq1}. Vrsti v \ref{eq1} sta definirani za notranjost enoskega diska (kjer je absolutna vrednost manjša od 1), zato obe vrsti konvergirata in ju lahko seštejemo s pomočjo formule za geometrijsko vrsto. 
+    Pokazati ekvivalentnost definicije z zapisom \ref{eq1} je dokaj trivialno, vrsto v definiciji le razbijemo na tri dele (glede na predznačenost iterativnega indeksa) in člen vsake izmed vsot zapišemo s kompleksno spremenljivko. 
+    Za dokaz ekvivalence z drugo alternativno definicijo se moramo nekoliko bolj potruditi in pomagati z \ref{eq1}. Vrsti v \ref{eq1} sta definirani za notranjost enotskega diska (kjer je absolutna vrednost manjša od 1), zato obe vrsti konvergirata in ju lahko seštejemo s pomočjo formule za geometrijsko vrsto. 
     Prek enakosti $|1 - z|^2 = (\overline{1 - z})(1 - z) = (1 - \overline{z})(1 - z) = 1 + r^2 - 2r \cos(\theta)$ dobimo ekvivalenco z zapisom \ref{eq2}:
     $$
         P_r(\theta) = 1 + \frac{z}{1 - z} + \frac{\overline{z}}{1 - \overline{z}} = \frac{1 - |z|^2}{|1 - z|^2} = \frac{1 - r^2}{1 + r^2 - 2r\cos(\theta)}.
@@ -224,6 +229,7 @@ V zadnjem poglavju, bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nav
     Preden se lotimo uporabe novo definiranega pojma, si oglejmo še nekaj njegovih lastnosti. 
     
     \begin{trditev}
+        \label{lastpk}
         Funkcija Poissonovega jedra ima naslednje lastnosti:
         \begin{enumerate}
             \item funkcija Poissonovega jedra je periodična s periodo $2\pi$, 
@@ -231,18 +237,48 @@ V zadnjem poglavju, bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nav
             \item za vsak fiksen $r \in [0,1)~\text{in}~-\pi \leq \theta \leq \pi: P_r(\theta) > 0$,
             \item za vsak fiksen $r \in [0,1)~\text{in}~-\pi \leq \theta \leq \pi: P_r( - \theta) = P_r(\theta)$,
             \item za vsak fiksen $r \in [0,1): P_r(\theta)~\text{na}~-\pi \leq \theta \leq 0~\text{narašča in na}~0 \leq \theta \leq \pi~\text{pada}$,
-            \item za vsak fiksen $\delta > 0: max\{P_r(\theta)| \delta \leq |\theta| \leq \pi\} \to 0$ ko gre $r \to 1$.
+            \item za vsak fiksen $\delta > 0: \text{max}\{P_r(\theta)~|~ \delta \leq |\theta| \leq \pi\} \to 0$ ko gre $r \to 1$,
+            \item Poissonovo jedro je kot funkcija dveh spremenljivk ($r$ in $\theta$) harmonična.
         \end{enumerate}
     \end{trditev}
-
-    \begin{opomba}
-        Opazimo, da lahko zgoraj konstruirano razširitev za polinomske funkcije $h$ na notranjosti enotskega diska zapišemo tudi s pomočjo Poissonovega jedra:
-        $$
-        \widetilde{h}(r e^{i \theta}) = \int_{-\pi}^{\pi}{h(e^{i \varphi}) \bigg[\sum_{k = - \infty}^{\infty} r^{|k|} e^{- i k \varphi} e^{i k \theta}} \bigg]\frac{d \varphi}{2 \pi} = 
-        \int_{-\pi}^{\pi}{h(e^{i \varphi}) P_r(\theta - \varphi)\frac{d \varphi}{2 \pi}}.
-        $$
-        Sedaj bomo prav ta zapis vzeli za definicijo novega pojma v splošnem. 
-    \end{opomba}
+    \begin{dokaz}
+        $ $
+        \begin{enumerate}
+            \item Periodičnost funkcije, s periodo $2\pi$, je zaradi definiranosti prek vsote členov $e^{ik\theta}$ očitna. 
+            \item Oglejmo si \ref{int1} in vzemimo $h \equiv 1$. Dobimo: 
+            $$
+                \widetilde{h}(r e^{i \theta}) = \int_{-\pi}^{\pi}{\bigg[\sum_{k=-\infty}^{\infty}{r^{|k|} e^{ik(\varphi - \theta)}}\bigg] \frac{d \varphi}{2 \pi}} = \int_{-\pi}^{\pi}{P_r(\varphi - \theta)\frac{d \varphi}{2 \pi}}. 
+            $$
+            Opazimo, da $\widetilde{h} \equiv 1$ reši Dirichletov problem, zato je po lemi \ref{enolicno} edina rešitev. Uporabimo translacijo $\varphi \mapsto \varphi - \theta$ za uvedbo nove spremenljivke v integral, ter ob upoštevanju periodičnosti dobimo:
+            $$
+                1 = \int_{-\pi}^{\pi}{P_r(\varphi - \theta)\frac{d \varphi}{2 \pi}} = \int_{-\pi}^{\pi}{P_r(\varphi)\frac{d \varphi}{2 \pi}}.
+            $$
+            \item Trditev očitno sledi iz definicije \ref{eq2}. 
+            \item Trditev očitno sledi iz definicije \ref{eq2}. 
+            \item Trditev očitno sledi iz definicije \ref{eq2}. 
+            \item TODO 
+            \item Po trditvi \ref{hh} zadošča pokazati, da lahko Poissonovo jedro zapišemo kot realni del holomorfne funkcije (definirane na $\mathbb{D}$). Opazimo, da po \ref{eq1} to res lahko storimo kot:
+            $$
+                P_r(\theta) = 1 + 2~\text{Re}\bigg(\frac{z}{1-z}\bigg) = \text{Re}\bigg(\frac{1+z}{1-z}\bigg),~\text{za}~z= re^{i\theta} \in \mathbb{D}.
+            $$
+        \end{enumerate}
+    \end{dokaz}
+    Vrnimo se k predpisu razširitve, ki smo jo izpeljali za polinomske funkcije $h$ na notranjosti enotskega diska. Opazimo, da si lahko pomagamo s sedaj definiranim pojmom Poissonovega jedra in zapišimo:
+    $$
+    \widetilde{h}(r e^{i \theta}) = \int_{-\pi}^{\pi}{h(e^{i \varphi}) \bigg[\sum_{k = - \infty}^{\infty} r^{|k|} e^{- i k \varphi} e^{i k \theta}} \bigg]\frac{d \varphi}{2 \pi} = 
+    \int_{-\pi}^{\pi}{h(e^{i \varphi}) P_r(\theta - \varphi)\frac{d \varphi}{2 \pi}}.
+    $$
+    Če (trigonometričen) polinom $h(e^{i\theta})$ (ki  bi seveda lahko zavzemal kompleksne vrednosti), zamenjamo s (trigonometričnim) polinomom $u(e^{i\theta})$, ki zavzema le realne vrednosti, se nam zgornja enakost v duhu 
+    točke (7) trditve \ref{lastpk}, še olepša. Takrat lahko namreč za $z = re^{i\theta} \in \mathbb{D}$ pišemo:
+    \begin{equation*}
+        \begin{split}
+            \widetilde{u}(z) = \widetilde{u}(r e^{i \theta}) = \int_{-\pi}^{\pi}{u(e^{i \varphi}) P_r(\theta - \varphi)\frac{d \varphi}{2 \pi}} = \int_{-\pi}^{\pi}{u(e^{i \varphi})~\text{Re}\bigg(\frac{1+re^{i(\theta - \varphi)}}{1-re^{i(\theta - \varphi)}}\bigg)\frac{d \varphi}{2 \pi}}= \\
+            \int_{-\pi}^{\pi}{u(e^{i \varphi})~\text{Re}\bigg(\frac{e^{i\varphi}+re^{i\theta}}{e^{i\varphi}-re^{i\theta}}\bigg)\frac{d \varphi}{2 \pi}}=~\text{Re}~\bigg[\int_{-\pi}^{\pi}{u(e^{i \varphi})\bigg(\frac{e^{i\varphi}+z}{e^{i\varphi}-z}\bigg)\frac{d \varphi}{2 \pi}}\bigg].
+        \end{split}
+    \end{equation*}
+    Opazimo, da nam je uspelo $\widetilde{u}(z)$ za $z \in \mathbb{D}$ izraziti kot realni del holomorfne funkcije, kar nam da tudi gladko odvisnost $\widetilde{u}(z)$ od spremenljivke/parametra $z$.
+    \newline
+    Posvetimo se sedaj nazaj iskanju splošne rešitve Dirichletovega problema. Zgoraj smo z intuitivno izpeljavo nevede že zapisali funkcijo, ki jo bomo sedaj vzeli za definicijo novega pojma, ter pokazali da tudi v splošnem pripelje do rešitve.
 
     \begin{definicija}
         \textbf{Poissonov integral}, ki ga označimo z~$\widetilde{h}(z)$, od zvezne funkcije $h(e^{i\theta})$ je funkcija, definirana na enotskem disku s predpisom
@@ -260,7 +296,7 @@ V zadnjem poglavju, bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nav
         Diplomska naloga
      \end{dokaz}
      \begin{posledica}
-        Dirichletov problem za enostki disk, je dobro postavljen matematičen problem. 
+        Dirichletov problem za enotski disk, je dobro postavljen matematičen problem. 
     \end{posledica}
     \begin{dokaz}
         Obstoj rešitve za vsako zvezno začetno podano funkcijo, nam (eksplicitno) zagotavlja trditev \ref{obstoj}. Enoličnost rešitve, nam zaradi že zagotovoljenega obstoja zagotavlja lema \ref{enolicno}, zvezna odvisnost rešitve od začetnih podatkov, pa je predpostavka problem (funkcija reši problem le v primeru, ko je zvezna na zaprtju enotskega diska, kar nam zagotavlja zvezno odvisnost od pogojev na robu diska oziroma zvezno odvisnost od začetnih pogojev).
