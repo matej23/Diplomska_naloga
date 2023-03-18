@@ -386,7 +386,27 @@ V zadnjem poglavju, bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nav
     \end{dokaz}
 
 \section{Lastnost povprečne vrednosti}
-     \begin{definicija}
+
+    \begin{definicija}  
+        Naj bo $h$ zvezna funkcija na območju $D$. Denimo, da za $z_0 \in D$ in $r$ velja  $\overline{\mathbb{D}}(z_0, r) \subseteq D$. \textbf{Povprečje funkcije} $h$ na $\overline{\mathbb{D}}(z_0, r)$ definiramo kot:
+        $$
+            A(r) = \int_{0}^{2 \pi}{h \big(z_0 + r e^{i\theta}\big)\frac{d\theta}{2 \pi}}.
+        $$
+    \end{definicija}
+    \begin{trditev}
+        \label{zvpov}
+        Naj bo $h$ zvezna funkcija, definirana na območju $D$. Naj bo $\overline{\mathbb{D}}(z_0, r) \subseteq D$. 
+        Potem je $A(r)$ zvezno odvisna od $r$ in velja: $\lim_{r \to 0}{A(r)} = h(z_0)$.
+    \end{trditev}
+    \begin{dokaz}
+        $A(r)$ je zvezno odvisna od $r$, saj je definirana kot integral zvezne funkcije. Drugi del trditve nam dokaže:
+        $$
+            |A(r) - h(z_0)| = \bigg|\int_{0}^{2\pi} \big[h(z_0 + r e^{i\theta})  - h(z_0)\big] \frac{d\theta}{2\pi} \bigg| \leq \int_{0}^{2 \pi} \big| h(z_0 + r e^{i\theta}) - h(z_0) \big| \frac{d\theta}{2 \pi},
+        $$
+        saj lahko zaradi zveznosti $h$ notranjost integrala navzgor ocenimo s poljubno majhnim $\epsilon$ (pri dovolj majhnem $r$) in s tem dobimo $|A(r) - h(z_0)| < \epsilon$, za poljubno majhen $\epsilon$. 
+    \end{dokaz}
+
+    \begin{definicija}
         Zvezna funkcija $h$, definirana na območju $D \subseteq \C$ ima \textbf{lastnost povprečne vrednosti}, če za vsak $z_0 \in D$ obstaja $\epsilon_0 > 0$, da $\overline{\mathbb{D}}(z_0, \epsilon_0) \subseteq D$ in za vsak $0 < \epsilon \leq \epsilon_0 $ velja:
         $$
             h(z_0) = \frac{1}{2 \pi} \int_{0}^{2 \pi}{h(z_0 + \epsilon e^{i \theta}) d\theta}.
@@ -398,16 +418,54 @@ V zadnjem poglavju, bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nav
     \end{opomba}
 
     \begin{trditev}
-        Naj bo $u$ harmonična funkcija na območju $D \subseteq \C$. Če velja $\overline{\mathbb{D}}(z_0, \rho) \subseteq D$, potem velja:
+        Naj bo $f$ holomorfna na območju $D$. Potem ima lastnost povprečne vrednosti.
+    \end{trditev}
+    \begin{dokaz}
+        Predpostavka, da ja $f$ holomorfna nam omogoča uporabo Cauchyjeve integralske formule za vsak zaprt disk, ki je v celoti vsebovan v $D$. Torej za $z \in D$ in vsak $r$, tako da $\overline{\mathbb{D}}(z,r) \subseteq \mathbb{D}$ velja:
+        $$
+        f(z) = \frac{1}{2 \pi i} \int_{\partial \overline{\mathbb{D}}(z, r)}{\frac{f(\xi)}{\xi  - z}}d\xi.
+        $$
+        Ko rob diska parametriziramo, dobimo:
+        $$
+        f(z) = \frac{1}{2 \pi} \int_{0}^{2\pi}{f(z + re^{i\varphi})}d\varphi.
+        $$
+    \end{dokaz}
+
+    \begin{trditev}
+        Naj bo $u$ harmonična funkcija na območju $D \subseteq \C$. Za $z_0$ in $\rho$, kjer $\overline{\mathbb{D}}(z_0, \rho) \subseteq D$, velja:
             $$
                 u(z_0) = \frac{1}{2 \pi} \int_{0}^{2 \pi}{u(z_0 + r e^{i \theta}) d\theta},~~\text{kjer}~~ 0 < r < \rho.
             $$
     \end{trditev}
     \begin{dokaz}
-        Diplomska naloga
+        Na $\overline{\mathbb{D}}(z_0, \rho) \subseteq D$ lahko za $P = -\frac{\partial u}{\partial y}$ in $Q = \frac{\partial u}{\partial x}$ uporabimo Greenovo integralsko formulo:
+        $$
+            \int_{\partial \overline{\mathbb{D}}(z_0, \rho)}{P dx + Q dy} = \iint_{\overline{\mathbb{D}}(z_0, \rho)}{\bigg(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\bigg)dx dy}.
+        $$ 
+        Sedaj upoštevajmo pogoj za harmoničnost $u$ \big($\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0$\big) in ga vstavimo v Greenovo formulo:
+        $$
+        \int_{\partial \overline{\mathbb{D}}(z_0, \rho)}{-\frac{\partial u}{\partial y} dx + \frac{\partial u}{\partial x} dy} = \iint_{\overline{\mathbb{D}}(z_0, \rho)}{\bigg(\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2}\bigg)dx dy} = 0. 
+        $$
+        Rob diska lahko pri $z_0 = x_0 + iy_0$ parametriziramo z $x(\theta) = x_0 + \rho \cos(\theta),~y(\theta) = y_0 + \rho \sin(\theta)$. Ko to vstavimo v zgornjo enakost dobimo:
+        $$
+        0 = \rho \int_{0}^{2 \pi}{\bigg[\frac{\partial u}{\partial x} \cos(\theta) + \frac{\partial u}{\partial y} \sin(\theta)\bigg] d\theta} = \rho \int_{0}^{2\pi}{\frac{\partial u}{\partial \rho}\big({z_0 + \rho e^{i\theta}\big)d\theta}}.
+        $$
+        Ker je $u$ harmonična, je gladka, zato lahko zamenjamo limitna procesa integriranja in odvajanja, delimo z $2\pi \rho$ in zapišemo:
+        $$
+        0 = \frac{\partial}{\partial \rho} \int_{0}^{2\pi}{u\big({z_0 + \rho e^{i\theta}\big)\frac{d\theta}{2 \pi}}}.
+        $$
+        Sledi, da je vrednost zgornjega integrala konstanta, za vsak $0 <r < \rho$ t.j.: 
+        $$
+        \int_{0}^{2\pi}{u\big({z_0 + r e^{i\theta}\big)\frac{d\theta}{2 \pi}}} = c \in \mathbb{C},~ 0 < r < \rho.
+        $$
+        Opazimo, da je potrebno le še pokazati, da $c = u(z_0)$.
+        Ker je $u$ zvezna, po trditvi \ref{zvpov} velja, da ko pošljemo $r \to 0$ dobimo:
+        $$
+        c = \lim_{r \to 0}{\bigg[\int_{0}^{2\pi}{u\big({z_0 + r e^{i\theta}\big)\frac{d\theta}{2 \pi}}}\bigg]} = \int_{0}^{2\pi}{{u(z_0)\frac{d\theta}{2 \pi}}} = u(z_0).
+        $$
     \end{dokaz}
     \begin{opomba}
-        Iz kompleksne analize vemo, da imajo holomorfne funkcije lastnost povprečne vrednosti, zgornja trditev pa nam pove, da imajo lastnost povprečne vrednosti tudi harmonične funkcije. 
+        Komentirali smo že, da imajo holomorfne funkcije lastnost povprečne vrednosti, zgornja trditev pa nam pove, da imajo lastnost povprečne vrednosti tudi harmonične funkcije. 
         Za harmonične funkcije velja celo več, da se jih namreč karakterizirati s pomočjo lastnosti povprečne vrednosti. 
     \end{opomba}
     \begin{trditev}
