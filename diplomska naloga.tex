@@ -108,8 +108,20 @@ V zadnjem poglavju, bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nav
         Z uporabo Cauchy-Riemannovega sistema enačb lahko bralec sam hitro preveri, da trditev drži.
     \end{dokaz}
 
+    \begin{definicija}
+        Naj bo funkcija $u$ na območju $D$ harmonična. Če obstaja harmonična funkcija $v$, definirana na $D$, tako da je funkcija $f + u + iv$ na $D$ holomorfna, potem funkciji $v$ pravimo \textbf{harmonična konjugiranka funkcije $u$} (na $D$).    
+    \end{definicija}
+
+    \begin{trditev}
+        Naj bo $u$ harmonična funkcija, definirana na zvezdastem območju $D$. Potem za $u$ na $D$ obstaja harmonična konjugiranka $v$ in je do konstante natančno enolično določena. 
+    \end{trditev}
+    \begin{dokaz}
+        Konstrukcijo harmonične konjugiranke, si bralec za primer, ko je zvezdasto območje kar odprt disk lahko ogleda v \cite{osnova}. 
+        Ideja dokaza v splošnem je podobna. 
+    \end{dokaz}
+
     \begin{opomba}
-        V duhu zgornje trditve, je velikokrat smiselno na harmonične funkcije gledati kot na realne dele holomorfnih funkcij. Prav to že nekako nakazuje, da se bodo vsaj nekatere "lepe/željene" lastnosti, ki jih holomorfne funkcije imajo, prenesle tudi na harmonične funkcije.
+        V duhu zgornjih dveh trditev, je velikokrat smiselno na harmonične funkcije gledati kot na realne dele holomorfnih funkcij. Prav to že nekako nakazuje, da se bodo vsaj nekatere "lepe/željene" lastnosti, ki jih holomorfne funkcije imajo, prenesle tudi na harmonične funkcije.
     \end{opomba}
     %%V duhu zgornjih dveh opomb, opazimo, da lahko kompleksno funkcijo $f$, zapišemo v obliki realnega in imaginarnega dela oziroma kot $f = u + i v$, s pomočjo nekih realnih funkcij (dveh spremenljivk) $u$ in $v$, ter lahko zaradi linearnosti parcialnih odvodov sklepamo, da je za harmoničnost $f$ kot kompleksne funkcije, dovolj zahtevati harmoničnost $u$ in $v$ kot realnih funkcij.
     %%Podoben argument nam da vedeti, da nam harmoničnost $f = u + iv$, implicira tudi harmoničnost $u$ in $v$. 
@@ -263,29 +275,63 @@ V zadnjem poglavju, bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nav
             $$
         \end{enumerate}
     \end{dokaz}
-    Vrnimo se k predpisu razširitve, ki smo jo izpeljali za polinomske funkcije $h$ na notranjosti enotskega diska. Opazimo, da si lahko pomagamo s sedaj definiranim pojmom Poissonovega jedra in zapišimo:
+    \begin{opomba}
+        Lastnosti Poissonovega jedra, navedene v trditvi \ref{lastpk}, so tudi dobro razvidne na spodnji sliki. 
+        \newline
+        SLIKA - GRAF POISSONOVEGA JEDRA
+        \newline
+        Vredno je omeniti tudi, da točki (2) in (3) trditve \ref{lastpk} nakazujeta, da funkcija $\frac{1}{2 \pi} P_r(\theta)$ določa gostoto zvezno porazdeljene slučajne spremenljivke.
+    \end{opomba}
+    Sedaj se vrnimo k reševanju Dirichletovega problema za enotski disk. 
+    Spomnimo se, da smo za polinomske funkcije $h$ skonstruirali predpis razširitve, ki je rešila zastavljen problem. 
+    Opazimo, da si sedaj lahko pomagamo z definiranim pojmom Poissonovega jedra in zapišimo:
     $$
     \widetilde{h}(r e^{i \theta}) = \int_{-\pi}^{\pi}{h(e^{i \varphi}) \bigg[\sum_{k = - \infty}^{\infty} r^{|k|} e^{- i k \varphi} e^{i k \theta}} \bigg]\frac{d \varphi}{2 \pi} = 
     \int_{-\pi}^{\pi}{h(e^{i \varphi}) P_r(\theta - \varphi)\frac{d \varphi}{2 \pi}}.
     $$
     Če (trigonometričen) polinom $h(e^{i\theta})$ (ki  bi seveda lahko zavzemal kompleksne vrednosti), zamenjamo s (trigonometričnim) polinomom $u(e^{i\theta})$, ki zavzema le realne vrednosti, se nam zgornja enakost v duhu 
     točke (7) trditve \ref{lastpk}, še olepša. Takrat lahko namreč za $z = re^{i\theta} \in \mathbb{D}$ pišemo:
-    \begin{equation*}
+    \begin{equation}
+        \label{realnidel}
         \begin{split}
             \widetilde{u}(z) = \widetilde{u}(r e^{i \theta}) = \int_{-\pi}^{\pi}{u(e^{i \varphi}) P_r(\theta - \varphi)\frac{d \varphi}{2 \pi}} = \int_{-\pi}^{\pi}{u(e^{i \varphi})~\text{Re}\bigg(\frac{1+re^{i(\theta - \varphi)}}{1-re^{i(\theta - \varphi)}}\bigg)\frac{d \varphi}{2 \pi}}= \\
             \int_{-\pi}^{\pi}{u(e^{i \varphi})~\text{Re}\bigg(\frac{e^{i\varphi}+re^{i\theta}}{e^{i\varphi}-re^{i\theta}}\bigg)\frac{d \varphi}{2 \pi}}=~\text{Re}~\bigg[\int_{-\pi}^{\pi}{u(e^{i \varphi})\bigg(\frac{e^{i\varphi}+z}{e^{i\varphi}-z}\bigg)\frac{d \varphi}{2 \pi}}\bigg].
         \end{split}
-    \end{equation*}
-    Opazimo, da nam je uspelo $\widetilde{u}(z)$ za $z \in \mathbb{D}$ izraziti kot realni del holomorfne funkcije, kar nam da tudi gladko odvisnost $\widetilde{u}(z)$ od spremenljivke/parametra $z$.
+    \end{equation}
+    Opazimo, da nam je uspelo $\widetilde{u}(z)$ za $z \in \mathbb{D}$ izraziti kot realni del holomorfne funkcije, ne le implicira harmoničnost predpisa (po trditvi \ref{hh}) ampak tudi gladko odvisnost $\widetilde{u}(z)$ od spremenljivke/parametra $z$.
     \newline
     Posvetimo se sedaj nazaj iskanju splošne rešitve Dirichletovega problema. Zgoraj smo z intuitivno izpeljavo nevede že zapisali funkcijo, ki jo bomo sedaj vzeli za definicijo novega pojma, ter pokazali da tudi v splošnem pripelje do rešitve.
 
     \begin{definicija}
         \textbf{Poissonov integral}, ki ga označimo z~$\widetilde{h}(z)$, od zvezne funkcije $h(e^{i\theta})$ je funkcija, definirana na enotskem disku s predpisom
         $$
-        \widetilde{h}(z) = \int_{-\pi}^{\pi}{h(e^{i\phi}) P_r(\theta - \phi)~\frac{d\phi}{2 \pi}}~\text{, kjer}~~z = r e^{i\theta} \in \mathbb{D}.
+        \widetilde{h}(z) = \int_{-\pi}^{\pi}{h(e^{i\varphi}) P_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}}~\text{, kjer}~~z = r e^{i\theta} \in \mathbb{D}.
         $$
      \end{definicija}
+     \begin{opomba}
+        Ekvivalentno bi lahko definicijo Poissonovega integrala, zaradi ($2\pi$) periodičnosti Poissonovega jedra,  zapisali tudi kot:
+        $$
+        \widetilde{h}(z) = \int_{-\pi}^{\pi}{h\big(e^{i(\theta-\varphi)}\big) P_r(\varphi)~\frac{d\varphi}{2 \pi}}~\text{, kjer}~~z = r e^{i\theta} \in \mathbb{D}.
+        $$
+     \end{opomba}
+     \begin{trditev}
+        \label{lastpi}
+        Za  preslikavo $\Phi : h \mapsto \widetilde{h}$, t.j. preslikavo, ki  zvezni funkciji $h$, definirani na $\partial \mathbb{D}$ priredi njen Poissonov integral, velja:
+        \begin{enumerate}
+            \item $\Phi$ je linearna preslikava, t.j. $\Phi(c_1 h_1 + c_2 h_2) = c_1 \widetilde{h_1} + c_2 \widetilde{h_2}$,
+            \item $\Phi$ "ohranja omejenost", t.j. če $|h| \leq M$ na $\partial \mathbb{D}$, potem $|\widetilde{h}| \leq M$ na $\mathbb{D}$.
+        \end{enumerate}
+     \end{trditev}
+     \begin{dokaz}
+        $ $
+        \begin{enumerate}
+            \item Trditev trivialno sledi iz definicije Poissonovega integrala, zaradi linearnosti integrala. 
+            \item Trditev sledi iz točke (2) in (3) trditve \ref{lastpk}.
+        \end{enumerate}
+     \end{dokaz}
+        
+
+
      \begin{trditev}
         \label{obstoj}
         Naj bo $h$ zvezna kompleksna funkcija definirana na $\partial \mathbb{D}$. Rešitev Dirichletovega problema obstaja in ima vrednosti na $\mathbb{D}$ definirane kot Poissonov integral funkcije $h$.
@@ -293,13 +339,50 @@ V zadnjem poglavju, bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nav
         Rečeno drugače, Poissonov integral zvezne kompleksne funkcije, definirane na $\partial \mathbb{D}$ je zvezna harmonična funkcija, definirana na $\mathbb{D}$, ki nam ponuja zvezno harmonično razširitev $h$ na $\overline{\mathbb{D}}$, če jo dodefiniramo na $\mathbb{D}$ z njenim Poissonovim integralom.
      \end{trditev}
      \begin{dokaz}
-        Diplomska naloga
+        Trditev dokaži v dveh korakih. Najprej dokažimo, da je Poissonov integral na $\mathbb{D}$ harmonična funkcija.
+        Vemo, da lahko vsako kompleksno funkcijo $h$ zapišemo/razcepimo na njen realni in imaginarni del kot $h = u + iv$, pri čemer sta $u$ in $v$ funkciji (ene kompleksne ali dveh realni spremenljivk), z zalogo vrednostjo znotraj realnih števil. 
+        Zaradi linearnosti Poissonovega integrala, po trditvi \ref{lastpi} se lahko sedaj posebej skoncentriramo na Poissonov integral realnega ($\widetilde{u}$) in Poissonov integral imaginarnega ($\widetilde{v}$) dela. 
+        Tako, kot smo to naredili pri \ref{realnidel}, lahko vsakega izmed Poissonovih integralov $\widetilde{u}$ in $\widetilde{v}$ zapišemo kot realni del neke holomorfne funkcije, kar nam po trditvi \ref{hh} implicira harmoničnost $\widetilde{u}$ in $\widetilde{v}$.
+        Zaradi opombe \ref{lin}, nam to implicira tudi harmoničnost $\widetilde{h} = \widetilde{u} + i\widetilde{v}$, ter dokaz prvega dela trditve. 
+        \newline
+        Za dokaz zveznosti na $\overline{\mathbb{D}}$ se moramo nekoliko bolj potruditi. Uporabili bomo lastnosti Poissonovega jedra iz trditve \ref{lastpk}. 
+        Ker je $h$ na $\partial \mathbb{D}$ zvezna, je kot zvezna funkcija na kompaktu: 
+        \begin{itemize}
+            \item omejena, t.j.:$~\exists M: |h(e^{i\theta})| \leq M$ in 
+            \item enakomerno zvezna, t.j.: $\forall \epsilon > 0, \exists \delta > 0: | \theta - \varphi | < \delta \Rightarrow |h(e^{i\theta}) - h(e^{i\varphi})| < \epsilon $.
+        \end{itemize}
+        Po točki (2) iz trditve \ref{lastpk}, lahko zapišemo:
+        $$
+            \widetilde{h}(re^{i\theta}) - h(e^{i\theta}) = \int_{-\pi}^{\pi}{\bigg[h\big(e^{i(\theta - \varphi)}\big) - h(e^{i\theta})\bigg]P_r(\theta)\frac{d\varphi}{2\pi}}.
+        $$
+        Sedaj vzamemo absolutno vrednost leve in desne strani enakosti, ter uporabimo trikotniško neenakost. Dobimo:
+        $$
+        |\widetilde{h}(re^{i\theta}) - h(e^{i\theta})| \leq \int_{-\pi}^{\pi}{\bigg| h\big(e^{i(\theta - \varphi)}\big) - h(e^{i\theta})\bigg|P_r(\theta)\frac{d\varphi}{2\pi}}.
+        $$
+        Integral lahko razdelimo na dva dela, tako, da bomo lahko uporabili enakomerno zveznost funkcije:
+        $$
+        |\widetilde{h}(re^{i\theta}) - h(e^{i\theta})| \leq \bigg(\int_{-\delta}^{\delta} + \int_{\delta \leq |\varphi| \le \pi}\bigg){\bigg| h\big(e^{i(\theta - \varphi)}\big) - h(e^{i\theta})\bigg|P_r(\theta)\frac{d\varphi}{2\pi}}.
+        $$
+        Vrednosti znotraj prvega integral lahko zaradi enakomerne zveznosti navzgor ocenimo z $\epsilon$, vrednosti znotraj drugega integrala, pa lahko prek omejenosti navzgor ocenimo kar z $2M$. 
+        $$
+        |\widetilde{h}(re^{i\theta}) - h(e^{i\theta})| \leq \epsilon \int_{-\delta}^{\delta}{P_r(\theta) \frac{d\varphi}{2\pi}} + 2M\int_{\delta \leq |\varphi| \leq \pi}{P_r(\theta)\frac{d\varphi}{2\pi}}.
+        $$
+        Vsakega od integralov lahko sedaj v duhu točke (2) trditve \ref{lastpk} navzgor ocenimo in dobimo:
+        $$
+        |\widetilde{h}(re^{i\theta}) - h(e^{i\theta})| \leq \epsilon  + 2M~\text{max}\{P_r(\varphi)~| ~\delta \leq |\varphi| \leq \pi \}.
+        $$
+        Sedaj uporabimo točko (6) trditve \ref{lastpk}, ki nam pove, da gre drugi sumand res proti 0, ko gre $r$ proti 1. 
+        Torej, za vsak $\widetilde{\epsilon} > 0$, pri $r$, ki je dovolj blizu 1, velja, da $|\widetilde{h}(re^{i\theta}) - h(e^{i\theta})| < \widetilde{\epsilon}$.
+        Zveznost in trditev je s tem dokazana.
+        
+
      \end{dokaz}
      \begin{posledica}
         Dirichletov problem za enotski disk, je dobro postavljen matematičen problem. 
     \end{posledica}
     \begin{dokaz}
-        Obstoj rešitve za vsako zvezno začetno podano funkcijo, nam (eksplicitno) zagotavlja trditev \ref{obstoj}. Enoličnost rešitve, nam zaradi že zagotovoljenega obstoja zagotavlja lema \ref{enolicno}, zvezna odvisnost rešitve od začetnih podatkov, pa je predpostavka problem (funkcija reši problem le v primeru, ko je zvezna na zaprtju enotskega diska, kar nam zagotavlja zvezno odvisnost od pogojev na robu diska oziroma zvezno odvisnost od začetnih pogojev).
+        Obstoj rešitve za vsako zvezno začetno podano funkcijo, nam (eksplicitno) zagotavlja trditev \ref{obstoj}. 
+        Enoličnost rešitve, nam zaradi že zagotovoljenega obstoja zagotavlja lema \ref{enolicno}, zvezna odvisnost rešitve od začetnih podatkov, pa je predpostavka problema (funkcija reši problem le v primeru, ko je zvezna na zaprtju enotskega diska, kar nam zagotavlja zvezno odvisnost od pogojev na robu diska oziroma zvezno odvisnost od začetnih pogojev).
     \end{dokaz}
 
 \section{Lastnost povprečne vrednosti}
