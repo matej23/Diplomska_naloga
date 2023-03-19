@@ -73,6 +73,7 @@ V zadnjem poglavju, bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nav
 %\geslo{}{}
 
 %------------------------------------------------------------
+\newpage
 \section{Harmonične funkcije}
     \begin{definicija}
         \label{harm}
@@ -113,6 +114,7 @@ V zadnjem poglavju, bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nav
     \end{definicija}
 
     \begin{trditev}
+        \label{konj}
         Naj bo $u$ harmonična funkcija, definirana na zvezdastem območju $D$. Potem za $u$ na $D$ obstaja harmonična konjugiranka $v$ in je do konstante natančno enolično določena. 
     \end{trditev}
     \begin{dokaz}
@@ -131,10 +133,18 @@ V zadnjem poglavju, bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nav
     \end{opomba}
     \begin{opomba}
         V literaturi se v definiciji harmoničnosti za funkcijo $u$ pojavlja tudi zahteva, da je funkcija gladka, oziroma $u \in C^{\infty}$. V zgornji definiciji zahtevamo le obstoj drugih parcialnih odvodov, oziroma $u \in C^2$. 
-        Nekoliko kasneje v diplomskem delu, bomo pokazali, da gladkost $u$ ni potrebna predpostavka, saj lahko z nekaj znanja kompleksne analize gladkost $u$ izpeljemo iz harmoničnosti $u$ in s tem pokažemo ekvivalentnost definicij. 
+        Ekvivalentnost definicij potrdi spodnja trditev.
     \end{opomba}
+    \begin{trditev}
+        \label{gladkosth}
+        Naj bo $u$ harmonična funkcija na območju $D$. Potem je $u$ na $D$ gladka oziroma $u \in C^{\infty}(D)$. 
+    \end{trditev}
+    \begin{dokaz}
+        Za vsako točko $z \in D$, lahko najdemo dovolj majhno zvezdasto okolico $U_z$ (lahko kar dovolj majhen disk), tako, da bo okolica v celoti vsebova v $D$. 
+        Po trditvi \ref{konj} na $U_z$ obstaja harmonična konjugiranka t.j. $v$, tako da je $f = u+ iv$ holomorfna na $U_z$. To pa že obstaja gladkost $u$ na $U_z$ oziroma gladkost v okolici poljubno izbrane točke iz $D$. 
+    \end{dokaz}
 
-
+\newpage
 \section{Dirichletov problem za enotski disk}
     \begin{pro}
         Naj bo $\mathbb{D}$ enotski disk. Zvezno kompleksno funkcijo $h$, definirano na $\partial \mathbb{D}$, razširi do zvezne funkcije $\widetilde{h}$, tako da bo $\widetilde{h}$ harmonična na $\mathbb{D}$ in zvezna na $\overline{\mathbb{D}}$, ter se bo zožitev $\widetilde{h}$ na $\partial \mathbb{D}$ ujemala s $h$.
@@ -186,8 +196,8 @@ V zadnjem poglavju, bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nav
         $$
         \int_{-\pi}^{\pi}{e^{ij\theta} e^{-ik\theta}\frac{d\theta}{2\pi}} = 
         \begin{cases}
-            1;~j=k\\
-            0;~ j \neq k\\
+            1~&j=k\\
+            0~&j \neq k\\
         \end{cases}
         .$$
 
@@ -374,17 +384,25 @@ V zadnjem poglavju, bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nav
         Sedaj uporabimo točko (6) trditve \ref{lastpk}, ki nam pove, da gre drugi sumand res proti 0, ko gre $r$ proti 1. 
         Torej, za vsak $\widetilde{\epsilon} > 0$, pri $r$, ki je dovolj blizu 1, velja, da $|\widetilde{h}(re^{i\theta}) - h(e^{i\theta})| < \widetilde{\epsilon}$.
         Zveznost in trditev je s tem dokazana.
-        
-
-     \end{dokaz}
-     \begin{posledica}
+    \end{dokaz}
+    \begin{posledica}
         Dirichletov problem za enotski disk, je dobro postavljen matematičen problem. 
     \end{posledica}
     \begin{dokaz}
         Obstoj rešitve za vsako zvezno začetno podano funkcijo, nam (eksplicitno) zagotavlja trditev \ref{obstoj}. 
         Enoličnost rešitve, nam zaradi že zagotovoljenega obstoja zagotavlja lema \ref{enolicno}, zvezna odvisnost rešitve od začetnih podatkov, pa je predpostavka problema (funkcija reši problem le v primeru, ko je zvezna na zaprtju enotskega diska, kar nam zagotavlja zvezno odvisnost od pogojev na robu diska oziroma zvezno odvisnost od začetnih pogojev).
     \end{dokaz}
+    \begin{opomba}
+        \label{alldisk}
+        Dirichletov problem smo formulirali in reševali za enotski disk. Problem bi na podoben način lahko formulirali za poljubno območje $U$. 
+        Kot začetni/robni pogoj bi podali zvezno funckijo $f$ (definirano na $\partial U$), ter iskali njeno razširitev $\widetilde{f}$ (na $\overline{U}$), tako da bi bila na $\overline{U}$ zvezna, 
+        na $U$ harmonična, ter bi se zožitev $\widetilde{f}$ na $\partial U$ ujemala z $f$.
+        V splošnem Dirichletovega problema znotraj diplomske naloge ne bomo reševali, vredno pa je omeniti, 
+        da je bil prav enotski disk izbran zaradi preprostosti in bi lahko zgornji rezultat na podoben način zapisali za poljuben disk. To naredimo s pomočjo vpeljave novih spremenljivk ($z \to az + b$) v Poissonov integral. 
+        DOKONCAJ IZPELJAVO!
+     \end{opomba}
 
+\newpage
 \section{Lastnost povprečne vrednosti}
 
     \begin{definicija}  
@@ -416,6 +434,13 @@ V zadnjem poglavju, bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nav
         Definicija nam pove, da ima zvezna funkcija $h$, definirana na območju $D \subseteq \C$, lastnost povprečne vrednosti, če za vsak $z_0$ iz $D$ velja, 
         da je $h(z_0)$ povprečje vrednosti $h(z)$, kjer $z$ teče po majhni krožnici s središčem v $z_0$.
     \end{opomba}
+    \begin{trditev}
+        \label{linlpv}
+        Linearna kombinacija funkcij s lastnostjo povprečne vrednosti, je funkcija z lastnostjo povprečne vrednosti. 
+    \end{trditev}
+    \begin{dokaz}
+        Trditev sledi iz linearnosti integrala, prek katerega je definirana lastnost povprečne vrednosti.
+    \end{dokaz}
 
     \begin{trditev}
         Naj bo $f$ holomorfna na območju $D$. Potem ima lastnost povprečne vrednosti.
@@ -432,6 +457,7 @@ V zadnjem poglavju, bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nav
     \end{dokaz}
 
     \begin{trditev}
+        \label{harmonicnapovp}
         Naj bo $u$ harmonična funkcija na območju $D \subseteq \C$. Za $z_0$ in $\rho$, kjer $\overline{\mathbb{D}}(z_0, \rho) \subseteq D$, velja:
             $$
                 u(z_0) = \frac{1}{2 \pi} \int_{0}^{2 \pi}{u(z_0 + r e^{i \theta}) d\theta},~~\text{kjer}~~ 0 < r < \rho.
@@ -469,29 +495,131 @@ V zadnjem poglavju, bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nav
         Za harmonične funkcije velja celo več, da se jih namreč karakterizirati s pomočjo lastnosti povprečne vrednosti. 
     \end{opomba}
     \begin{trditev}
-        Naj bo $h$ zvezna funkcija, definirana na območju $D \subseteq \C$. Velja, da je $h$ harmonična funkcija, natanko tedaj, ko ima lastnost povprečne vrednosti.
+        \label{ekvhlp}
+        Naj bo $h$ zvezna funkcija, definirana na območju $U \subseteq \C$. Velja, da je $h$ harmonična funkcija, natanko tedaj, ko ima lastnost povprečne vrednosti.
     \end{trditev}
     \begin{dokaz}
-        Diplomska naloga
+        Trditev \ref{harmonicnapovp} nam dokaže eno implikacijo. Dovolj je torej preveriti, da je zvezna funkcija $h$, z lastnostjo povprečne vrednosti na $U$ harmonična. 
+        Dokaz temelji na že dokazanem obstoju rešitve Dirichletovega problema za enotski disk oziroma po opombi \ref{alldisk} obstoju rešitve Dirichletovega problema za poljuben disk. 
+        \newline
+        Ker je $U$ območje, za poljubno točko $z_0 \in U$ obstaja $r$, tako da $\overline{\mathbb{D}}(z_0,r) \subseteq U$. Ker je $h$ zvezna na $U$, $h$ na $\partial \overline{\mathbb{D}}(z_0, r)$ določa robne/začetne pogoje za Dirichletov problem za disk $\mathbb{D}(z_0,r)$.
+        Vemo, da rešitev (označimo jo z $\widetilde{h}$) obstaja. 
+        Kot harmonična funkcija, ima po trditvi \ref{harmonicnapovp} na $\mathbb{D}(z_0, r)$ lastnost povprečne vrednosti. 
+        Oglejmo si sedaj funkcijo $g(z) = h(z) - \widetilde{z}$, za $z \in \overline{\mathbb{D}}(z_0,r)$. 
+        Kot razlika funkcij s lastnostjo povprečne vrednosti, ima po trditvi \ref{linlpv} tudi $g$ na $\mathbb{D}(z_0, r)$ lastnost povprečne vrednosti in je kot razlika dveh zveznih funkcij, zvezna na $\overline{D}(z_0, r)$.
+        Vemo celo, da na $\partial \overline{\mathbb{D}}(z_0, r)$ velja $g \equiv 0$, saj je zožitev $\widetilde{h}$ na $\partial \overline{\mathbb{D}}(z_0,r)$ enaka $h$. 
+        Po principu maksima, za funkcije z lastnostjo povprečne vrednosti, je potem $g \equiv 0$ oziroma $\widetilde{h} \equiv h$ na $\overline{\mathbb{D}}(z_0, r)$, kar nam da harmoničnost $h$ na $\mathbb{D}(z_0, r)$. 
+        Dokazali smo torej, da za poljubno točko $z_0 \in U$ obstaja disk, katerega zaprtje je vsebovano v $U$ in na notranjosti katerega je $h$ harmonična. To pa nam že zagotavlja harmoničnost $h$ na $U$. 
+    \end{dokaz}
+    \begin{trditev}
+        Naj bo $u$ zvezna funkcija z lastnostjo povprečne vrednosti, definirana na območju $D$. Potem je $u$ na $D$ gladka oziroma $u \in C^{\infty}(D)$.
+    \end{trditev}
+    \begin{dokaz}
+        Po trditvi \ref{ekvhlp} je $u$ harmonična, po trditvi \ref{gladkosth} pa zato tudi gladka.
     \end{dokaz}
 
 \newpage
 \section{Schwarzov princip zrcaljenja za harmonične funkcije}
+    Znotraj tretjega poglavja, smo se že srečali s problemom razširitve podane funkcije, do funkcije, ki mora zahtevati dodatnim pogojem. 
+    Pri Dirichletovem problemu smo tako zahtevali harmoničnost razširitve na notranjosti območja/diska in zveznost razširitve na zaprtju območja/diska. 
+    Pokazali smo, da to lahko naredimo s pomočjo Poissonovega integrala $\widetilde{h}$ kot:
+    $$
+        h^e(z) = 
+        \begin{cases}
+            h(z)~&z \in \partial \mathbb{D} \\
+            \widetilde{h}(z)~&z \in \mathbb{D}
+        \end{cases}.
+    $$
+    Problem, ki ga Schwarzov princip zrcaljenja reši, je ne glede na drugačne začetne pogoje, v svojem bistvu iz vidika iskanja razširitve kljub temu blizu že rešenemu Dirichletovemu problemu.
+    Glavna razlika je, da pri Schwarzovem principu zrcaljenja harmoničnost na območju vzamemo že za predpostavko, (ter s pomočjo robnih zveznih začetnih pogojev) poskušamo konstruirati harmonično razširitev na povsem novem območju, podobne oblike.  
+    Kot to že nakazuje beseda zrcaljanje v imenu principa, bomo razširitev želeli konstruirati na "zrcalni sliki" prvotno definiranega območja. Prav zato bo potrebno predpostaviti nekaj simetrije.
+    Spoznajmo sedaj nekaj osnovnih pojmov, ki nas bodo pripeljali do glavnega izreka.
+    \begin{definicija}
+        Naj bo $U$ območje. \textbf{Zrcaljenje območja U čez realno os} definiramo kot: $U^* = \{\overline{z}~|~z \in U\}$.
+        \newline
+        Pravimo, da je \textbf{območje U simetrično glede na realno os} če velja: $U^* = U$.
+        \newline
+        Naj bo $u: U \to \mathbb{R}$. Potem lahko pri zgornjih oznakah definiramo: $u^*: U^* \to \mathbb{R}$, kot $u^*(z) = u(\overline{z})$.
+    \end{definicija}
+
+    Naravno je pričakovati, da se zaradi dokaj preproste definicije $u^*$ prek $u$ lastnosti $u$ "prenesejo" tudi na $u^*$. 
+    Spodnja lema nam to potrdi.
+
+    \begin{lema}
+        \label{lemaharm}
+        Naj bo $U$ območje in $u: U \to \mathbb{R}$. Če je $u$ harmonična na $U$, je $u^*$ harmonična na $U^*$. 
+    \end{lema}
+    \begin{proof}
+        Trditev lahko dokažemo na dva načina. Dokažimo najprej s pomočjo karakterizacije harmoničnih funkcij z lastnostjo povprečne vrednosti. 
+        Ker je $u$ na $U$ harmonična ima na $U$ lastnost povprečne vrednosti.
+        Sedaj je hitro jasno, da ima lastnost povprečne vrednosti tudi $u^*$ na $U^*$. 
+        Iz trditve \ref{ekvhlp} potem sledi, da je $u^*$ na $U^*$ tudi harmonična.
+        \newline
+        Trditev je možno dokazati tudi kar direktno po definiciji t.j. dokazati, da velja: $\frac{\partial^2 u^*}{\partial x^2} + \frac{\partial^2 u^*}{\partial y^2} = 0$. 
+        Opazimo, da lahko $u^*$ (s pomočjo identifikacije $z = x + iy \leftrightarrow (x,y)$) zapišemo tudi kot kompozitum $u \circ ((x,y) \mapsto (x, -y))$. 
+        Sedaj po definiciji parcialno odvajamo in dobimo enakosti:
+        $$
+            \frac{\partial u^*}{\partial y} = - \frac{\partial u }{\partial y},~~~~\frac{\partial^2 u^*}{\partial y^2} = \frac{\partial^2 u }{\partial y^2},~~~~\frac{\partial^2 u^*}{\partial x^2} = \frac{\partial^2 u }{\partial x^2},
+        $$
+        ki implicirajo:
+        $$
+            \frac{\partial^2 u^*}{\partial x^2} + \frac{\partial^2 u^*}{\partial y^2} = \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0.
+        $$
+    \end{proof}
+    \begin{lema}
+        Če je $f$ holomorfna na območju $U$ je $g(z) = \overline{f({\overline{z}})}$ holomorfna na $U^*$.
+    \end{lema}
+    \begin{dokaz}
+        Iz kompleksne analize vemo, da je dovolj pokazati, da tudi $g$ zadošča Cauchy-Riemannovemu sistemu enačb.
+        \newline
+        Pišimo: $f(z) = u(z) + iv(z)$ in $g(z) = p(z) + iq(z)$.
+        Potem je $g(z) = u(\overline{z}) - iv(\overline{z})$ in zato $p(z) = u(\overline{z}),\text{ter}~q(z) = -v(\overline{z})$. 
+        \newline
+        Velja:
+        \begin{equation*}
+            \frac{\partial p}{\partial x} = \frac{\partial u}{\partial x} \overset{C-R}{=} \frac{\partial v}{\partial y} = - \bigg(- \frac{\partial q}{\partial y}\bigg) = \frac{\partial q}{\partial y}~~~\text{in}~~~
+            \frac{\partial p}{\partial y} = -\frac{\partial u}{\partial y} \overset{C-R}{=} \frac{\partial v}{\partial x} = -\frac{\partial q}{\partial x}.
+        \end{equation*}
+        Alternativen dokaz, si bralec lahko ogleda v REFERENCA.
+    \end{dokaz}
+
+    Sedaj smo pripravljeni na formulacijo in dokaz glavnega izreka.
     \begin{izrek}
         Naj bo $D \subseteq \C$ območje, simetrično glede na realno os. 
-        Označimo $D^{+} = D \cap \{\text{Im} > 0\}$. 
-        Naj bo $u(z): D^{+} \to \mathbb{R}$ harmonična funkcija, za katero velja, da gre $u(z) \to 0$, ko gre $z \in D^{+}$ proti poljubni točki $D \cap \mathbb{R}$. 
-        Potem obstaja harmonična razširitev $u(z)$ na $D$, ki je eksplicitno podana s predpisom $u(\bar{z}) = - u(z)$ za $z \in D$.
+        Označimo $D^{+} = D \cap \{\text{Im} > 0\}$ in $D^{-} = D \cap \{\text{Im} < 0\}$.
+        \newline
+        Naj bo $u(z): D^{+} \to \mathbb{R}$ harmonična funkcija, za katero velja, da gre $u(z) \to 0$, ko gre $z \in D^{+}$ proti poljubni točki $D \cap \mathbb{R}$ t.j.: $$\lim_{\text{Im}(z) \to 0^+} u(z) = 0.$$
+        Potem obstaja harmonična razširitev $u(z)$ na $D$, ki jo podaja predpis $u(\bar{z}) = - u(z)$ za $z \in D$ t.j.:
+        $$
+            u^e(z) = 
+            \begin{cases}
+                u(z)~~&z \in D^{+}\\
+                -u(\overline{z})~~&z \in D^{-}\\
+                0~~ &z \in \mathbb{R}
+            \end{cases}
+            .
+        $$
     \end{izrek}
+    Preden se posvetimo dokazu, si na sliki oglejmo kaj nam Schwarzov princip zrcaljenja zares omogoča.
     \begin{center}
         \includegraphics[width = 0.8 \textwidth]{schwarzov_princip_zrcaljenja.png}
     \end{center}
-    Slika prikazuje glede na $\R$ simetrično območje $D \subseteq \C$. $D^{+}$ označuje  območje na katerem harmonično funkcijo $u$ poznamo, $D^{-}$ pa območje na katerem lahko po izreku eksplicitno konstruiramo razširitev.
+    Slika prikazuje glede na $\R$ simetrično območje $D \subseteq \C$. $D^{+}$ označuje območje na katerem harmonično funkcijo $u$ poznamo, $D^{-}$ pa območje na katerem lahko po izreku eksplicitno konstruiramo razširitev s predpisom $u(\overline{z}) = - u(z)$.
+    Vodoravna črta prikazuje odsek realne osi, na kateri bodo zaradi zveznosti vrednosti trivialno poračunljive. 
     Točka $z_0$ in "majhen" disk okoli nje, nakazujeta, da se bomo dokaza lotili z lastnostjo povprečne vrednosti.
+
+
     \begin{dokaz}
-        Dokaz temelji na uporabi karakterizacije harmoničnih funkcij s pomočjo lastnosti povprečne vrednosti, oziroma uporabi le-tega, za dokaz harmoničnosti eksplicitno podane razširitve, za katero trdimo, da je harmonična na $D$.
+        Opazimo, da je $D$ disjunktna unija $D^+$, $D^-$ in $D^0 = D \cap \mathbb{R}$.
+        Hitro je razvidno, da je $u^e$ na $D$ res zvezna (na $D^+$ in $D^-$ po predpisu, na $D^0$ zaradi limite iz predpostavke izreka). 
+        \newline
+        Posvetimo se dokazu harmoničnosti. Ker je $u^e$ na $D$ zvezna, je po trditvi \ref{ekvhlp} dovolj pokazati, da ima $u^e$ na $D$ lastnost povprečne vrednosti.
+        Na $D^+$ je $u^e$ harmonična po predpostavki, na $D^-$ pa harmoničnost hitro preverimo prek leme \ref{lemaharm}. 
+        Za poljubno točko $z_0 \in D^0$, pri dovolj majhnem $r$ (tako da je $\overline{\mathbb{D}}(z_0,r) \subseteq D$) velja, da se ob računanju povprečja paroma "zrcalne" vrednosti zaradi predpisa $u(\overline{z}) = u(z)$ ravno odštejejo. 
+        To pa že implicira, da je povprečje v poljubnem $z_0 \in D^0$ enako $0$ in $u^e$ tudi v $z_0 \in D^0$ izpolnjuje lastnost povprečne vrednosti.
     \end{dokaz}
 
+    KAJ S HOLOMORFNIMI ??, DO KAM NAPREJ ??
 \newpage
 
 \bibliographystyle{siam}
