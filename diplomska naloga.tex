@@ -61,8 +61,8 @@
 
 \section{Uvod}
 V diplomski nalogi bomo spoznali osnovne lastnosti harmoničnih fukcij, ki jih bomo proti koncu s pridom uporabili za dokaz glavnega izreka, katerega ime nosi naslov naloge.
-Vlekli bomo številne vzporednice s kompleksno analizo, gre namreč za področje, močno povezano s študijo harmoničnih funkcij.
-\newline
+Vlekli bomo številne vzporednice s kompleksno analizo, gre namreč za področje, močno povezano s študijo holomorfnih funkcij.
+
 V prvem poglavju bomo spoznali, kaj so harmonične funkcije in poudarili, katere njihove lastnosti bodo za nadaljevanje pomembne. Ogledali si bomo tudi njihov odnos s holomorfnimi funkcijami. 
 V drugem poglavju bomo spoznali Dirichletov problem za enotski disk, ki nam bo dal osnovo za definicijo Poissonovega jedra in Poissonovega integrala. Ogledali si bomo nekaj lastnosti obeh definiranih pojmov in z njuno pomočjo rešili Dirichletov problem za enotski disk.
 Tretje poglavje je namenjeno karakterizaciji harmoničnih funkcij s pomočjo lastnosti povprečne vrednosti in analizi pomembnosti te karakterizacije. 
@@ -77,7 +77,8 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
 \section{Harmonične funkcije}
     \begin{definicija}
         \label{harm}
-        Funkcija $u(x_1, x_2, \dots, x_n)$ je \emph{harmonična}, če velja
+        Naj bo $U$ odprta podmnožica v $\mathbb{R}^n$. Naj bo $u$ funkcija, definirana na $U$ in naj bo na definicijskem območju dvakrat zvezno odvedljiva.  
+        Pravimo, da je funkcija $u(x_1, x_2, \dots, x_n)$ \emph{harmonična}, če velja
         $$
         \frac{\partial^2 u}{\partial x_1 ^ 2} +  \frac{\partial^2 u}{\partial x_2 ^ 2} + \dots + \frac{\partial^2 u}{\partial x_n ^ 2} = 0.
         $$
@@ -87,12 +88,12 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         $$
     \end{definicija}
 
-    Pogoj za harmoničnost podaja (Laplaceovo) parcialno diferencialno enačbo, zapisano bodisi s Laplaceovim operatorjem ali razpisano s parcialnimi odvodi drugega reda. 
+    Pogoj za harmoničnost podaja Laplaceovo parcialno diferencialno enačbo, zapisano bodisi s Laplaceovim operatorjem ali razpisano s parcialnimi odvodi drugega reda. 
     Funkcija je torej harmonična, če zadošča zgoraj zapisani parcialni diferencialni enačbi. 
-    Po tihem tu seveda privzemamo obstoj (vsaj) drugih parcialnih odvodov, saj drugače o harmoničnosti funkcije ne moremo govoriti.
+    %Po tihem tu seveda privzemamo obstoj (vsaj) drugih parcialnih odvodov, saj drugače o harmoničnosti funkcije ne moremo govoriti.
 
     \begin{opomba}
-        Vredno je omeniti, da nismo specificirali, ali gre pri funkciji $u$ (harmoničnost katere bi radi opazovali) za realno ali kompleksno funkcijo. 
+        Vredno je omeniti, da v zgornji definiciji nismo specificirali, ali gre pri funkciji $u$ za realno ali kompleksno funkcijo. 
         Pojem harmoničnosti smo definirali v splošnem, torej tako za kompleksne kot tudi realne funkcije.
         Znotraj diplomske naloge se bomo omejili na funkcije dveh realnih spremenljivk ali funkcijo ene kompleksne spremenljivke, ki jo bomo nato delili na realni in imaginarni del ($z = x + iy $) in na ta način prešli nazaj na funkcije dveh realnih spremenljivk.
         \newline
@@ -101,61 +102,226 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
                 \Delta u = \frac{\partial^2 u}{\partial x ^ 2} +  \frac{\partial^2 u}{\partial y ^ 2}= 0.
             $$
     \end{opomba}
-    \begin{trditev}
-        \label{hh}
-        Naj bo $f = u + iv$ holomorfna funkcija. Potem sta funkciji $u$ in $v$ harmonični. Rečeno drugače, realni in imaginarni del holomorfne funkcije sta harmonični funkciji. 
-    \end{trditev}
-    \begin{dokaz}
-        Z uporabo Cauchy-Riemannovega sistema enačb lahko bralec sam hitro preveri, da trditev drži.
-    \end{dokaz}
 
     \begin{definicija}
-        Naj bo funkcija $u$ na območju $D$ harmonična. Če obstaja harmonična funkcija $v$, definirana na $D$, tako da je funkcija $f + u + iv$ na $D$ holomorfna, potem funkciji $v$ pravimo \emph{harmonična konjugiranka funkcije $u$} (na $D$).    
+        \emph{Območje} $D$ je povezana odprta množica v $\mathbb{R}^n$.
+        Če obstaja $a \in D$, da za vse $b \in D$ in vse $t \in [0,~1]$ tudi $t a + (1-t)b \in D$, pravimo, da je $D$ \emph{zvezdasto območje}.
+    \end{definicija}
+
+
+    \begin{trditev}
+        \label{hh}
+        Naj bo $U \subseteq \mathbb{C}$ odprta množica. Naj bo $f = u + iv$ holomorfna funkcija, $u$ in $v$ pa realni funkciji, definirani na $U$. Potem sta realni funkciji $u$ in $v$ harmonični na $U$.
+    \end{trditev}
+
+    \begin{dokaz}
+        Ker je $f$ holomorfna, zadošča Cauchy-Riemannovemu sistemu enačb prek katerih lahko bralec sam hitro preveri, da trditev drži. Dokaz je natančneje naveden v \cite{osnova}, na strani $55$.
+    \end{dokaz}
+
+    \begin{opomba}
+        Če označimo $u = \text{Re}{f}$ in $v = \text{Im}{f}$, nam zgornja trditev v resnici pove, da sta realni in imaginarni del holomorfne funkcije harmonični funkciji. 
+    \end{opomba}
+
+    \begin{definicija}
+        Naj bo $u$ realna harmonična funckija, definirana na območju $D$. Če obstaja realna harmonična funkcija $v$, definirana na $D$, da je funkcija $f = u + iv$ na $D$ holomorfna, potem funkciji $v$ pravimo \emph{harmonična konjugiranka funkcije $u$ na $D$}.    
     \end{definicija}
 
     \begin{trditev}
         \label{konj}
-        Naj bo $u$ harmonična funkcija, definirana na zvezdastem območju $D$. Potem za $u$ na $D$ obstaja harmonična konjugiranka $v$ in je do konstante natančno enolično določena. 
+        Naj bo $u$ realna harmonična funkcija, definirana na zvezdastem območju $D$. Potem za $u$ na $D$ obstaja harmonična konjugiranka $v$ in je do konstante natančno enolično določena. 
     \end{trditev}
     \begin{dokaz}
-        Konstrukcijo harmonične konjugiranke, si bralec za primer, ko je zvezdasto območje kar odprt disk lahko ogleda v \cite{osnova}. 
-        Ideja dokaza v splošnem je podobna. 
+        Konstrukcijo harmonične konjugiranke, si bralec za primer, ko je zvezdasto območje kar odprt disk lahko ogleda v \cite{osnova}, na strani $56$ in $57$. 
+        Ideja dokaza za splošno zvezdasto območje je podobna. 
     \end{dokaz}
 
     \begin{opomba}
-        V duhu zgornjih dveh trditev je velikokrat smiselno na harmonične funkcije $u$ in $v$ smiselno gledati kot na realne dele holomorfne funkcije $f = u + iv$. To že nakazuje, da se bodo nekatere "lepe/željene"  lastnosti, ki jih holomorfne funkcije imajo, prenesle tudi na harmonične funkcije.
+        V duhu zgornjih dveh trditev, je velikokrat smiselno na realno harmonično funkcijo $u$ smiselno gledati kot na realni del holomorfne funkcije $f = u + iv$, kjer je $v$ njena harmonična konjugiranka. To že nakazuje, da se bodo nekatere lepe lastnosti holomorfnih funkcij prenesle tudi na harmonične funkcije.
     \end{opomba}
     %%V duhu zgornjih dveh opomb, opazimo, da lahko kompleksno funkcijo $f$, zapišemo v obliki realnega in imaginarnega dela oziroma kot $f = u + i v$, s pomočjo nekih realnih funkcij (dveh spremenljivk) $u$ in $v$, ter lahko zaradi linearnosti parcialnih odvodov sklepamo, da je za harmoničnost $f$ kot kompleksne funkcije, dovolj zahtevati harmoničnost $u$ in $v$ kot realnih funkcij.
     %%Podoben argument nam da vedeti, da nam harmoničnost $f = u + iv$, implicira tudi harmoničnost $u$ in $v$. 
     \begin{opomba}
         \label{lin}
-        Zaradi linearnosti parcialnih odvodov tudi linearna kombinacija harmoničnih funkcij harmonična. To bomo pri reševanju enega izmed glavnih problemov diplomskega dela s pridom uporabili.
+        Zaradi linearnosti parcialnih odvodov, je tudi linearna kombinacija harmoničnih funkcij harmonična. To bomo pri reševanju enega izmed glavnih problemov diplomskega dela s pridom uporabili.
     \end{opomba}
     \begin{opomba}
         V literaturi se v definiciji harmoničnosti za funkcijo $u$ pojavlja tudi zahteva, da je funkcija gladka, oziroma $u \in C^{\infty}$. V zgornji definiciji zahtevamo le obstoj drugih parcialnih odvodov, oziroma $u \in C^2$. 
-        Ekvivalentnost definicij potrdi spodnja trditev.
+        Da sta definiciji med seboj ekvivalentni, potrdi spodnja trditev. 
     \end{opomba}
     \begin{trditev}
         \label{gladkosth}
-        Naj bo $u$ harmonična funkcija na območju $D$. Potem je $u$ na $D$ gladka, oziroma $u \in C^{\infty}(D)$. 
+        Naj bo $u$ realna harmonična funkcija definirana na območju $D$. Potem je $u$ na $D$ gladka, oziroma $u \in C^{\infty}(D)$. 
     \end{trditev}
     \begin{dokaz}
-        Za vsako točko $z \in D$ lahko najdemo dovolj majhno zvezdasto okolico $U_z$ (lahko kar dovolj majhen disk) tako, da bo okolica v celoti vsebova v $D$. 
-        Po trditvi \ref{konj} na $U_z$ obstaja harmonična konjugiranka $v$, da je $f = u+ iv$ holomorfna na $U_z$. To po trditvi \ref{hh} implicira gladkost $u$ na $U_z$ oziroma gladkost v neki okolici poljubno izbrane točke iz $D$. 
+        Ker je  $D$ odprta množica, lahko za vsako točko $z \in D$ najdemo dovolj majhno zvezdasto okolico $U_z$, da bo okolica v celoti vsebova v $D$. Dovolj je vzeti kar dovolj majhen disk. 
+        Po trditvi \ref{konj} na $U_z$ obstaja harmonična konjugiranka $v$, da je $f = u+ iv$ na $U_z$ holomorfna, ter zato na $U_z$ tudi gladka. Sledi, da je na $U_z$ gladka tudi funkcija $u$.
     \end{dokaz}
 
 \newpage
-\section{Dirichletov problem za enotski disk}
-    \begin{pro}
-        Naj bo $\mathbb{D}$ enotski disk. Zvezno kompleksno funkcijo $h$, definirano na $\partial \mathbb{D}$, razširi do zvezne funkcije $\widetilde{h}$ tako, da bo $\widetilde{h}$ harmonična na $\mathbb{D}$ in zvezna na $\overline{\mathbb{D}}$, ter se bo zožitev $\widetilde{h}$ na $\partial \mathbb{D}$ ujemala s $h$.
-    \end{pro}
+\section{Lastnost povprečne vrednosti}
 
+    \begin{definicija}  
+        Naj bo $h$ zvezna funkcija, definirana na območju $D$. Denimo, da za $z_0 \in D$ in $r > 0$ velja $\overline{\mathbb{D}}(z_0, r) \subseteq D$. \emph{Povprečje funkcije} $h$ na $\overline{\mathbb{D}}(z_0, r)$ definiramo kot:
+        $$
+            A(r) = \int_{0}^{2 \pi}{h \big(z_0 + r e^{i\theta}\big)\frac{d\theta}{2 \pi}}.
+        $$
+    \end{definicija}
+    \begin{trditev}
+        \label{zvpov}
+        Naj bo $h$ zvezna funkcija, definirana na območju $D$, ter denimo, da za $z_0 \in D$ in $r > 0$ velja $\overline{\mathbb{D}}(z_0, r) \subseteq D$. 
+        Potem je $A(r)$ zvezna na $(0,~r]$ in velja: $\lim_{r \to 0}{A(r)} = h(z_0)$.
+    \end{trditev}
+    \begin{dokaz}
+        Ker je povprečje zvezne funkcije definirano kot integral zvezne funkcije, je funkcija $A(r)$ zvezna na $(0,~r]$. Drugi del trditve dokažimo po definiciji.
+        Naj bo $\epsilon > 0$ poljubno majhen. Velja:
+        $$
+            |A(r) - h(z_0)| = \bigg|\int_{0}^{2\pi} \big[h(z_0 + r e^{i\theta})  - h(z_0)\big] \frac{d\theta}{2\pi} \bigg| \leq \int_{0}^{2 \pi} \big| h(z_0 + r e^{i\theta}) - h(z_0) \big| \frac{d\theta}{2 \pi}.
+        $$
+        Ker je $h$ zvezna, obstaja $\delta > 0$, da za vsak $|r| < \delta$ in vsak $\theta \in [0,~2\pi]$ velja \mbox{$|h(z_0 + r e^{i\theta}) - h(z_0)| < \epsilon$}.
+        Za vsak $r$, ki je manjši od $\delta$ torej $|A(r) - h(z_0)| < \epsilon$. Ker je bil $\epsilon$ poljubno majhen, je trditev s tem dokazana.
+    \end{dokaz}
+
+    \begin{definicija}
+        Naj bo $h$ zvezna funkcija, definirana na območju $D \subseteq \C$. Pravimo, da ima $h$ na $D$ \emph{lastnost povprečne vrednosti}, če za vsak $z_0 \in D$ obstaja $\epsilon_0 > 0$, da je $\overline{\mathbb{D}}(z_0, \epsilon_0) \subseteq D$ in za vsak $0 < \epsilon \leq \epsilon_0 $ velja:
+        $$
+            h(z_0) = \frac{1}{2 \pi} \int_{0}^{2 \pi}{h(z_0 + \epsilon e^{i \theta}) d\theta}.
+        $$
+    \end{definicija}
     \begin{opomba}
-        Kot smo že komentirali po definiciji \ref{harm} so funkcije harmonične, natanko tedaj ko zadoščajo Laplaceovi parcialni diferencialni enačbi. 
-        Vredno je omeniti, da lahko na Direchletov problem za enotski disk gledamo tudi iz stališča teorije diferencialnih enačb. Gre za problem iskanja funkcije, ki na notranjosti območja (v našem primeru kar notranjost enotskega diska) reši Laplaceovo diferencialno enačbo ob robnem pogoju, ki ga določa v naprej podana funkcija na robu območja (v našem primeru začetna zvezna funkcija, podana na enotski krožnici). 
-        Navadno se v teoriji parcialnih diferencialnih enačb srečamo s tako imenovanimi dobro postavljenimi matematičnimi problemi, o katerih si bralec več lahko prebere na REFERENCA. 
-        Spodaj se bomo le seznanili z njihovo definicijo in pokazali, da zgoraj zastavljen Dirichletov problem ustreza definiciji. 
+        Definicija nam pove, da ima zvezna funkcija $h$ na območju $D \subseteq \C$ lastnost povprečne vrednosti, če za vsak $z_0$ iz $D$ velja, 
+        da je $h(z_0)$ povprečje vrednosti $h(z)$, kjer $z$ teče po majhni krožnici s središčem v $z_0$.
     \end{opomba}
+    \begin{trditev}
+        \label{linlpv}
+        Linearna kombinacija funkcij z lastnostjo povprečne vrednosti je funkcija z lastnostjo povprečne vrednosti. 
+    \end{trditev}
+    \begin{dokaz}
+        Trditev sledi iz linearnosti integrala.
+    \end{dokaz}
+
+    \begin{lema}
+        Naj bo $u$ zvezna realna funkcija, definirana na območju $D$. Naj ima $u$ na $D$ lastnost povprečne vrednosti in naj obstaja $M \in \mathbb{R}$, da za vsak $z \in D$ velja: $u(z) \leq M$. 
+        Če obstaja $z_0 \in D$, da velja: $u(z_0) = M$, potem je $u(z) = M$ za vsak $z \in D$.
+    \end{lema}
+    \begin{dokaz}
+        Ker je $u$ na $D$ zvezna, je množica $A = \{z \in D~|~u(z) < M\}$ odprta. Po definiciji dokažimo, da je odprta tudi množica $B = \{z \in D~|~u(z) = M\}$. Naj bo $z_1 \in B$. Ker je $D$ odprta, obstaja $\rho_{z_1}$, da je za vsak $0 < r < \rho_{z_1}$ tudi $\overline{\mathbb{D}}(z_1, r) \subseteq D$. 
+        Funkcija $u$ ima na $D$ lastnost povprečne vrednosti, zato velja:
+        $$
+            u(z_1) = \int_{0}^{2\pi}{u(z_1 + re^{i\theta}) \frac{d\theta}{2\pi}},~\text{za vsak}~0<r<\rho_{z_1}, 
+        $$
+        oziroma: 
+        $$
+        0 = \int_{0}^{2\pi}{\left[u(z_1) - u(z_1 + re^{i\theta}) \right]\frac{d\theta}{2\pi}},~\text{za vsak}~0<r<\rho_{z_1}.
+        $$
+        Ker je integrand nenegativen in zvezen, integral pa enak nič, je integrand enak nič. 
+        Sledi, da je $M = u(z_1) = u(z_1 + r e^{i \theta})$, za vsak $\theta \in [0,~2\pi]$ in vsak $0 < r < \rho_{z_1}$, oziroma ima poljuben $z_1 \in B$ okolico, ki je vsebovana v $B$. Torej je $B$ odprta.
+        Predpostavka nam pove, da za vsak $z \in D$ velja $u(z) \leq M$, zato je $D$ disjunktna unija množic $A$ in $B$. Ker je $D$ povezana, $A$ in $B$ pa odprti množici, je ena izmed niju prazna, druga pa posledično enaka $D$. Ker po predpostavki $B$ vsebuje $z_0$, je $A$ prazna, $B$ pa je enaka $D$. Sledi, da je $u(z) = M$ za vsak $z \in D$. 
+    \end{dokaz}
+
+    \begin{trditev}[Princip maksima za funkcije z lastnostjo povprečne vrednosti]
+        
+    \end{trditev}
+    \begin{dokaz}
+        test
+    \end{dokaz}
+
+    \begin{trditev}
+        posledica princip maxima
+    \end{trditev}
+    \begin{dokaz}
+        test
+    \end{dokaz}
+
+
+    \begin{trditev}
+        Naj bo $f$ holomorfna funkcija na območju $D$. Potem ima funkcija $f$ na $D$ lastnost povprečne vrednosti.
+    \end{trditev}
+    \begin{dokaz}
+        Ker je funkcija $f$ na območju $D$ holomorfna, lahko uporabimo Cauchyjevo integralsko formulo za vsak zaprt disk, ki je v celoti vsebovan v $D$. Za vsak $z \in D$ in vsak $r$, kjer je $\overline{\mathbb{D}}(z,r) \subseteq \mathbb{D}$ torej velja:
+        $$
+        f(z) = \frac{1}{2 \pi i} \int_{\partial \overline{\mathbb{D}}(z, r)}{\frac{f(\xi)}{\xi  - z}}d\xi.
+        $$
+        Ko rob diska parametriziramo z $\xi = z + r e^{i \varphi}$, dobimo:
+        $$
+        f(z) = \frac{1}{2 \pi} \int_{0}^{2\pi}{f(z + re^{i\varphi})}d\varphi.
+        $$
+    \end{dokaz}
+
+    \begin{trditev}
+        \label{harmonicnapovp}
+        Naj bo $u$ harmonična funkcija, definirana na območju $D \subseteq \C$. Naj bo $z_0 \in D$ in $\rho > 0$, da velja $\overline{\mathbb{D}}(z_0, \rho) \subseteq D$. Za vsak $0 < r < \rho$ potem velja:
+            $$
+                u(z_0) = \frac{1}{2 \pi} \int_{0}^{2 \pi}{u(z_0 + r e^{i \theta}) d\theta}.
+            $$
+    \end{trditev}
+    \begin{dokaz}
+        Na $\overline{\mathbb{D}}(z_0, \rho) \subseteq D$ označimo $P = -\frac{\partial u}{\partial y}$ in $Q = \frac{\partial u}{\partial x}$ uporabimo Greenovo integralsko formulo:
+        $$
+            \int_{\partial \overline{\mathbb{D}}(z_0, \rho)}{P dx + Q dy} = \iint_{\overline{\mathbb{D}}(z_0, \rho)}{\bigg(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\bigg)dx dy}.
+        $$ 
+        Sedaj upoštevajmo harmoničnost $u$ in vstavimo v Greenovo formulo:
+        $$
+        \int_{\partial \overline{\mathbb{D}}(z_0, \rho)}{-\frac{\partial u}{\partial y} dx + \frac{\partial u}{\partial x} dy} = \iint_{\overline{\mathbb{D}}(z_0, \rho)}{\bigg(\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2}\bigg)dx dy} = 0. 
+        $$
+        Rob diska lahko pri $z_0 = x_0 + iy_0$ parametriziramo z $x(\theta) = x_0 + \rho \cos(\theta),~y(\theta) = y_0 + \rho \sin(\theta)$. Ko to vstavimo v zgornjo enakost, dobimo:
+        $$
+        0 = \rho \int_{0}^{2 \pi}{\bigg[\frac{\partial u}{\partial x} \cos(\theta) + \frac{\partial u}{\partial y} \sin(\theta)\bigg] d\theta} = \rho \int_{0}^{2\pi}{\frac{\partial u}{\partial \rho}\big({z_0 + \rho e^{i\theta}\big)d\theta}}.
+        $$
+        Ker je $u$ harmonična, je gladka, zato lahko zamenjamo limitna procesa integriranja in odvajanja. Delimo z $2\pi \rho$ in zapišemo:
+        $$
+        0 = \frac{\partial}{\partial \rho} \int_{0}^{2\pi}{u\big({z_0 + \rho e^{i\theta}\big)\frac{d\theta}{2 \pi}}}.
+        $$
+        Sledi, da je vrednost zgornjega integrala konstantna, za vsak $0 <r < \rho$. Obstaja $c \in \mathbb{C}$, da je: 
+        $$
+        \int_{0}^{2\pi}{u\big({z_0 + r e^{i\theta}\big)\frac{d\theta}{2 \pi}}} = c,~\text{za vsak}~ 0 < r < \rho.
+        $$
+        Potrebno je le še pokazati, da $c = u(z_0)$.
+        Ker je $u$ zvezna, po trditvi \ref{zvpov} velja, da v limiti $r \to 0$ dobimo:
+        $$
+        c = \lim_{r \to 0}{\bigg[\int_{0}^{2\pi}{u\big({z_0 + r e^{i\theta}\big)\frac{d\theta}{2 \pi}}}\bigg]} = \int_{0}^{2\pi}{{u(z_0)~\frac{d\theta}{2 \pi}}} = u(z_0).
+        $$
+    \end{dokaz}
+
+
+    PAZI KAM TOO
+    \begin{opomba}
+        Komentirali smo že, da imajo holomorfne funkcije lastnost povprečne vrednosti, zgornja trditev pa nam pove, da imajo lastnost povprečne vrednosti tudi harmonične funkcije. 
+        Za harmonične funkcije velja celo več, da se jih namreč karakterizirati s pomočjo lastnosti povprečne vrednosti. 
+    \end{opomba}
+    PAZI KAM TOO
+
+    \begin{trditev}
+        \label{ekvhlp}
+        Naj bo $h$ zvezna funkcija, definirana na območju $U \subseteq \C$. Velja, da je $h$ harmonična funkcija natanko tedaj, ko ima lastnost povprečne vrednosti.
+    \end{trditev}
+    \begin{dokaz}
+        Trditev \ref{harmonicnapovp} nam dokaže eno implikacijo. Dovolj je torej preveriti, da je zvezna funkcija $h$ z lastnostjo povprečne vrednosti na $U$ harmonična. 
+        Dokaz temelji na že dokazanem obstoju rešitve Dirichletovega problema za enotski disk oziroma na opombi \ref{alldisk}, ki nam potrdi obstoj rešitve Dirichletovega problema za poljuben disk. 
+        \newline
+        Ker je $U$ območje za poljubno točko $z_0 \in U$ obstaja $r$, da je $\overline{\mathbb{D}}(z_0,r) \subseteq U$. Ker je $h$ zvezna na $U$, $h$ na $\partial \overline{\mathbb{D}}(z_0, r)$ določa robne/začetne pogoje za Dirichletov problem za disk $\mathbb{D}(z_0,r)$.
+        Vemo, da rešitev $\widetilde{h}$ obstaja. 
+        Kot harmonična funkcija na $\mathbb{D}(z_0, r)$ ima po trditvi \ref{harmonicnapovp} na $\mathbb{D}(z_0, r)$ lastnost povprečne vrednosti. 
+        Oglejmo si sedaj funkcijo $g(z) = h(z) - \widetilde{h}(z)$ za $z \in \overline{\mathbb{D}}(z_0,r)$. 
+        Kot razlika funkcij z lastnostjo povprečne vrednosti ima po trditvi \ref{linlpv} tudi $g$ na $\mathbb{D}(z_0, r)$ lastnost povprečne vrednosti in je kot razlika dveh zveznih funkcij zvezna na $\overline{D}(z_0, r)$.
+        Vemo celo, da na $\partial \overline{\mathbb{D}}(z_0, r)$ velja $g \equiv 0$, saj je zožitev $\widetilde{h}$ na $\partial \overline{\mathbb{D}}(z_0,r)$ enaka $h$. 
+        Po principu maksima, za funkcije z lastnostjo povprečne vrednosti je potem $g \equiv 0$. Oziroma $\widetilde{h} \equiv h$ na $\overline{\mathbb{D}}(z_0, r)$, kar nam da harmoničnost $h$ na $\mathbb{D}(z_0, r)$. 
+        Dokazali smo torej, da je $h$ harmonična v okolici vsake točke $z_0$ v $U$. To pa nam že zagotavlja harmoničnost $h$ na $U$. 
+    \end{dokaz}
+    \begin{trditev}
+        Naj bo $u$ zvezna funkcija z lastnostjo povprečne vrednosti, definirana na območju $D$. Potem je $u$ na $D$ gladka, $u \in C^{\infty}(D)$.
+    \end{trditev}
+    \begin{dokaz}
+        Po trditvi \ref{ekvhlp} je $u$ harmonična, po trditvi \ref{gladkosth} pa zato tudi gladka.
+    \end{dokaz}
+
+\section{Dirichletov problem za enotski disk}
+    Naj bo $\mathbb{D}$ enotski disk. Zvezno kompleksno funkcijo $h$, definirano na $\partial \mathbb{D}$, bi želeli razširiti do zvezne funkcije $\widetilde{h}$, da bo $\widetilde{h}$ harmonična na $\mathbb{D}$ in zvezna na $\overline{\mathbb{D}}$, ter se bo zožitev $\widetilde{h}$ na $\partial \mathbb{D}$ ujemala s $h$.
+
+    Kot smo že komentirali po definiciji \ref{harm} so funkcije harmonične, natanko tedaj ko zadoščajo Laplaceovi parcialni diferencialni enačbi.   
+    Vredno je omeniti, da lahko na Direchletov problem za enotski disk gledamo tudi iz stališča teorije diferencialnih enačb. Gre za problem iskanja funkcije, ki na notranjosti območja reši Laplaceovo diferencialno enačbo ob robnem pogoju, ki ga določa v naprej podana funkcija na robu območja.     
+    V našem primeru, je notranjost območja kar notranjost enotskega diska, roben pogoj zvezne funkcije pa podaja začetna zvezna funkcija, podana na enotski krožnici.
+    Navadno se v teoriji parcialnih diferencialnih enačb srečamo s tako imenovanimi dobro postavljenimi matematičnimi problemi, o katerih si bralec več lahko prebere na REFERENCA.     
+    Spodaj se bomo le seznanili z njihovo definicijo in pokazali, da zgoraj zastavljen Dirichletov problem ustreza definiciji. 
 
     \begin{definicija}[J. Hadamard 1902]
         Pravimo, da je matematičen problem (parcialni diferencialnih enačb z robnimi in začetnimi pogoji) \emph{dobro postavljen}, če zanj velja:
@@ -401,123 +567,6 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         da je bil prav enotski disk izbran zaradi preprostosti in bi lahko zgornji rezultat na podoben način zapisali za poljuben disk. To naredimo s pomočjo vpeljave novih spremenljivk ($z \mapsto az + b$) v Poissonov integral. 
         DOKONCAJ IZPELJAVO!
      \end{opomba}
-
-\newpage
-\section{Lastnost povprečne vrednosti}
-
-    \begin{definicija}  
-        Naj bo $h$ zvezna funkcija na območju $D$. Denimo, da za $z_0 \in D$ in $r$ velja  $\overline{\mathbb{D}}(z_0, r) \subseteq D$. \emph{Povprečje funkcije} $h$ na $\overline{\mathbb{D}}(z_0, r)$ definiramo kot:
-        $$
-            A(r) = \int_{0}^{2 \pi}{h \big(z_0 + r e^{i\theta}\big)\frac{d\theta}{2 \pi}}.
-        $$
-    \end{definicija}
-    \begin{trditev}
-        \label{zvpov}
-        Naj bo $h$ zvezna funkcija, definirana na območju $D$. Naj bo $\overline{\mathbb{D}}(z_0, r) \subseteq D$. 
-        Potem je $A(r)$ zvezno odvisna od $r$ in velja: $\lim_{r \to 0}{A(r)} = h(z_0)$.
-    \end{trditev}
-    \begin{dokaz}
-        $A(r)$ je zvezno odvisna od $r$, saj je definirana kot integral zvezne funkcije. Drugi del trditve sledi iz ocene:
-        $$
-            |A(r) - h(z_0)| = \bigg|\int_{0}^{2\pi} \big[h(z_0 + r e^{i\theta})  - h(z_0)\big] \frac{d\theta}{2\pi} \bigg| \leq \int_{0}^{2 \pi} \big| h(z_0 + r e^{i\theta}) - h(z_0) \big| \frac{d\theta}{2 \pi},
-        $$
-        saj lahko zaradi zveznosti $h$ notranjost integrala navzgor ocenimo s poljubno majhnim $\epsilon$ (pri dovolj majhnem $r$) in s tem dobimo $|A(r) - h(z_0)| < \epsilon$, za poljubno majhen $\epsilon$. 
-    \end{dokaz}
-
-    \begin{definicija}
-        Zvezna funkcija $h$, definirana na območju $D \subseteq \C$, ima \emph{lastnost povprečne vrednosti}, če za vsak $z_0 \in D$ obstaja $\epsilon_0 > 0$, da je $\overline{\mathbb{D}}(z_0, \epsilon_0) \subseteq D$ in za vsak $0 < \epsilon \leq \epsilon_0 $ velja:
-        $$
-            h(z_0) = \frac{1}{2 \pi} \int_{0}^{2 \pi}{h(z_0 + \epsilon e^{i \theta}) d\theta}.
-        $$
-    \end{definicija}
-    \begin{opomba}
-        Definicija nam pove, da ima zvezna funkcija $h$, definirana na območju $D \subseteq \C$, lastnost povprečne vrednosti, če za vsak $z_0$ iz $D$ velja, 
-        da je $h(z_0)$ povprečje vrednosti $h(z)$, kjer $z$ teče po majhni krožnici s središčem v $z_0$.
-    \end{opomba}
-    \begin{trditev}
-        \label{linlpv}
-        Linearna kombinacija funkcij s lastnostjo povprečne vrednosti je funkcija z lastnostjo povprečne vrednosti. 
-    \end{trditev}
-    \begin{dokaz}
-        Trditev sledi iz linearnosti integrala, prek katerega je definirana lastnost povprečne vrednosti.
-    \end{dokaz}
-
-    \begin{trditev}
-        Naj bo $f$ holomorfna na območju $D$. Potem ima lastnost povprečne vrednosti.
-    \end{trditev}
-    \begin{dokaz}
-        Predpostavka, da ja $f$ holomorfna, nam omogoča uporabo Cauchyjeve integralske formule za vsak zaprt disk, ki je v celoti vsebovan v $D$. Torej za $z \in D$ in vsak $r$, tako da je $\overline{\mathbb{D}}(z,r) \subseteq \mathbb{D}$, velja:
-        $$
-        f(z) = \frac{1}{2 \pi i} \int_{\partial \overline{\mathbb{D}}(z, r)}{\frac{f(\xi)}{\xi  - z}}d\xi.
-        $$
-        Ko rob diska parametriziramo, dobimo:
-        $$
-        f(z) = \frac{1}{2 \pi} \int_{0}^{2\pi}{f(z + re^{i\varphi})}d\varphi.
-        $$
-    \end{dokaz}
-
-    \begin{trditev}
-        \label{harmonicnapovp}
-        Naj bo $u$ harmonična funkcija na območju $D \subseteq \C$. Za $z_0$ in $\rho$, da je $\overline{\mathbb{D}}(z_0, \rho) \subseteq D$ za vsak $0 < r < \rho$ velja:
-            $$
-                u(z_0) = \frac{1}{2 \pi} \int_{0}^{2 \pi}{u(z_0 + r e^{i \theta}) d\theta}.
-            $$
-    \end{trditev}
-    \begin{dokaz}
-        Na $\overline{\mathbb{D}}(z_0, \rho) \subseteq D$ označimo $P = -\frac{\partial u}{\partial y}$ in $Q = \frac{\partial u}{\partial x}$ uporabimo Greenovo integralsko formulo:
-        $$
-            \int_{\partial \overline{\mathbb{D}}(z_0, \rho)}{P dx + Q dy} = \iint_{\overline{\mathbb{D}}(z_0, \rho)}{\bigg(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\bigg)dx dy}.
-        $$ 
-        Sedaj upoštevajmo harmoničnost $u$ in vstavimo v Greenovo formulo:
-        $$
-        \int_{\partial \overline{\mathbb{D}}(z_0, \rho)}{-\frac{\partial u}{\partial y} dx + \frac{\partial u}{\partial x} dy} = \iint_{\overline{\mathbb{D}}(z_0, \rho)}{\bigg(\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2}\bigg)dx dy} = 0. 
-        $$
-        Rob diska lahko pri $z_0 = x_0 + iy_0$ parametriziramo z $x(\theta) = x_0 + \rho \cos(\theta),~y(\theta) = y_0 + \rho \sin(\theta)$. Ko to vstavimo v zgornjo enakost, dobimo:
-        $$
-        0 = \rho \int_{0}^{2 \pi}{\bigg[\frac{\partial u}{\partial x} \cos(\theta) + \frac{\partial u}{\partial y} \sin(\theta)\bigg] d\theta} = \rho \int_{0}^{2\pi}{\frac{\partial u}{\partial \rho}\big({z_0 + \rho e^{i\theta}\big)d\theta}}.
-        $$
-        Ker je $u$ harmonična, je gladka, zato lahko zamenjamo limitna procesa integriranja in odvajanja. Delimo z $2\pi \rho$ in zapišemo:
-        $$
-        0 = \frac{\partial}{\partial \rho} \int_{0}^{2\pi}{u\big({z_0 + \rho e^{i\theta}\big)\frac{d\theta}{2 \pi}}}.
-        $$
-        Sledi, da je vrednost zgornjega integrala konstantna, za vsak $0 <r < \rho$: 
-        $$
-        \int_{0}^{2\pi}{u\big({z_0 + r e^{i\theta}\big)\frac{d\theta}{2 \pi}}} = c \in \mathbb{C},~\text{za}~ 0 < r < \rho.
-        $$
-        Potrebno le še pokazati, da $c = u(z_0)$.
-        Ker je $u$ zvezna, po trditvi \ref{zvpov} velja, da ko pošljemo $r \to 0$, dobimo:
-        $$
-        c = \lim_{r \to 0}{\bigg[\int_{0}^{2\pi}{u\big({z_0 + r e^{i\theta}\big)\frac{d\theta}{2 \pi}}}\bigg]} = \int_{0}^{2\pi}{{u(z_0)\frac{d\theta}{2 \pi}}} = u(z_0).
-        $$
-    \end{dokaz}
-    \begin{opomba}
-        Komentirali smo že, da imajo holomorfne funkcije lastnost povprečne vrednosti, zgornja trditev pa nam pove, da imajo lastnost povprečne vrednosti tudi harmonične funkcije. 
-        Za harmonične funkcije velja celo več, da se jih namreč karakterizirati s pomočjo lastnosti povprečne vrednosti. 
-    \end{opomba}
-    \begin{trditev}
-        \label{ekvhlp}
-        Naj bo $h$ zvezna funkcija, definirana na območju $U \subseteq \C$. Velja, da je $h$ harmonična funkcija natanko tedaj, ko ima lastnost povprečne vrednosti.
-    \end{trditev}
-    \begin{dokaz}
-        Trditev \ref{harmonicnapovp} nam dokaže eno implikacijo. Dovolj je torej preveriti, da je zvezna funkcija $h$ z lastnostjo povprečne vrednosti na $U$ harmonična. 
-        Dokaz temelji na že dokazanem obstoju rešitve Dirichletovega problema za enotski disk oziroma na opombi \ref{alldisk}, ki nam potrdi obstoj rešitve Dirichletovega problema za poljuben disk. 
-        \newline
-        Ker je $U$ območje za poljubno točko $z_0 \in U$ obstaja $r$, da je $\overline{\mathbb{D}}(z_0,r) \subseteq U$. Ker je $h$ zvezna na $U$, $h$ na $\partial \overline{\mathbb{D}}(z_0, r)$ določa robne/začetne pogoje za Dirichletov problem za disk $\mathbb{D}(z_0,r)$.
-        Vemo, da rešitev $\widetilde{h}$ obstaja. 
-        Kot harmonična funkcija na $\mathbb{D}(z_0, r)$ ima po trditvi \ref{harmonicnapovp} na $\mathbb{D}(z_0, r)$ lastnost povprečne vrednosti. 
-        Oglejmo si sedaj funkcijo $g(z) = h(z) - \widetilde{h}(z)$ za $z \in \overline{\mathbb{D}}(z_0,r)$. 
-        Kot razlika funkcij z lastnostjo povprečne vrednosti ima po trditvi \ref{linlpv} tudi $g$ na $\mathbb{D}(z_0, r)$ lastnost povprečne vrednosti in je kot razlika dveh zveznih funkcij zvezna na $\overline{D}(z_0, r)$.
-        Vemo celo, da na $\partial \overline{\mathbb{D}}(z_0, r)$ velja $g \equiv 0$, saj je zožitev $\widetilde{h}$ na $\partial \overline{\mathbb{D}}(z_0,r)$ enaka $h$. 
-        Po principu maksima, za funkcije z lastnostjo povprečne vrednosti je potem $g \equiv 0$. Oziroma $\widetilde{h} \equiv h$ na $\overline{\mathbb{D}}(z_0, r)$, kar nam da harmoničnost $h$ na $\mathbb{D}(z_0, r)$. 
-        Dokazali smo torej, da je $h$ harmonična v okolici vsake točke $z_0$ v $U$. To pa nam že zagotavlja harmoničnost $h$ na $U$. 
-    \end{dokaz}
-    \begin{trditev}
-        Naj bo $u$ zvezna funkcija z lastnostjo povprečne vrednosti, definirana na območju $D$. Potem je $u$ na $D$ gladka, $u \in C^{\infty}(D)$.
-    \end{trditev}
-    \begin{dokaz}
-        Po trditvi \ref{ekvhlp} je $u$ harmonična, po trditvi \ref{gladkosth} pa zato tudi gladka.
-    \end{dokaz}
-
 \newpage
 \section{Schwarzov princip zrcaljenja za harmonične funkcije}
     V tretjem poglavju, smo se že srečali s problemom razširitve podane funkcije do funkcije, ki mora zadoščati dodatnim pogojem. 
