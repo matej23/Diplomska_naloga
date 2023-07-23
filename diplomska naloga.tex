@@ -199,41 +199,66 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         Trditev sledi iz linearnosti integrala.
     \end{dokaz}
 
-    \begin{lema}
-        \ref{lema_princip_max}
-        Naj bo $u$ zvezna realna funkcija, definirana na območju $D$. Naj ima $u$ na $D$ lastnost povprečne vrednosti in naj obstaja $M \in \mathbb{R}$, da za vsak $z \in D$ velja: $u(z) \leq M$. 
-        Če obstaja $z_0 \in D$, da velja: $u(z_0) = M$, potem je $u(z) = M$ za vsak $z \in D$.
-    \end{lema}
-    \begin{dokaz}
-        Ker je $u$ na $D$ zvezna, je množica $A = \{z \in D~|~u(z) < M\}$ odprta. Po definiciji dokažimo, da je odprta tudi množica $B = \{z \in D~|~u(z) = M\}$. Naj bo $z_1 \in B$. Ker je $D$ odprta, obstaja $\rho_{z_1}$, da je za vsak $0 < r < \rho_{z_1}$ tudi $\overline{\mathbb{D}}(z_1, r) \subseteq D$. 
-        Funkcija $u$ ima na $D$ lastnost povprečne vrednosti, zato velja:
-        $$
-            u(z_1) = \int_{0}^{2\pi}{u(z_1 + re^{i\theta}) \frac{d\theta}{2\pi}},~\text{za vsak}~0<r<\rho_{z_1}, 
-        $$
-        oziroma: 
-        $$
-        0 = \int_{0}^{2\pi}{\left[u(z_1) - u(z_1 + re^{i\theta}) \right]\frac{d\theta}{2\pi}},~\text{za vsak}~0<r<\rho_{z_1}.
-        $$
-        Ker je integrand nenegativen in zvezen, integral pa enak nič, je integrand enak nič. 
-        Sledi, da je $M = u(z_1) = u(z_1 + r e^{i \theta})$, za vsak $\theta \in [0,~2\pi]$ in vsak $0 < r < \rho_{z_1}$, oziroma ima poljuben $z_1 \in B$ okolico, ki je vsebovana v $B$. Torej je $B$ odprta.
-        Predpostavka nam pove, da za vsak $z \in D$ velja $u(z) \leq M$, zato je $D$ disjunktna unija množic $A$ in $B$. Ker je $D$ povezana, $A$ in $B$ pa odprti množici, je ena izmed niju prazna, druga pa posledično enaka $D$. Ker po predpostavki $B$ vsebuje $z_0$, je $A$ prazna, $B$ pa je enaka $D$. Sledi, da je $u(z) = M$ za vsak $z \in D$. 
-    \end{dokaz}
+    %\begin{lema}
+    %    \label{lema_princip_max}
+    %    Naj bo $u$ zvezna realna funkcija, definirana na območju $D$. Naj ima $u$ na $D$ lastnost povprečne vrednosti in naj obstaja $M \in \mathbb{R}$, da za vsak $z \in D$ velja: $u(z) \leq M$. 
+    %    Če obstaja $z_0 \in D$, da velja: $u(z_0) = M$, potem je $u(z) = M$ za vsak $z \in D$.
+    %\end{lema}
+    %\begin{dokaz}
+    %    Ker je $u$ na $D$ zvezna, je množica $A = \{z \in D~|~u(z) < M\}$ odprta. Po definiciji dokažimo, da je odprta tudi množica $B = \{z \in D~|~u(z) = M\}$. Naj bo $z_1 \in B$. Ker je $D$ odprta, obstaja $\rho_{z_1}$, da je za vsak $0 < r < \rho_{z_1}$ tudi $\overline{\mathbb{D}}(z_1, r) \subseteq D$. 
+    %    Funkcija $u$ ima na $D$ lastnost povprečne vrednosti, zato velja:
+    %    $$
+    %        u(z_1) = \int_{0}^{2\pi}{u(z_1 + re^{i\theta}) \frac{d\theta}{2\pi}},~\text{za vsak}~0<r<\rho_{z_1}, 
+    %    $$
+    %    oziroma: 
+    %    $$
+    %    0 = \int_{0}^{2\pi}{\left[u(z_1) - u(z_1 + re^{i\theta}) \right]\frac{d\theta}{2\pi}},~\text{za vsak}~0<r<\rho_{z_1}.
+    %    $$
+    %    Ker je integrand nenegativen in zvezen, integral pa enak nič, je integrand enak nič. 
+    %    Sledi, da je $M = u(z_1) = u(z_1 + r e^{i \theta})$, za vsak $\theta \in [0,~2\pi]$ in vsak $0 < r < \rho_{z_1}$, oziroma ima poljuben $z_1 \in B$ okolico, ki je vsebovana v $B$. Torej je $B$ odprta.
+    %    Predpostavka nam pove, da za vsak $z \in D$ velja $u(z) \leq M$, zato je $D$ disjunktna unija množic $A$ in $B$. Ker je $D$ povezana, $A$ in $B$ pa odprti množici, je ena izmed niju prazna, druga pa posledično enaka $D$. Ker po predpostavki $B$ vsebuje $z_0$, je $A$ prazna, $B$ pa je enaka $D$. Sledi, da je $u(z) = M$ za vsak $z \in D$. 
+    %\end{dokaz}
 
     \begin{trditev}[Princip maksima za funkcije z lastnostjo povprečne vrednosti]
+        \label{pm_lpv}
         Naj bo $h$ zvezna kompleksna funkcija, definirana na območju $D$. Naj ima $h$ na $D$ lastnost povprečne vrednosti in naj obstaja $M \in \mathbb{R}$, da velja: $|h(z)| \leq M$ za vsak $z \in D$. 
         Če obstaja $z_0 \in D$, da je: $|h(z_0)| = M$, potem je funkcija $h(z)$ na $D$ konstantna. 
     \end{trditev}
     \begin{dokaz}
-        Ker je $|h(z_0)| = M$, obstaja $\varphi$, da lahko zapišemo: $h(z_0) = M e^{i \varphi}$
+        Ker je $|h(z_0)| = M$, obstaja $\varphi \in [0,~2\pi]$, da velja: \mbox{$h(z_0) = M e^{i \varphi}$}.
+        Definirajmo: $H(z) = h(z) e^{-i\varphi},~z \in D$. Po trditvi \ref{linlpv} ima $H$ na $D$ lastnost povprečne vrednosti. Opazimo, da velja: $|H(z)|  \leq M$ za vsak $z \in D$, obenem pa \mbox{$H(z_0) = M$}.
+        Ker je funkcija $H$ na $D$ zvezna, $\{H(z_0)\}$ pa zaprta množica, je njena praslika \mbox{$A = \{z \in D~|~H(z) = H(z_0) = M\}$} prav tako zaprta množica. Po definiciji dokažimo, da je $A$ tudi odprta množica. 
+        Naj bo $z_1 \in A$. Ker je $D$ odprta, obstaja $\rho_{z_1}$, da je za vsak $0 < r < \rho_{z_1}$ tudi $\overline{\mathbb{D}}(z_1, r) \subseteq D$. 
+        Funkcija $H$ ima na $D$ lastnost povprečne vrednosti, zato velja:
+        $$
+            H(z_1) = \int_{0}^{2\pi}{H(z_1 + re^{i\theta}) \frac{d\theta}{2\pi}},~\text{za vsak}~0<r<\rho_{z_1}.
+        $$
+        Ker je $z_1 \in A$, velja $H(z_1) = M$, ter zato $\text{Re}[H(z_1)] = H(z_1)$. 
+        Sledi:
+        $$
+        H(z_1) = \text{Re}[H(z_1)] = \int_{0}^{2\pi}{\text{Re}[H(z_1 + re^{i\theta})]~\frac{d\theta}{2\pi}},~\text{za vsak}~0<r<\rho_{z_1},
+        $$
+        oziroma:
+        $$
+        0 = \int_{0}^{2\pi}{\left(H(z_1) - \text{Re}[H(z_1 + re^{i\theta})] \right)\frac{d\theta}{2\pi}},~\text{za vsak}~0<r<\rho_{z_1}.
+        $$
+        Vemo, da za vsak $z \in D$ velja: $|H(z)| \leq M = H(z_1)$, zato za vsak $z \in D$ velja: $\text{Re}[H(z)] \leq |H(z)| \leq H(z_1)$.
+        Sedaj vemo, da je integrand integrala nenegativen in zvezen, integral pa enak nič, zato je integrand enak nič. 
+        Sledi, da je \mbox{$H(z_1) = \text{Re}[H(z_1 + r e^{i \theta})]$}, za vsak $\theta \in [0,~2\pi]$ in vsak $0 < r < \rho_{z_1}$. Definicija absolutne vrednosti nam da: $|H(z)| = \sqrt{\text{Re}[H(z)]^2 + \text{Im}[H(z)]^2}$. Ker vemo, da za vsak $z \in D$ velja: $|H(z)| \leq H(z_1) = M$, za vsak $w \in \mathbb{D}(z_1,\rho_{z_1})$ pa $H(z_1) = \text{Re}[H(w)]$, sledi, da je za vsak $w \in \mathbb{D}(z_1,\rho_{z_1})$ $\text{Im}[H(w)] = 0$, oziroma: $H(w) = H(z_1)$. 
+        Poljuben $z_1 \in A$ ima torej odprto okolico, ki je vsebovana v $A$. Torej je $A$ odprta.
+        Predpostavka trditve nam pove, da $A$ ni prazna, saj $z_0 \in A$. Ker je $D$ povezana, $A$ pa odprta in hkrati zaprta neprazna množica, velja $A = D$. 
+        Po definiciji množice $A$ je zato funkcija $H$ na $D$ konstantna. \mbox{Posledično je na $D$ konstantna tudi funkcija $h(z)$.} 
     \end{dokaz}
 
-    \begin{trditev}
-        posledica princip maxima
-    \end{trditev}
+    \begin{posledica}
+        Naj bo $h$  kompleksna funkcija, definirana na omejenem območju $D$. Naj bo $h$ zvezna na $\overline{D}$ in naj ima na $D$ lastnost povprečne vrednosti. 
+        Če obstaja $M \in \mathbb{R}$, da velja: $|h(z)| \leq M$ za vsak $z \in \partial D$, potem velja: $|h(z)| \leq M$ za vsak $z \in \overline{D}$. 
+    \end{posledica}
     \begin{dokaz}
-        test
+        Ker je funkcija $h$ zvezna na kompaktnem območju $\overline{D}$, na $\overline{D}$ zavzame minimum in maksimum. Posledično $|h|$ na $\overline{D}$ zavzame maksimum. 
+        Torej $|h|$ zavzame maksimum na $D$ ali na $\partial D$. Če funkcija $|h|$ maksimum zavzame na $D$, potem je po trditvi \ref{pm_lpv} funkcija $h$ na $D$ konstantna. Ker je $h$ zvezna na $\overline{D}$, je $h$ konstantna celo na $\overline{D}$. 
+        Sledi, da $h$ maksimum gotove zavzame na $\partial D$ iz česar lahko sklepamo želeno.
     \end{dokaz}
-
 
     \begin{trditev}
         Naj bo $f$ holomorfna funkcija na območju $D$. Potem ima funkcija $f$ na $D$ lastnost povprečne vrednosti.
