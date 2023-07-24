@@ -1,6 +1,7 @@
 \documentclass[mat1]{fmfdelo}
 \usepackage{graphicx}
 \usepackage{amsmath}
+\usepackage{yhmath}
 \usepackage[shortlabels]{enumitem}
 % \documentclass[fin1]{fmfdelo}
 % \documentclass[isrm1]{fmfdelo}
@@ -431,14 +432,14 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         P_r(\theta) &=  1 + \sum_{k = 1}^{\infty}{r^{k} e^{i k \theta}} +  \sum_{j = 1}^{\infty}{r^{j} e^{-i j \theta}}~;  &  &r \in [0,1),~\theta \in [0,2\pi] \label{eq1}\\
         &= 1 + \sum_{k=1}^{\infty}{z^k} + \sum_{j=1}^{\infty}{\overline{z}^{j}}~;   & &z = r e^{i\theta} \in \mathbb{D}. \notag
     \end{align}
-    Ker je Poissonovo jedro definirano na notranjosti enotskega diska, kjer je absolutna vrednost kompleksne spremenljivke manjša od ena, obe vrsti v zapisu (\ref{eq1}) konvergirata.
+    Ker je Poissonovo jedro definirano na notranjosti enotskega diska, kjer je absolutna vrednost kompleksne spremenljivke manjša od ena, obe vrsti v zapisu \eqref{eq1} konvergirata.
     Ko ju seštejemo s formulo za geometrijsko vrsto dobimo:
 
     \begin{align}
         \label{eq2}
         P_r(\theta) &= 1 + \frac{z}{1 - z}+ \frac{\overline{z}}{1 - \overline{z}} = \frac{1 - |z|^2}{|1-z|^2}~;& &z = r e^{i\theta} \in \mathbb{D}.
     \end{align}
-    Opazimo, da bi (\ref{eq2}) lahko zapisali tudi nekoliko drugače:
+    Opazimo, da bi \eqref{eq2} lahko zapisali tudi nekoliko drugače:
     \begin{align}
         \label{eq3}
         P_r(\theta) &= 1 + \frac{z}{1 - z}+ \frac{\overline{z}}{1 - \overline{z}} = 1 + \left(\frac{z}{1 - z} \right)+ \overline{\left(\frac{z}{1 - z}\right)} \notag \\
@@ -470,15 +471,15 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         \end{enumerate}
     \end{trditev}
     \begin{dokaz}
-        Lastnosti a), b) in c) sledijo iz zapisa (\ref{eq4}). Opazimo, da je v tem zapisu od $\theta$ odvisen le člen s funkcijo kosinus. 
+        Lastnosti a), b) in c) sledijo iz zapisa \eqref{eq4}. Opazimo, da je v tem zapisu od $\theta$ odvisen le člen s funkcijo kosinus. 
         Ta zagotavlja $2\pi$-periodičnost in sodost, ter podaja želen interval naraščanja in padanja Poissonovega jedra, v odvisnosti od spremenljivke $\theta$. 
         
-        Za dokaz točke d) si oglejmo zapis (\ref{eq2}). Ker je Poissonovo jedro definirano na notranjosti enotskega diska, je absolutna vrednost v zapisu uporabljene kompleksne spremenljive manjša od ena. 
+        Za dokaz točke d) si oglejmo zapis \eqref{eq2}. Ker je Poissonovo jedro definirano na notranjosti enotskega diska, je absolutna vrednost v zapisu uporabljene kompleksne spremenljive manjša od ena. 
         Sledi, da sta števec in imenovalec v zapisu strogo pozitivna, kar dokazuje trditev. 
 
         Pri dokazu točke e) si pomagajmo z izpeljavo rešitve za Dirichletov problem na enotskem disku. 
         Za robni pogoj, bomo na robu enotskega diska vzeli funkcijo, ki je identično enaka $1$. Označimo torej $h(z) \equiv 1,~ z \in \partial \mathbb{D}$. Opazimo, da je \mbox{$\widetilde{h}(z) \equiv 1,~z \in \overline{\mathbb{D}}$} trivialna rešitev tako postavljenega Dirichletovega problema za enotski disk.
-        Lema \ref{enolicno} nam pove, da je rešitev za tako podan Dirichletov problem enolično določena. Vemo tudi, da je harmonična razširitev eksplicitno podana prek formule (\ref{int1}).
+        Lema \ref{enolicno} nam pove, da je rešitev za tako podan Dirichletov problem enolično določena. Vemo tudi, da je harmonična razširitev eksplicitno podana prek formule \eqref{int1}.
         Velja torej:
         $$
         1 = \int_{-\pi}^{\pi}{\left[\sum_{k=-\infty}^{\infty}{r^{|k|} e^{ik(\theta - \varphi)}}\right] \frac{d \varphi}{2 \pi}} = \int_{-\pi}^{\pi}{P_r(\theta - \varphi)\frac{d \varphi}{2 \pi}}. 
@@ -493,7 +494,7 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         Za vsak $r \in [0, 1)$ funkcija $\frac{1}{2 \pi} P_r(\theta),~ \theta \in [-\pi, \pi]$ določa gostoto zvezno porazdeljene slučajne spremenljivke.
     \end{posledica}
     \begin{dokaz}
-        Iz zapisa (\ref{eq4}) je jasno, da je pri poljubnem $r \in [0,1)$ zapisana funkcija v odvisnosti od $\theta$ zvezna na intervalu $[-\pi, \pi]$, točki d) in e) trditve \ref{lastpk} pa nam dokazujeta, da je na definicijskem območju funkcija strogo pozitivna in se pointegrira v $1$.
+        Iz zapisa \eqref{eq4} je jasno, da je pri poljubnem $r \in [0,1)$ zapisana funkcija v odvisnosti od $\theta$ zvezna na intervalu $[-\pi, \pi]$, točki d) in e) trditve \ref{lastpk} pa nam dokazujeta, da je na definicijskem območju funkcija strogo pozitivna in se pointegrira v $1$.
     \end{dokaz}
 
     \begin{definicija}
@@ -502,17 +503,17 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
             \item $\int_{\partial \mathbb{D}}{F_\lambda} = 1,~\text{za vsak $\lambda \in \Lambda$}$,
             \item sup\{$\int_{\partial \mathbb{D}}{\left| F_{\lambda}\right|}~|~\lambda \in \Lambda$\} $< \infty$,
             \item za vsak $\delta > 0$ velja: $\lim_{\lambda \to \mu}{\int_{\{|x| > \delta\}}{|F_{\lambda}(x)|~dx}} = 0$, kjer $\mu$ označuje supremum množice $\Lambda$, oziroma $\infty$, če supremum množice $\Lambda$ ne obstaja.
-
         \end{enumerate}
     \end{definicija}
 
     \begin{trditev}
         \label{proti0}
-        Naj bo $\frac{\pi}{2} > \delta > 0$. Potem gre $\max\{P_r(\theta)~|~ \delta \leq |\theta| \leq \pi\} \to 0$ ko gre $r \to 1$.
+        Naj bo $\delta > 0$. Potem gre $\max\{P_r(\theta)~|~ \delta \leq |\theta| \leq \pi\} \to 0$ ko gre $r \to 1$.
     \end{trditev}
     \begin{dokaz}
-        Ker je za vsak $r$ Poissonovo jedro v odvisnosti od spremenljivke $\theta$ na intervalu $[-\pi, \pi]$ zvezna funkcija, maksimum na kompaktu $[-\pi, \pi]$ gotovo zavzamemo. Točki a) in b) trditve \ref{lastpk} nam povesta, da bomo za vsak $r$ maksimum zavzeli kar v $\delta$. Oglejmo si torej $P_r(\delta) = \frac{1 -r^2}{1 + r^2 - 2r \cos(\delta)}$. Ker je $\delta \in \left(0,\frac{\pi}{2}\right)$, bo imenovalec ulomka strogo pozitiven, števec ulomka pa gre proti $0$, ko gre $r \to 1$. 
-        Sledi, da gre $\max\{P_r(\theta)~|~ \delta \leq |\theta| \leq \pi\} = P_r(\delta) \to 0$, ko gre $r \to 1$.
+        Ker je za vsak $r$ Poissonovo jedro v odvisnosti od spremenljivke $\theta$ na intervalu $[-\pi, \pi]$ zvezna funkcija, maksimum na kompaktu $[-\pi, \pi]$ gotovo zavzamemo. Točki a) in b) trditve \ref{lastpk} nam povesta, da bomo za vsak $r$ maksimum zavzeli kar v $\delta$. 
+        Oglejmo si torej $P_r(\delta) = \frac{1 -r^2}{1 + r^2 - 2r \cos(\delta)}$. Ker je $\delta >0 $, bo imenovalec ulomka strogo pozitiven, števec ulomka pa gre proti $0$, ko gre $r \to 1$. 
+        Sledi, da gre \mbox{$\max\{P_r(\theta)~|~ \delta \leq |\theta| \leq \pi\} = P_r(\delta) \to 0$}, ko gre $r \to 1$.
     \end{dokaz}
     \begin{posledica}
         \label{int_proti0}
@@ -534,72 +535,102 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         Da družina zadošča pogoju točke A) nam pove točka e) trditve \ref{lastpk}, točka d) trditve \ref{lastpk} pa nam pove, da je s tem zadoščeno tudi pogoju točke B). 
         Posledica \ref{int_proti0} nam pove, da družina zadošča tudi pogoju iz točke C).
     \end{dokaz}
+    \begin{opomba}
+        Vredno je s pomočjo zgoraj zapisanih trditev komentirati obnašanje funkcije Poissonovega jedra, ko pošljemo $r \to 1$. Trditev \ref{proti0} nam pove, da se vrednosti funkcije v odvisnosti od spremenljivke $\theta$, ki so poljubno malo oddaljene od izhodišča približujejo $0$. Dodatno zapisano potrdi tudi posledica \ref{int_proti0}.
+        Oglejmo si sedaj, kaj se zgodi z vrednostjo funkcije pri $\theta = 0$, ko pošljemo $r \to 1$. Iz zapisa \eqref{eq4} vemo, da velja:
+        $$
+        P_r(0) = \frac{1-r^2}{1+ r^2 - 2r} = \frac{1- r^2}{(1 - r)^2} = \frac{1 + r}{1 -r},~~r \in [0,1).
+        $$
+        Ko gre $r \to 1$, gre torej $P_r(0)$ proti $\infty$. Zapisani opažanji nam skupaj z ugotovitvijo iz točke e) trditve \ref{lastpk} nakazujeta, da se funkcija Poissonovega jedra, ko pošljemo $r \to 1$ približuje tako imenovani Diracovi delti. 
+        O tem si bralec več lahko prebere na REFERENCA.
+    \end{opomba}
 
     \begin{trditev}
         Poissonovo jedro je na enotskem disku harmonična funkcija. 
     \end{trditev}
     \begin{dokaz}
         Trditev \ref{hh} nam pove, da je dovolj pokazati, da lahko Poissonovo jedro zapišemo kot realni del holomorfne funkcije, definirane na enotskem disku.
-        Zapis (\ref{eq3}) nam pove, da je Poissonovo jedro realni del funkcije $f(z) = \frac{1 + z}{1 - z},~z \in \mathbb{D}$. Ker je $f$ na enotskem disku tudi holomorfna, je trditev s tem dokazana. 
+        Zapis \eqref{eq3} nam pove, da je Poissonovo jedro realni del funkcije $f(z) = \frac{1 + z}{1 - z},~z \in \mathbb{D}$. Ker je $f$ na enotskem disku tudi holomorfna, je trditev s tem dokazana. 
     \end{dokaz}
 
     \begin{opomba}
-        Lastnosti Poissonovega jedra, navedene v trditvi \ref{lastpk}, so tudi dobro razvidne na spodnji sliki. 
+        Lastnosti Poissonovega jedra, navedene v trditvi \ref{lastpk} in \ref{proti0}, so tudi dobro razvidne na spodnji sliki. 
     \end{opomba}
 
     \begin{figure}[H]
         \begin{center}
         \includegraphics[width=\linewidth]{grafi.png}
-        \caption{Graf Poissonovega jedra glede na vrednost spremenljivke $r$}
+        \caption{Graf Poissonovega jedra glede na vrednost spremenljivke $r$.}
         \end{center}    
     \end{figure}
 
     Sedaj se vrnimo k reševanju Dirichletovega problema za enotski disk. 
     Spomnimo se, da smo za polinomske funkcije $h$ skonstruirali predpis razširitve, ki je rešila zastavljen problem. 
-    Opazimo, da si sedaj lahko pomagamo z definiranim pojmom Poissonovega jedra in zapišemo:
+    Opazimo, da bi si pri zapisu enačbe \eqref{int1} lahko pomagali z definiranim pojmom Poissonovega jedra. Lahko zapišemo:
+    
     $$
     \widetilde{h}(r e^{i \theta}) = \int_{-\pi}^{\pi}{h(e^{i \varphi}) \bigg[\sum_{k = - \infty}^{\infty} r^{|k|} e^{- i k \varphi} e^{i k \theta}} \bigg]\frac{d \varphi}{2 \pi} = 
-    \int_{-\pi}^{\pi}{h(e^{i \varphi}) P_r(\theta - \varphi)\frac{d \varphi}{2 \pi}}.
+    = \int_{-\pi}^{\pi}{h(e^{i \varphi}) P_r(\theta - \varphi)\frac{d \varphi}{2 \pi}},~~r e^{i \theta} \in \overline{\mathbb{D}}.
     $$
-    Če (trigonometričen) polinom $h(e^{i\theta})$ (ki  bi seveda lahko zavzemal kompleksne vrednosti) zamenjamo s (trigonometričnim) polinomom $u(e^{i\theta})$, ki zavzema le realne vrednosti, se nam zgornja enakost v duhu 
-    točke (7) trditve \ref{lastpk} še olepša. Takrat lahko namreč za $z = re^{i\theta} \in \mathbb{D}$ pišemo:
+
+    Če trigonometrični polinom $h(e^{i\theta})$, ki bi seveda lahko zavzel tudi kompleksne vrednosti, zamenjamo s realnim trigonometričnim polinomom $u(e^{i\theta})$, se nam zgornja enakost v duhu 
+    zapisa \eqref{eq3} še olepša. Takrat lahko namreč za $z = re^{i\theta} \in \mathbb{D}$ pišemo:
+    
     \begin{equation}
         \label{realnidel}
         \begin{split}
             \widetilde{u}(z) = \widetilde{u}(r e^{i \theta}) = \int_{-\pi}^{\pi}{u(e^{i \varphi}) P_r(\theta - \varphi)\frac{d \varphi}{2 \pi}} = \int_{-\pi}^{\pi}{u(e^{i \varphi})~\text{Re}\bigg(\frac{1+re^{i(\theta - \varphi)}}{1-re^{i(\theta - \varphi)}}\bigg)\frac{d \varphi}{2 \pi}}= \\
-            \int_{-\pi}^{\pi}{u(e^{i \varphi})~\text{Re}\bigg(\frac{e^{i\varphi}+re^{i\theta}}{e^{i\varphi}-re^{i\theta}}\bigg)\frac{d \varphi}{2 \pi}}=~\text{Re}~\bigg[\int_{-\pi}^{\pi}{u(e^{i \varphi})\bigg(\frac{e^{i\varphi}+z}{e^{i\varphi}-z}\bigg)\frac{d \varphi}{2 \pi}}\bigg].
+            = \int_{-\pi}^{\pi}{u(e^{i \varphi})~\text{Re}\bigg(\frac{e^{i\varphi}+re^{i\theta}}{e^{i\varphi}-re^{i\theta}}\bigg)\frac{d \varphi}{2 \pi}}=~\text{Re}~\bigg[\int_{-\pi}^{\pi}{u(e^{i \varphi})\bigg(\frac{e^{i\varphi}+z}{e^{i\varphi}-z}\bigg)\frac{d \varphi}{2 \pi}}\bigg].
         \end{split}
     \end{equation}
-    S tem smo $\widetilde{u}(z)$ za $z \in \mathbb{D}$ izraziti kot realni del holomorfne funkcije, kar ne implicira le harmoničnost predpisa (po trditvi \ref{hh}), ampak tudi gladko odvisnost $\widetilde{u}(z)$ od spremenljivke $z$.
-    \newline
-    Posvetimo se sedaj spet iskanju splošne rešitve Dirichletovega problema. Zgoraj smo z intuitivno izpeljavo nevede že zapisali funkcijo, ki jo bomo sedaj vzeli za definicijo novega pojma. Pokazali smo, da to v splošnem pripelje do rešitve.
+
+    Tako smo $\widetilde{u}(z)$ za $z \in \mathbb{D}$ izrazili kot realni del holomorfne funkcije, kar po trditvi \ref{hh} dokazuje harmoničnost zapisa \eqref{realnidel}, ter obenem tudi gladko odvisnost $\widetilde{u}(z)$ od kompleksne spremenljivke $z$, na notranjosti enotskega diska.
+    
+    Posvetimo se sedaj spet iskanju splošne rešitve Dirichletovega problema na enotskem disku. Zgoraj smo z intuitivno izpeljavo nevede že zapisali funkcijo, ki jo bomo sedaj vzeli za definicijo novega pojma. 
+    Pokazali bomo, da to tudi v splošnem omogoča zapis rešitve Dirichletovega problema na enotskem disku.
 
     \begin{definicija}
-        \emph{Poissonov integral}, ki ga označimo z~$\widetilde{h}(z)$, zvezne funkcije $h(e^{i\theta})$, je funkcija, definirana na enotskem disku s predpisom
+        Naj bo $h(e^{i \theta})$ zvezna funkcija, definirana na robu enotskega diska.
+        \emph{Poissonov integral} funkcije $h(e^{i\theta})$, ki ga označimo z~$\widetilde{h}(z)$, je funkcija, definirana na notranjosti enotskega diska s predpisom
         $$
         \widetilde{h}(z) = \int_{-\pi}^{\pi}{h(e^{i\varphi}) P_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}}~\text{, kjer je}~~z = r e^{i\theta} \in \mathbb{D}.
         $$
      \end{definicija}
      \begin{opomba}
-        Ekvivalentno bi lahko definicijo Poissonovega integrala, zaradi 2 $\pi$ periodičnosti Poissonovega jedra, zapisali tudi kot:
+        Če v zgornji integral uvedemo novo spremenljivko $\tau = \theta - \varphi$, ter upoštevamo točko a) trditve \ref{lastpk}, lahko Poissonov integral funkcije $h$, zapišemo tudi kot:
         $$
         \widetilde{h}(z) = \int_{-\pi}^{\pi}{h\big(e^{i(\theta-\varphi)}\big) P_r(\varphi)~\frac{d\varphi}{2 \pi}}~\text{, kjer}~~z = r e^{i\theta} \in \mathbb{D}.
         $$
+        Natančneje si opisan postopek, ki pripelje do zgornjega zapisa Poissonovega integrala bralec lahko ogleda v dokazu točke e) trditve \ref{lastpk}.
      \end{opomba}
+
      \begin{trditev}
         \label{lastpi}
-        Za preslikavo $\Phi : h \mapsto \widetilde{h}$, t.j. preslikavo, ki zvezni funkciji $h$, definirani na $\partial \mathbb{D}$, priredi njen Poissonov integral, velja:
-        \begin{enumerate}
-            \item $\Phi$ je linearna preslikava, t.j. $\Phi(c_1 h_1 + c_2 h_2) = c_1 \widetilde{h_1} + c_2 \widetilde{h_2}$,
-            \item $\Phi$ "ohranja omejenost", t.j. če je $|h| \leq M$ na $\partial \mathbb{D}$, potem je $|\widetilde{h}| \leq M$ na $\mathbb{D}$.
+        Naj bo $\Phi$ preslikava, ki zvezni funkciji $h$, definirani na robu enotskega diska, prireredi njen Poissonov integral $\widetilde{h}$, t.j. $\Phi : h \mapsto \widetilde{h}$.
+        Potem velja:
+        \begin{enumerate}[label={\alph*)}]
+            \item $\Phi$ je $\mathbb{C}$-linearna preslikava, t.j. \mbox{$\text{za vsak}~h_1,h_2 \in C^0(\partial \mathbb{D})~\text{in vsak}~c_1,c_2 \in \mathbb{C}$} velja: $\Phi(c_1 h_1 + c_2 h_2) = c_1 \widetilde{h_1} + c_2 \widetilde{h_2}$,
+            \item $\Phi$ ohranja omejenost, t.j. če za poljuben $h \in C^0(\partial \mathbb{D})$ obstaja $M \in \mathbb{R}$, da velja $|h(z)| \leq M$, za vsak $z \in \partial \mathbb{D}$, potem je $|[\Phi(h)](z)| \leq M$ za vsak $z \in \mathbb{D}$.
         \end{enumerate}
      \end{trditev}
      \begin{dokaz}
-        $ $
-        \begin{enumerate}
-            \item Trditev trivialno sledi iz definicije Poissonovega integrala, zaradi linearnosti integrala. 
-            \item Trditev sledi iz točke (2) in (3) trditve \ref{lastpk}.
-        \end{enumerate}
+            Dokažimo najprej točko a). Naj bosta $h_1$ in $h_2$ poljubni zvezni funkciji, definirani na robu enotskega diska, ter $c_1, c_2$ poljubni kompleksni števili. 
+            Potem je na robu enotskega diska zvezna tudi funkcija $c_1 h_1 + c_2 h_2$. Oglejmo si sedaj najprej Poissonov integral za zapisano linearno kombinacijo.
+            \begin{align*}
+                \widetilde{[c_1 h_1 + c_2 h_2]}(z) &= \int_{-\pi}^{\pi}{\left([c_1 h_1 + c_2 h_2](e^{i\varphi}) \right)P_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}}\\ 
+                & = \int_{-\pi}^{\pi}{\left([c_1 h_1](e^{i\varphi}) + [c_2 h_2](e^{i\varphi})\right)P_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}}\\
+                & = c_1\int_{-\pi}^{\pi}{h_1(e^{i\varphi})P_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}} + c_2\int_{-\pi}^{\pi}{h_2(e^{i\varphi})P_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}}\\
+                & = c_1 \widetilde{h_1}(z) + c_2 \widetilde{h_2}(z) = [c_1 \widetilde{h_1} + c_2 \widetilde{h_2}](z)~,~~~~z \in \mathbb{D}
+            \end{align*}
+            Po definiciji preslikave $\Phi$ sedaj sledi $\Phi(c_1 h_1 + c_2 h_2) = c_1 \Phi(h_1) + c_2 \Phi(h_2)$.
+
+            Dokažimo še točko b). Naj bo $h$ poljubna omejena zvezna funkcija, definirana na robu enotskega diska. Naj za $M \in \mathbb{R}$ velja $|h(z)| \leq M$ za vsak $z \in \partial \mathbb{D}$.
+            Ponovno si najprej oglejmo Poissonov integral funkcije $h$ in uporabimo zapisano neenakost, ter točki d) in e) trditve \ref{lastpk}.
+            \begin{align*}
+                \left|\widetilde{h}(z)\right| &= \left| \int_{-\pi}^{\pi}{h(e^{i\varphi}) P_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}} \right| \leq \int_{-\pi}^{\pi}{\left|h(e^{i\varphi}) \right|P_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}} \\ 
+                &\leq M \int_{-\pi}^{\pi}{P_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}} = M,~~~~z \in \mathbb{D}& & \\
+            \end{align*}
+            Po definiciji preslikave $\Phi$ zato $|[\Phi(h)](z)| \leq M$ za vsak $z \in \mathbb{D}$.
      \end{dokaz}
         
      \begin{trditev}
