@@ -334,6 +334,7 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
     \end{dokaz}
 
     \begin{opomba}
+        \label{motivacija}
         Vredno je že na tej točki omeniti, da za harmonične funkcije velja celo več, kot nam to narekuje trditev \ref{harmonicnapovp}. Harmonične funkcije, se da namreč karakterizirati s pomočjo lastnosti povprečne vrednosti. Motivacija za ogled naslednjega razdelka temelji ravno na dokazu omenjenega rezultata.  
     \end{opomba}
 
@@ -536,7 +537,7 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         Posledica \ref{int_proti0} nam pove, da družina zadošča tudi pogoju iz točke C).
     \end{dokaz}
     \begin{opomba}
-        Vredno je s pomočjo zgoraj zapisanih trditev komentirati obnašanje funkcije Poissonovega jedra, ko pošljemo $r \to 1$. Trditev \ref{proti0} nam pove, da se vrednosti funkcije v odvisnosti od spremenljivke $\theta$, ki so poljubno malo oddaljene od izhodišča približujejo $0$. Dodatno zapisano potrdi tudi posledica \ref{int_proti0}.
+        Vredno je, s pomočjo zgoraj zapisanih trditev, komentirati obnašanje funkcije Poissonovega jedra, ko pošljemo $r \to 1$. Trditev \ref{proti0} nam pove, da se vrednosti funkcije v odvisnosti od spremenljivke $\theta$, ki so poljubno malo oddaljene od izhodišča približujejo $0$. Dodatno zapisano potrdi tudi posledica \ref{int_proti0}.
         Oglejmo si sedaj, kaj se zgodi z vrednostjo funkcije pri $\theta = 0$, ko pošljemo $r \to 1$. Iz zapisa \eqref{eq4} vemo, da velja:
         $$
         P_r(0) = \frac{1-r^2}{1+ r^2 - 2r} = \frac{1- r^2}{(1 - r)^2} = \frac{1 + r}{1 -r},~~r \in [0,1).
@@ -570,21 +571,8 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
     
     $$
     \widetilde{h}(r e^{i \theta}) = \int_{-\pi}^{\pi}{h(e^{i \varphi}) \bigg[\sum_{k = - \infty}^{\infty} r^{|k|} e^{- i k \varphi} e^{i k \theta}} \bigg]\frac{d \varphi}{2 \pi} = 
-    = \int_{-\pi}^{\pi}{h(e^{i \varphi}) P_r(\theta - \varphi)\frac{d \varphi}{2 \pi}},~~r e^{i \theta} \in \overline{\mathbb{D}}.
+    \int_{-\pi}^{\pi}{h(e^{i \varphi}) P_r(\theta - \varphi)\frac{d \varphi}{2 \pi}},~~r e^{i \theta} \in \overline{\mathbb{D}}.
     $$
-
-    Če trigonometrični polinom $h(e^{i\theta})$, ki bi seveda lahko zavzel tudi kompleksne vrednosti, zamenjamo s realnim trigonometričnim polinomom $u(e^{i\theta})$, se nam zgornja enakost v duhu 
-    zapisa \eqref{eq3} še olepša. Takrat lahko namreč za $z = re^{i\theta} \in \mathbb{D}$ pišemo:
-    
-    \begin{equation}
-        \label{realnidel}
-        \begin{split}
-            \widetilde{u}(z) = \widetilde{u}(r e^{i \theta}) = \int_{-\pi}^{\pi}{u(e^{i \varphi}) P_r(\theta - \varphi)\frac{d \varphi}{2 \pi}} = \int_{-\pi}^{\pi}{u(e^{i \varphi})~\text{Re}\bigg(\frac{1+re^{i(\theta - \varphi)}}{1-re^{i(\theta - \varphi)}}\bigg)\frac{d \varphi}{2 \pi}}= \\
-            = \int_{-\pi}^{\pi}{u(e^{i \varphi})~\text{Re}\bigg(\frac{e^{i\varphi}+re^{i\theta}}{e^{i\varphi}-re^{i\theta}}\bigg)\frac{d \varphi}{2 \pi}}=~\text{Re}~\bigg[\int_{-\pi}^{\pi}{u(e^{i \varphi})\bigg(\frac{e^{i\varphi}+z}{e^{i\varphi}-z}\bigg)\frac{d \varphi}{2 \pi}}\bigg].
-        \end{split}
-    \end{equation}
-
-    Tako smo $\widetilde{u}(z)$ za $z \in \mathbb{D}$ izrazili kot realni del holomorfne funkcije, kar po trditvi \ref{hh} dokazuje harmoničnost zapisa \eqref{realnidel}, ter obenem tudi gladko odvisnost $\widetilde{u}(z)$ od kompleksne spremenljivke $z$, na notranjosti enotskega diska.
     
     Posvetimo se sedaj spet iskanju splošne rešitve Dirichletovega problema na enotskem disku. Zgoraj smo z intuitivno izpeljavo nevede že zapisali funkcijo, ki jo bomo sedaj vzeli za definicijo novega pojma. 
     Pokazali bomo, da to tudi v splošnem omogoča zapis rešitve Dirichletovega problema na enotskem disku.
@@ -632,21 +620,53 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
             \end{align*}
             Po definiciji preslikave $\Phi$ zato $|[\Phi(h)](z)| \leq M$ za vsak $z \in \mathbb{D}$.
      \end{dokaz}
+
+     \begin{lema}
+        \label{realnidel}
+        Naj bo $u$ realna zvezna funkcija, definirana na $\partial \mathbb{D}$. Potem je Poissonov integral funkcije $u$ na $\mathbb{D}$ harmonična funkcija.
+     \end{lema}
+     \begin{dokaz}
+        Pomagajmo si z zapisom \eqref{eq3}. Za $z = re^{i\theta} \in \mathbb{D}$ lahko zapišemo:
+        
+        \begin{equation}
+            \begin{split}
+                \widetilde{u}(z) = \widetilde{u}(r e^{i \theta}) = \int_{-\pi}^{\pi}{u(e^{i \varphi}) P_r(\theta - \varphi)\frac{d \varphi}{2 \pi}} = \int_{-\pi}^{\pi}{u(e^{i \varphi})~\text{Re}\bigg(\frac{1+re^{i(\theta - \varphi)}}{1-re^{i(\theta - \varphi)}}\bigg)\frac{d \varphi}{2 \pi}}= \\
+                = \int_{-\pi}^{\pi}{u(e^{i \varphi})~\text{Re}\bigg(\frac{e^{i\varphi}+re^{i\theta}}{e^{i\varphi}-re^{i\theta}}\bigg)\frac{d \varphi}{2 \pi}}=~\text{Re}~\bigg[\int_{-\pi}^{\pi}{u(e^{i \varphi})\bigg(\frac{e^{i\varphi}+z}{e^{i\varphi}-z}\bigg)\frac{d \varphi}{2 \pi}}\bigg].
+            \end{split}
+        \end{equation}
+    
+        Tako smo $\widetilde{u}(z)$ za $z \in \mathbb{D}$ izrazili kot realni del holomorfne funkcije, kar po trditvi \ref{hh} dokazuje harmoničnost Poissonovega integrala funkcije $u$, na notranjosti enotskega diska.
+     \end{dokaz}
         
      \begin{trditev}
         \label{obstoj}
-        Naj bo $h$ zvezna kompleksna funkcija definirana na $\partial \mathbb{D}$. Rešitev Dirichletovega problema obstaja in je na $\mathbb{D}$ definirana kot Poissonov integral funkcije $h$.
-        \newline
-        Rečeno drugače, Poissonov integral zvezne kompleksne funkcije, definirane na $\partial \mathbb{D}$ je zvezna harmonična funkcija, definirana na $\mathbb{D}$, ki je zvezno harmonična razširitev $h$ na $\overline{\mathbb{D}}$, če jo dodefiniramo na $\mathbb{D}$.
+        Naj bo $h$ zvezna kompleksna funkcija, definirana na $\partial \mathbb{D}$. Rešitev Dirichletovega problema, z robnim pogojem $h$, za enotski disk obstaja in je na $\mathbb{D}$ definirana kot Poissonov integral funkcije $h$.
      \end{trditev}
+     \begin{opomba}
+        Pred dokazom trditve še na nekoliko drugačen način zapišimo, kaj nam trditev v resnici pove. 
+        Definirajmo funkcijo $H$, na $\overline{\mathbb{D}}$, kot:
+        $$
+            H(z) = \begin{cases}
+                    h(z);~~z \in \partial \mathbb{D}\\
+                    \widetilde{h}(z);~~z \in \mathbb{D}
+            \end{cases}.
+        $$
+        Trdimo, da funkcija $H$ na $\overline{\mathbb{D}}$ zvezna, ter na $\mathbb{D}$ harmonična. Po definiciji funckije $H$ opazimo, da v resnici trdimo, da je na $\mathbb{D}$ harmoničen Poissonov integral funkcije $h$. 
+        Ker se zožitev tako definirane funkcije $H$ na $\partial \mathbb{D}$ ujema s $h$, trdimo, da je ravno funkcija $H$ rešitev za Dirichletov problem na enotskem disku, z robnim pogojem $h$.
+     \end{opomba}
+
      \begin{dokaz}
         Trditev bomo dokazali v dveh korakih. Najprej dokažimo, da je Poissonov integral na $\mathbb{D}$ harmonična funkcija.
-        Vemo, da lahko vsako kompleksno funkcijo $h$ razcepimo na njen realni in imaginarni del kot $h = u + iv$, pri čemer sta $u$ in $v$ funkciji, z zalogo vrednostjo znotraj realnih števil. 
-        Zaradi linearnosti Poissonovega integrala, se lahko sedaj posebej skoncentriramo na Poissonov integral realnega dela (ki ga označimo z $\widetilde{u}$) in Poissonov integral imaginarnega dele (ki ga označimo z $\widetilde{v}$). 
-        Tako, kot smo to naredili pri \ref{realnidel}, lahko vsakega izmed Poissonovih integralov $\widetilde{u}$ in $\widetilde{v}$ zapišemo kot realni del neke holomorfne funkcije, kar nam po trditvi \ref{hh} implicira harmoničnost $\widetilde{u}$ in $\widetilde{v}$.
-        Zaradi opombe \ref{lin} nam to implicira tudi harmoničnost $\widetilde{h} = \widetilde{u} + i\widetilde{v}$ ter s tem dokaz prvega dela trditve. 
-        \newline
-        Za dokaz zveznosti na $\overline{\mathbb{D}}$ se moramo nekoliko bolj potruditi. Uporabili bomo lastnosti Poissonovega jedra iz trditve \ref{lastpk}. 
+        Vemo, da lahko kompleksno funkcijo $h$ razcepimo na njen realni in imaginarni del kot $h = u + iv$, pri čemer sta $u$ in $v$ realni funkciji. 
+        Točka a) trditve \ref{lastpi} nam pove, da velja $\widetilde{h} = \widetilde{u} + i \widetilde{v}$.
+        Ker sta $u$ in $v$ realni zvezni funkciji, definirani na robu enotskega diska, lahko uporabimo lemo \ref{realnidel}. Ta nam pove, da sta $\widetilde{u}$ in $\widetilde{v}$ na $\mathbb{D}$ harmonični funkciji. 
+        Dokaz prvega dela zaključi opomba \ref{lin}, ki pove, da je potem tudi $\widetilde{h} = \widetilde{u} + i \widetilde{v}$ na $\mathbb{D}$ harmonična funkcija.
+        
+        PREVERI
+
+        Za dokaz zveznosti na $\overline{\mathbb{D}}$ se moramo nekoliko bolj potruditi.
+        Na  $\mathbb{D}$ je $\widetilde{h}$ harmonična, zato je tam tudi zvezna. Dovolj je torej dokazati, da imamo zveznost do roba enotskega diska.
+        Ker je $h$ zvezna na kompaktu $\partial \mathbb{D}$, je omejena in enakomerno zvezna.  
         Kot zvezna funkcija na kompaktu, je za $h$ na $\partial \mathbb{D}$ velja: 
         \begin{itemize}
             \item omejena, t.j.:$~\exists M: |h(e^{i\theta})| \leq M$ in 
@@ -677,12 +697,14 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         Zveznost in s tem trditev je tako dokazana.
     \end{dokaz}
     \begin{posledica}
+        SPREMENI!!
         Dirichletov problem za enotski disk je dobro postavljen matematičen problem. 
     \end{posledica}
     \begin{dokaz}
         Obstoj rešitve za vsako zvezno začetno podano funkcijo nam preko eksplicitne konstrukcije zagotavlja trditev \ref{obstoj}. 
         Enoličnost rešitve nam zagotavlja lema \ref{enolicno}, zvezna odvisnost rešitve od začetnih podatkov, pa je predpostavka problema (funkcija reši problem le v primeru, ko je zvezna na zaprtju enotskega diska, kar nam zagotavlja zvezno odvisnost od pogojev na robu diska oziroma zvezno odvisnost od začetnih pogojev).
     \end{dokaz}
+
     \begin{opomba}
         \label{alldisk}
         Dirichletov problem smo formulirali in reševali za enotski disk. Problem bi na podoben način lahko formulirali za poljubno območje $U$. 
@@ -693,26 +715,31 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         DOKONCAJ IZPELJAVO!
      \end{opomba}
 
+     TO SPET OKEJ
+     \begin{opomba}
+        Spomnimo se glavne motivacije za razdelek, ki smo jo navedli v opombi \ref{motivacija}.
+        Z znanjem, pridobljenim znotraj razdelka, je sedaj dokaz omenjene karakterizacije na dlani.
+     \end{opomba}
      \begin{trditev}
         \label{ekvhlp}
         Naj bo $h$ zvezna funkcija, definirana na območju $U \subseteq \C$. Velja, da je $h$ harmonična funkcija natanko tedaj, ko ima lastnost povprečne vrednosti.
     \end{trditev}
     \begin{dokaz}
-        Trditev \ref{harmonicnapovp} nam dokaže eno implikacijo. Dovolj je torej preveriti, da je zvezna funkcija $h$ z lastnostjo povprečne vrednosti na $U$ harmonična. 
-        Dokaz temelji na že dokazanem obstoju rešitve Dirichletovega problema za enotski disk oziroma na opombi \ref{alldisk}, ki nam potrdi obstoj rešitve Dirichletovega problema za poljuben disk. 
-        \newline
-        Ker je $U$ območje za poljubno točko $z_0 \in U$ obstaja $r$, da je $\overline{\mathbb{D}}(z_0,r) \subseteq U$. Ker je $h$ zvezna na $U$, $h$ na $\partial \overline{\mathbb{D}}(z_0, r)$ določa robne/začetne pogoje za Dirichletov problem za disk $\mathbb{D}(z_0,r)$.
-        Vemo, da rešitev $\widetilde{h}$ obstaja. 
-        Kot harmonična funkcija na $\mathbb{D}(z_0, r)$ ima po trditvi \ref{harmonicnapovp} na $\mathbb{D}(z_0, r)$ lastnost povprečne vrednosti. 
-        Oglejmo si sedaj funkcijo $g(z) = h(z) - \widetilde{h}(z)$ za $z \in \overline{\mathbb{D}}(z_0,r)$. 
+        Trditev \ref{harmonicnapovp} nam dokaže eno implikacijo. Dokazati je potrebno torej le še, da je zvezna funkcija $h$ z lastnostjo povprečne vrednosti na $U$ harmonična. 
+        Dokaz temelji na obstoju rešitve Dirichletovega problema za poljuben disk. 
+        
+        Ker je $U$ območje, za poljubno točko $z_0 \in U$ obstaja $r>0$, da je $\overline{\mathbb{D}}(z_0,r) \subseteq U$. Ker je $h$ zvezna na $U$, $h$ na $\partial \overline{\mathbb{D}}(z_0, r)$ določa začetne pogoje za Dirichletov problem za disk $\mathbb{D}(z_0,r)$.
+        Trditev \ref{obstoj} in opomba \ref{alldisk} potrdita, da rešitev obstaja. Rešitev označimo s $H(z)$.
+        Kot harmonična funkcija na $\mathbb{D}(z_0, r)$, ima po trditvi \ref{harmonicnapovp} $H$ na $\mathbb{D}(z_0, r)$ lastnost povprečne vrednosti. 
+        Oglejmo si sedaj funkcijo $g(z) = h(z) - H(z)$ za $z \in \overline{\mathbb{D}}(z_0,r)$. 
         Kot razlika funkcij z lastnostjo povprečne vrednosti ima po trditvi \ref{linlpv} tudi $g$ na $\mathbb{D}(z_0, r)$ lastnost povprečne vrednosti in je kot razlika dveh zveznih funkcij zvezna na $\overline{D}(z_0, r)$.
-        Vemo celo, da na $\partial \overline{\mathbb{D}}(z_0, r)$ velja $g \equiv 0$, saj je zožitev $\widetilde{h}$ na $\partial \overline{\mathbb{D}}(z_0,r)$ enaka $h$. 
-        Po principu maksima, za funkcije z lastnostjo povprečne vrednosti je potem $g \equiv 0$. Oziroma $\widetilde{h} \equiv h$ na $\overline{\mathbb{D}}(z_0, r)$, kar nam da harmoničnost $h$ na $\mathbb{D}(z_0, r)$. 
-        Dokazali smo torej, da je $h$ harmonična v okolici vsake točke $z_0$ v $U$. To pa nam že zagotavlja harmoničnost $h$ na $U$. 
+        Vemo celo, da na $\partial \overline{\mathbb{D}}(z_0, r)$ velja $g \equiv 0$, saj je zožitev $H$ na $\partial \overline{\mathbb{D}}(z_0,r)$ enaka $h$. 
+        Po posledici \ref{posledica_pm_lpv} je potem $g \equiv 0$ na $\overline{\mathbb{D}}(z_0, r)$, oziroma $H(z) =  h(z)$, za vsak $z \in \overline{\mathbb{D}}(z_0, r)$. Sledi, da je $h$ harmonična na $\mathbb{D}(z_0, r)$, oziroma ima poljubna točka $z_0$ v $U$ okolico, na kateri je $h$ harmonična. 
+        Posledično je funkcija $h$ harmonična na $U$.
     \end{dokaz}
-    \begin{trditev}
-        Naj bo $u$ zvezna funkcija z lastnostjo povprečne vrednosti, definirana na območju $D$. Potem je $u$ na $D$ gladka, $u \in C^{\infty}(D)$.
-    \end{trditev}
+    \begin{posledica}
+        Naj bo $u$ zvezna funkcija z lastnostjo povprečne vrednosti, definirana na območju $D$. Potem je $u$ na $D$ gladka, oziroma $u \in C^{\infty}(D)$.
+    \end{posledica}
     \begin{dokaz}
         Po trditvi \ref{ekvhlp} je $u$ harmonična, po trditvi \ref{gladkosth} pa zato tudi gladka.
     \end{dokaz}
