@@ -349,6 +349,7 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
     Spodaj se bomo le seznanili z njihovo definicijo in pokazali, da zgoraj zastavljen Dirichletov problem ustreza definiciji. 
 
     \begin{definicija}[J. Hadamard 1902]
+        \label{def_dp}
         Pravimo, da je matematičen problem parcialni diferencialnih enačb z robnimi in začetnimi pogoji \emph{dobro postavljen}, če zanj velja:
         \begin{enumerate}[label={\Alph*)}]
             \item rešitev problema obstaja,
@@ -459,16 +460,16 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
     %$$
     %    P_r(\theta) = 1 + \frac{z}{1 - z} + \frac{\overline{z}}{1 - \overline{z}} = \frac{1 - |z|^2}{|1 - z|^2} = \frac{1 - r^2}{1 + r^2 - 2r\cos(\theta)}.
     %$$
-    \begin{opomba}
-        \label{par_s_t_Pr}
-        V literaturi se pogosto predpis za Poissonovo jedro za vsak $r \in [0,1)$, namesto z $\theta \in [0, 2\pi]$, zapiše v odvisosti od spremenljivke $t \in [0,1]$.
-        Predpis za Poissonovo jedro tako postane:
-        \begin{equation}
-            \label{poisson_t}
-           P_r(t) = \sum_{k = -\infty}^{\infty}{r^{|k|} e^{i (2 \pi t)k }} = \frac{1-r^2}{1+ r^2 - 2r \cos(2 \pi t)}\text{~,~~kjer je}~ t\in [0, 1]~\text{in}~ r < 1.
-        \end{equation}
-        Prednost takšnega zapisa, bo jasna v nadaljevanju.
-    \end{opomba}
+    %%%\begin{opomba}
+    %%%    \label{par_s_t_Pr}
+    %%%    V literaturi se pogosto predpis za Poissonovo jedro za vsak $r \in [0,1)$, namesto z $\theta \in [0, 2\pi]$, zapiše v odvisosti od spremenljivke $t \in [0,1]$.
+    %%%    Predpis za Poissonovo jedro tako postane:
+    %%%    \begin{equation}
+    %%%        \label{poisson_t}
+    %%%       P_r(t) = \sum_{k = -\infty}^{\infty}{r^{|k|} e^{i (2 \pi t)k }} = \frac{1-r^2}{1+ r^2 - 2r \cos(2 \pi t)}\text{~,~~kjer je}~ t\in [0, 1]~\text{in}~ r < 1.
+    %%%    \end{equation}
+    %%%    Prednost takšnega zapisa, bo jasna v nadaljevanju.
+    %%%\end{opomba}
 
     Preden se lotimo uporabe Poissonovega jedra, si s pomočjo zgornjih zapisov oglejmo še nekaj njegovih lastnosti, ki so zbrane v spodnjih trditvah. 
     
@@ -593,24 +594,24 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         \end{align}
     \end{definicija}
 
-    \begin{opomba}
-        \label{par_s_t_Qr}
-        Kot smo to storili v opombi \ref{par_s_t_Pr}, lahko tudi v predpisu za konjugirano Poissonovo jedro spremenljivko $\theta \in [0,2\pi]$ zamenjamo s spremenljivko $t \in [0,1]$. Dobimo:
-        $$
-        Q_r(\theta) = \frac{2 r \sin(2 \pi t)}{1+ r^2 - 2r \cos(2 \pi t)}\text{~,~~kjer je}~ t\in [0, 1]~\text{in}~ r < 1.
-        $$
-    \end{opomba}
+    %%%\begin{opomba}
+    %%%    \label{par_s_t_Qr}
+    %%%    Kot smo to storili v opombi \ref{par_s_t_Pr}, lahko tudi v predpisu za konjugirano Poissonovo jedro spremenljivko $\theta \in [0,2\pi]$ zamenjamo s spremenljivko $t \in [0,1]$. Dobimo:
+    %%%    $$
+    %%%    Q_r(\theta) = \frac{2 r \sin(2 \pi t)}{1+ r^2 - 2r \cos(2 \pi t)}\text{~,~~kjer je}~ t\in [0, 1]~\text{in}~ r < 1.
+    %%%    $$
+    %%%\end{opomba}
 
     \begin{opomba}
         Zapišimo zvezi, ki jih narekujeta zgornji komentar in definicija. Velja:
         $$
         P_r(\theta) + i~Q_r(\theta) = \left[ \frac{1-r^2}{1+ r^2 - 2r \cos(\theta)}\right] + i \left[\frac{2 r \sin(\theta)}{1+ r^2 - 2r \cos(\theta)}\right] = \frac{1 + re^{i\theta}}{1 - re^{i\theta}}~;~~r e^{i\theta} \in \mathbb{D}, 
         $$
-        oziroma v duhu zapisa iz opomb \ref{par_s_t_Pr} in \ref{par_s_t_Qr}:
-        \begin{align*}
-            P_r(t) + i~Q_r(t) &= \left[ \frac{1-r^2}{1+ r^2 - 2r \cos(2 \pi t)}\right] + i \left[\frac{2 r \sin(2 \pi t)}{1+ r^2 - 2r \cos(2 \pi t)}\right] \\ 
-            &=  \text{Re}\left[\frac{1 + re^{2 \pi i t}}{1 - re^{2 \pi i t}}\right] + i~\text{Im}\left[\frac{1 + re^{2 \pi i t}}{1 - re^{2 \pi i t}}\right]=\frac{1 + re^{2 \pi i t}}{1 - re^{2 \pi i t}};~t\in [0, 1], ~ r < 1.
-        \end{align*}        
+        %%%oziroma v duhu zapisa iz opomb \ref{par_s_t_Pr} in \ref{par_s_t_Qr}:
+        %%%\begin{align*}
+        %%%    P_r(t) + i~Q_r(t) &= \left[ \frac{1-r^2}{1+ r^2 - 2r \cos(2 \pi t)}\right] + i \left[\frac{2 r \sin(2 \pi t)}{1+ r^2 - 2r \cos(2 \pi t)}\right] \\ 
+        %%%    &=  \text{Re}\left[\frac{1 + re^{2 \pi i t}}{1 - re^{2 \pi i t}}\right] + i~\text{Im}\left[\frac{1 + re^{2 \pi i t}}{1 - re^{2 \pi i t}}\right]=\frac{1 + re^{2 \pi i t}}{1 - re^{2 \pi i t}};~t\in [0, 1], ~ r < 1.
+        %%%\end{align*}        
     \end{opomba}
 
     Sedaj se vrnimo k reševanju Dirichletovega problema za enotski disk. 
@@ -643,37 +644,39 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
 
      \begin{opomba}
         \label{opomba_konv1}
-        Spomnimo se alternativnega zapisa Poissonovega jedra, ki smo ga navedli v \eqref{poisson_t}. 
-        Opazimo, da bi se do takšnega zapisa Poissonovega jedra znotraj Poissonovega integrala lahko dokopali, z vpeljavo spremenljivke $s = \frac{\varphi}{ 2\pi}$, ter oznako $t = \frac{\theta}{2 \pi}$. 
-        Takrat namreč predpis za Poissonov integral postane:
-        $$
-        \widetilde{h}\left(r e^{2 \pi i t}\right) = \int_{0}^{1}{h\big(e^{(2 \pi i)s}\big) P_r(t - s)~ds},~\text{za}~~t \in [0,1]~\text{in}~r < 1. 
-        $$
-        Sedaj definirajmo funkcijo $f(w) = h(e^{(2 \pi i) w})$, ki nam omogoča zapis:
-        $$
-        \widetilde{h}\left(r e^{2 \pi i t}\right) = \int_{0}^{1}{f(s) P_r(t - s)~ds},~\text{za}~~t \in [0,1]~\text{in}~r < 1.
-        $$
-        Na tej točki se nam vse redukcije zapisa obrestujejo. V zgornjem zapisu Poissonovega integrala lahko namreč prepoznamo konvolucijo funkcije $f$ in Poissonovega jedra $P_r(t)$.
-        Velja torej:
-        \begin{equation}
-        \label{konv_Pr}
-            \widetilde{h}\left(r e^{2 \pi i t}\right) = (f * P_r)(t) = (P_r * f)(t),~\text{za}~~t \in [0,1]~\text{in}~r < 1.
-        \end{equation}
+        %%%Spomnimo se alternativnega zapisa Poissonovega jedra, ki smo ga navedli v \eqref{poisson_t}. 
+        %%%Opazimo, da bi se do takšnega zapisa Poissonovega jedra znotraj Poissonovega integrala lahko dokopali, z vpeljavo spremenljivke $s = \frac{\varphi}{ 2\pi}$, ter oznako $t = \frac{\theta}{2 \pi}$. 
+        %%%Takrat namreč predpis za Poissonov integral postane:
+        Če definiramo funkcijo $f(w) = h(e^{iw})$, lahko Poissonov integral zapišemo še nekoliko drugače. Velja:
+        \begin{align}
+            \label{konv_Pr}
+            \widetilde{h}(z) &= \int_{0}^{2\pi}{h(e^{i\varphi}) P_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}} = \int_{0}^{2\pi}{f(\varphi) P_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}} \notag \\
+            & = \frac{1}{2\pi} \left[(f * P_r)(\theta)\right] = \frac{1}{2\pi} \left[(P_r * f)(\theta)\right],~~z = r e^{i\theta},~\theta \in [0,2\pi],~r\in[0,1).
+        \end{align}
+        %$$Sedaj definirajmo funkcijo $f(w) = h(e^{(2 \pi i) w})$, ki nam omogoča zapis:
+        %$$$$
+        %$$\widetilde{h}\left(r e^{2 \pi i t}\right) = \int_{0}^{1}{f(s) P_r(t - s)~ds},~\text{za}~~t \in [0,1]~\text{in}~r < 1.
+        %$$$$
+        %$$Na tej točki se nam vse redukcije zapisa obrestujejo. V zgornjem zapisu Poissonovega integrala lahko namreč prepoznamo konvolucijo funkcije $f$ in Poissonovega jedra $P_r(t)$.
+        %%%Velja torej:
+        %%%\begin{equation}
+        %%%\label{konv_Pr}
+        %%%    \widetilde{h}\left(r e^{2 \pi i t}\right) = (f * P_r)(t) = (P_r * f)(t),~\text{za}~~t \in [0,1]~\text{in}~r < 1.
+        %%%\end{equation}
         Zadnja enakost v zgornjem zapisu je posledica komutativnosti konvolucije, ter še na nekoliko drugačen način dokazuje zapis iz opombe \ref{kom_poiss}. Velja namreč:
         \begin{align*}
-            \widetilde{h}\left(r e^{i \theta}\right) &= \widetilde{h}\left(r e^{2 \pi i t}\right) = (P_r * f)(t) = \int_{0}^{1}{P_r(s) f(t-s)~ds} = \int_{0}^{1}{h\big(e^{2 \pi i(t - s)}\big) P_r(s)~ds}\\
-            & = \int_{0}^{2\pi}{h\big(e^{i(\theta-\varphi)}\big) P_r(\varphi)~\frac{d\varphi}{2 \pi}}~;~~\text{za}~t \in [0,1]~\text{oziroma}~\theta \in [0,2\pi],~\text{ter}~r < 1.
+            \widetilde{h}\left(r e^{i \theta}\right) &= \frac{1}{2\pi} \left[(P_r * f)(\theta)\right] =  \frac{1}{2 \pi}\int_{0}^{2\pi}{P_r(\varphi) f(\theta - \varphi) ~d\varphi} \\
+            & = \int_{0}^{2\pi}{h\big(e^{i(\theta-\varphi)}\big) P_r(\varphi)~\frac{d\varphi}{2 \pi}},~~z = r e^{i\theta},~\theta \in [0,2\pi],~r\in[0,1). \notag
         \end{align*}
      \end{opomba}
 
      \begin{opomba}
         \label{opomba_konv2}
         Ogledali smo si alternativni zapis Poissonovega integrala s konvolucijo Poissonovega jedra. Smiselno se je vprašati, kako na zgornji postopek zapisa s konvolucijo vpliva zamenjava Poissonovega jedra s konjugiranim Poissonovim jedrom. Opazimo, da lahko po enakem postopku tudi integral s konjugiranim Poissonovim jedrom izrazimo kot konvolucijo. 
-        Zaradi preprostosti zapisa, bomo tu predpostavili enake oznake in definicijska območja spremenljivk, kot smo to  storili v zgornjem zapisu. Dobimo: 
-        \begin{equation}
-            \label{konv_Qr}
-            \int_{0}^{2\pi}{h(e^{i\varphi}) Q_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}} = \int_{0}^{1}{f(s) Q_r(t - s)~ds} = (f * Q_r)(t).
-        \end{equation}
+        Ponovno definiramo $f(w) = h(e^{i w})$, ki nam omogoča zapis:
+        \begin{equation*}
+            \int_{0}^{2\pi}{h(e^{i\varphi}) Q_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}}  = \frac{1}{2\pi}\int_{0}^{2 \pi}{f(\varphi) Q_r(\theta - \varphi)~d\varphi} = \frac{1}{2 \pi}[(f * Q_r)(\theta)],~re^{i\theta} \in \mathbb{D}.
+        \end{equation*}
      \end{opomba}
      Konvolucijska zapisa integrala iz opombe \ref{opomba_konv1} in \ref{opomba_konv2} bomo uporabili nekoliko kasneje, sedaj pa se še nekoliko posvetimo lastnostim Poissonovega integrala.
 
@@ -756,16 +759,16 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
     \begin{opomba}
         Spomnimo se zapisa iz opomb \ref{opomba_konv1} in \ref{opomba_konv2}. Schwarzovo integralsko formulo za holomorfno funkcijo $F = U + iV$ lahko alternativno zapišemo kot konvolucijo. Velja:
         $$
-            F(r e^{2 \pi i t}) = \int_{0}^{1}{U(e^{2 \pi i s})\left[\frac{e^{2 \pi i s}+r e^{2 \pi i t}}{e^{2 \pi i s}-r e^{2 \pi it}}\right]ds} + i V(0)~;~~~~t \in [0,1],~r \in [0,1).
+            F(r e^{i \theta}) = \int_{0}^{2 \pi}{U(e^{i \varphi})\left[\frac{e^{i \varphi}+r e^{i \theta}}{e^{i \varphi}-r e^{i \theta}}\right]~\frac{d \varphi}{2 \pi}} + i V(0)~;~~~~\theta \in [0,2 \pi],~r \in [0,1).
         $$
-        Označimo $G(w) = U(e^{(2 \pi i) w})$, ter poenostavimo. Dobimo:
+        Označimo $G(w) = U(e^{iw})$, ter poenostavimo. Dobimo:
         \begin{align*}
-            F(r e^{2 \pi i t}) & = \int_{0}^{1}{G(s)\left[\frac{1 +r e^{2 \pi i (t-s)}}{1-r e^{2 \pi i(t-s)}}\right]}ds + iV(0)\\
+            F(r e^{i \theta}) & = \int_{0}^{2 \pi}{G(\varphi)\left[\frac{1 +r e^{i (\theta-\varphi)}}{1-r e^{i(\theta-\varphi)}}\right]}~\frac{d\varphi}{2 \pi} + iV(0)\\
             %%& =\int_{0}^{1}{G(s)\left[\text{Re}\left[\frac{1 +r e^{2 \pi i (t-s)}}{1-r e^{2 \pi i(t-s)}}\right] + i~\text{Im}\left[\frac{1 +r e^{2 \pi i (t-s)}}{1-r e^{2 \pi i(t-s)}}\right] \right]}ds + i V(0) \\
-            & = \left[\int_{0}^{1}{G(s)[(P_r + i Q_r)(t - s)]}ds\right]+  iV(0) \\
-            & = \left[G * (P_r + iQ_r)\right](t) + iV(0)\\
+            & = \frac{1}{2 \pi} \left[\int_{0}^{2 \pi}{G(\varphi)[(P_r + i Q_r)(\theta - \varphi)]}~d\varphi\right]+  iV(0) \\
+            & = \frac{1}{2 \pi} \big[G * (P_r + iQ_r)\big](\theta) + iV(0)\\
             %& = \left[(G * P_r) + i(G*Q_r)\right](t) + iV(0)\\
-            & = (G * P_r)(t) + i~[(G * Q_r)(t) + V(0)]~,~~~~t\in [0,1],~r \in [0,1).
+            & = \frac{1}{2 \pi}\bigg[(G * P_r)(t) + i\big[(G * Q_r)(t) + 2 \pi V(0)\big]\bigg]~,~~~~\theta\in [0,2 \pi],~r \in [0,1).
         \end{align*}
     \end{opomba}
 
@@ -853,12 +856,30 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
     \end{dokaz}
 
     \begin{posledica}
-        SPREMENI!!
         Dirichletov problem za enotski disk je dobro postavljen matematičen problem. 
     \end{posledica}
     \begin{dokaz}
-        Obstoj rešitve za vsako zvezno začetno podano funkcijo nam preko eksplicitne konstrukcije zagotavlja trditev \ref{obstoj}. 
-        Enoličnost rešitve nam zagotavlja lema \ref{enolicno}, zvezna odvisnost rešitve od začetnih podatkov, pa je predpostavka problema (funkcija reši problem le v primeru, ko je zvezna na zaprtju enotskega diska, kar nam zagotavlja zvezno odvisnost od pogojev na robu diska oziroma zvezno odvisnost od začetnih pogojev).
+        Dokažimo, da Dirichletov problem za enotski disk ustreza zahtevam A), B) in C) iz definicije \ref{def_dp}.
+        Zahtevo A), oziroma obstoj rešitve za vsako zvezno funkcijo definirani na robu enotskega diska, nam preko eksplicitne konstrukcije zagotavlja trditev \ref{obstoj}. Enoličnost rešitve oziroma zahtevo B) pa nam potrjuje lema \ref{enolicno}. 
+        
+        Osredotočimo se na zahtevo C). 
+        Naj bo $\epsilon > 0$ poljubno majhen in $h$ zvezna funkcija, definirana na $\partial \mathbb{D}$. 
+        Naj bo $g$ poljubna zvezna funkcija, definirana na $\partial \mathbb{D}$, za katero za vsak $z \in \partial \mathbb{D}$ velja: $|h(z) - g(z)| < \epsilon$. 
+        Definirajmo $f(z) = h(z) - g(z)$. Opazimo, da velja $|f(z)| < \epsilon$, za vsak $z \in \partial \mathbb{D}$. Točka b) trditve \ref{lastpi} nam pove, da potem za vsak $z \in \mathbb{D}$ velja $|\widetilde{f}(z)| < \epsilon$, po točki a) trditve \ref{lastpi} pa sledi \mbox{$|\widetilde{h}(z) - \widetilde{g}(z)| < \epsilon$}, za vsak $z \in \mathbb{D}$.
+        Definirajmo funkciji $H$ in $G$ kot:
+        $$
+            H(z) = \begin{cases}
+                    h(z);~~z \in \partial \mathbb{D}\\
+                    \widetilde{h}(z);~~z \in \mathbb{D}
+            \end{cases},~~~~~~~
+            G(z) = \begin{cases}
+                g(z);~~z \in \partial \mathbb{D}\\
+                \widetilde{g}(z);~~z \in \mathbb{D}
+            \end{cases}.
+        $$
+        Trditev \ref{obstoj} nam pove, da je rešitev za Dirichletov problem na enotskem disku, z začetnim pogojem $h$, funkcija $H$, za začetni pogoj $g$ pa funkcija $G$.
+        Zapisali smo, da se funkciji $G$ in $H$ na $\partial \mathbb{D}$ in $\mathbb{D}$ po absolutni vrednosti razlikujeta za manj kot $\epsilon$. Sledi, da velja $|H(z) - G(z)| < \epsilon$ za vsak $z \in \overline{\mathbb{D}}$.     
+        Ker je bil $\epsilon$ poljubno majhen, smo s tem dokazali zvezno odvisnost problema od začetnih pogojev.
     \end{dokaz}
 
     \begin{opomba}
