@@ -192,6 +192,31 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         Definicija nam pove, da ima zvezna funkcija $h$ na območju $D \subseteq \C$ lastnost povprečne vrednosti, če za vsak $z_0$ iz $D$ velja, 
         da je $h(z_0)$ povprečje vrednosti $h(z)$, kjer $z$ teče po majhni krožnici s središčem v $z_0$.
     \end{opomba}
+
+    Smiselno se je vprašati, zakaj je pogoj, da ima funkcija lastnost povprečne vrednosti, definiran prek krivuljnega integrala po robu diska in ne ploskovnega integrala po območju, ki ga omejuje rob diska.
+    Naslednja trditev nam pove, da funkcija, ki ima lastnost povprečne vrednosti, torej je vrednost v središču enaka povprečju vrednosti na robu majhnega diska, zadošča tudi pogoju, da je vrednost v središču enak povprečju vrednosti na celotnem disku.
+
+    \begin{trditev}
+        Naj bo $u$ zvezna funkcija, definirana na območju $D$. Naj ima $u$ na $D$ lastnost povprečne vrednosti, ter denimo da za $z_0 \in D$ in $r>0$ velja $\overline{\mathbb{D}}(z_0,r) \subseteq D$. Potem velja:
+        $$
+            u(z_0) = \frac{1}{\pi r^2} \iint_{\mathbb{D}(z_0,r)}{u(x + iy)~dxdy}.
+        $$
+    \end{trditev}
+    \begin{dokaz}
+        Dvojni integral po disku, lahko z uvedbo polarnih koordinat $x = z_0 + \rho \cos(\theta)$, $y = z_0 + \rho \sin(\theta)$ prevedemo na dvakratnega. Velja:
+        $$
+        \frac{1}{\pi r^2} \iint_{\mathbb{D}(z_0,r)}{u(x + iy)~dxdy} = \frac{1}{\pi r^2} \int_{0}^{r}{\rho \left[\int_{0}^{2 \pi} u(z_0 + \rho e^{i\theta})~d\theta \right]d\rho}. 
+        $$
+        Ker ima $u$ na $D$ lastnost povprečne vrednosti, velja:
+        $$
+            2 \pi~u(z_0) = \int_{0}^{2 \pi}{u(z_0 + \rho e^{i \theta}) d\theta},~\text{za vsak}~\rho \in [0, r].
+        $$
+        Sledi:
+        $$
+        \frac{1}{\pi r^2} \iint_{\mathbb{D}(z_0,r)}{u(x + iy)~dxdy} = \frac{2}{r^2} \int_{0}^{r}{\rho \left[u(z_0)\right]d\rho} = u(z_0) \left[\frac{2}{r^2} \int_{0}^{r}{\rho~d\rho}\right] = u(z_0).
+        $$
+    \end{dokaz}
+
     \begin{trditev}
         \label{linlpv}
         Linearna kombinacija funkcij z lastnostjo povprečne vrednosti je funkcija z lastnostjo povprečne vrednosti. 
