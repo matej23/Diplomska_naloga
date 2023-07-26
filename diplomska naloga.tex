@@ -613,8 +613,6 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         \end{align*}        
     \end{opomba}
 
-
-
     Sedaj se vrnimo k reševanju Dirichletovega problema za enotski disk. 
     Spomnimo se, da smo za polinomske funkcije $h$ skonstruirali predpis razširitve, ki je rešila zastavljen problem. 
     Opazimo, da bi si pri zapisu enačbe \eqref{int1} lahko pomagali z definiranim pojmom Poissonovega jedra. Lahko zapišemo:
@@ -756,11 +754,11 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
     \end{dokaz}
 
     \begin{opomba}
-        Spomnimo se zapisa iz opomb \ref{opomba_konv1} in \ref{opomba_konv2}. Schwarzovo integralsko formulo za holomorfno funkcijo $F = U + iV$ lahko alternativno zapišemo kot konvolucijo.  
+        Spomnimo se zapisa iz opomb \ref{opomba_konv1} in \ref{opomba_konv2}. Schwarzovo integralsko formulo za holomorfno funkcijo $F = U + iV$ lahko alternativno zapišemo kot konvolucijo. Velja:
         $$
-            F(r e^{2 \pi i t}) = \int_{0}^{1}{U(e^{2 \pi i s})\left[\frac{e^{2 \pi i s}+r e^{2 \pi i t}}{e^{2 \pi i s}-r e^{2 \pi it}}\right]ds} + i V(0)~;~~~~t \in [0,1],~r \in [0,1)
+            F(r e^{2 \pi i t}) = \int_{0}^{1}{U(e^{2 \pi i s})\left[\frac{e^{2 \pi i s}+r e^{2 \pi i t}}{e^{2 \pi i s}-r e^{2 \pi it}}\right]ds} + i V(0)~;~~~~t \in [0,1],~r \in [0,1).
         $$
-        Označimo $G(w) = U(e^{2 \pi i w})$ poenostavimo. Dobimo:
+        Označimo $G(w) = U(e^{(2 \pi i) w})$, ter poenostavimo. Dobimo:
         \begin{align*}
             F(r e^{2 \pi i t}) & = \int_{0}^{1}{G(s)\left[\frac{1 +r e^{2 \pi i (t-s)}}{1-r e^{2 \pi i(t-s)}}\right]}ds + iV(0)\\
             %%& =\int_{0}^{1}{G(s)\left[\text{Re}\left[\frac{1 +r e^{2 \pi i (t-s)}}{1-r e^{2 \pi i(t-s)}}\right] + i~\text{Im}\left[\frac{1 +r e^{2 \pi i (t-s)}}{1-r e^{2 \pi i(t-s)}}\right] \right]}ds + i V(0) \\
@@ -771,7 +769,7 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         \end{align*}
     \end{opomba}
 
-    Za preproste zvezne funkcije smo že dokazali, da rešitev Dirichletovega problema na enotskem disku obstaja. To nas je pripeljalo do definicije Poissonovega jedra in Poissonovega integrala, s pomočjo katerih bomo sedaj pokazali, da lahko za poljubno zvezno funkcijo obstaja rešitev Dirichletovega problema na enotskem disku.
+    Vrnimo se k bistvu razdelka. Za preproste zvezne funkcije smo že dokazali, da rešitev Dirichletovega problema na enotskem disku obstaja. To nas je pripeljalo do definicije Poissonovega jedra in Poissonovega integrala, s pomočjo katerih bomo sedaj pokazali, da lahko za poljubno zvezno funkcijo obstaja rešitev Dirichletovega problema na enotskem disku.
     \begin{trditev}
         \label{obstoj}
         Naj bo $h$ zvezna kompleksna funkcija, definirana na $\partial \mathbb{D}$. Rešitev Dirichletovega problema, z robnim pogojem $h$, za enotski disk obstaja in je na $\mathbb{D}$ definirana kot Poissonov integral funkcije $h$.
