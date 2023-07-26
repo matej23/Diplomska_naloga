@@ -460,11 +460,12 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
     %    P_r(\theta) = 1 + \frac{z}{1 - z} + \frac{\overline{z}}{1 - \overline{z}} = \frac{1 - |z|^2}{|1 - z|^2} = \frac{1 - r^2}{1 + r^2 - 2r\cos(\theta)}.
     %$$
     \begin{opomba}
+        \label{par_s_t_Pr}
         V literaturi se pogosto predpis za Poissonovo jedro za vsak $r \in [0,1)$, namesto z $\theta \in [0, 2\pi]$, zapiše v odvisosti od spremenljivke $t \in [0,1]$.
         Predpis za Poissonovo jedro tako postane:
         \begin{equation}
             \label{poisson_t}
-           P_r(t) = \sum_{k = -\infty}^{\infty}{r^{|k|} e^{i (2 \pi t)k }}\text{, kjer je}~ t\in [0, 1]~\text{in}~ r < 1.
+           P_r(t) = \sum_{k = -\infty}^{\infty}{r^{|k|} e^{i (2 \pi t)k }} = \frac{1-r^2}{1+ r^2 - 2r \cos(2 \pi t)}\text{~,~~kjer je}~ t\in [0, 1]~\text{in}~ r < 1.
         \end{equation}
         Prednost takšnega zapisa, bo jasna v nadaljevanju.
     \end{opomba}
@@ -557,14 +558,6 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         O tem si bralec več lahko prebere na REFERENCA.
     \end{opomba}
 
-    \begin{trditev}
-        Poissonovo jedro je na enotskem disku harmonična funkcija. 
-    \end{trditev}
-    \begin{dokaz}
-        Trditev \ref{hh} nam pove, da je dovolj pokazati, da lahko Poissonovo jedro zapišemo kot realni del holomorfne funkcije, definirane na enotskem disku.
-        Zapis \eqref{eq3} nam pove, da je Poissonovo jedro realni del funkcije $f(z) = \frac{1 + z}{1 - z},~z \in \mathbb{D}$. Ker je $f$ na enotskem disku tudi holomorfna, je trditev s tem dokazana. 
-    \end{dokaz}
-
     \begin{opomba}
         Lastnosti Poissonovega jedra, navedene v trditvi \ref{lastpk} in \ref{proti0}, so tudi dobro razvidne na spodnji sliki. 
     \end{opomba}
@@ -575,6 +568,52 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         \caption{Graf Poissonovega jedra glede na vrednost spremenljivke $r$.}
         \end{center}    
     \end{figure}
+
+    \begin{trditev}
+        \label{poiss_harm}
+        Poissonovo jedro je na enotskem disku harmonična funkcija. 
+    \end{trditev}
+    \begin{dokaz}
+        Trditev \ref{hh} nam pove, da je dovolj pokazati, da lahko Poissonovo jedro zapišemo kot realni del holomorfne funkcije, definirane na enotskem disku.
+        Zapis \eqref{eq3} nam pove, da je Poissonovo jedro realni del funkcije $f(z) = \frac{1 + z}{1 - z},~z \in \mathbb{D}$. Ker je $f$ na enotskem disku tudi holomorfna, je trditev s tem dokazana. 
+    \end{dokaz}
+
+    Ker je enotski disk zvezdasto območje, Poissonovo jedro pa po trditvi \ref{poiss_harm} harmonična funkcija, po trditvi \ref{konj} obstaja harmonična konjugiranka Poissonovega jedra. 
+    Opazimo, da smo v zapisu \eqref{eq3} Poissonovo jedro prikladno zapisali kot realni del holomorfne funkcije, zato se nam ponuja harmonična konjugiranka Poissonovega jedra kot imaginarni del zapisane holomorfne funkcije.
+    Velja:
+    \begin{align*}
+        \text{Im}\left[\frac{1 + z}{1-z}\right] &= \frac{\frac{1 + z}{1-z} - \left(\overline{\frac{1 + z}{1-z}}\right)}{2i} = \frac{(1 + z)(1 - \overline{z}) - (1 + \overline{z})(1 - z)}{|1 - z|^2~2i} & & \\ 
+        & = \frac{2~\text{Im}z}{|1 - z|^2} = \frac{2 r \sin(\theta)}{1+ r^2 - 2r \cos(\theta)}~; & & z = r e^{i\theta} \in \mathbb{D}.
+    \end{align*}
+    Prav to nas sedaj pripelje do naslednje definicije. 
+    \begin{definicija}
+        \emph{Konjugirano Poissonovo jedro}, je funkcija definirana s predpisom:
+        \begin{align}
+            Q_r(\theta) & = \frac{2 r \sin(\theta)}{1+ r^2 - 2r \cos(\theta)}~;~~r \in [0,1),~\theta \in [0,2\pi].
+        \end{align}
+    \end{definicija}
+
+    \begin{opomba}
+        \label{par_s_t_Qr}
+        Kot smo to storili v opombi \ref{par_s_t_Pr}, lahko tudi v predpisu za konjugirano Poissonovo jedro spremenljivko $\theta \in [0,2\pi]$ zamenjamo s spremenljivko $t \in [0,1]$. Dobimo:
+        $$
+        Q_r(\theta) = \frac{2 r \sin(2 \pi t)}{1+ r^2 - 2r \cos(2 \pi t)}\text{~,~~kjer je}~ t\in [0, 1]~\text{in}~ r < 1.
+        $$
+    \end{opomba}
+
+    \begin{opomba}
+        Zapišimo zvezi, ki jih narekujeta zgornji komentar in definicija. Velja:
+        $$
+        P_r(\theta) + i~Q_r(\theta) = \left[ \frac{1-r^2}{1+ r^2 - 2r \cos(\theta)}\right] + i \left[\frac{2 r \sin(\theta)}{1+ r^2 - 2r \cos(\theta)}\right] = \frac{1 + re^{i\theta}}{1 - re^{i\theta}}~;~~r e^{i\theta} \in \mathbb{D}, 
+        $$
+        oziroma v duhu zapisa iz opomb \ref{par_s_t_Pr} in \ref{par_s_t_Qr}:
+        \begin{align*}
+            P_r(t) + i~Q_r(t) &= \left[ \frac{1-r^2}{1+ r^2 - 2r \cos(2 \pi t)}\right] + i \left[\frac{2 r \sin(2 \pi t)}{1+ r^2 - 2r \cos(2 \pi t)}\right] \\ 
+            &=  \text{Re}\left[\frac{1 + re^{2 \pi i t}}{1 - re^{2 \pi i t}}\right] + i~\text{Im}\left[\frac{1 + re^{2 \pi i t}}{1 - re^{2 \pi i t}}\right]=\frac{1 + re^{2 \pi i t}}{1 - re^{2 \pi i t}};~t\in [0, 1], ~ r < 1.
+        \end{align*}        
+    \end{opomba}
+
+
 
     Sedaj se vrnimo k reševanju Dirichletovega problema za enotski disk. 
     Spomnimo se, da smo za polinomske funkcije $h$ skonstruirali predpis razširitve, ki je rešila zastavljen problem. 
@@ -605,9 +644,10 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
      \end{opomba}
 
      \begin{opomba}
+        \label{opomba_konv1}
         Spomnimo se alternativnega zapisa Poissonovega jedra, ki smo ga navedli v \eqref{poisson_t}. 
         Opazimo, da bi se do takšnega zapisa Poissonovega jedra znotraj Poissonovega integrala lahko dokopali, z vpeljavo spremenljivke $s = \frac{\varphi}{ 2\pi}$, ter oznako $t = \frac{\theta}{2 \pi}$. 
-        Takrat namreč predpis za Poissonov intgeral postane:
+        Takrat namreč predpis za Poissonov integral postane:
         $$
         \widetilde{h}\left(r e^{2 \pi i t}\right) = \int_{0}^{1}{h\big(e^{(2 \pi i)s}\big) P_r(t - s)~ds},~\text{za}~~t \in [0,1]~\text{in}~r < 1. 
         $$
@@ -617,15 +657,27 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         $$
         Na tej točki se nam vse redukcije zapisa obrestujejo. V zgornjem zapisu Poissonovega integrala lahko namreč prepoznamo konvolucijo funkcije $f$ in Poissonovega jedra $P_r(t)$.
         Velja torej:
-        $$
-        \widetilde{h}\left(r e^{2 \pi i t}\right) = (f * P_r)(t) = (P_r * f)(t),~\text{za}~~t \in [0,1]~\text{in}~r < 1.
-        $$
+        \begin{equation}
+        \label{konv_Pr}
+            \widetilde{h}\left(r e^{2 \pi i t}\right) = (f * P_r)(t) = (P_r * f)(t),~\text{za}~~t \in [0,1]~\text{in}~r < 1.
+        \end{equation}
         Zadnja enakost v zgornjem zapisu je posledica komutativnosti konvolucije, ter še na nekoliko drugačen način dokazuje zapis iz opombe \ref{kom_poiss}. Velja namreč:
         \begin{align*}
             \widetilde{h}\left(r e^{i \theta}\right) &= \widetilde{h}\left(r e^{2 \pi i t}\right) = (P_r * f)(t) = \int_{0}^{1}{P_r(s) f(t-s)~ds} = \int_{0}^{1}{h\big(e^{2 \pi i(t - s)}\big) P_r(s)~ds}\\
             & = \int_{0}^{2\pi}{h\big(e^{i(\theta-\varphi)}\big) P_r(\varphi)~\frac{d\varphi}{2 \pi}}~;~~\text{za}~t \in [0,1]~\text{oziroma}~\theta \in [0,2\pi],~\text{ter}~r < 1.
         \end{align*}
      \end{opomba}
+
+     \begin{opomba}
+        \label{opomba_konv2}
+        Ogledali smo si alternativni zapis Poissonovega integrala s konvolucijo Poissonovega jedra. Smiselno se je vprašati, kako na zgornji postopek zapisa s konvolucijo vpliva zamenjava Poissonovega jedra s konjugiranim Poissonovim jedrom. Opazimo, da lahko po enakem postopku tudi integral s konjugiranim Poissonovim jedrom izrazimo kot konvolucijo. 
+        Zaradi preprostosti zapisa, bomo tu predpostavili enake oznake in definicijska območja spremenljivk, kot smo to  storili v zgornjem zapisu. Dobimo: 
+        \begin{equation}
+            \label{konv_Qr}
+            \int_{0}^{2\pi}{h(e^{i\varphi}) Q_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}} = \int_{0}^{1}{f(s) Q_r(t - s)~ds} = (f * Q_r)(t).
+        \end{equation}
+     \end{opomba}
+     Konvolucijska zapisa integrala iz opombe \ref{opomba_konv1} in \ref{opomba_konv2} bomo uporabili nekoliko kasneje, sedaj pa se še nekoliko posvetimo lastnostim Poissonovega integrala.
 
      \begin{trditev}
         \label{lastpi}
@@ -662,22 +714,69 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
      \end{lema}
      \begin{dokaz}
         Pomagajmo si z zapisom \eqref{eq3}. Za $z = re^{i\theta} \in \mathbb{D}$ lahko zapišemo:
-        
-        \begin{equation}
-            \begin{split}
-                \widetilde{u}(z) = \widetilde{u}(r e^{i \theta}) = \int_{-\pi}^{\pi}{u(e^{i \varphi}) P_r(\theta - \varphi)\frac{d \varphi}{2 \pi}} = \int_{-\pi}^{\pi}{u(e^{i \varphi})~\text{Re}\bigg(\frac{1+re^{i(\theta - \varphi)}}{1-re^{i(\theta - \varphi)}}\bigg)\frac{d \varphi}{2 \pi}}= \\
-                = \int_{-\pi}^{\pi}{u(e^{i \varphi})~\text{Re}\bigg(\frac{e^{i\varphi}+re^{i\theta}}{e^{i\varphi}-re^{i\theta}}\bigg)\frac{d \varphi}{2 \pi}}=~\text{Re}~\bigg[\int_{-\pi}^{\pi}{u(e^{i \varphi})\bigg(\frac{e^{i\varphi}+z}{e^{i\varphi}-z}\bigg)\frac{d \varphi}{2 \pi}}\bigg].
-            \end{split}
-        \end{equation}
-    
+            \begin{align}
+                \label{lema_schwarz}
+                \widetilde{u}(z) &= \widetilde{u}(r e^{i \theta}) = \int_{-\pi}^{\pi}{u(e^{i \varphi}) P_r(\theta - \varphi)\frac{d \varphi}{2 \pi}} = \int_{-\pi}^{\pi}{u(e^{i \varphi})~\text{Re}\bigg(\frac{1+re^{i(\theta - \varphi)}}{1-re^{i(\theta - \varphi)}}\bigg)\frac{d \varphi}{2 \pi}} \notag \\
+                &= \int_{-\pi}^{\pi}{u(e^{i \varphi})~\text{Re}\bigg(\frac{e^{i\varphi}+re^{i\theta}}{e^{i\varphi}-re^{i\theta}}\bigg)\frac{d \varphi}{2 \pi}}=~\text{Re}~\bigg[\int_{-\pi}^{\pi}{u(e^{i \varphi})\bigg(\frac{e^{i\varphi}+z}{e^{i\varphi}-z}\bigg)\frac{d \varphi}{2 \pi}}\bigg].
+            \end{align}
         Tako smo $\widetilde{u}(z)$ za $z \in \mathbb{D}$ izrazili kot realni del holomorfne funkcije, kar po trditvi \ref{hh} dokazuje harmoničnost Poissonovega integrala funkcije $u$, na notranjosti enotskega diska.
      \end{dokaz}
-        
-     \begin{trditev}
+
+     Osredotočimo se na predpis holomorfne funkcije iz zapisa \eqref{lema_schwarz}. Opazimo, da smo jo konstruirali s pomočjo podane realne funkcije $u$. 
+     Sedaj začnimo nekoliko drugače. Denimo da imamo podano funkcijo $F = U + iV$, ki je na $\overline{\mathbb{D}}$ zvezna in na $\mathbb{D}$ holomorfna. Vredno je omeniti, da sta tu v zapisu $U$ in $V$ realni funkciji, ki predstavljata realni oziroma imaginarni del funkcije $F$, ter sta zato na $\overline{\mathbb{D}}$ zvezni in na $\mathbb{D}$ harmonični.
+     Iz realnega dela holomorfne funkcije $F$, torej funkcije $U$ lahko na enak način, kot smo to storili v \eqref{lema_schwarz} konstruiramo holomorfno funkcijo $\widetilde{F}$ kot:
+     \begin{equation}
+        \label{priprav_schwarz}
+        \widetilde{F}(z) = \int_{0}^{2 \pi}{U(e^{i \varphi})\bigg(\frac{e^{i\varphi}+z}{e^{i\varphi}-z}\bigg)\frac{d \varphi}{2 \pi}},~z \in \mathbb{D}.
+    \end{equation}
+    Enakost \eqref{lema_schwarz} nam pove, da za $z = r e^{i\theta}\in \mathbb{D}$ velja: $\text{Re}(\widetilde{F})(z) = U(z)$, zato se je smiselno vprašati ali lahko kaj podobnega na $\mathbb{D}$ trdimo tudi za $\widetilde{F}$ in $F$. 
+    O tem nam več pove naslednja posledica. 
+
+    \begin{posledica}[Schwarzova integralska formula]
+        Naj bo $F = U + iV$ holomorfna na $\mathbb{D}$ in zvezna na $\overline{\mathbb{D}}$. Potem velja: 
+        $$ 
+            F(z) = \int_{0}^{2 \pi}{U(e^{i \varphi})\bigg(\frac{e^{i\varphi}+z}{e^{i\varphi}-z}\bigg)\frac{d \varphi}{2 \pi}} + i V(0),~z \in \mathbb{D}.
+        $$
+    \end{posledica}
+    \begin{dokaz}
+        Enako kot smo to storili v \eqref{lema_schwarz} in \eqref{priprav_schwarz}, lahko definiramo holomorfno funkcijo:
+        $$
+        \widetilde{F}(z) = \int_{0}^{2 \pi}{U(e^{i \varphi})\bigg(\frac{e^{i\varphi}+z}{e^{i\varphi}-z}\bigg)\frac{d \varphi}{2 \pi}},~z \in \mathbb{D}.
+        $$
+        Komentirali smo že, da po \eqref{lema_schwarz} velja $\text{Re}(\widetilde{F}) \equiv \text{Re}(F)$, oziroma $\text{Re}[\widetilde{F} - F](z) = 0$, za vsak $z \in \mathbb{D}$. Razlika holomorfnih funkcij zadošča Cauchy-Riemannovemu sistem enačb, zato obstaja $C \in \mathbb{C}$, da velja $\text{Im}[\widetilde{F} - F](z) = C$, za vsak $z \in \mathbb{D}$.
+        Ker je $U$ na $\mathbb{D}$ harmonična, ima na $U$ lastnost povprečne vrednosti. Zato velja:
+        $$
+        \widetilde{F}(0) = \int_{0}^{2 \pi}{U(e^{i \varphi})\bigg(\frac{e^{i\varphi}+0}{e^{i\varphi}-0}\bigg)\frac{d \varphi}{2 \pi}} = \int_{0}^{2 \pi}{U(e^{i \varphi})\frac{d \varphi}{2 \pi}} = U(0).
+        $$
+        Ker je $F(0) = U(0) + iV(0)$, sledi $\text{Im}[F - \widetilde{F}] \equiv V(0)$.
+        Torej velja:
+        $$ 
+        F(z) = \widetilde{F}(z) + iV(0) = \int_{0}^{2 \pi}{U(e^{i \varphi})\bigg(\frac{e^{i\varphi}+z}{e^{i\varphi}-z}\bigg)\frac{d \varphi}{2 \pi}} + i V(0),~z \in \mathbb{D}.
+        $$
+    \end{dokaz}
+
+    \begin{opomba}
+        Spomnimo se zapisa iz opomb \ref{opomba_konv1} in \ref{opomba_konv2}. Schwarzovo integralsko formulo za holomorfno funkcijo $F = U + iV$ lahko alternativno zapišemo kot konvolucijo.  
+        $$
+            F(r e^{2 \pi i t}) = \int_{0}^{1}{U(e^{2 \pi i s})\left[\frac{e^{2 \pi i s}+r e^{2 \pi i t}}{e^{2 \pi i s}-r e^{2 \pi it}}\right]ds} + i V(0)~;~~~~t \in [0,1],~r \in [0,1)
+        $$
+        Označimo $G(w) = U(e^{2 \pi i w})$ poenostavimo. Dobimo:
+        \begin{align*}
+            F(r e^{2 \pi i t}) & = \int_{0}^{1}{G(s)\left[\frac{1 +r e^{2 \pi i (t-s)}}{1-r e^{2 \pi i(t-s)}}\right]}ds + iV(0)\\
+            %%& =\int_{0}^{1}{G(s)\left[\text{Re}\left[\frac{1 +r e^{2 \pi i (t-s)}}{1-r e^{2 \pi i(t-s)}}\right] + i~\text{Im}\left[\frac{1 +r e^{2 \pi i (t-s)}}{1-r e^{2 \pi i(t-s)}}\right] \right]}ds + i V(0) \\
+            & = \left[\int_{0}^{1}{G(s)[(P_r + i Q_r)(t - s)]}ds\right]+  iV(0) \\
+            & = \left[G * (P_r + iQ_r)\right](t) + iV(0)\\
+            %& = \left[(G * P_r) + i(G*Q_r)\right](t) + iV(0)\\
+            & = (G * P_r)(t) + i~[(G * Q_r)(t) + V(0)]~,~~~~t\in [0,1],~r \in [0,1).
+        \end{align*}
+    \end{opomba}
+
+    Za preproste zvezne funkcije smo že dokazali, da rešitev Dirichletovega problema na enotskem disku obstaja. To nas je pripeljalo do definicije Poissonovega jedra in Poissonovega integrala, s pomočjo katerih bomo sedaj pokazali, da lahko za poljubno zvezno funkcijo obstaja rešitev Dirichletovega problema na enotskem disku.
+    \begin{trditev}
         \label{obstoj}
         Naj bo $h$ zvezna kompleksna funkcija, definirana na $\partial \mathbb{D}$. Rešitev Dirichletovega problema, z robnim pogojem $h$, za enotski disk obstaja in je na $\mathbb{D}$ definirana kot Poissonov integral funkcije $h$.
-     \end{trditev}
-     \begin{opomba}
+    \end{trditev}
+    \begin{opomba}
         \label{opomba_obstoj}
         Pred dokazom trditve še na nekoliko drugačen način zapišimo, kaj nam trditev v resnici pove. 
         Definirajmo funkcijo $H$, na $\overline{\mathbb{D}}$, kot:
