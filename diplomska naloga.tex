@@ -907,21 +907,80 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         Ker je bil $\epsilon$ poljubno majhen, smo s tem dokazali zvezno odvisnost problema od začetnih pogojev.
     \end{dokaz}
 
-    \begin{posledica}
-        Vsi diski
-    \end{posledica}
+    Pred nadaljevanjem Poissonov integral zapišimo nekoliko drugače. Opazimo, da gre v resnici za krivuljni integral po robu enotskega diska, pri čemer smo rob enotskega diska parametrizirali s funkcijo $e^{it},~t \in [0,2 \pi]$. 
+    Za nadaljevanje nam bo prav prišel zapis s krivujnim integralom, zato si ga izpeljimo. Po definiciji Poissonovega integrala in Poissonovega jedra velja:
+    \begin{align*}
+        \widetilde{h}(r e^{i\theta}) &= \int_{0}^{2\pi}{h(e^{i\varphi}) P_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}} = \int_{0}^{2\pi}{h(e^{i\varphi}) \left[\frac{1 - |r e^{i (\theta - \varphi)}|^2}{|1 - r e^{i (\theta - \varphi)}|^2}\right]\frac{d\varphi}{2 \pi}} \\
+        & = \int_{0}^{2\pi}{h(e^{i\varphi}) \left[\frac{1 - |r e^{i \theta}|^2}{|e^{i \varphi} - r e^{i \theta}|^2}\right]\frac{d\varphi}{2 \pi}};~~ r \in [0,1),~\theta \in [0,2 \pi].
+    \end{align*}
+    Sedaj označimo $z = re^{i \theta}$ in v integral vpeljimo $w = e^{i \varphi}$. Velja:
+    \begin{align}
+        \label{pi_kompl}
+        \widetilde{h}(z) &= \frac{1}{2 \pi}\int_{0}^{2\pi}{h(e^{i\varphi}) \left[\frac{1 - |ze^{ -i\varphi}|^2}{|1 - ze^{-i\varphi}|^2}\right]\frac{d\varphi}{2 \pi}}= \frac{1}{2\pi}\int_{0}^{2\pi}{h(e^{i\varphi}) \left[\frac{|1 - |z|^2}{|e^{i \varphi} - z|^2}\right]\frac{d\varphi}{2 \pi}} \notag \\
+        & = \frac{1}{2\pi i}\int_{\partial \mathbb{D}}{h(w) \left[\frac{1 - |z|^2}{|w - z|^2}\right]\frac{dw}{w}} =  \frac{1}{2\pi i}~\text{Re}\left[\int_{\partial \mathbb{D}}{h(w) \left(\frac{w + z }{w - z}\right)\frac{dw}{w}}\right];~ z \in \mathbb{D}.
+    \end{align}
+    Dirichletov problem smo do sedaj formulirali in reševali za enotski disk. Problem bi na podoben način lahko formulirali za poljubno območje $U \subseteq \mathbb{C}$. 
+    Kot začetni pogoj bi podali zvezno funkcijo, definirano na $\partial U$, ter iskali njeno razširitev na $\overline{U}$, tako da bi bila na $\overline{U}$ zvezna, ter na $U$ harmonična.
+    
+    V splošnem Dirichletovega problema znotraj diplomske naloge ne bomo reševali, bomo pa komentirali obstoj in konstrukcijo rešitve, v primeru ko je $U$ omejeno enostavno povezano območje.
+    Na reševanje tako zastavljenega problema, smo se v resnici pripravili z zapis Poissonovega integrala s kompleksno spremenljivko.
 
-    \begin{opomba}
+    Nakažimo, kako se lotimo reševanja Dirichletovega problema za omejeno enostavno povezano območje $\Omega$. Naj bo $f$ zvezna funkcija, definirana na $\partial \Omega$. 
+    Riemannov upodobitven izrek nam pove, da je $\Omega$ konformno ekvivalentna enotskemu disku. Denimo, da lahko biholomorfizma razširimo do biholomorfizma $\Phi: \overline{\Omega} \to \overline{D}$. 
+    Označimo $\Psi = \Phi^{-1}$, ter definirajmo $g = f \circ \Phi: \partial \mathbb{D} \to \mathbb{C}$. Funkcija $g$ zadošča pogojem za Dirichletov problem na enotskem disku, ki ga znamo rešiti s pomočjo Poissonovega integrala:
+    $$
+    \widetilde{g}(z) = [\widetilde{f \circ \Phi}](z) = \frac{1}{2\pi i}\int_{\partial \mathbb{D}}{[f \circ \Phi](w) \left[\frac{1 - |z|^2}{|w - z|^2}\right]\frac{dw}{w}};~~z \in \mathbb{D}. 
+    $$
+    Sedaj v integral uvedimo novo spremenljivko, $\tau = \Phi(w)$, da bomo integrirali po $\partial \Omega$: 
+    $$
+    [\widetilde{f \circ \Phi}](z) = \frac{1}{2\pi i}\int_{\partial \Omega}{f(\tau) \left[\frac{1 - |z|^2}{|\Psi(\tau) - z|^2}\right]\frac{|\Psi'(\tau)|}{\Psi(\tau)}d \tau};~~z \in \mathbb{D}. 
+    $$
+    Sedaj z biholomorfizmom slikajmo v drugo smer. Označimo $\xi = \Phi(z)$, ter zato $z = \Psi(\xi)$. Dobimo:
+    \begin{equation}
+        \label{eno_pov_obm}
+    \widetilde{f}(\xi) = \frac{1}{2\pi i}\int_{\partial \Omega}{f(\tau) \left[\frac{1 - |\Psi(\xi)|^2}{|\Psi(\tau) - \Psi(\xi)|^2}\right]\frac{|\Psi'(\tau)|}{\Psi(\tau)}~d \tau};~~\xi \in \Omega. 
+    \end{equation}
+    Zapisana funkcija se na $\partial \Omega$ ujema z $f$, na $\overline{\Omega}$ je zvezna, ter na $\Omega$ harmonična. Zato je rešitev za Dirichletov problem na $\Omega$ pri začetnem pogoju $f$.
+
+    Zgornji predpis si oglejmo na nekoliko bolj konkretnem primeru. 
+    
+    \begin{trditev}
         \label{alldisk}
-        Dirichletov problem smo formulirali in reševali za enotski disk. Problem bi na podoben način lahko formulirali za poljubno območje $U$. 
-        Kot začetni/robni pogoj bi podali zvezno funckijo $f$ (definirano na $\partial U$), ter iskali njeno razširitev $\widetilde{f}$ (na $\overline{U}$), tako da bi bila na $\overline{U}$ zvezna, 
-        na $U$ harmonična, ter bi se zožitev $\widetilde{f}$ na $\partial U$ ujemala z $f$.
-        V splošnem Dirichletovega problema znotraj diplomske naloge ne bomo reševali, vredno pa je omeniti, 
-        da je bil prav enotski disk izbran zaradi preprostosti in bi lahko zgornji rezultat na podoben način zapisali za poljuben disk. To naredimo s pomočjo vpeljave novih spremenljivk ($z \mapsto az + b$) v Poissonov integral. 
-        DOKONCAJ IZPELJAVO!
-     \end{opomba}
+        Naj bo $h$ zvezna funckija, definirana na $\partial \mathbb{D}(a,R)$, za $a \in \mathbb{D}$ in $R>0$.  
+        Za $h$ obstaja rešitev za Dirichletov problem na disku $\mathbb{D}(a,R)$ in je podana s predpisom:
+        $$
+            H(a + r e^{i \theta}) = \begin{cases}
+                    h(a + R e^{i \theta});~~r = R,~\theta \in [0, 2\pi],\\
+                    \widetilde{h}(a + r e^{i \theta});~~ r \in [0,R),~ \theta \in [0, 2\pi]
+            \end{cases},~\text{kjer:}
+        $$
+        $$
+        \widetilde{h}(a + r e^{i \theta}) = \int_{0}^{2 \pi}{h(a + R e^{i \varphi}) \left[\frac{R^2 - r^2}{R^2 + r^2 - 2Rr \cos(\theta - \varphi)}\right] \frac{d \varphi}{2 \pi}}.
+        $$
+     \end{trditev}
+     \begin{dokaz}
+        Pomagali si bomo zgoraj zapisanim postopkom za konstrukcijo rešitve za \mbox{Dirichletov} problem na omejenih enostavnih povezanh območjih. 
+        Sedaj definirajmo $\Phi(z) = Rz + a,~z \in \overline{\mathbb{D}}$. Gre za biholomorfizem z inverzom \mbox{$\Psi(\xi) = \Phi^{-1}(\xi) = \frac{1}{R}(\xi - a)$}, $\xi \in \overline{\mathbb{D}}(a,R)$.
+        Prek zapisa \eqref{eno_pov_obm} dobimo:
+        $$ 
+        \widetilde{h}(\xi) = \frac{1}{2\pi i}\int_{\partial \mathbb{D}(a,R)}{h(\tau) \left[\frac{1 - |\frac{1}{R}(\xi - a)|^2}{|\frac{1}{R}(\tau - a) - \frac{1}{R}(\xi - a)|^2}\right]\frac{\frac{1}{R}}{\frac{1}{R}(\tau - a)}~d \tau};~~\xi \in \mathbb{D}(a,R). 
+        $$
+        Sedaj v integral uvedemo novo spremenljivko $\tau = a + Re^{i \varphi},~\varphi \in [0,2\pi]$, ter označimo $\xi = a + z,~z \in \mathbb{D}(0, R)$. Dobimo:
+        \begin{align*}
+            \widetilde{h}(a + z) &= \frac{1}{2\pi i}\int_{0}^{2 \pi}{h(a + R e^{i \varphi}) \left[\frac{1 - \frac{1}{R}|z|^2}{|e^{i \varphi} - \frac{1}{R} z|^2}\right]\frac{(i R e^{i \varphi}) d \varphi}{R e^{i \varphi}}}\\
+            & = \frac{1}{2 \pi}\int_{0}^{2 \pi}{h(a + R e^{i \varphi}) \left[\frac{1 - \frac{1}{R}|z|^2}{|e^{i \varphi} - \frac{1}{R} z|^2}\right]d\varphi}\\
+            & = \frac{1}{2 \pi}\int_{0}^{2 \pi}{h(a + R e^{i \varphi}) \left[\frac{R^2 - |z|^2}{|R e^{i \varphi} - z|^2}\right]d\varphi};~~z \in \mathbb{D}(0,R).
+        \end{align*}
+        Sedaj parametrizirajmo še $z \in \mathbb{D}(0,R)$. Označimo $z = r e^{i \theta},~r \in [0,R),~\theta \in [0,2 \pi]$. Sledi:
+        \begin{align*}
+            \widetilde{h}(a + r e^{i \theta}) &= \frac{1}{2 \pi}\int_{0}^{2 \pi}{h(a + R e^{i \varphi}) \left[\frac{|R|^2 - |r e^{i \theta}|^2}{|R e^{i \varphi} - r e^{i \theta}|^2}\right]d\varphi}; \\
+            & = \frac{1}{2 \pi}\int_{0}^{2 \pi}{h(a + R e^{i \varphi}) \left[\frac{R^2 - r^2}{R^2 - 2Rr \cos(\theta - \varphi) + r^2}\right]d\varphi};~~r e^{i \theta} \in \mathbb{D}(0,R).
+        \end{align*}
+        Prišli smo do želenega predpisa na notranjosti diska $D(a,R)$. Da razširitev zares reši Dirichletov problem preverimo enako kot smo to storili pri enotskem disku. 
+        Opazimo namreč, da je v zgornjem integralu namesto Poissonovega jedra prisotna funkcija, ki jo iz Poissonovega jedra dobimo če spremenljivko $r$ v predpisu zamenjamo z $\frac{r}{R}$. 
+        Omenjena zamenjava vpliva le na spremembo definicijskega območja in lastnosti Poissonovega jedra ne spremeni.
+     \end{dokaz}
 
-     TO SPET OKEJ
      \begin{opomba}
         Spomnimo se glavne motivacije za razdelek, ki smo jo navedli v opombi \ref{motivacija}.
         Z znanjem, pridobljenim znotraj razdelka, je sedaj dokaz karakterizacije harmoničnih funkcij na dlani.
@@ -935,7 +994,7 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         Dokaz temelji na obstoju rešitve Dirichletovega problema za poljuben disk. 
         
         Ker je $U$ območje, za poljubno točko $z_0 \in U$ obstaja $r>0$, da je $\overline{\mathbb{D}}(z_0,r) \subseteq U$. Ker je $h$ zvezna na $U$, $h$ na $\partial \overline{\mathbb{D}}(z_0, r)$ določa začetne pogoje za Dirichletov problem za disk $\mathbb{D}(z_0,r)$.
-        Trditev \ref{obstoj} in opomba \ref{alldisk} potrdita, da rešitev obstaja. Rešitev označimo s $H(z)$.
+        Trditev \ref{obstoj} in \ref{alldisk} potrdita, da rešitev obstaja. Rešitev označimo s $H(z)$.
         Kot harmonična funkcija na $\mathbb{D}(z_0, r)$, ima po trditvi \ref{harmonicnapovp} $H$ na $\mathbb{D}(z_0, r)$ lastnost povprečne vrednosti. 
         Oglejmo si sedaj funkcijo $g(z) = h(z) - H(z)$ za $z \in \overline{\mathbb{D}}(z_0,r)$. 
         Kot razlika funkcij z lastnostjo povprečne vrednosti ima po trditvi \ref{linlpv} tudi $g$ na $\mathbb{D}(z_0, r)$ lastnost povprečne vrednosti in je kot razlika dveh zveznih funkcij zvezna na $\overline{D}(z_0, r)$.
