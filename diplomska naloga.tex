@@ -116,7 +116,12 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
     \end{trditev}
 
     \begin{dokaz}
-        Ker je $f$ holomorfna, zadošča Cauchy-Riemannovemu sistemu enačb prek katerih lahko bralec sam hitro preveri, da trditev drži. Dokaz je natančneje naveden v \cite{osnova}, na strani $55$.
+        Ker je $f$ holomorfna, zadošča Cauchy-Riemannovemu sistemu enačb. Sledi: 
+        \begin{align*}
+            \frac{\partial^2 u}{\partial x^2} &= \frac{\partial^2 v}{\partial x \partial y}~~~~\text{in}~~~~\frac{\partial^2 u}{\partial x \partial y} = \frac{\partial^2 v}{\partial y^2}~,~~\text{ter}\\ 
+            \frac{\partial^2 u}{\partial y^2} &=  - \frac{\partial^2 v}{\partial x \partial y}~~~~\text{in}~~~~\frac{\partial^2 u}{\partial x \partial y} =  - \frac{\partial^2 v}{\partial x^2}.
+        \end{align*}
+        Zato velja: $\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = \frac{\partial^2 v}{\partial x \partial y} - \frac{\partial^2 v}{\partial x \partial y} =0$ in $\frac{\partial^2 v}{\partial x^2} + \frac{\partial^2 v}{\partial y^2} = \frac{\partial^2 u}{\partial x \partial y} - \frac{\partial^2 u}{\partial x \partial y}=0$.
     \end{dokaz}
 
     \begin{opomba}
@@ -157,6 +162,17 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         Ker je  $D$ odprta množica, lahko za vsako točko $z \in D$ najdemo dovolj majhno zvezdasto okolico $U_z$, da bo okolica v celoti vsebova v $D$. Dovolj je vzeti kar dovolj majhen disk. 
         Po trditvi \ref{konj} na $U_z$ obstaja harmonična konjugiranka $v$, da je $f = u+ iv$ na $U_z$ holomorfna, ter zato na $U_z$ tudi gladka. Sledi, da je na $U_z$ gladka tudi funkcija $u$.
         Ker smo za vsako točko iz $D$ našli odprto okolico na kateri je funkcija $u$ gladka, je $u$ gladka na celotnem definicijskem območju.
+    \end{dokaz}
+
+    \begin{trditev}
+        \label{komp_s_hol}
+        Naj bo $u$ harmonična funkcija, definirana na območju $D$. Naj bo $\Omega$ območje in $f : \Omega \to D$ holomorfna funkcija. Potem je $u \circ f$ na $\Omega$ harmonična funkcija.
+    \end{trditev}
+    \begin{dokaz}
+        Naj bo $z_0$ poljubna točka iz $\Omega$. Dovolj je pokazati, da ima $z_0$ odprto okolico, na kateri je $u \circ f$ harmonična. Ker je $D$ območje, obstaja $r > 0$, da je \mbox{$\mathbb{D}(f(z_0), r) \subseteq D$}. 
+        Po trditvi \ref{konj} zato za $u$ na $\mathbb{D}(f(z_0),r)$ obstaja $v$, da je $g = u + iv$ na $\mathbb{D}(f(z_0), r)$ holomorfna. Sledi, da je $g \circ f$ holomorfna na $\left\{z~|~ f(z) \in \mathbb{D}(f(z_0), r)\right\}$.
+        Ker je $f$ holomorfna, je $A_{z_0} = \left\{z~|~ f(z) \in \mathbb{D}(f(z_0), r)\right\}$ odprta okolica za $z_0$. Sledi, da je na odprti okolici $A_{z_0} \subseteq \Omega$, točke $z_0$, $\text{Re}[g \circ f] = \text{Re}[(u + iv)\circ f] = \text{Re}[(u \circ f) + i(v \circ f)] = u \circ f$ harmonična funkcija. 
+        Zato je $u \circ f$ harmonična na $\Omega$.
     \end{dokaz}
 
 \section{Lastnost povprečne vrednosti}
@@ -940,7 +956,7 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         \label{eno_pov_obm}
     \widetilde{f}(\xi) = \frac{1}{2\pi i}\int_{\partial \Omega}{f(\tau) \left[\frac{1 - |\Psi(\xi)|^2}{|\Psi(\tau) - \Psi(\xi)|^2}\right]\frac{|\Psi'(\tau)|}{\Psi(\tau)}~d \tau};~~\xi \in \Omega. 
     \end{equation}
-    Zapisana funkcija se na $\partial \Omega$ ujema z $f$, na $\overline{\Omega}$ je zvezna, ter na $\Omega$ harmonična. Zato je rešitev za Dirichletov problem na $\Omega$ pri začetnem pogoju $f$.
+    Zapisana funkcija se na $\partial \Omega$ ujema z $f$, na $\overline{\Omega}$ je zvezna, ter na $\Omega$ po trditvi \ref{komp_s_hol} harmonična. Zato je rešitev za Dirichletov problem na $\Omega$ pri začetnem pogoju $f$.
 
     Zgornji predpis si oglejmo na nekoliko bolj konkretnem primeru. 
     
