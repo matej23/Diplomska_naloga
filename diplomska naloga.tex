@@ -1021,8 +1021,6 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         Po trditvi \ref{ekvhlp} je $u$ harmonična, po trditvi \ref{gladkosth} pa zato tudi gladka.
     \end{dokaz}
 
-\newpage
-
 \section{Schwarzov princip zrcaljenja za harmonične funkcije}
     Nekoliko se še navežimo na prejšno poglavje. 
     Srečali smo se s problemom obstoja in konstrukcije razširitve, podane funkcije, ki bo obenem zadoščala zahtevam problema.  
@@ -1046,15 +1044,19 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
     \end{definicija}
 
     \begin{definicija}
-        Naj bo $u$ funkcija, definirana na območju $U \subseteq \mathbb{C}$. Potem z \emph{$u^*$} označimo funkcijo, definirano na $U^*$, s predpisom $u^*(w) = u(\overline{w}),~w \in U^*$
+        Naj bo $u$ funkcija, definirana na območju $U \subseteq \mathbb{C}$. Potem z \emph{$u^*$} označimo funkcijo, definirano na $U^*$, s predpisom $u^*(w) = \overline{u(\overline{w})},~w \in U^*$
     \end{definicija}
 
-    Opazimo, da predpis iz zgornje definicije, za funkcijo $u$ definirano na območju $U$, v resnici ponuja zvezo $u^*(\overline{z}) = (u^* \circ (z \mapsto \overline{z}))(z) = u(z),~z \in U$.
-    Zapisana zveza nakazuje, da se bodo v veliki meri lastnosti funkcije $u$ prenesle na funkcijo $u^*$. Nakazano potrdi spodnja lema.
+    Opazimo, da predpis iz zgornje definicije, za funkcijo $u$ definirano na območju $U$, v resnici ponuja zvezo $u^*(\overline{z}) = (u^* \circ (z \mapsto \overline{z}))(z) = \overline{u(z)},~z \in U$.
+    Zapisana zveza nakazuje, da se bodo v veliki meri lastnosti funkcije $u$ prenesle na funkcijo $u^*$.
+
+    \begin{opomba}
+        Na tem mestu le spomnimo, da je za realne funkcije $u$, definirane na $U$, konjugiranje funkcijskih vrednosti pri predpisu funkcije $u^*$ odveč. Torej je funkcija $u^*$ določena kar prek zveze $u^*(w) = u(\overline{w}),~w \in U^*$.
+    \end{opomba}
 
     \begin{trditev}
         \label{lemaharm}
-        Naj bo $u$ funkcija, definirana na območju $U \subseteq \mathbb{C}$. Če je $u$ harmonična na $U$, potem je $u^*$ harmonična na $U^*$. 
+        Naj bo $u$ realna funkcija, definirana na območju $U \subseteq \mathbb{C}$. Če je $u$ harmonična na $U$, potem je $u^*$ harmonična na $U^*$. 
     \end{trditev}
     \begin{proof}
         Trditev dokažimo na dva načina. Dokaz prvega načina temelji na uporabi karakterizacije harmoničnih funkcij z lastnostjo povprečne vrednosti. 
@@ -1087,13 +1089,13 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
     \begin{trditev}
         \label{lemahol}
         Naj bo $f$ holomorfna funkcija, definirana na območju $U \subseteq \mathbb{C}$.
-        Potem je funkcija $g(w) = \overline{f({\overline{w}})},~w \in U^*$ holomorfna na $U^*$.
+        Potem je funkcija $f^*$ holomorfna na $U^*$.
     \end{trditev}
     \begin{dokaz}
-        Trditev ponovno dokažimo na dva načina. Dokaza se najprej lotimo s pomočjo Cauchy-Riemannovega sistema, nato pa holomorfnost funkcije $g$ dokažimo še po definiciji.
+        Trditev ponovno dokažimo na dva načina. Dokaza se najprej lotimo s pomočjo Cauchy-Riemannovega sistema, nato pa holomorfnost funkcije $f^*$ dokažimo še po definiciji.
 
-        Označimo $f(z) = u(z) + iv(z),~ z \in U$ in $g(w) = p(w) + iq(w),~w \in U^*$, kjer so $u,v, p$ in $q$ realne funkcije. 
-        Iz definicije funkcije $g$ sledi $g(w) = \overline{u(\overline{w}) + iv(\overline{w})} = u(\overline{w}) - iv(\overline{w}),~ w \in U^*$. 
+        Označimo $f(z) = u(z) + iv(z),~ z \in U$ in $f^*(w) = p(w) + iq(w),~w \in U^*$, kjer so $u,v, p$ in $q$ realne funkcije. 
+        Iz definicije funkcije $f^*$ sledi $f^*(w) = \overline{u(\overline{w}) + iv(\overline{w})} = u(\overline{w}) - iv(\overline{w}),~ w \in U^*$. 
         Sedaj enačimo realni in imaginarni del zapisanih funkcij. Dobimo:
         \begin{align*}
             p(w) &= u(\overline{w}),~w \in U^*~,~~\text{oziroma}~~~~p(\overline{z}) = u(z),~z \in U~,~~\text{ter:} \\
@@ -1109,7 +1111,15 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         \begin{align*}
             \frac{\partial p}{\partial x} = \frac{\partial u}{\partial x} &= \frac{\partial v}{\partial y} = \frac{\partial q}{\partial y}~~~~\text{in}~~~~ \frac{\partial p}{\partial y} = -\frac{\partial u}{\partial y} = \frac{\partial v}{\partial x} = -\frac{\partial q}{\partial x}.
         \end{align*}
-        Opazimo, da funkcija $g = p + iq$ zadošča Cauchy-Riemannovemu sistemu enačb, zato je holomorfna.
+        Opazimo, da funkcija $f^* = p + iq$ zadošča Cauchy-Riemannovemu sistemu enačb, zato je holomorfna.
+
+        Sedaj dokažimo holomorfnost funkcije $f^*$ še po definiciji. Želimo dokazati, da je $f^*$ v vsaki točki $w \in U^*$ kompleksno odvedljiva. Predpostavka trditve nam pove, da je $f$ kompleksno odvedljiva v vsaki točki $\overline{w} \in U$.
+        Naj bo $w \in U^*$. Potem velja: 
+        \begin{align*}
+            \lim_{h \to 0}\left[{\frac{f^*(w + h) - f^*(w)}{h}}\right] &= \lim_{h \to 0}\left[{\frac{\overline{f\left(\overline{w + h}\right)} - \overline{f(\overline{w})}}{h}}\right] = \lim_{h \to 0}{\overline{\left[\frac{f\left(\overline{w + h}\right) - f(\overline{w})}{\overline{h}}\right]}} \\
+            \lim_{h \to 0}{\overline{\left[\frac{f\left(\overline{w} + \overline{h}\right) - f(\overline{w})}{\overline{h}}\right]}} & = \overline{\lim_{\overline{h} \to 0}{\left[\frac{f\left(\overline{w} + \overline{h}\right) - f(\overline{w})}{\overline{h}}\right]}} = \overline{f'(\overline{w})}.
+        \end{align*}
+        Limita diferenčnega kvocienta obstaja v poljubni točki $w \in U^*$, zato je $f^*$ na $U^*$ kompleksno odvedljiva oziroma holomorfna.
     \end{dokaz}
 
     Sedaj smo pripravljeni na formulacijo in dokaz glavnega izreka.
