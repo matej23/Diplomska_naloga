@@ -1015,7 +1015,7 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         Posledično je funkcija $h$ harmonična na $U$.
     \end{dokaz}
     \begin{posledica}
-        Naj bo $u$ zvezna funkcija z lastnostjo povprečne vrednosti, definirana na območju $D$. Potem je $u$ na $D$ gladka, oziroma $u \in C^{\infty}(D)$.
+        Naj bo $u$ realna zvezna funkcija z lastnostjo povprečne vrednosti, definirana na območju $D$. Potem je $u$ na $D$ gladka, oziroma $u \in C^{\infty}(D)$.
     \end{posledica}
     \begin{dokaz}
         Po trditvi \ref{ekvhlp} je $u$ harmonična, po trditvi \ref{gladkosth} pa zato tudi gladka.
@@ -1024,53 +1024,68 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
 \newpage
 
 \section{Schwarzov princip zrcaljenja za harmonične funkcije}
-    V tretjem poglavju, smo se že srečali s problemom razširitve podane funkcije do funkcije, ki mora zadoščati dodatnim pogojem. 
-    Pri Dirichletovem problemu smo zahtevali harmoničnost razširitve na notranjosti območja/diska in zveznost razširitve na zaprtju območja/diska. 
-    Pokazali smo, da to lahko naredimo s pomočjo Poissonovega integrala $\widetilde{h}$ kot:
+    Nekoliko se še navežimo na prejšno poglavje. 
+    Srečali smo se s problemom obstoja in konstrukcije razširitve, podane funkcije, ki bo obenem zadoščala zahtevam problema.  
+    Pri Dirichletovem problemu, smo zahtevali harmoničnost razširitve na notranjosti in zveznost razširitve na zaprtju območja. 
+    Pokazali smo, da lahko na enotskem disku zahtevam problema, z začetnim pogojem $h$, zadostimo s pomočjo Poissonovega integrala podane funkcije, tako da za razširitev definiramo:
     $$
-        h^e(z) = 
+        H(z) = 
         \begin{cases}
             h(z)~&z \in \partial \mathbb{D} \\
             \widetilde{h}(z)~&z \in \mathbb{D}
         \end{cases}.
     $$
-    Problem, ki ga Schwarzov princip zrcaljenja reši je ne glede na drugačne začetne pogoje, iz vidika iskanja razširitve kljub temu blizu že rešenemu Dirichletovemu problemu.
-    Glavna razlika je, da pri Schwarzovem principu zrcaljenja harmoničnost na območju vzamemo že za predpostavko, ter s pomočjo robnih zveznih začetnih pogojev poskušamo konstruirati harmonično razširitev na povsem novem območju podobne oblike.  
-    Kot že nakazuje beseda zrcaljanje v imenu principa, bomo razširitev želeli konstruirati na "zrcalni sliki" prvotno definiranega območja. Prav zato bo potrebno predpostaviti nekaj simetrije.
-    Spoznajmo sedaj nekaj osnovnih pojmov, ki nas bodo pripeljali do glavnega izreka.
+    Problem, ki ga Schwarzov princip zrcaljenja reši, je ne glede na drugačne začetne pogoje iz vidika iskanja harmonične razširitve kljub temu blizu že obdelanemu Dirichletovemu problemu.
+    Pri Dirichletovem problemu, smo podano funkcijo želeli harmonično razširiti na notranjost območja, pri čemer smo poznali le vrednosti funkcije na robu, tu pa bomo harmoničnost funkcije na manjšem območju že privzeli, ter iskali harmonično razširitev na novo območju podobne oblike.
+    Kaj točno smatramo za območje podobne oblike bo jasno v nadaljevanju, vendar kot to že nakazuje beseda zrcaljanje v imenu principa, bomo razširitev želeli konstruirati na zrcalni sliki prvotnega območja. 
+    
+    Spoznajmo najprej nekaj osnovnih pojmov, ki nam bodo omogočili natančno formulacijo in dokaz glavnega izreka razdelka.
     \begin{definicija}
-        Naj bo $U$ območje. \emph{Zrcaljenje območja U čez realno os} definiramo kot $U^* = \{\overline{z}~|~z \in U\}$.
-        \newline
-        Pravimo, da je \emph{območje U simetrično glede na realno os}, če velja $U^* = U$.
-        \newline
-        Naj bo $u: U \to \mathbb{R}$. Potem lahko pri zgornjih oznakah definiramo $u^*: U^* \to \mathbb{R}$, kot $u^*(z) = u(\overline{z})$.
+        Naj bo $U \subseteq \mathbb{C}$ območje. Potem je $U^* = \{\overline{z}~|~z \in U\}$ \emph{zrcalna slika območja U glede na realno os}.
+        Če za območje $U$ velja $U^* = U$ pravimo, da je območje $U$ \emph{simetrično glede na realno os}.
     \end{definicija}
 
-    Naravno je pričakovati, da se zaradi dokaj preproste definicije $u^*$ lastnosti $u$ "prenesejo" tudi na $u^*$. 
-    Spodnja lema nam to potrdi.
+    \begin{definicija}
+        Naj bo $u$ funkcija, definirana na območju $U \subseteq \mathbb{C}$. Potem z \emph{$u^*$} označimo funkcijo, definirano na $U^*$, s predpisom $u^*(w) = u(\overline{w}),~w \in U^*$
+    \end{definicija}
 
-    \begin{lema}
+    Opazimo, da predpis iz zgornje definicije, za funkcijo $u$ definirano na območju $U$, v resnici ponuja zvezo $u^*(\overline{z}) = (u^* \circ (z \mapsto \overline{z}))(z) = u(z),~z \in U$.
+    Zapisana zveza nakazuje, da se bodo v veliki meri lastnosti funkcije $u$ prenesle na funkcijo $u^*$. Nakazano potrdi spodnja lema.
+
+    \begin{trditev}
         \label{lemaharm}
-        Naj bo $U$ območje in $u: U \to \mathbb{R}$. Če je $u$ harmonična na $U$, je $u^*$ harmonična na $U^*$. 
-    \end{lema}
+        Naj bo $u$ funkcija, definirana na območju $U \subseteq \mathbb{C}$. Če je $u$ harmonična na $U$, potem je $u^*$ harmonična na $U^*$. 
+    \end{trditev}
     \begin{proof}
-        Trditev lahko dokažemo na dva načina. Dokažimo najprej s pomočjo karakterizacije harmoničnih funkcij z lastnostjo povprečne vrednosti. 
-        Ker je $u$ na $U$ harmonična ima na $U$ lastnost povprečne vrednosti.
-        Sedaj je hitro jasno, da ima lastnost povprečne vrednosti tudi $u^*$ na $U^*$. 
-        Iz trditve \ref{ekvhlp} potem sledi, da je $u^*$ na $U^*$ tudi harmonična.
-        \newline
-        Trditev je možno dokazati tudi kar direktno po definiciji, t.j. dokazati, da velja: $\frac{\partial^2 u^*}{\partial x^2} + \frac{\partial^2 u^*}{\partial y^2} = 0$. 
-        Opazimo, da lahko $u^*$ (s pomočjo identifikacije $z = x + iy \leftrightarrow (x,y)$) zapišemo tudi kot kompozitum $u \circ ((x,y) \mapsto (x, -y))$. 
-        Sedaj po definiciji parcialno odvajamo in dobimo enakosti:
+        Trditev dokažimo na dva načina. Dokaz prvega načina temelji na uporabi karakterizacije harmoničnih funkcij z lastnostjo povprečne vrednosti. 
+        
+        Naj bo \mbox{$w_0 \in U^*$}. Ker je $U^*$ območje, obstaja $\rho>0$, da za vsak $0 < r < \rho$ velja $\overline{\mathbb{D}}(w_0, r) \subseteq U^*$. Po definiciji $U^*$ sledi, da za vsak \mbox{$0 < r < \rho$} velja $\overline{\mathbb{D}}(\overline{w_0}, r) \subseteq U$. 
+        Ker je funkcija $u$ na $U$ harmonična, ima po trditvi \ref{ekvhlp} na $U$ lastnost povprečne vrednosti. Sledi:
+        \begin{align*}
+            u^*(w_0) & = u(\overline{w_0}) = \frac{1}{2 \pi} \int_{0}^{2 \pi}{u\left(\overline{w_0} + r e^{i \theta}\right) d\theta} = \frac{1}{2 \pi} \int_{0}^{2 \pi}{u\left(\overline{w_0 + r e^{-i \theta}}\right) d\theta}\\
+            &= \frac{1}{2 \pi} \int_{0}^{2 \pi}{u^*\left(w_0 + r e^{-i \theta}\right) d\theta} = \frac{1}{2 \pi} \int_{0}^{2 \pi}{u^*\left(w_0 + r e^{i \theta}\right) d\theta};~r \in (0, \rho).
+        \end{align*} 
+        Pokazali smo, da ima funkcija $u^*$ na $U^*$ lastnost povprečne vrednosti. 
+        Ker je funkcija $u$ zvezna na $U$, je očitno funkcija $u^*$ zvezna na $U^*$. 
+        Po trditvi \ref{ekvhlp} sledi, da je funkcija $u^*$ na $U^*$ harmonična. 
+        
+        Dokažimo trditev še po definiciji, t.j. dokažimo, da $u^*$ na $U^*$ zadošča Laplaceovi parcialni diferencialni enačbi.
+        Pomagali si bomo z standardno identifikacijo kompleksne spremenljivke $z = x + iy$ s parom realnega in imaginarnega dela $(x,y)$.
+        Identifikacija nam narekuje zvezo $[u^* \circ ((x,y) \mapsto (x,-y))](x, y) = u(x, y),~ x + iy \in U$.
+        Sedaj parcialno odvajajmo in dobimo:
+        \begin{align*}
+            \frac{\partial u}{\partial x} &= \frac{\partial u^* }{\partial x}~,~~~~~\frac{\partial u}{\partial y} = - \frac{\partial u^* }{\partial y}, \\
+            \frac{\partial^2 u}{\partial x^2} & = \frac{\partial^2 u^* }{\partial x^2}~,~~~~~\frac{\partial^2 u}{\partial y^2} = \frac{\partial^2 u^* }{\partial y^2}.
+        \end{align*}
+        Ker je funkcija $u$ na $U$ harmonična, sledi:
         $$
-            \frac{\partial u^*}{\partial y} = - \frac{\partial u }{\partial y},~~~~\frac{\partial^2 u^*}{\partial y^2} = \frac{\partial^2 u }{\partial y^2},~~~~\frac{\partial^2 u^*}{\partial x^2} = \frac{\partial^2 u }{\partial x^2},
+            \Delta u^* = \frac{\partial^2 u^*}{\partial x^2} + \frac{\partial^2 u^*}{\partial y^2} = \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0.
         $$
-        ki implicirajo:
-        $$
-            \frac{\partial^2 u^*}{\partial x^2} + \frac{\partial^2 u^*}{\partial y^2} = \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0.
-        $$
+        Zato je $u^*$ harmonična na $U^*$.
     \end{proof}
+    
     \begin{lema}
+        \label{lemahol}
         Če je $f$ holomorfna na območju $U$, je $g(z) = \overline{f({\overline{z}})}$ holomorfna na $U^*$.
     \end{lema}
     \begin{dokaz}
