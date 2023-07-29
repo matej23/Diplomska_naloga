@@ -1083,23 +1083,33 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         $$
         Zato je $u^*$ harmonična na $U^*$.
     \end{proof}
-    
-    \begin{lema}
+
+    \begin{trditev}
         \label{lemahol}
-        Če je $f$ holomorfna na območju $U$, je $g(z) = \overline{f({\overline{z}})}$ holomorfna na $U^*$.
-    \end{lema}
+        Naj bo $f$ holomorfna funkcija, definirana na območju $U \subseteq \mathbb{C}$.
+        Potem je funkcija $g(w) = \overline{f({\overline{w}})},~w \in U^*$ holomorfna na $U^*$.
+    \end{trditev}
     \begin{dokaz}
-        Iz kompleksne analize vemo, da je dovolj pokazati, da tudi $g$ zadošča Cauchy-Riemannovemu sistemu enačb.
-        \newline
-        Pišimo: $f(z) = u(z) + iv(z)$ in $g(z) = p(z) + iq(z)$.
-        Potem je $g(z) = u(\overline{z}) - iv(\overline{z})$ in zato $p(z) = u(\overline{z})~\text{ter}~q(z) = -v(\overline{z})$. 
-        \newline
-        Velja:
-        \begin{equation*}
-            \frac{\partial p}{\partial x} = \frac{\partial u}{\partial x} \overset{C-R}{=} \frac{\partial v}{\partial y} = - \bigg(- \frac{\partial q}{\partial y}\bigg) = \frac{\partial q}{\partial y}~~~\text{in}~~~
-            \frac{\partial p}{\partial y} = -\frac{\partial u}{\partial y} \overset{C-R}{=} \frac{\partial v}{\partial x} = -\frac{\partial q}{\partial x}.
-        \end{equation*}
-        Alternativen dokaz si bralec lahko ogleda v REFERENCA.
+        Trditev ponovno dokažimo na dva načina. Dokaza se najprej lotimo s pomočjo Cauchy-Riemannovega sistema, nato pa holomorfnost funkcije $g$ dokažimo še po definiciji.
+
+        Označimo $f(z) = u(z) + iv(z),~ z \in U$ in $g(w) = p(w) + iq(w),~w \in U^*$, kjer so $u,v, p$ in $q$ realne funkcije. 
+        Iz definicije funkcije $g$ sledi $g(w) = \overline{u(\overline{w}) + iv(\overline{w})} = u(\overline{w}) - iv(\overline{w}),~ w \in U^*$. 
+        Sedaj enačimo realni in imaginarni del zapisanih funkcij. Dobimo:
+        \begin{align*}
+            p(w) &= u(\overline{w}),~w \in U^*~,~~\text{oziroma}~~~~p(\overline{z}) = u(z),~z \in U~,~~\text{ter:} \\
+            q(w) &= -v(\overline{w}),~w \in U^*~,~~\text{oziroma}~~~~q(\overline{z}) = -v(z),~z \in U.
+        \end{align*}
+        Enakosti lahko sedaj ob upoštevanju identifikacije $z \leftrightarrow (x,y)$ oziroma $\overline{z} \leftrightarrow (x, -y)$ parcialno odvajamo po realnih spremenljivkah $x$ in $y$. Dobimo:
+        \begin{align*}
+            \frac{\partial u}{\partial x} &= \frac{\partial p}{\partial x}~~~~\text{in}~~~~ -\frac{\partial v}{\partial x} = \frac{\partial q}{\partial x}~,~~\text{ter:}\\
+            \frac{\partial u}{\partial y} &=  - \frac{\partial p}{\partial y}~~~~\text{in}~~~~ -\frac{\partial v}{\partial y} = - \frac{\partial q}{\partial y} \iff \frac{\partial v}{\partial y} = \frac{\partial q}{\partial y}~.      
+        \end{align*}
+        Ker je funkcija $f$ holomorfna, zadošča Cauchy-Riemannovemu sistemu enačb.  
+        Sledi: 
+        \begin{align*}
+            \frac{\partial p}{\partial x} = \frac{\partial u}{\partial x} &= \frac{\partial v}{\partial y} = \frac{\partial q}{\partial y}~~~~\text{in}~~~~ \frac{\partial p}{\partial y} = -\frac{\partial u}{\partial y} = \frac{\partial v}{\partial x} = -\frac{\partial q}{\partial x}.
+        \end{align*}
+        Opazimo, da funkcija $g = p + iq$ zadošča Cauchy-Riemannovemu sistemu enačb, zato je holomorfna.
     \end{dokaz}
 
     Sedaj smo pripravljeni na formulacijo in dokaz glavnega izreka.
