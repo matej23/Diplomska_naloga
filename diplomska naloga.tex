@@ -3,6 +3,7 @@
 \usepackage{amsmath}
 \usepackage{yhmath}
 \usepackage[shortlabels]{enumitem}
+\usepackage[justification=centering]{caption}
 % \documentclass[fin1]{fmfdelo}
 % \documentclass[isrm1]{fmfdelo}
 % \documentclass[mat2]{fmfdelo}
@@ -1079,11 +1080,11 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
             \frac{\partial u}{\partial x} &= \frac{\partial u^* }{\partial x}~,~~~~~\frac{\partial u}{\partial y} = - \frac{\partial u^* }{\partial y}, \\
             \frac{\partial^2 u}{\partial x^2} & = \frac{\partial^2 u^* }{\partial x^2}~,~~~~~\frac{\partial^2 u}{\partial y^2} = \frac{\partial^2 u^* }{\partial y^2}.
         \end{align*}
-        Ker je funkcija $u$ na $U$ harmonična, sledi:
+        Ker je funkcija $u$ na $U$ harmonična, velja:
         $$
             \Delta u^* = \frac{\partial^2 u^*}{\partial x^2} + \frac{\partial^2 u^*}{\partial y^2} = \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0.
         $$
-        Zato je $u^*$ harmonična na $U^*$.
+        Sledi, da je $u^*$ harmonična na $U^*$.
     \end{proof}
 
     \begin{trditev}
@@ -1123,39 +1124,74 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
     \end{dokaz}
 
     Sedaj smo pripravljeni na formulacijo in dokaz glavnega izreka.
-    \begin{izrek}
+    
+    \begin{izrek}[Schwarzov princip zrcaljenja za harmonične funkcije]
+        \label{schwarz_harm}
         Naj bo $D \subseteq \C$ območje, simetrično glede na realno os. 
-        Označimo $D^{+} = D \cap \{\text{Im} > 0\}$ in $D^{-} = D \cap \{\text{Im} < 0\}$.
-        \newline
-        Naj bo $u(z): D^{+} \to \mathbb{R}$ harmonična funkcija, za katero velja, da gre $u(z) \to 0$, ko gre $z \in D^{+}$ proti poljubni točki $D \cap \mathbb{R}$ t.j.: $$\lim_{\text{Im}(z) \to 0^+} u(z) = 0.$$
-        Potem obstaja harmonična razširitev $u(z)$ na $D$, ki jo podaja predpis $u(\bar{z}) = - u(z)$ za $z \in D$:
-        $$
-            u^e(z) = 
-            \begin{cases}
-                u(z)~~&z \in D^{+}\\
-                -u(\overline{z})~~&z \in D^{-}\\
-                0~~ &z \in \mathbb{R}
-            \end{cases}
-            .
-        $$
+        Označimo $D^{+} = \{z \in D~|~\text{Im}[z] > 0\},~D^{-} = \{z \in D~|~\text{Im}[z] < 0\}$ in $D^{0} = \{z \in D~|~\text{Im}[z] = 0\}$.
+        Naj bo $u$ realna zvezna funkcija, definirana na $D^{+} \cup D^0$. Naj bo $u$ na $D^{+}$ harmonična in naj za vsak $z \in D^0$ velja $u(z) = 0$.
+        Potem obstaja harmonična razširitev funkcije $u$ na $D$, ki je eksplicitno podana prek zveze $u(\bar{z}) = - u(z),~z \in D$.
     \end{izrek}
-    Preden se posvetimo dokazu, si na sliki oglejmo, kaj nam Schwarzov princip zrcaljenja zares omogoča.
-    \begin{center}
-        \includegraphics[width = 0.8 \textwidth]{schwarzov_princip_zrcaljenja.png}
-    \end{center}
-    Slika prikazuje glede na $\R$ simetrično območje $D \subseteq \C$. $D^{+}$ označuje območje, na katerem harmonično funkcijo $u$ poznamo, $D^{-}$ pa območje, na katerem lahko po izreku eksplicitno konstruiramo razširitev prek predpisa $u(\overline{z}) = - u(z)$.
-    Vodoravna črta prikazuje odsek realne osi, na kateri bodo zaradi zahtevane zveznosti vrednosti trivialno poračunljive. 
+    \begin{opomba}
+        \label{op_spz}
+        Preden se lotimo dokaza izreka, se še nekoliko posvetimo temu kaj nam izrek v resnici pove. 
+        Zapisana zveza za funkcijo $u$, nam v resnici narekuje predpis za funkcijo:
+        $$
+        U(z) = 
+        \begin{cases}
+            u(z)~~&z \in D^{+}\\
+            -u(\overline{z})~~&z \in D^{-}\\
+            0~~ &z \in D^0
+        \end{cases}
+        .
+        $$
+        Izrek pravi, da je funkcija $U$ na $D$ harmonična.
+        Sedaj zapisano situacijo komentirajmo še s pomočjo spodnje slike. 
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[width = \textwidth]{schwarzov_princip_zrcaljenja.png}
+                \caption{Grafičen prikaz Schwarzovega principa zrcaljenja za harmonične funkcije.}
+            \end{center}    
+        \end{figure}
+    Slika prikazuje glede na realno os simetrično območje $D \subseteq \C$. $D^{+}$ označuje območje, na katerem je poznana funkcija $u$ harmonična, $D^{-}$ pa zrcalno sliko območja $D^+$ glede na realno os. 
+    Predpis razširitve je na $D^-$ podan s predpisom $u(\overline{z}) = - u(z)$.
+    Vodoravna črta prikazuje odsek realne osi. Odsek, ki leži znotraj območja $D$ smo označili z $D^0$. Funkcija $u$ je na tem delu območja po predpostavki izreka ničelna.
+    
     Točka $z_0$ in "majhen" disk okoli nje nakazujeta, da se bomo dokaza lotili z lastnostjo povprečne vrednosti.
-
+    \end{opomba}
 
     \begin{dokaz}
-        Opazimo, da je $D$ disjunktna unija $D^+$, $D^-$ in $D^0 = D \cap \mathbb{R}$.
-        Hitro je razvidno, da je $u^e$ na $D$ zaradi predpostavljene limite in ničelnih vrednosti na $D^0$ res zvezna. 
-        \newline
-        Posvetimo se dokazu harmoničnosti. Ker je $u^e$ na $D$ zvezna, je po trditvi \ref{ekvhlp} dovolj pokazati, da ima $u^e$ na $D$ lastnost povprečne vrednosti.
-        Na $D^+$ je $u^e$ harmonična po predpostavki, na $D^-$ pa harmoničnost hitro preverimo prek leme \ref{lemaharm}. 
-        Za poljubno točko $z_0 \in D^0$ pri dovolj majhnem $r$ (tako da je $\overline{\mathbb{D}}(z_0,r) \subseteq D$) velja, da se ob računanju povprečja paroma "zrcalne" vrednosti zaradi predpisa $u(\overline{z}) = - u(z)$ ravno odštejejo. 
-        To pa že implicira, da je povprečje vrednosti na $\partial \overline{\mathbb{D}}(z_0,r)$ v poljubnem $z_0 \in D^0$ enaka $0$ in $u^e$ tudi v $z_0 \in D^0$ izpolnjuje lastnost povprečne vrednosti.
+        Opazimo, da je $D$ disjunktna unija $D^+$, $D^-$ in $D^0$.
+        Sedaj na območju $D$ definirajmo funkcijo $u$, kot smo to storili v opombi \ref{op_spz}.
+        Funkcija $U$ je po predpostavkah izreka zvezna na $D^+ \cup D^0$, iz definicije, prek predpisa $u(\overline{z}) = - u(z)$, pa je jasno, da je zvezna kar na $D$. 
+        Posvetimo se dokazu harmoničnosti.
+        Ker je $U$, oziroma $u$, na $D^+$ harmonična, ima po trditvi \ref{ekvhlp}, na $D^+$ lastnost povprečne vrednosti. 
+        %Sledi, da za vsak $z_0 \in D^+$ obstaja $\epsilon_{z_0} > 0$, je $\overline{\mathbb{D}}(z_0, \epsilon_{z_0}) \subseteq D^+$ in za vsak $0 < \epsilon \leq \epsilon_{z_0}$ velja:
+        %$$
+        %U(z_0) = u(z_0) = \frac{1}{2 \pi} \int_{0}^{2 \pi}{u(z_0 + \epsilon e^{i \theta}) d\theta} = \frac{1}{2 \pi} \int_{0}^{2 \pi}{U(z_0 + \epsilon e^{i \theta}) d\theta}.
+        %$$
+        %Naj bo $w_0 \in D^-$. Iščemo $\epsilon_{w_0} > 0$, da bo $\overline{\mathbb{D}}(w_0, \epsilon_{w_0}) \subseteq D^-$ in bo za vsak $0 < \epsilon \leq \epsilon_{w_0}$ veljalo:
+        %$$
+        %U(w_0) = \frac{1}{2 \pi} \int_{0}^{2 \pi}{U(w_0 + \epsilon e^{i \theta}) d\theta}.
+        %$$
+        %Ker je $\overline{w_0} \in D^+$, lahko vzamemo $\epsilon_{w_0} = \epsilon_{\overline{w_0}}$. Za vsak $ 0 < \epsilon \leq \epsilon_{\overline{w_0}}$ namreč:
+        %\begin{align*}
+        %    U(w_0) & = -u(\overline{w_0}) = -\frac{1}{2 \pi} \int_{0}^{2 \pi}{u(\overline{w_0} + \epsilon e^{i \theta}) d\theta} = \frac{1}{2 \pi} \int_{0}^{2 \pi}{- u\left(\overline{w_0 + \epsilon e^{-i \theta}}\right) d\theta} \\
+        %    & = \frac{1}{2 \pi} \int_{0}^{2 \pi}{U\left(w_0 + \epsilon e^{-i \theta}\right) d\theta} = \frac{1}{2 \pi} \int_{0}^{2 \pi}{U\left(w_0 + \epsilon e^{i \theta}\right) d\theta}.
+        %\end{align*}
+        %Torej $U$ zadošča lastnosti povprečne vrednosti tudi na $D^-$. Preostane nam $D^0$.
+        Opazimo, da funkcijski predpis funkcije $U$ na območju $D^-$ sovpada s predpisom funkcije $- u^*(z)$. 
+        Ker je $U$, oziroma $u$, na $D^+$ harmonična, je po trditvi \ref{lemaharm} $-u^*(z)$, oziroma $U$ harmonična na $(D^+)^* = D^-$.
+        Po trditvi \ref{ekvhlp} ima $U$ na $D^-$ lastnost povprečne vrednosti. 
+        Sedaj nam preostane le še $D^0$.
+        Vzemimo poljubno točko $z_0 \in D^0 \subseteq \mathbb{R}$. Ker je $D$ območje, obstaja $\rho > 0$, da je $\overline{\mathbb{D}}(z_0, \rho) \subseteq D$. Za vsak $0 < r < \rho$ velja:
+        \begin{align*}
+            \frac{1}{2 \pi} \int_{0}^{2 \pi}{U(z_0 + re^{i \theta}) d\theta} &= \frac{1}{2 \pi} \left[\int_{0}^{\pi}U(z_0 + re^{i \theta})~d\theta + \int_{\pi}^{2\pi} U(z_0 + re^{i \theta})~d\theta\right] \\
+            & = \frac{1}{2 \pi} \left[\int_{0}^{\pi}U(z_0 + re^{i \theta})~d\theta + \int_{0}^{\pi}U(\overline{z_0 + re^{i \theta}})~d\theta\right] \\
+            &= \frac{1}{2 \pi} \left[\int_{0}^{\pi}u(z_0 + re^{i \theta})~d\theta - \int_{0}^{\pi}u(z_0 + re^{i \theta})~d\theta\right] = 0.
+        \end{align*}        
+        Ker je funkcija $U$ na $D^0$ ničelna, smo pokazali, da ima $U$ tudi na $D^0$ lastnost povprečne vrednosti. 
+        Dokazali smo, da ima zvezna funkcija $U$ na $D = D^+ \cup D^- \cup D^0$ lastnost povprečne vrednosti, zato je po trditvi \ref{ekvhlp} na $D$ harmonična.
     \end{dokaz}
 
     HOLOMORFNE ?
