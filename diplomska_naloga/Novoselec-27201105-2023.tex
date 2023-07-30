@@ -8,22 +8,22 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % - vaše ime
-\avtor{...}
+\avtor{Matej Novoselec}
 
 % - naslov dela v slovenščini
-\naslov{...}
+\naslov{Schwarzov princip zrcaljenja za harmonične funkcije}
 
 % - naslov dela v angleščini
-\title{...}
+\title{Schwarz Reflection Principle for Harmonic Functions}
 
 % - ime mentorja/mentorice s polnim nazivom:
 %   - doc.~dr.~Ime Priimek
 %   - izr.~prof.~dr.~Ime Priimek
 %   - prof.~dr.~Ime Priimek
 %   za druge variante uporabite ustrezne ukaze
-\mentor{...}
+%\mentor{prof. dr. Barbara Drinovec Drnovšek}
 % \somentor{...}
-% \mentorica{...}
+\mentorica{prof. dr. Barbara Drinovec Drnovšek}
 % \somentorica{...}
 % \mentorja{...}{...}
 % \somentorja{...}{...}
@@ -31,15 +31,15 @@
 % \somentorici{...}{...}
 
 % - leto diplome
-\letnica{...} 
+\letnica{2023} 
 
 % - povzetek v slovenščini
 %   V povzetku na kratko opišite vsebinske rezultate dela. Sem ne sodi razlaga
 %   organizacije dela, torej v katerem razdelku je kaj, pač pa le opis vsebine.
-\povzetek{...}
+\povzetek{TU BO POVZETEK}
 
 % - povzetek v angleščini
-\abstract{...}
+\abstract{TU BO POVZETEK V ANG}
 
 % - klasifikacijske oznake, ločene z vejicami
 %   Oznake, ki opisujejo področje dela, so dostopne na strani https://www.ams.org/msc/
@@ -99,6 +99,7 @@ Tretje poglavje je namenjeno karakterizaciji harmoničnih funkcij s pomočjo las
 V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, navedli in dokazali glavni izrek diplomskega dela - Schwarzov princip zrcaljenja za harmonične funkcije.
 %------------------------------------------------------------
 \section{Harmonične funkcije}
+\subsection{Osnovni pojmi}
     \begin{definicija}
         \label{harm}
         Naj bo $U$ odprta podmnožica v $\mathbb{R}^n$. Naj bo $u$ funkcija, definirana na $U$ in naj bo na definicijskem območju dvakrat zvezno odvedljiva.  
@@ -132,7 +133,7 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         Če obstaja $a \in D$, da za vse $b \in D$ in vse $t \in [0,~1]$ tudi $t a + (1-t)b \in D$ pravimo, da je $D$ \emph{zvezdasto območje}.
     \end{definicija}
 
-
+\subsection{Lastnosti harmoničnih funkcij}
     \begin{trditev}
         \label{hh}
         Naj bo $U \subseteq \mathbb{C}$ odprta množica. Naj bo $f = u + iv$ holomorfna funkcija, $u$ in $v$ pa realni funkciji, definirani na $U$. Potem sta funkciji $u$ in $v$ na $U$ harmonični.
@@ -199,7 +200,7 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
     \end{dokaz}
 
 \section{Lastnost povprečne vrednosti}
-
+\subsection{Definicija in osnovne lastnosti}
     \begin{definicija}  
         Naj bo $h$ zvezna funkcija, definirana na območju $D$. Denimo, da za $z_0 \in D$ in $r > 0$ velja $\overline{\mathbb{D}}(z_0, r) \subseteq D$. \emph{Povprečje funkcije} $h$ na $\overline{\mathbb{D}}(z_0, r)$ definiramo kot:
         $$
@@ -280,7 +281,7 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
     %    Sledi, da je $M = u(z_1) = u(z_1 + r e^{i \theta})$, za vsak $\theta \in [0,~2\pi]$ in vsak $0 < r < \rho_{z_1}$, oziroma ima poljuben $z_1 \in B$ okolico, ki je vsebovana v $B$. Torej je $B$ odprta.
     %    Predpostavka nam pove, da za vsak $z \in D$ velja $u(z) \leq M$, zato je $D$ disjunktna unija množic $A$ in $B$. Ker je $D$ povezana, $A$ in $B$ pa odprti množici, je ena izmed niju prazna, druga pa posledično enaka $D$. Ker po predpostavki $B$ vsebuje $z_0$, je $A$ prazna, $B$ pa je enaka $D$. Sledi, da je $u(z) = M$ za vsak $z \in D$. 
     %\end{dokaz}
-
+\subsection{Princip maksima}
     \begin{trditev}[Princip maksima za funkcije z lastnostjo povprečne vrednosti]
         \label{pm_lpv}
         Naj bo $h$ zvezna kompleksna funkcija, definirana na območju $D$. Naj ima $h$ na $D$ lastnost povprečne vrednosti in naj obstaja $M \in \mathbb{R}$, da velja $|h(z)| \leq M$ za vsak $z \in D$. 
@@ -400,6 +401,7 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
     \end{opomba}
 
 \section{Dirichletov problem za enotski disk}
+\subsection{Formulacija problema}
     Za začetek navedimo problem, ki ga bomo znotraj poglavja reševali.
     Naj bo $\mathbb{D}$ enotski disk. Zvezno kompleksno funkcijo $h$, definirano na $\partial \mathbb{D}$, bi želeli razširiti do funkcije $H$, da bo $H$ harmonična na $\mathbb{D}$ in zvezna na $\overline{\mathbb{D}}$.
 
@@ -468,6 +470,8 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
 
     Zgornji ekspliciten zapis razširitve je le drugače zapis že komentirane rešitve Dirichletovega problema na enotskem disku, za polinom v spremenljivki $e^{i \theta}$, $\theta \in [0,2\pi]$.
     Sedaj bomo zgornjo funkcijo, ki smo jo na intuitiven način konstruirali s pomočjo predpostavljene polinomske oblike funkcije $h$ vzeli za definicijo novega pojma in z njegovo pomočjo prišli do razširitve za splošne zvezne funkcije $h$.
+    
+\subsection{Poissonovo jedro}
     \begin{definicija}
         \emph{Poissonovo jedro} je funkcija definirana s predpisom
         $$
@@ -684,6 +688,7 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
     Zgoraj smo z intuitivno izpeljavo nevede že zapisali funkcijo, ki jo bomo sedaj vzeli za definicijo novega pojma. 
     Pokazali bomo, da to tudi pri splošnih zveznih funkcijah omogoča zapis rešitve Dirichletovega problema na enotskem disku.
 
+\subsection{Poissonov integral}
     \begin{definicija}
         Naj bo $h(e^{i \theta})$ zvezna funkcija, definirana na robu enotskega diska.
         \emph{Poissonov integral} funkcije $h(e^{i\theta})$, ki ga označimo s $\widetilde{h}(z)$, je funkcija, definirana na notranjosti enotskega diska s predpisom:
@@ -767,6 +772,7 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
             Po definiciji preslikave $\Phi$ zato $|[\Phi(h)](z)| \leq M$, za vsak $z \in \mathbb{D}$.
      \end{dokaz}
 
+\subsection{Schwarzova integralska formula}
      \begin{lema}
         \label{realnidel}
         Naj bo $u$ realna zvezna funkcija, definirana na $\partial \mathbb{D}$. Potem je Poissonov integral funkcije $u$ na $\mathbb{D}$ harmonična funkcija.
@@ -831,6 +837,7 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         \end{align*}
     \end{opomba}
 
+\subsection{Rešitev Dirichletovega problema na enotskem disku}
     Vrnimo se k bistvu razdelka. Za preproste zvezne funkcije smo že dokazali, da rešitev Dirichletovega problema na enotskem disku obstaja. To nas je pripeljalo do definicije Poissonovega jedra in Poissonovega integrala, s pomočjo katerih bomo sedaj pokazali, da za poljubno zvezno funkcijo obstaja rešitev Dirichletovega problema na enotskem disku.
     \begin{trditev}
         \label{obstoj}
@@ -954,6 +961,7 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         & = \frac{1}{2\pi i}\int_{\partial \mathbb{D}}{h(w) \left[\frac{1 - |z|^2}{|w - z|^2}\right]\frac{dw}{w}} =  \frac{1}{2\pi i}~\text{Re}\left[\int_{\partial \mathbb{D}}{h(w) \left(\frac{w + z }{w - z}\right)\frac{dw}{w}}\right];~ z \in \mathbb{D}.
     \end{align}
 
+\subsection{Dirichletov problem na splošnejših območjih}
     Dirichletov problem smo do sedaj formulirali in reševali za enotski disk. Problem bi na podoben način lahko formulirali za poljubno območje $U \subseteq \mathbb{C}$. 
     Kot začetni pogoj bi podali zvezno funkcijo, definirano na $\partial U$, ter iskali njeno razširitev na $\overline{U}$, tako da bi bila na $\overline{U}$ zvezna, ter na $U$ harmonična.
     
@@ -1017,6 +1025,7 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         Omenjena zamenjava vpliva le na spremembo definicijskega območja in lastnosti Poissonovega jedra ne spremeni.
      \end{dokaz}
 
+\subsection{Karakterizacija harmoničnih funkcij}
     Spomnimo se glavne motivacije za razdelek, ki smo jo navedli v opombi \ref{motivacija}.
     Z znanjem, pridobljenim znotraj razdelka, je sedaj dokaz karakterizacije harmoničnih funkcij na dlani.
     
@@ -1044,7 +1053,8 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         Po trditvi \ref{ekvhlp} je $u$ harmonična, po trditvi \ref{gladkosth} pa zato tudi gladka.
     \end{dokaz}
 
-\section{Schwarzov princip zrcaljenja za harmonične funkcije}
+\section{Schwarzov princip zrcaljenja}
+\subsection{Uvod in definicije osnovnih pojmov}
     Nekoliko se še navežimo na prejšno poglavje. 
     Srečali smo se s problemom obstoja in konstrukcije razširitve, podane funkcije, ki bo obenem zadoščala zahtevam problema.  
     Pri Dirichletovem problemu, smo zahtevali harmoničnost razširitve na notranjosti in zveznost razširitve na zaprtju območja. 
@@ -1077,6 +1087,7 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         Na tem mestu le spomnimo, da je za realne funkcije $u$, definirane na $U$, konjugiranje funkcijskih vrednosti pri predpisu funkcije $u^*$ odveč. Torej je funkcija $u^*$ določena kar prek zveze $u^*(w) = u(\overline{w}),~w \in U^*$.
     \end{opomba}
 
+\subsection{Schwarzov princip zrcaljenja za harmonične funkcije}
     \begin{trditev}
         \label{lemaharm}
         Naj bo $u$ realna funkcija, definirana na območju $U \subseteq \mathbb{C}$. Če je $u$ harmonična na $U$, potem je $u^*$ harmonična na $U^*$. 
@@ -1108,42 +1119,6 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         $$
         Sledi, da je $u^*$ harmonična na $U^*$.
     \end{proof}
-
-    \begin{trditev}
-        \label{lemahol}
-        Naj bo $f$ holomorfna funkcija, definirana na območju $U \subseteq \mathbb{C}$.
-        Potem je funkcija $f^*$ holomorfna na $U^*$.
-    \end{trditev}
-    \begin{dokaz}
-        Trditev ponovno dokažimo na dva načina. Dokaza se najprej lotimo s pomočjo Cauchy-Riemannovega sistema, nato pa holomorfnost funkcije $f^*$ dokažimo še po definiciji.
-
-        Označimo $f(z) = u(z) + iv(z),~ z \in U$ in $f^*(w) = p(w) + iq(w),~w \in U^*$, kjer so $u,v, p$ in $q$ realne funkcije. 
-        Iz definicije funkcije $f^*$ sledi $f^*(w) = \overline{u(\overline{w}) + iv(\overline{w})} = u(\overline{w}) - iv(\overline{w}),~ w \in U^*$. 
-        Sedaj enačimo realni in imaginarni del zapisanih funkcij. Dobimo:
-        \begin{align*}
-            p(w) &= u(\overline{w}),~w \in U^*~,~~\text{oziroma}~~~~p(\overline{z}) = u(z),~z \in U~,~~\text{ter:} \\
-            q(w) &= -v(\overline{w}),~w \in U^*~,~~\text{oziroma}~~~~q(\overline{z}) = -v(z),~z \in U.
-        \end{align*}
-        Enakosti lahko sedaj ob upoštevanju identifikacije $z \leftrightarrow (x,y)$ oziroma $\overline{z} \leftrightarrow (x, -y)$ parcialno odvajamo po realnih spremenljivkah $x$ in $y$. Dobimo:
-        \begin{align*}
-            \frac{\partial u}{\partial x} &= \frac{\partial p}{\partial x}~~~~\text{in}~~~~ -\frac{\partial v}{\partial x} = \frac{\partial q}{\partial x}~,~~\text{ter:}\\
-            \frac{\partial u}{\partial y} &=  - \frac{\partial p}{\partial y}~~~~\text{in}~~~~ -\frac{\partial v}{\partial y} = - \frac{\partial q}{\partial y} \iff \frac{\partial v}{\partial y} = \frac{\partial q}{\partial y}~.      
-        \end{align*}
-        Ker je funkcija $f$ holomorfna, zadošča Cauchy-Riemannovemu sistemu enačb.  
-        Sledi: 
-        \begin{align*}
-            \frac{\partial p}{\partial x} = \frac{\partial u}{\partial x} &= \frac{\partial v}{\partial y} = \frac{\partial q}{\partial y}~~~~\text{in}~~~~ \frac{\partial p}{\partial y} = -\frac{\partial u}{\partial y} = \frac{\partial v}{\partial x} = -\frac{\partial q}{\partial x}.
-        \end{align*}
-        Opazimo, da funkcija $f^* = p + iq$ zadošča Cauchy-Riemannovemu sistemu enačb, zato je holomorfna.
-
-        Sedaj dokažimo holomorfnost funkcije $f^*$ še po definiciji. Želimo dokazati, da je $f^*$ v vsaki točki $w \in U^*$ kompleksno odvedljiva. Predpostavka trditve nam pove, da je $f$ kompleksno odvedljiva v vsaki točki $\overline{w} \in U$.
-        Naj bo $w \in U^*$. Potem velja: 
-        \begin{align*}
-            \lim_{h \to 0}\left[{\frac{f^*(w + h) - f^*(w)}{h}}\right] &= \lim_{h \to 0}\left[{\frac{\overline{f\left(\overline{w + h}\right)} - \overline{f(\overline{w})}}{h}}\right] = \lim_{h \to 0}{\overline{\left[\frac{f\left(\overline{w + h}\right) - f(\overline{w})}{\overline{h}}\right]}} \\
-            \lim_{h \to 0}{\overline{\left[\frac{f\left(\overline{w} + \overline{h}\right) - f(\overline{w})}{\overline{h}}\right]}} & = \overline{\lim_{\overline{h} \to 0}{\left[\frac{f\left(\overline{w} + \overline{h}\right) - f(\overline{w})}{\overline{h}}\right]}} = \overline{f'(\overline{w})}.
-        \end{align*}
-        Limita diferenčnega kvocienta obstaja v poljubni točki $w \in U^*$, zato je $f^*$ na $U^*$ kompleksno odvedljiva oziroma holomorfna.
-    \end{dokaz}
 
     Sedaj smo pripravljeni na formulacijo in dokaz glavnega izreka.
     
@@ -1216,7 +1191,45 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         Dokazali smo, da ima zvezna funkcija $U$ na $D = D^+ \cup D^- \cup D^0$ lastnost povprečne vrednosti, zato je po trditvi \ref{ekvhlp} na $D$ harmonična.
     \end{dokaz}
 
-    HOLOMORFNE ?
+\subsection{Schwarzov princip zrcaljenja za holomorfne funkcije}
+    \begin{trditev}
+        \label{lemahol}
+        Naj bo $f$ holomorfna funkcija, definirana na območju $U \subseteq \mathbb{C}$.
+        Potem je funkcija $f^*$ holomorfna na $U^*$.
+    \end{trditev}
+    \begin{dokaz}
+        Trditev ponovno dokažimo na dva načina. Dokaza se najprej lotimo s pomočjo Cauchy-Riemannovega sistema, nato pa holomorfnost funkcije $f^*$ dokažimo še po definiciji.
+
+        Označimo $f(z) = u(z) + iv(z),~ z \in U$ in $f^*(w) = p(w) + iq(w),~w \in U^*$, kjer so $u,v, p$ in $q$ realne funkcije. 
+        Iz definicije funkcije $f^*$ sledi $f^*(w) = \overline{u(\overline{w}) + iv(\overline{w})} = u(\overline{w}) - iv(\overline{w}),~ w \in U^*$. 
+        Sedaj enačimo realni in imaginarni del zapisanih funkcij. Dobimo:
+        \begin{align*}
+            p(w) &= u(\overline{w}),~w \in U^*~,~~\text{oziroma}~~~~p(\overline{z}) = u(z),~z \in U~,~~\text{ter:} \\
+            q(w) &= -v(\overline{w}),~w \in U^*~,~~\text{oziroma}~~~~q(\overline{z}) = -v(z),~z \in U.
+        \end{align*}
+        Enakosti lahko sedaj ob upoštevanju identifikacije $z \leftrightarrow (x,y)$ oziroma $\overline{z} \leftrightarrow (x, -y)$ parcialno odvajamo po realnih spremenljivkah $x$ in $y$. Dobimo:
+        \begin{align*}
+            \frac{\partial u}{\partial x} &= \frac{\partial p}{\partial x}~~~~\text{in}~~~~ -\frac{\partial v}{\partial x} = \frac{\partial q}{\partial x}~,~~\text{ter:}\\
+            \frac{\partial u}{\partial y} &=  - \frac{\partial p}{\partial y}~~~~\text{in}~~~~ -\frac{\partial v}{\partial y} = - \frac{\partial q}{\partial y} \iff \frac{\partial v}{\partial y} = \frac{\partial q}{\partial y}~.      
+        \end{align*}
+        Ker je funkcija $f$ holomorfna, zadošča Cauchy-Riemannovemu sistemu enačb.  
+        Sledi: 
+        \begin{align*}
+            \frac{\partial p}{\partial x} = \frac{\partial u}{\partial x} &= \frac{\partial v}{\partial y} = \frac{\partial q}{\partial y}~~~~\text{in}~~~~ \frac{\partial p}{\partial y} = -\frac{\partial u}{\partial y} = \frac{\partial v}{\partial x} = -\frac{\partial q}{\partial x}.
+        \end{align*}
+        Opazimo, da funkcija $f^* = p + iq$ zadošča Cauchy-Riemannovemu sistemu enačb, zato je holomorfna.
+
+        Sedaj dokažimo holomorfnost funkcije $f^*$ še po definiciji. Želimo dokazati, da je $f^*$ v vsaki točki $w \in U^*$ kompleksno odvedljiva. Predpostavka trditve nam pove, da je $f$ kompleksno odvedljiva v vsaki točki $\overline{w} \in U$.
+        Naj bo $w \in U^*$. Potem velja: 
+        \begin{align*}
+            \lim_{h \to 0}\left[{\frac{f^*(w + h) - f^*(w)}{h}}\right] &= \lim_{h \to 0}\left[{\frac{\overline{f\left(\overline{w + h}\right)} - \overline{f(\overline{w})}}{h}}\right] = \lim_{h \to 0}{\overline{\left[\frac{f\left(\overline{w + h}\right) - f(\overline{w})}{\overline{h}}\right]}} \\
+            \lim_{h \to 0}{\overline{\left[\frac{f\left(\overline{w} + \overline{h}\right) - f(\overline{w})}{\overline{h}}\right]}} & = \overline{\lim_{\overline{h} \to 0}{\left[\frac{f\left(\overline{w} + \overline{h}\right) - f(\overline{w})}{\overline{h}}\right]}} = \overline{f'(\overline{w})}.
+        \end{align*}
+        Limita diferenčnega kvocienta obstaja v poljubni točki $w \in U^*$, zato je $f^*$ na $U^*$ kompleksno odvedljiva oziroma holomorfna.
+    \end{dokaz}
+
+\section{Zaključek}
+    TU BO ZAKLJUCEK
 
 \bibliographystyle{siam}
 \begin{thebibliography}{9}
@@ -1226,14 +1239,5 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
     \bibitem{mean value p}
     Weisstein, Eric W. \emph{Mean-Value Property}, v: From MathWorld--A Wolfram Web Resource, [ogled 22. 2. 2023], dostopno na
 \end{thebibliography}
-%
-% \section{Uvod}
-% ...
-
-% \section{...}
-% ...
-
-% \section{Zaključek}
-% ...
 
 \end{document}
