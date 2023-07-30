@@ -404,6 +404,13 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
 \subsection{Formulacija problema}
     Za začetek navedimo problem, ki ga bomo znotraj poglavja reševali.
     Naj bo $\mathbb{D}$ enotski disk. Zvezno kompleksno funkcijo $h$, definirano na $\partial \mathbb{D}$, bi želeli razširiti do funkcije $H$, da bo $H$ harmonična na $\mathbb{D}$ in zvezna na $\overline{\mathbb{D}}$.
+    Opisan problem je grafično prikazan na spodnji sliki. 
+    \begin{figure}[h]
+        \begin{center}
+            \includegraphics[width = 0.7 \textwidth]{dirichlet_form.png}
+            \caption{Dirichletov problem za enotski disk, z začetnim pogojem $h$.}
+        \end{center}    
+    \end{figure}
 
     Kot smo že komentirali po definiciji \ref{harm}, so funkcije harmonične natanko tedaj ko zadoščajo Laplaceovi parcialni diferencialni enačbi.   
     Vredno je omeniti, da lahko na Direchletov problem za enotski disk gledamo tudi iz stališča teorije diferencialnih enačb. Gre za problem iskanja funkcije, ki na notranjosti območja reši Laplaceovo diferencialno enačbo ob robnem pogoju, ki ga določa v naprej podana funkcija na robu območja.     
@@ -626,7 +633,7 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         Lastnosti Poissonovega jedra, navedene v trditvi \ref{lastpk} in \ref{proti0}, so tudi dobro razvidne na spodnji sliki. 
     \end{opomba}
 
-    \begin{figure}%[H]
+    \begin{figure}[h]
         \begin{center}
         \includegraphics[width=\linewidth]{grafi.png}
         \caption{Graf Poissonovega jedra glede na vrednost spremenljivke $r$.}
@@ -789,7 +796,7 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
 
      Osredotočimo se na predpis holomorfne funkcije iz zapisa \eqref{lema_schwarz}. Opazimo, da smo jo konstruirali s pomočjo podane realne funkcije $u$. 
      Sedaj začnimo nekoliko drugače. Denimo da imamo podano funkcijo $F = U + iV$, ki je na $\overline{\mathbb{D}}$ zvezna in na $\mathbb{D}$ holomorfna. Vredno je omeniti, da sta tu v zapisu $U$ in $V$ realni funkciji, ki predstavljata realni oziroma imaginarni del funkcije $F$, ter sta zato na $\overline{\mathbb{D}}$ zvezni in na $\mathbb{D}$ harmonični.
-     Iz realnega dela holomorfne funkcije $F$, torej funkcije $U$ lahko na enak način, kot smo to storili v \eqref{lema_schwarz} konstruiramo holomorfno funkcijo $\widetilde{F}$, s predpisom:
+     Iz realnega dela holomorfne funkcije $F$, torej funkcije $U$, lahko na enak način kot smo to storili v \eqref{lema_schwarz}, konstruiramo holomorfno funkcijo $\widetilde{F}$ s predpisom:
      \begin{equation}
         \label{priprav_schwarz}
         \widetilde{F}(z) = \int_{0}^{2 \pi}{U(e^{i \varphi})\bigg(\frac{e^{i\varphi}+z}{e^{i\varphi}-z}\bigg)\frac{d \varphi}{2 \pi}},~z \in \mathbb{D}.
@@ -854,7 +861,14 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
             \end{cases}.
         $$
         Trdimo, da je funkcija $H$ na $\overline{\mathbb{D}}$ zvezna, ter na $\mathbb{D}$ harmonična. Po definiciji funkcije $H$ opazimo, da v resnici trdimo, da je na $\mathbb{D}$ harmoničen Poissonov integral funkcije $h$. 
-        Ker se zožitev tako definirane funkcije $H$ na $\partial \mathbb{D}$ ujema s $h$, želimo dokazati, da je ravno funkcija $H$ rešitev za Dirichletov problem na enotskem disku, z robnim pogojem $h$.
+        Ker se zožitev tako definirane funkcije $H$ na $\partial \mathbb{D}$ ujema s $h$, želimo dokazati, da je ravno funkcija $H$ rešitev za Dirichletov problem na enotskem disku, z robnim pogojem $h$. 
+        Formulacijo problema smo predstavili tudi grafično, pa naredimo to še za rešitev problema. 
+        \begin{figure}[h]
+            \begin{center}
+                \includegraphics[width = 0.7 \textwidth]{dirichlet_resitev.png}
+                \caption{Rešitev Dirichletovega problema na enotskem disku, z robnim pogojem $h$.}
+            \end{center}    
+        \end{figure}
      \end{opomba}
 
      \begin{dokaz}
@@ -1053,6 +1067,15 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         Po trditvi \ref{ekvhlp} je $u$ harmonična, po trditvi \ref{gladkosth} pa zato tudi gladka.
     \end{dokaz}
 
+    \begin{opomba}
+        \label{karakterizacija}
+        Karakterizacija harmoničnih funkcij, prek lastnosti povprečne vrednosti, je primerljiva s karakterizacijo holomorfnih funkcij, ki jo ponuja izrek Morera. 
+        Ta nam pove, da je na območju zvezna funkcija holomorfna natanko tedaj, ko je krivuljni integral funkcije po robu vsakega trikotniku, ki je v celoti vsebovan v območju, enak nič.
+        Opazimo torej, da se za zvezne funkcije pojem harmoničnosti oziroma holomorfnosti izraža preko zahteve za krivuljni integral po robu (majhnega) diska oziroma robu trikotnika.
+        Prednost vsake izmed karakterizacij bo jasna znotraj naslednjega poglavja. Karakterizacija harmoničnih funkcij bo ključna pri dokazu Schwarzovega principa zrcaljenja za harmonične funkcije, 
+        karakterizacija holomorfnih funkcij pa bo ključna za dokaz Schwarzovega principa zrcaljenja za holomorfne funkcije. 
+    \end{opomba}
+
 \section{Schwarzov princip zrcaljenja}
 \subsection{Uvod in definicije osnovnih pojmov}
     Nekoliko se še navežimo na prejšno poglavje. 
@@ -1062,8 +1085,8 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
     $$
         H(z) = 
         \begin{cases}
-            h(z)~&z \in \partial \mathbb{D} \\
-            \widetilde{h}(z)~&z \in \mathbb{D}
+            h(z)~;~~&z \in \partial \mathbb{D} \\
+            \widetilde{h}(z)~;~~&z \in \mathbb{D}
         \end{cases}.
     $$
     Problem, ki ga Schwarzov princip zrcaljenja reši, je ne glede na drugačne začetne pogoje iz vidika iskanja harmonične razširitve kljub temu blizu že obdelanemu Dirichletovemu problemu.
@@ -1136,20 +1159,21 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         $$
         U(z) = 
         \begin{cases}
-            u(z)~~&z \in D^{+}\\
-            -u(\overline{z})~~&z \in D^{-}\\
-            0~~ &z \in D^0
+            u(z)~;~~&z \in D^{+}\\
+            -u(\overline{z})~;~~&z \in D^{-}\\
+            0~;~~ &z \in D^0
         \end{cases}
         .
         $$
         Izrek pravi, da je funkcija $U$ na $D$ harmonična.
         Sedaj zapisano situacijo komentirajmo še s pomočjo spodnje slike. 
-        \begin{figure}%[H]
+        \begin{figure}[h]
             \begin{center}
-                \includegraphics[width = \textwidth]{schwarzov_princip_zrcaljenja.png}
+                \includegraphics[width = \textwidth]{schwarz_harm.png}
                 \caption{Grafičen prikaz Schwarzovega principa zrcaljenja za harmonične funkcije.}
             \end{center}    
         \end{figure}
+
     Slika prikazuje glede na realno os simetrično območje $D \subseteq \mathbb{C}$. $D^{+}$ označuje območje, na katerem je poznana funkcija $u$ harmonična, $D^{-}$ pa zrcalno sliko območja $D^+$ glede na realno os. 
     Predpis razširitve je na $D^-$ podan s predpisom $u(\overline{z}) = - u(z)$.
     Vodoravna črta prikazuje odsek realne osi. Odsek, ki leži znotraj območja $D$ smo označili z $D^0$. Funkcija $u$ je na tem delu območja po predpostavki izreka ničelna.
@@ -1226,6 +1250,70 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
             \lim_{h \to 0}{\overline{\left[\frac{f\left(\overline{w} + \overline{h}\right) - f(\overline{w})}{\overline{h}}\right]}} & = \overline{\lim_{\overline{h} \to 0}{\left[\frac{f\left(\overline{w} + \overline{h}\right) - f(\overline{w})}{\overline{h}}\right]}} = \overline{f'(\overline{w})}.
         \end{align*}
         Limita diferenčnega kvocienta obstaja v poljubni točki $w \in U^*$, zato je $f^*$ na $U^*$ kompleksno odvedljiva oziroma holomorfna.
+    \end{dokaz}
+
+    \begin{trditev}[Schwarzov princip zrcaljenja za holomorfne funkcije]
+        Naj bo $D \subseteq \mathbb{C}$ območje, simetrično glede na realno os. 
+        Označimo $D^{+} = \{z \in D~|~\text{Im}[z] > 0\},~D^{-} = \{z \in D~|~\text{Im}[z] < 0\}$ in $D^{0} = \{z \in D~|~\text{Im}[z] = 0\}$.
+        Naj bo $f$ zvezna funkcija, definirana na $D^{+} \cup D^0$. Naj bo $f$ na $D^{+}$ holomorfna in naj $f$ na $D^0$ zavzame realne vrednosti.
+        Potem je funkcija $F$, definirana s predpisom:
+        $$
+        F(z) = 
+        \begin{cases}
+            f(z)~;~~&z \in D^{+} \cup D^0\\
+            f^*(z)~;~~&z \in D^{-} \cup D^0
+        \end{cases}~,
+        $$
+        na območju $D$ holomorfna.
+    \end{trditev}
+    \begin{opomba}
+        Trditev nam v resnici pove, da za holomorfno funkcijo $f$ obstaja holomorfna razširitev, podana s predpisom:
+        $$
+        F(z) = 
+        \begin{cases}
+            f(z)~;~~&z \in D^{+} \cup D^0\\
+            \overline{f(\overline{z})}~;~~&z \in D^{-} \cup D^0
+        \end{cases}.
+        $$
+        Opazimo, da imata veji predpisa funkcije $F$ neprazen presek, zato se je smiselno vprašati ali je predpis sploh dobro definiran. V resnici je potrebno preveriti ali se funkcijske vrednosti na preseku vej, oziroma $D^0$, ujemajo.  
+        Naj bo $z_0 \in D^0$. Po definiciji sledi $z_0 \in \mathbb{R}$, ter zato $\overline{z_0} = z_0$. Ker funkcija $f$, po predpostavki trditve, na $D^0$ zavzame realne vrednosti, sledi $f(z_0) = f(\overline{z_0}) = \overline{f(\overline{z_0})}$.
+    \end{opomba}
+    \begin{dokaz}
+        Območje $D$ je disjunktna unija $D^+$, $D^-$ in $D^0$. Vemo da je funkcija $F$, oziroma $f$, holomorfna na $D^+$, zato je po trditvi \ref{lemahol} funkcija $f^*$, oziroma $F$, holomorfna na $(D^+)^* = D^-$. 
+        Dovolj je torej dokazati, da je $F$ holomorfna v okolici vsake točke iz $D^0$. 
+        Naj bo $z_0 \in D^0$ in $\delta > 0$ tak, da velja $\overline{\mathbb{D}}(z_0,\delta) \subseteq \mathbb{D}$. Spomnimo se opombe \ref{karakterizacija}. 
+        Funkcija $F$ je očitno zvezna kar na $D$, zato je dovolj pokazati, da za vsak zaprt trikotnik $T$, za katerega velja $T \subseteq \mathbb{D}(z_0, \delta)$ sledi: 
+        $$ 
+            \int_{\partial T}{F(\xi)~d\xi} = 0.
+        $$
+        Naj bo $T$ poljuben zaprt trikotnik, ki je v celoti vsebovan v $\mathbb{D}(z_0,\delta)$. Opazimo, da imao dve možnosti.
+        Bodisi je $T$ v celoti vsebovan v $\mathbb{D}(z_0,\delta) \cap D^+$ ali $\mathbb{D}(z_0,\delta) \cap D^-$, bodisi ima z $D^0$ neprazen presek.
+        
+        Če je $T$ v celoti vsebovan v $\mathbb{D}(z_0,\delta) \cap D^+$ ali $\mathbb{D}(z_0,\delta) \cap D^-$, nam holomorfnost funkcije $F$ na $D^+$ in $D^-$ omogoča uporabo Cauchyjevega izreka. 
+        Ta nam pove, da je krivuljni integral po robu $T$ res enak nič. 
+        Zapisana situacija je za zaprte trikotnike $T_1 \subseteq \mathbb{D}(z_0,\delta) \cap D^+$, ter zaprte trikotnike $T_2 \subseteq \mathbb{D}(z_0,\delta) \cap D^-$, grafično prikazana na spodnji sliki. 
+        \begin{figure}[h]
+            \begin{center}
+                \includegraphics[width = \textwidth]{schwarz_hol_1.png}
+                \caption{Zaprta trikotnika $T_1$ in $T_2$, vsebovana v $\mathbb{D}(z_0,\delta) \cap D^+$ oziroma v $\mathbb{D}(z_0,\delta) \cap D^-$.}
+            \end{center}    
+        \end{figure}
+
+        Posvetimo se drugi možnosti, torej možnosti, da presek zaprtega trikotnika $T$ in $D^0$ ni prazen. 
+        Ideja je krivuljni integral po robu trikotnika dovolj blizu $D^0$ razbiti na krivuljna integrala, ki bosta v celoti znotraj območij $\mathbb{D}(z_0,\delta) \cap D^+$ oziroma $\mathbb{D}(z_0,\delta) \cap D^-$, 
+        ter krivuljni integral, katerega prispevek bo dovolj majhen.
+        Situacijo si pred nadaljevanjem oglejmo na spodnji sliki. 
+
+        \begin{figure}[h]
+            \begin{center}
+                \includegraphics[width = \textwidth]{schwarz_hol_2.png}
+                \caption{Razbitje trikotnika $T$ na $P^+$, $P^-$ in $P^0$.}
+            \end{center}    
+        \end{figure}
+
+
+
+
     \end{dokaz}
 
 \section{Zaključek}
