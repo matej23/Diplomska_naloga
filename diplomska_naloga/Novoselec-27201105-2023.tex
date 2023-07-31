@@ -69,6 +69,7 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{yhmath}
+\usepackage{float}
 \usepackage[shortlabels]{enumitem}
 \usepackage[justification=centering]{caption}
 
@@ -405,7 +406,7 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
     Za začetek navedimo problem, ki ga bomo znotraj poglavja reševali.
     Naj bo $\mathbb{D}$ enotski disk. Zvezno kompleksno funkcijo $h$, definirano na $\partial \mathbb{D}$, bi želeli razširiti do funkcije $H$, da bo $H$ harmonična na $\mathbb{D}$ in zvezna na $\overline{\mathbb{D}}$.
     Opisan problem je grafično prikazan na spodnji sliki. 
-    \begin{figure}[h]
+    \begin{figure}[H]
         \begin{center}
             \includegraphics[width = 0.7 \textwidth]{dirichlet_form.png}
             \caption{Dirichletov problem za enotski disk, z začetnim pogojem $h$.}
@@ -633,7 +634,7 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         Lastnosti Poissonovega jedra, navedene v trditvi \ref{lastpk} in \ref{proti0}, so tudi dobro razvidne na spodnji sliki. 
     \end{opomba}
 
-    \begin{figure}[h]
+    \begin{figure}[H]
         \begin{center}
         \includegraphics[width=\linewidth]{grafi.png}
         \caption{Graf Poissonovega jedra glede na vrednost spremenljivke $r$.}
@@ -863,7 +864,7 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         Trdimo, da je funkcija $H$ na $\overline{\mathbb{D}}$ zvezna, ter na $\mathbb{D}$ harmonična. Po definiciji funkcije $H$ opazimo, da v resnici trdimo, da je na $\mathbb{D}$ harmoničen Poissonov integral funkcije $h$. 
         Ker se zožitev tako definirane funkcije $H$ na $\partial \mathbb{D}$ ujema s $h$, želimo dokazati, da je ravno funkcija $H$ rešitev za Dirichletov problem na enotskem disku, z robnim pogojem $h$. 
         Formulacijo problema smo predstavili tudi grafično, pa naredimo to še za rešitev problema. 
-        \begin{figure}[h]
+        \begin{figure}[H]
             \begin{center}
                 \includegraphics[width = 0.7 \textwidth]{dirichlet_resitev.png}
                 \caption{Rešitev Dirichletovega problema na enotskem disku, z robnim pogojem $h$.}
@@ -1167,7 +1168,7 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         $$
         Izrek pravi, da je funkcija $U$ na $D$ harmonična.
         Sedaj zapisano situacijo komentirajmo še s pomočjo spodnje slike. 
-        \begin{figure}[h]
+        \begin{figure}[H]
             \begin{center}
                 \includegraphics[width = \textwidth]{schwarz_harm.png}
                 \caption{Grafičen prikaz Schwarzovega principa zrcaljenja za harmonične funkcije.}
@@ -1286,34 +1287,93 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         $$ 
             \int_{\partial T}{F(\xi)~d\xi} = 0.
         $$
-        Naj bo $T$ poljuben zaprt trikotnik, ki je v celoti vsebovan v $\mathbb{D}(z_0,\delta)$. Opazimo, da imao dve možnosti.
+        Naj bo $T$ poljuben zaprt trikotnik, ki je v celoti vsebovan v $\mathbb{D}(z_0,\delta)$. Opazimo, da imamo dve možnosti.
         Bodisi je $T$ v celoti vsebovan v $\mathbb{D}(z_0,\delta) \cap D^+$ ali $\mathbb{D}(z_0,\delta) \cap D^-$, bodisi ima z $D^0$ neprazen presek.
         
         Če je $T$ v celoti vsebovan v $\mathbb{D}(z_0,\delta) \cap D^+$ ali $\mathbb{D}(z_0,\delta) \cap D^-$, nam holomorfnost funkcije $F$ na $D^+$ in $D^-$ omogoča uporabo Cauchyjevega izreka. 
         Ta nam pove, da je krivuljni integral po robu $T$ res enak nič. 
         Zapisana situacija je za zaprte trikotnike $T_1 \subseteq \mathbb{D}(z_0,\delta) \cap D^+$, ter zaprte trikotnike $T_2 \subseteq \mathbb{D}(z_0,\delta) \cap D^-$, grafično prikazana na spodnji sliki. 
-        \begin{figure}[h]
+        \begin{figure}[H]
             \begin{center}
                 \includegraphics[width = \textwidth]{schwarz_hol_1.png}
                 \caption{Zaprta trikotnika $T_1$ in $T_2$, vsebovana v $\mathbb{D}(z_0,\delta) \cap D^+$ oziroma v $\mathbb{D}(z_0,\delta) \cap D^-$.}
             \end{center}    
         \end{figure}
 
-        Posvetimo se drugi možnosti, torej možnosti, da presek zaprtega trikotnika $T$ in $D^0$ ni prazen. 
-        Ideja je krivuljni integral po robu trikotnika dovolj blizu $D^0$ razbiti na krivuljna integrala, ki bosta v celoti znotraj območij $\mathbb{D}(z_0,\delta) \cap D^+$ oziroma $\mathbb{D}(z_0,\delta) \cap D^-$, 
-        ter krivuljni integral, katerega prispevek bo dovolj majhen.
-        Situacijo si pred nadaljevanjem oglejmo na spodnji sliki. 
+        Posvetimo se drugi možnosti, torej možnosti, da presek zaprtega trikotnika $T$ in $D^0$ ni prazen. Tokrat si situacijo najprej oglejmo grafično. 
 
-        \begin{figure}[h]
+        \begin{figure}[H]
             \begin{center}
                 \includegraphics[width = \textwidth]{schwarz_hol_2.png}
-                \caption{Razbitje trikotnika $T$ na $P^+$, $P^-$ in $P^0$.}
+                \caption{Delitev zaprtega trikotnika $T$ na $P^+$, $P^-$ in $P^0$.}
             \end{center}    
         \end{figure}
 
-
-
-
+        Ideja je krivuljni integral po robu trikotnika dovolj blizu $D^0$ razbiti na krivuljna integrala, ki bosta v celoti znotraj območij $\mathbb{D}(z_0,\delta) \cap D^+$ oziroma $\mathbb{D}(z_0,\delta) \cap D^-$, 
+        ter krivuljni integral, katerega prispevek bo dovolj majhen.
+        
+        Naj bo $\epsilon > 0$. Želimo najti dovolj majhen $\delta_0 > 0$, za katerega bo delitev zaprtega trikotnika $T$ na $P^+ = \{z \in T~|~\text{Im}[z] \geq \delta_0\}$, $P^- = \{z \in T~|~\text{Im}[z] \leq -\delta_0\}$ in $P^0 = \{z \in T~|~|\text{Im}[z]| \leq \delta_0\}$ zadoščala:
+        $$ 
+            \left|\int_{\partial P^0}{F(\xi)~d\xi}\right| < \epsilon~,~\text{ter zato po Cauchyjevem izreku za funkcijo $F$ na $P^+$ in $P^-$:}
+        $$
+        \begin{align*}
+            \left|\int_{\partial T}{F(\xi)~d\xi}\right| &= \left|\int_{\partial P^+}{F(\xi)~d\xi} + \int_{\partial P^-}{F(\xi)~d\xi} + \int_{\partial P^0}{F(\xi)~d\xi}\right|\\
+            &\leq \left|\int_{\partial P^+}{F(\xi)~d\xi} \right|+ \left|\int_{\partial P^-}{F(\xi)~d\xi}\right| + \left|\int_{\partial P^0}{F(\xi)~d\xi}\right| \\ 
+            & =\left|\int_{\partial P^0}{F(\xi)~d\xi} \right| < \epsilon.
+        \end{align*}
+        Sedaj razbijmo še krivuljni integral po robu $\partial P^0$. Ponovno si delitev najprej oglejmo na spodnji sliki, ter jo šele nato uporabimo. 
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[width = \textwidth]{schwarz_hol_int.png}
+                \caption{Delitev roba $P^0$ na $S_Z$, $S_D$, $S_L$ in $S_S$.}
+            \end{center}    
+        \end{figure}
+        Slika nam nakazuje delitev krivuljnega integrala po robu na linearne odseke. Velja:
+        \begin{align*}
+            \left|\int_{\partial P^0}{F(\xi)~d\xi}\right| &= \left|\int_{S_Z}{F(\xi)~d\xi} - \int_{S_S}{F(\xi)~d\xi} + \int_{S_L}{F(\xi)~d\xi} - \int_{S_D}{F(\xi)~d\xi}\right|\\
+            & \leq \left|\int_{S_Z}{F(\xi)~d\xi} - \int_{S_S}{F(\xi)~d\xi} \right| + \left|\int_{S_L}{F(\xi)~d\xi}\right| + \left|\int_{S_D}{F(\xi)~d\xi}\right|.\\
+        \end{align*}
+        Opazimo, da bi lahko krivuljna integrala $S_D$ in $S_L$ parametrizirali s pomočjo linearne funkcije. Zato obstaja konstanta $C_1 \in \mathbb{R}$, da velja $|z_{ZL} - z_{SL}| < C_1 \delta_0$ in  \mbox{$|z_{ZD} - z_{SD}| < C_1 \delta_0$}.
+        Ker je $F$ na $D$ zvezna, $P^0$ pa zaprta podmožica, je $|F|$ na $P^0$ omejena. Sedaj opažanji združimo. Ko krivuljni integral parametriziramo, ter integrand navzgor omejimo, opazimo, da je absolutna vrednost integrala lahko poljubno majhna, če bo le $\delta_0$ dovolj majhen. 
+        Zapišimo nekoliko drugače. Obstaja $\delta_1 > 0$, da za $\delta_0 \leq \delta_1$ velja:  
+        $$ 
+        \left|\int_{S_L}{F(\xi)~d\xi}\right| < \frac{\epsilon}{5}~~~\text{in}~~~\left|\int_{S_D}{F(\xi)~d\xi}\right| < \frac{\epsilon}{5}.
+        $$
+        Podoben sklep lahko naredimo pri integralu $\int_{S_1}{F(\xi)~d\xi}$ in $\int_{S_2}{F(\xi)~d\xi}$. Obstaja torej $\delta_2 > 0$, da za $\delta_0 \leq \delta_2$ velja:
+        $$ 
+        \left|\int_{S_1}{F(\xi)~d\xi}\right| < \frac{\epsilon}{5}~~~\text{in}~~~\left|\int_{S_2}{F(\xi)~d\xi}\right| < \frac{\epsilon}{5}.
+        $$
+        Sedaj uporabimo zgornje ocene. Dobimo: 
+        \begin{align*}
+            \left|\int_{\partial P^0}{F(\xi)~d\xi}\right|&< \left|\int_{S_Z}{F(\xi)~d\xi} - \int_{S_{S'}}{F(\xi)~d\xi} - \int_{S_1}{F(\xi)~d\xi} - \int_{S_2}{F(\xi)~d\xi}\right| + \frac{\epsilon}{5} +  \frac{\epsilon}{5}\\
+            & \leq \left|\int_{S_Z}{F(\xi)~d\xi} - \int_{S_{S'}}{F(\xi)~d\xi}\right| + \left|\int_{S_1}{F(\xi)~d\xi}\right| + \left|\int_{S_2}{F(\xi)~d\xi}\right| + \frac{2\epsilon}{5}\\
+            & < \left|\int_{S_Z}{F(\xi_Z)~d\xi_Z} - \int_{S_{S'}}{F(\xi_{S'})~d\xi_{S'}}\right| + \frac{4\epsilon}{5}.\\
+        \end{align*}
+        Sedaj preostala integrala parametrizirajmo z $\xi_Z = (1 -t)z_{ZD} + t z_{ZL},~t \in [0,1]$ in $\xi_{S'} = (1 -t)z_{Z2} + t z_{Z1},~t \in [0,1]$.
+        Sledi: 
+        \begin{align*}
+            &\int_{S_Z}{F(\xi_Z)~d\xi_Z} - \int_{S_{S'}}{F(\xi_{S'})~d\xi_{S'}}\\
+            &=\int_{0}^{1}{F((1 -t)z_{ZD} + t z_{ZL})(z_{ZL} - z_{ZD})~dt} - \int_{0}^{1}{F((1 -t)z_{2} + t z_{1})(z_{1} - z_{2})~dt}\\
+            &=\int_{0}^{1}{\left[F((1 -t)z_{ZD} + t z_{ZL})(z_{ZL} - z_{ZD}) - F((1 -t)z_{2} + t z_{1})(z_{1} - z_{2})\right]dt}.
+        \end{align*}  
+        Opazimo, da velja $z_{ZL} = z_{1} + 2 \delta_0$ in $z_{ZD} = z_2 + 2 \delta_0$, ter zato:
+        \begin{align*}
+            &\int_{S_Z}{F(\xi_Z)~d\xi_Z} - \int_{S_{S'}}{F(\xi_{S'})~d\xi_{S'}}\\
+            &=(z_{1} - z_{2})\int_{0}^{1}{\left[F((1 -t)z_{2} + t z_{1} + 2 \delta_0) - F((1 -t)z_{2} + t z_{1})\right]dt}.
+        \end{align*}  
+        Ker je $F$ zvezna na kompaktu $P^0$ obstaja $\delta_3 >0$, da za vsak $z, w \in P^0$ iz $|z -w| < \delta_3$ sledi $|F(z) - F(w)| < \frac{\epsilon}{5(z_1 - z_2)}$.
+        Zato za $\delta_0 \leq \frac{\delta_3}{2}$ velja:
+        \begin{align*}
+            &\left|\int_{S_Z}{F(\xi_Z)~d\xi_Z} - \int_{S_{S'}}{F(\xi_{S'})~d\xi_{S'}}\right|
+            \leq (z_{1} - z_{2})\int_{0}^{1}{\frac{\epsilon}{5(z_{1} - z_{2})}~dt} < \frac{\epsilon}{5}.
+        \end{align*}  
+        Sedaj ocene združimo. Vzemimo $\delta_0 = \text{min}\{\delta_1, \delta_2, \frac{\delta_3}{2}\}$. Velja:
+        $$ 
+        \left|\int_{\partial P^0}{F(\xi)~d\xi}\right|< \epsilon.
+        $$
+        Ker je bil $\epsilon$ poljubno majhen, iz tega že sledi $\int_{\partial T}{F(\xi)~d\xi} = 0$. 
+        Da bo enakost veljala za vsak zaprt trikotnik iz okolice točke $z_0$, lahko namesto $\delta$ pri definiciji okolice vzamemo $\widetilde{\delta} = \delta_0 < \delta$. 
+        Sledi, da je $F$ holomorfna na $\mathbb{D}(z_0, \widetilde{\delta})$. Ker je bil $z_0 \in D^0$ poljuben, smo dokazali, da je $F$ holomorfna tudi v okolici vsake točke iz $D^0$. 
     \end{dokaz}
 
 \section{Zaključek}
