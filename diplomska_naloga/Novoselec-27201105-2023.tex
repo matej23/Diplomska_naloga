@@ -94,13 +94,13 @@
 
 NAPIŠI NOV UVOD!!
 
-V diplomski nalogi bomo spoznali osnovne lastnosti harmoničnih fukcij, ki jih bomo proti koncu s pridom uporabili za dokaz glavnega izreka, katerega ime nosi naslov naloge.
-Vlekli bomo številne vzporednice s kompleksno analizo, gre namreč za področje, močno povezano s študijo holomorfnih funkcij.
-
-V prvem poglavju bomo spoznali, kaj so harmonične funkcije in poudarili, katere njihove lastnosti bodo za nadaljevanje pomembne. Ogledali si bomo tudi njihov odnos s holomorfnimi funkcijami. 
-V drugem poglavju bomo spoznali Dirichletov problem za enotski disk, ki nam bo dal osnovo za definicijo Poissonovega jedra in Poissonovega integrala. Ogledali si bomo nekaj lastnosti obeh definiranih pojmov in z njuno pomočjo rešili Dirichletov problem za enotski disk.
-Tretje poglavje je namenjeno karakterizaciji harmoničnih funkcij s pomočjo lastnosti povprečne vrednosti in analizi pomembnosti te karakterizacije. 
-V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, navedli in dokazali glavni izrek diplomskega dela - Schwarzov princip zrcaljenja za harmonične funkcije.
+%V diplomski nalogi bomo spoznali osnovne lastnosti harmoničnih fukcij, ki jih bomo proti koncu s pridom uporabili za dokaz glavnega izreka, katerega ime nosi naslov naloge.
+%Vlekli bomo številne vzporednice s kompleksno analizo, gre namreč za področje, močno povezano s študijo holomorfnih funkcij.
+%
+%V prvem poglavju bomo spoznali, kaj so harmonične funkcije in poudarili, katere njihove lastnosti bodo za nadaljevanje pomembne. Ogledali si bomo tudi njihov odnos s holomorfnimi funkcijami. 
+%V drugem poglavju bomo spoznali Dirichletov problem za enotski disk, ki nam bo dal osnovo za definicijo Poissonovega jedra in Poissonovega integrala. Ogledali si bomo nekaj lastnosti obeh definiranih pojmov in z njuno pomočjo rešili Dirichletov problem za enotski disk.
+%Tretje poglavje je namenjeno karakterizaciji harmoničnih funkcij s pomočjo lastnosti povprečne vrednosti in analizi pomembnosti te karakterizacije. 
+%V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, navedli in dokazali glavni izrek diplomskega dela - Schwarzov princip zrcaljenja za harmonične funkcije.
 %------------------------------------------------------------
 \section{Harmonične funkcije}
 \subsection{Osnovni pojmi}
@@ -152,7 +152,7 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
     \end{dokaz}
 
     \begin{opomba}
-        Če označimo $u = \text{Re}{f}$ in $v = \text{Im}{f}$, nam zgornja trditev v resnici pove, da sta realni in imaginarni del holomorfne funkcije harmonični funkciji. 
+        Če označimo $u = \text{Re}{f}$ in $v = \text{Im}{f}$, nam zgornja trditev pove, da sta realni in imaginarni del holomorfne funkcije harmonični funkciji. 
     \end{opomba}
 
     \begin{definicija}
@@ -168,15 +168,9 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         Ideja dokaza za splošno zvezdasto območje je podobna. 
     \end{dokaz}
 
-    \begin{opomba}
-        V duhu trditev \ref{hh} in \ref{konj}, je velikokrat smiselno na realno harmonično funkcijo $u$ gledati kot na realni del holomorfne funkcije $f = u + iv$, kjer je $v$ njena harmonična konjugiranka. To že nakazuje, da se bodo nekatere lepe lastnosti holomorfnih funkcij prenesle tudi na harmonične funkcije.
-    \end{opomba}
-    %%V duhu zgornjih dveh opomb, opazimo, da lahko kompleksno funkcijo $f$, zapišemo v obliki realnega in imaginarnega dela oziroma kot $f = u + i v$, s pomočjo nekih realnih funkcij (dveh spremenljivk) $u$ in $v$, ter lahko zaradi linearnosti parcialnih odvodov sklepamo, da je za harmoničnost $f$ kot kompleksne funkcije, dovolj zahtevati harmoničnost $u$ in $v$ kot realnih funkcij.
-    %%Podoben argument nam da vedeti, da nam harmoničnost $f = u + iv$, implicira tudi harmoničnost $u$ in $v$. 
-    \begin{opomba}
-        \label{lin}
-        Zaradi linearnosti parcialnih odvodov, je tudi linearna kombinacija harmoničnih funkcij harmonična. To bomo pri reševanju enega izmed glavnih problemov diplomskega dela s pridom uporabili.
-    \end{opomba}
+    V duhu trditev \ref{hh} in \ref{konj}, je velikokrat smiselno na realno harmonično funkcijo $u$ gledati kot na realni del holomorfne funkcije $f = u + iv$, kjer je $v$ njena harmonična konjugiranka. To že nakazuje, da se bodo nekatere lepe lastnosti holomorfnih funkcij prenesle tudi na harmonične funkcije.
+    Opazimo tudi, da je zaradi linearnosti parcialnih odvodov, tudi linearna kombinacija harmoničnih funkcij harmonična. To bomo pri reševanju enega izmed glavnih problemov diplomskega dela s pridom uporabili.
+
     \begin{opomba}
         V literaturi se v definiciji harmoničnosti, za funkcijo $u$, pojavlja tudi zahteva, da je funkcija gladka oziroma $u \in C^{\infty}$. V zgornji definiciji zahtevamo le obstoj drugih parcialnih odvodov, oziroma $u \in C^2$. 
         Da sta definiciji za realne funkcije dveh spremenljivk med seboj ekvivalentni, potrdi spodnja trditev. 
@@ -216,71 +210,69 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
     \begin{dokaz}
         Zapišimo $g = u_1 + i u_2$, kjer sta $u_1$ in $u_2$ realni funkciji, definirani na $D$. 
         Ker je $g$ harmonična, velja $ 0 = \Delta g = \Delta(u_1 + i u_2) = \Delta u_1 + i \Delta u_2$. Sledi $\Delta u_1 = \Delta u_2 = 0$, oziroma $u_1$ in $u_2$ sta realni harmonični funkciji.
-        Trditev \ref{komp_s_hol} nam pove, da sta potem funkciji $u_1 \circ f$ in $u_2 \circ f$ harmonični na $D$. Opomba \ref{lin} zaključi, da je potem na $D$ harmonična tudi funkcija $(u_1 \circ f) + i (u_2 \circ f) = (u_1 + i u_2) \circ f = g \circ f$.
+        Trditev \ref{komp_s_hol} nam pove, da sta potem funkciji $u_1 \circ f$ in $u_2 \circ f$ harmonični na $D$. Zaradi linearnosti Laplaceovega operatorja lahko zaključimo, da je potem na $D$ harmonična tudi funkcija $(u_1 \circ f) + i (u_2 \circ f) = (u_1 + i u_2) \circ f = g \circ f$.
     \end{dokaz}
 
 \section{Lastnost povprečne vrednosti}
 \subsection{Definicija in osnovne lastnosti}
     \begin{definicija}  
-        Naj bo $h$ zvezna funkcija, definirana na območju $D$. Denimo, da za $z_0 \in D$ in $r > 0$ velja $\overline{\mathbb{D}}(z_0, r) \subseteq D$. \emph{Povprečje funkcije} $h$ na $\overline{\mathbb{D}}(z_0, r)$ definiramo kot
+        Naj bo $h$ kompleksna zvezna funkcija, definirana na območju $D$. Denimo, da za $z_0 \in D$ in $r_0 > 0$ velja $\overline{\mathbb{D}}(z_0, r_0) \subseteq D$. \emph{Povprečje funkcije} $h$ na $\overline{\mathbb{D}}(z_0, r_0)$ definiramo kot
         $$
-            A(r) = \int_{0}^{2 \pi}{h \big(z_0 + r e^{i\theta}\big)\frac{d\theta}{2 \pi}}.
+            A(r) = \int_{0}^{2 \pi}{h \big(z_0 + r e^{i\theta}\big)\frac{d\theta}{2 \pi}}~,~~\text{za}~~r \in (0,r_0].
         $$
     \end{definicija}
     \begin{trditev}
         \label{zvpov}
-        Naj bo $h$ zvezna funkcija, definirana na območju $D$, ter denimo, da za $z_0 \in D$ in $r > 0$ velja $\overline{\mathbb{D}}(z_0, r) \subseteq D$. 
-        Potem je $A(r)$ zvezna na $(0,~r]$ in velja $\lim_{r \downarrow 0}{A(r)} = h(z_0)$.
+        Naj bo $h$ kompleksna zvezna funkcija, definirana na območju $D$, ter denimo, da za $z_0 \in D$ in $r_0 > 0$ velja $\overline{\mathbb{D}}(z_0, r_0) \subseteq D$. 
+        Potem je funkcija $A$ zvezna na $(0,~r_0]$ in velja $\lim_{r \downarrow 0}{A(r)} = h(z_0)$.
     \end{trditev}
     \begin{dokaz}
-        Ker je povprečje zvezne funkcije definirano kot integral zvezne funkcije, je funkcija $A(r)$ zvezna na $(0,~r]$. Drugi del trditve dokažimo po definiciji.
+        Ker je povprečje zvezne funkcije definirano kot integral zvezne funkcije, je funkcija $A$ zvezna na $(0,~r_0]$. Drugi del trditve dokažimo po definiciji.
         Naj bo $\epsilon > 0$ poljubno majhen. Velja
         $$
-            |A(r) - h(z_0)| = \bigg|\int_{0}^{2\pi} \big[h(z_0 + r e^{i\theta})  - h(z_0)\big] \frac{d\theta}{2\pi} \bigg| \leq \int_{0}^{2 \pi} \big| h(z_0 + r e^{i\theta}) - h(z_0) \big| \frac{d\theta}{2 \pi}.
+            |A(r) - h(z_0)| = \bigg|\int_{0}^{2\pi} \left(h(z_0 + r e^{i\theta})  - h(z_0)\right) \frac{d\theta}{2\pi} \bigg| \leq \int_{0}^{2 \pi} \big| h(z_0 + r e^{i\theta}) - h(z_0) \big| \frac{d\theta}{2 \pi}.
         $$
-        Ker je $h$ zvezna, obstaja $\delta > 0$, da za vsak $r < \delta$ in vsak $\theta \in [0,~2\pi]$ velja \mbox{$|h(z_0 + r e^{i\theta}) - h(z_0)| < \epsilon$}.
+        Ker je $h$ zvezna, obstaja $\delta > 0$, da za vsak $r \in  (0,~\delta)$ in vsak $\theta \in [0,~2\pi]$ velja \mbox{$|h(z_0 + r e^{i\theta}) - h(z_0)| < \epsilon$}.
         Za vsak $r$, ki je manjši od $\delta$, torej $|A(r) - h(z_0)| < \epsilon$. Ker je bil $\epsilon$ poljubno majhen, sledi $\lim_{r \downarrow 0}{A(r)} = h(z_0)$.
     \end{dokaz}
 
     \begin{definicija}
-        Naj bo $h$ zvezna funkcija, definirana na območju $D \subseteq \mathbb{C}$. Pravimo, da ima funkcija $h$ na $D$ \emph{lastnost povprečne vrednosti}, če za vsak $z_0 \in D$ obstaja $\epsilon_0 > 0$, da je $\overline{\mathbb{D}}(z_0, \epsilon_0) \subseteq D$ in za vsak $0 < \epsilon \leq \epsilon_0 $ velja
+        Naj bo $h$ kompleksna zvezna funkcija, definirana na območju $D \subseteq \mathbb{C}$. Pravimo, da ima funkcija $h$ na $D$ \emph{lastnost povprečne vrednosti}, če za vsak $z_0 \in D$ obstaja $\epsilon_0 > 0$, da je $\overline{\mathbb{D}}(z_0, \epsilon_0) \subseteq D$ in za vsak $0 < \epsilon \leq \epsilon_0 $ velja
         $$
             h(z_0) = \frac{1}{2 \pi} \int_{0}^{2 \pi}{h(z_0 + \epsilon e^{i \theta}) d\theta}.
         $$
     \end{definicija}
     \begin{opomba}
-        Definicija nam pove, da ima zvezna funkcija $h$ na območju $D \subseteq \mathbb{C}$ lastnost povprečne vrednosti, če za vsak $z_0$ iz $D$ velja, 
+        Definicija nam pove, da ima kompleksna zvezna funkcija $h$ na območju $D \subseteq \mathbb{C}$ lastnost povprečne vrednosti, če za vsak $z_0$ iz $D$ velja, 
         da je $h(z_0)$ povprečje vrednosti $h(z)$, kjer $z$ teče po majhni krožnici s središčem v $z_0$.
     \end{opomba}
 
-    Smiselno se je vprašati zakaj je pogoj, da ima funkcija lastnost povprečne vrednosti definiran prek krivuljnega integrala po robu diska in ne ploskovnega integrala po območju, ki ga omejuje rob diska.
+    Smiselno se je vprašati, zakaj je pogoj, da ima funkcija lastnost povprečne vrednosti, definiran prek krivuljnega integrala po robu diska in ne dvojnega integrala po območju, ki ga omejuje rob diska.
     Naslednja trditev nam pove, da funkcija ki ima lastnost povprečne vrednosti, zadošča tudi pogoju, da je vrednost v središču enaka povprečju vrednosti na celotnem disku.
 
     \begin{trditev}
-        Naj bo $u$ zvezna funkcija, definirana na območju $D$. Naj ima $u$ na $D$ lastnost povprečne vrednosti, ter denimo da za $z_0 \in D$ in $r>0$ velja $\overline{\mathbb{D}}(z_0,r) \subseteq D$. Potem velja
+        Naj bo $u$ kompleksna zvezna funkcija, definirana na območju $D$. Naj ima $u$ na $D$ lastnost povprečne vrednosti ter denimo, da za $z_0 \in D$ in $r>0$ velja $\overline{\mathbb{D}}(z_0,r) \subseteq D$. Potem velja
         $$
             u(z_0) = \frac{1}{\pi r^2} \iint_{\mathbb{D}(z_0,r)}{u(x + iy)~dxdy}.
         $$
     \end{trditev}
     \begin{dokaz}
-        Dvojni integral po disku, lahko z uvedbo polarnih koordinat $x = z_0 + \rho \cos(\theta)$, $y = z_0 + \rho \sin(\theta)$ prevedemo na dvakratnega. Velja
+        Dvojni integral po disku lahko z uvedbo polarnih koordinat $x = z_0 + \rho \cos\theta$, $y = z_0 + \rho \sin\theta$ prevedemo na dvakratnega. Velja
         $$
-        \frac{1}{\pi r^2} \iint_{\mathbb{D}(z_0,r)}{u(x + iy)~dxdy} = \frac{1}{\pi r^2} \int_{0}^{r}{\rho \left[\int_{0}^{2 \pi} u(z_0 + \rho e^{i\theta})~d\theta \right]d\rho}. 
+        \frac{1}{\pi r^2} \iint_{\mathbb{D}(z_0,r)}{u(x + iy)~dxdy} = \frac{1}{\pi r^2} \int_{0}^{r}{\rho \left(\int_{0}^{2 \pi} u(z_0 + \rho e^{i\theta})~d\theta \right)d\rho}. 
         $$
         Ker ima $u$ na $D$ lastnost povprečne vrednosti, velja
         $$
-            2 \pi~u(z_0) = \int_{0}^{2 \pi}{u(z_0 + \rho e^{i \theta}) d\theta},~\text{za vsak}~\rho \in [0, r].
+            2 \pi~u(z_0) = \int_{0}^{2 \pi}{u\left(z_0 + \rho e^{i \theta}\right) d\theta},~\text{za vsak}~\rho \in [0, r].
         $$
         Sledi
         $$
-        \frac{1}{\pi r^2} \iint_{\mathbb{D}(z_0,r)}{u(x + iy)~dxdy} = \frac{2}{r^2} \int_{0}^{r}{\rho \left[u(z_0)\right]d\rho} = u(z_0) \left[\frac{2}{r^2} \int_{0}^{r}{\rho~d\rho}\right] = u(z_0).
+        \frac{1}{\pi r^2} \iint_{\mathbb{D}(z_0,r)}{u(x + iy)~dxdy} = \frac{2}{r^2} \int_{0}^{r}{\rho \left(u(z_0)\right)d\rho} = u(z_0) \left(\frac{2}{r^2} \int_{0}^{r}{\rho~d\rho}\right) = u(z_0).
         $$
     \end{dokaz}
 
-    \begin{opomba}
-        \label{linlpv}
-        Iz linearnosti integrala sledi, da je tudi linearna kombinacija funkcij z lastnostjo povprečne vrednosti funkcija z lastnostjo povprečne vrednosti. 
-    \end{opomba}
+    Omenimo še, da iz linearnosti integrala sledi, da je tudi linearna kombinacija funkcij z lastnostjo povprečne vrednosti funkcija z lastnostjo povprečne vrednosti. 
+
 
 \subsection{Princip maksima}
     \begin{trditev}[Princip maksima za funkcije z lastnostjo povprečne vrednosti]
@@ -290,7 +282,7 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
     \end{trditev}
     \begin{dokaz}
         Ker je $|h(z_0)| = M$, obstaja $\varphi \in [0,~2\pi]$, da velja \mbox{$h(z_0) = M e^{i \varphi}$}.
-        Definirajmo $H(z) = h(z) e^{-i\varphi},~z \in D$. Po opombi \ref{linlpv} ima $H$ na $D$ lastnost povprečne vrednosti. Opazimo, da za vsak $z \in D$ velja $|H(z)|  \leq M$, obenem pa \mbox{$H(z_0) = M$}.
+        Definirajmo $H(z) = h(z) e^{-i\varphi},~z \in D$. Zaradi linearnosti lastnosti povprečne vrednosti ima tudi $H$ na $D$ lastnost povprečne vrednosti. Opazimo, da za vsak $z \in D$ velja $|H(z)|  \leq M$, obenem pa \mbox{$H(z_0) = M$}.
         Ker je funkcija $H$ na $D$ zvezna, $\{H(z_0)\}$ pa zaprta množica, je njena praslika \mbox{$A = \{z \in D~|~H(z) = H(z_0) = M\}$} prav tako zaprta množica. Po definiciji dokažimo, da je $A$ tudi odprta množica. 
         Naj bo $z_1 \in A$. Ker je $D$ odprta, obstaja $\rho_{z_1}$, da je za vsak $0 < r < \rho_{z_1}$ tudi $\overline{\mathbb{D}}(z_1, r) \subseteq D$. 
         Funkcija $H$ ima na $D$ lastnost povprečne vrednosti, zato velja
@@ -308,7 +300,7 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         $$
         Vemo, da za vsak $z \in D$ velja $|H(z)| \leq M = H(z_1)$, zato za vsak $z \in D$ velja $\text{Re}[H(z)] \leq |H(z)| \leq H(z_1)$.
         Sedaj vemo, da je integrand integrala nenegativen in zvezen, integral pa enak nič. Zato je integrand enak nič. 
-        Sledi, da je \mbox{$H(z_1) = \text{Re}[H(z_1 + r e^{i \theta})]$}, za vsak $\theta \in [0,~2\pi]$ in vsak $0 < r < \rho_{z_1}$. Definicija absolutne vrednosti nam da $|H(z)| = \sqrt{\text{Re}[H(z)]^2 + \text{Im}[H(z)]^2}$. 
+        Sledi, da je \mbox{$H(z_1) = \text{Re}[H(z_1 + r e^{i \theta})]$} za vsak $\theta \in [0,~2\pi]$ in vsak $0 < r < \rho_{z_1}$. Definicija absolutne vrednosti nam da $|H(z)| = \sqrt{\text{Re}[H(z)]^2 + \text{Im}[H(z)]^2}$. 
         Ker vemo, da za vsak $z \in D$ velja $|H(z)| \leq H(z_1) = M$, za vsak $w \in \mathbb{D}(z_1,\rho_{z_1})$ pa $H(z_1) = \text{Re}[H(w)]$ sledi, da za vsak $w \in \mathbb{D}(z_1,\rho_{z_1})$ velja $\text{Im}[H(w)] = 0$, oziroma $H(w) = H(z_1)$. 
         Poljuben $z_1 \in A$ ima torej odprto okolico, $ \mathbb{D}(z_1, \rho_{z_1}) \subseteq A$. Torej je $A$ odprta.
         Predpostavka trditve nam pove, da $A$ ni prazna, saj $z_0 \in A$. Ker je $D$ povezana, $A$ pa odprta in hkrati zaprta neprazna množica, velja $A = D$. 
@@ -327,6 +319,7 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
     \end{dokaz}
 
     \begin{trditev}
+        \label{hol_lpv}
         Naj bo $f$ holomorfna funkcija, definirana na območju $D$. Potem ima funkcija $f$ na $D$ lastnost povprečne vrednosti.
     \end{trditev}
     \begin{dokaz}
@@ -342,12 +335,18 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
 
     \begin{trditev}
         \label{harmonicnapovp}
-        Naj bo $u$ harmonična funkcija, definirana na območju $D \subseteq \mathbb{C}$. Naj bo $z_0 \in D$ in $\rho > 0$, da velja $\overline{\mathbb{D}}(z_0, \rho) \subseteq D$. Za vsak $0 < r < \rho$ potem velja
+        Naj bo $u$ kompleksna harmonična funkcija, definirana na območju $D \subseteq \mathbb{C}$. Naj bo $z_0 \in D$ in $\rho > 0$, da velja $\overline{\mathbb{D}}(z_0, \rho) \subseteq D$. Za vsak $0 < r < \rho$ potem velja
             $$
                 u(z_0) = \frac{1}{2 \pi} \int_{0}^{2 \pi}{u(z_0 + r e^{i \theta}) d\theta}.
             $$
     \end{trditev}
     \begin{dokaz}
+        Trditev dokažimo na dva načina. Prvi temelji na uporabi trditve \ref{hol_lpv}. Zapišimo $u = u_1 + i u_2$, kjer sta $u_1$ in $u_2$ realni funkciji definirani na območju $D$.
+        Ker je $u$ harmonična na $D$ sta na območju $D$ harmonični tudi funkciji $u_1$ in $u_2$. Za poljuben $z_0 \in D$ in $\rho > 0$, da velja $\overline{\mathbb{D}}(z_0, \rho) \subseteq D$ po trditvi \ref{konj} obstajata realni funkciji $v_1$ in $v_2$, da sta 
+        funkciji $f_1 = u_1 + i v_1$ in $f_2 = u_2 + i v_2$ na $\mathbb{D}(z_0, \rho)$ holomorfni. Po trditvi \ref{hol_lpv} imata $f_1$ in $f_2$ na $\mathbb{D}(z_0, \rho)$ lastnost povprečne vrednosti.
+        Sledi, da imata na $\mathbb{D}(z_0, \rho)$ funkciji $u_1$ in $u_2$ lastnost povprečne vrednosti. Zato ima tudi linearna kombinacija $u_1 + i u_2 = u$ na $\mathbb{D}(z_0, \rho)$ lastnost povprečne vrednosti.
+
+        Trditev je vredno dokazati še direktno, brez uporabe trditve \ref{hol_lpv}.
         Na $\overline{\mathbb{D}}(z_0, \rho) \subseteq D$ označimo $P = -\frac{\partial u}{\partial y}$ in $Q = \frac{\partial u}{\partial x}$, ter uporabimo Greenovo integralsko formulo
         $$
             \int_{\partial \mathbb{D}(z_0, \rho)}{P dx + Q dy} = \iint_{\overline{\mathbb{D}}(z_0, \rho)}{\bigg(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\bigg)dx dy}.
@@ -356,22 +355,22 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         $$
         \int_{\partial \mathbb{D}(z_0, \rho)}{-\frac{\partial u}{\partial y} dx + \frac{\partial u}{\partial x} dy} = \iint_{\overline{\mathbb{D}}(z_0, \rho)}{\bigg(\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2}\bigg)dx dy} = 0. 
         $$
-        Rob diska lahko pri $z_0 = x_0 + iy_0$ parametriziramo z $x(\theta) = x_0 + \rho \cos(\theta),~y(\theta) = y_0 + \rho \sin(\theta)$. Ko to vstavimo v zgornjo enakost, dobimo
+        Rob diska lahko pri $z_0 = x_0 + iy_0$ parametriziramo z $x(\theta) = x_0 + \rho \cos\theta,~y(\theta) = y_0 + \rho \sin\theta$. Ko to vstavimo v zgornjo enakost, dobimo
         $$
-        0 = \rho \int_{0}^{2 \pi}{\bigg[\frac{\partial u}{\partial x} \cos(\theta) + \frac{\partial u}{\partial y} \sin(\theta)\bigg] d\theta} = \rho \int_{0}^{2\pi}{\frac{\partial u}{\partial \rho}\big({z_0 + \rho e^{i\theta}\big)d\theta}}.
+        0 = \rho \int_{0}^{2 \pi}{\left(\frac{\partial u}{\partial x} \cos\theta + \frac{\partial u}{\partial y} \sin\theta\right) d\theta} = \rho \int_{0}^{2\pi}{\frac{\partial u}{\partial \rho}\big(z_0 + \rho e^{i\theta}\big)d\theta}.
         $$
         Ker je $u$ harmonična, je po trditvi \ref{gladkost_komp_h} gladka, zato lahko zamenjamo limitna procesa integriranja in odvajanja. Delimo z $2\pi \rho$ in dobimo
         $$
-        0 = \frac{\partial}{\partial \rho} \int_{0}^{2\pi}{u\big({z_0 + \rho e^{i\theta}\big)\frac{d\theta}{2 \pi}}}.
+        0 = \frac{\partial}{\partial \rho} \int_{0}^{2\pi}{u\big(z_0 + \rho e^{i\theta}\big)\frac{d\theta}{2 \pi}}.
         $$
         Sledi, da je vrednost zgornjega integrala konstantna, za vsak $0 <r < \rho$. Obstaja torej $c \in \mathbb{C}$, da je
         $$
-        \int_{0}^{2\pi}{u\big({z_0 + r e^{i\theta}\big)\frac{d\theta}{2 \pi}}} = c,~\text{za vsak}~ 0 < r < \rho.
+        \int_{0}^{2\pi}{u\big(z_0 + r e^{i\theta}\big)\frac{d\theta}{2 \pi}} = c,~\text{za vsak}~ 0 < r < \rho.
         $$
         Potrebno je le še pokazati, da $c = u(z_0)$.
         Ker je $u$ zvezna, po trditvi \ref{zvpov} velja, da v limiti $r \downarrow 0$ dobimo
         $$
-        c = \lim_{r \downarrow 0}{\bigg[\int_{0}^{2\pi}{u\big({z_0 + r e^{i\theta}\big)\frac{d\theta}{2 \pi}}}\bigg]} = \int_{0}^{2\pi}{{u(z_0)~\frac{d\theta}{2 \pi}}} = u(z_0).
+        c = \lim_{r \downarrow 0}{\left(\int_{0}^{2\pi}{u\left(z_0 + r e^{i\theta}\right)\frac{d\theta}{2 \pi}}\right)} = \int_{0}^{2\pi}{{u(z_0)~\frac{d\theta}{2 \pi}}} = u(z_0).
         $$
     \end{dokaz}
 
@@ -396,37 +395,34 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         Ker je funkcija $h$ na $D$ harmonična, ima po trditvi \ref{harmonicnapovp} na $D$ lastnost povprečne vrednosti. Sedaj funkcija $h$ zadošča pogojem za trditev \ref{posledica_pm_lpv}, ki dokazuje želeno.
     \end{dokaz}
 
-    \begin{opomba}
-        \label{motivacija}
-        Vredno je že na tej točki omeniti, da za harmonične funkcije velja celo več kot nam to narekuje trditev \ref{harmonicnapovp}. 
-        Harmonične funkcije se da namreč karakterizirati s pomočjo lastnosti povprečne vrednosti. 
-        Motivacija za ogled naslednjega poglavja temelji ravno na dokazu omenjenega rezultata.  
-    \end{opomba}
+    Vredno je že na tej točki omeniti, da za harmonične funkcije velja celo več kot nam to narekuje trditev \ref{harmonicnapovp}. 
+    Harmonične funkcije se da namreč karakterizirati s pomočjo lastnosti povprečne vrednosti. 
+    Motivacija za ogled naslednjega poglavja temelji ravno na dokazu omenjenega rezultata. 
 
 \section{Dirichletov problem za enotski disk}
 \subsection{Formulacija problema}
     Za začetek navedimo problem, ki ga bomo znotraj poglavja reševali.
-    Naj bo $\mathbb{D}$ enotski disk. Zvezno kompleksno funkcijo $h$, definirano na $\partial \mathbb{D}$, bi želeli razširiti do funkcije $H$, da bo $H$ harmonična na $\mathbb{D}$ in zvezna na $\overline{\mathbb{D}}$.
+    Naj bo $\mathbb{D}$ enotski disk. Zvezno kompleksno funkcijo $h$, definirano na $\partial \mathbb{D}$, bi želeli razširiti do funkcije $H$, ki bo harmonična na $\mathbb{D}$ in zvezna na $\overline{\mathbb{D}}$.
     Opisan problem je grafično prikazan na spodnji sliki. 
     \begin{figure}[H]
         \begin{center}
             \includegraphics[width = 0.7 \textwidth]{dirichlet_form.png}
-            \caption{Dirichletov problem za enotski disk, z začetnim pogojem $h$.}
+            \caption{Dirichletov problem za enotski disk, z robnim pogojem $h$.}
         \end{center}    
     \end{figure}
 
     Kot smo že komentirali po definiciji \ref{harm}, so funkcije harmonične natanko tedaj ko zadoščajo Laplaceovi parcialni diferencialni enačbi.   
-    Vredno je omeniti, da lahko na Direchletov problem za enotski disk gledamo tudi iz stališča teorije diferencialnih enačb. Gre za problem iskanja funkcije, ki na notranjosti območja reši Laplaceovo diferencialno enačbo ob robnem pogoju, ki ga določa v naprej podana funkcija na robu območja.     
-    V našem primeru, je notranjost območja kar notranjost enotskega diska, roben pogoj zvezne funkcije pa podaja začetna zvezna funkcija, podana na enotski krožnici.
+    Vredno je omeniti, da lahko na Dirichletov problem za enotski disk gledamo tudi iz stališča teorije diferencialnih enačb. Gre za problem iskanja funkcije, ki na notranjosti območja reši Laplaceovo diferencialno enačbo ob robnem pogoju, ki ga določa v naprej podana funkcija na robu območja.     
+    V našem primeru je notranjost območja kar notranjost enotskega diska, robni pogoj zvezne funkcije pa podaja začetna zvezna funkcija, podana na enotski krožnici.
     Navadno se v teoriji parcialnih diferencialnih enačb srečamo s tako imenovanimi dobro postavljenimi matematičnimi problemi, o katerih si bralec več lahko prebere na REFERENCA.     
     V nadaljevanju se bomo le seznanili z njihovo definicijo in pokazali, da zgoraj zastavljen Dirichletov problem za enotski disk ustreza definiciji. 
 
-    \begin{definicija}[J. Hadamard, 1902]
+    \begin{definicija}[J. Hadamard]
         \label{def_dp}
         Pravimo, da je matematičen problem parcialnih diferencialnih enačb z robnimi in začetnimi pogoji \emph{dobro postavljen}, če zanj velja
         \begin{enumerate}[label={\Alph*)}]
             \item rešitev problema obstaja,
-            \item rešitev problema je ena sama, oziroma rešitev je enolično določena,
+            \item rešitev problema je enolično določena,
             \item rešitev je zvezno odvisna od začetnih podatkov problema.
         \end{enumerate}
     \end{definicija}
@@ -437,28 +433,26 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
     \end{lema}
     \begin{dokaz}
         Denimo, da obstajata dve različni rešitvi, $H_1$ in $H_2$, Dirichletovega problema za enotski disk z začetnim pogojem $h$.
-        Oglejmo si razliko $H_1 - H_2$. Vemo, da je njuna razlika na $\partial \mathbb{D}$ enaka $0$, saj sta tam enaki $h$. Ker sta funkciji $H_1$ in $H_2$ na $\mathbb{D}$ harmonični, po opombi \ref{lin} vemo, da je tudi njuna razlika harmonična funkcija. 
-        Po posledici \ref{pm_harm}, oziroma principu maksima za harmonične funkcije sledi, da je $H_1 - H_2 \equiv 0$ tudi na $\mathbb{D}$. Sledi enakost $h_1$ in $h_2$ tudi na $\mathbb{D}$ in protislovje. 
+        Oglejmo si razliko $H_1 - H_2$. Vemo, da je njuna razlika na $\partial \mathbb{D}$ enaka $0$, saj sta tam enaki $h$. 
+        Ker sta funkciji $H_1$ in $H_2$ na $\mathbb{D}$ harmonični, je zaradi linearnosti Laplaceovega operatorja tudi njuna razlika harmonična funkcija. 
+        Po posledici \ref{pm_harm}, oziroma principu maksima za harmonične funkcije sledi, da je $H_1 - H_2 \equiv 0$ tudi na $\mathbb{D}$. Sledi enakost $H_1$ in $H_2$ tudi na $\mathbb{D}$ in protislovje. 
     \end{dokaz}
     
-    \begin{opomba}
-        \label{opomba_dir}
-        Lema \ref{enolicno} nam pove, da je rešitev problema največ ena, zato se je dovolj posvetiti konstrukciji potencialne rešitve. 
-        Opazimo, da lahko točke $z \in \partial \mathbb{D}$ zapišemo z $e^{i \theta} \in \partial \mathbb{D}$, kjer $\theta \in [0,2\pi]$. Funkcijo $h(z),~z \in \partial \mathbb{D}$ lahko tako pišemo kot kompozitum $h(e^{i \theta}),~\theta \in [0,2\pi]$.
-    \end{opomba}
+    Lema \ref{enolicno} nam pove, da je rešitev problema največ ena. Zato se je dovolj posvetiti konstrukciji potencialne rešitve. 
+    Opazimo, da lahko točke $z \in \partial \mathbb{D}$ zapišemo z \mbox{$e^{i \theta} \in \partial \mathbb{D}$}, kjer $\theta \in [0,2\pi]$. Funkcijo $h(z),~z \in \partial \mathbb{D}$ lahko tako pišemo kot kompozitum $h(e^{i \theta}),~\theta \in [0,2\pi]$.
 
     Sedaj poskusimo skonstruirati harmonično razširitev, ki bo zadoščala Dirichletovemu problemu na enotskem disku za zvezno funkcijo $h(e^{i \theta})$.
     Za začetek se posvetimo enostavnim primerom in si šele za tem teorijo oziroma konstrukcijo oglejmo v splošnem. 
     
-    Naravno je za enostavne zvezne funkcije, definirane na $\partial \mathbb{D}$, vzeti kar polinome. V luči opombe \ref{opomba_dir} $h(e^{i\theta})$ je polinomska spremenljivka lahko kar $e^{i\theta}$, kjer bo $\theta$ iz intervala $[0,2\pi]$. 
-    Zaradi linearnosti Laplaceovega opeartorja, se problem preveda na iskanje rešitve za monome. 
+    Naravno je za enostavne zvezne funkcije, definirane na $\partial \mathbb{D}$, vzeti kar polinome. Zgornji komentar nam pove, da je polinomska spremenljivka lahko kar $e^{i\theta}$, kjer \mbox{$\theta \in [0,2\pi]$}. 
+    Zaradi linearnosti Laplaceovega operatorja se problem prevede na iskanje rešitve za monome. 
     Zato si oglejmo funkcije oblike $h(e^{i \theta}) = e^{i k \theta}, k \in \mathbb{Z}$, ter za njih poskusimo skonstruirati želeno razširitev. 
     Hitro opazimo, da se nam v tem primeru pojavlja preprosta eksplicitna razširitev s predpisom $H(r e^{i \theta}) = r^{|k|}e^{i k \theta}$, za \mbox{$r \in [0, 1]$} in $\theta \in [0, 2\pi]$. 
     Tako predpisana razširitev je za $k \geq 0$ na $\mathbb{D}$ harmonična, saj je $r^k e^{ik\theta} = z^k$ celo holomorfna funkcija in zato harmonična. Pri $k < 0$ dobimo razširitev $r^{-k} e^{ik\theta} = \overline{z}^{-k}$, ki v splošnem ni holomorfna, a je \mbox{kljub} temu harmonična. 
     Gre namreč za monom v konjugirani spremenljivki, harmoničnost katerega lahko preverimo po definiciji prek parcialnih odvodov.
     Obenem je za vsak $k \in \mathbb{Z}$ razširitev zvezna na $\overline{\mathbb{D}}$ in se na $\partial \mathbb{D}$ ujema z začetnimi pogoji. Razširitev torej zadošča pogojem za rešitev Dirichletovega problema na enotskem disku, ki je po lemi \ref{enolicno} enolično določena. 
-    Z upoštevanjem linearnosti Laplaceovega operatorja lahko za začetne funkcije oblike $h(e^{i\theta}) = \sum_{k = -N}^{N}{a_k e^{ik\theta}};~\theta \in [0,2\pi]$, konstruiramo harmonično razširitev s predpisom
-    $H(r e^{i \theta}) = \sum_{k = -N}^{N}{a_k r^{|k|}e^{ik\theta}};~r \in [0,1],~\theta \in [0,2\pi]$. 
+    Ko upoštevamo linearnost Laplaceovega operatorja za začetne funkcije oblike $h(e^{i\theta}) = \sum_{k = -N}^{N}{a_k e^{ik\theta}},~\theta \in [0,2\pi]$ dobimo harmonično razširitev s predpisom
+    $H(r e^{i \theta}) = \sum_{k = -N}^{N}{a_k r^{|k|}e^{ik\theta}},~r \in [0,1],~\theta \in [0,2\pi]$. 
     
     Smiselno bi bilo koeficiente $a_k$ izraziti direktno prek funkcije $h$. 
     V ta namen si oglejmo $\int_{-\pi}^{\pi}{e^{ij\theta} e^{-ik\theta}d\theta}$, kjer $k,l \in \mathbb{Z}$. Prek integracije zapisane kompleksne funkcije preverimo tako imenovano ortogonalno relacijo med kompleksnimi eksponenti
@@ -477,10 +471,10 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
     $$
         \sum_{k = - N}^{N}{ a_k r^{|k|}e^{ik\theta}} = \sum_{k = - N}^{N} \left(\int_{-\pi}^{\pi}{h(e^{i \varphi}) e^{- i k \varphi}~\frac{d \varphi}{2 \pi}}\right) r^{|k|} e^{i k \theta}.
     $$
-    Zamenjamo vsoto in integral, ter množico, po kateri teče indeks vsote razširimo na vsa cela števila. Pri tem se rezultat ne spremeni, saj je sumand pri dodanih indeksih enak nič. Dobimo ekspliciten zapis
+    Zamenjamo vsoto in integral, ter množico, po kateri teče indeks vsote, razširimo na vsa cela števila. Pri tem se rezultat ne spremeni, saj je sumand pri dodanih indeksih enak nič. Dobimo ekspliciten zapis
     \begin{equation}
         \label{int1}
-        \widetilde{h}(r e^{i \theta}) = \int_{-\pi}^{\pi}{h(e^{i \varphi}) \left[\sum_{k = - \infty}^{\infty} r^{|k|} e^{- i k \varphi} e^{i k \theta} \right] \frac{d \varphi}{2 \pi}}, ~~~ r e^{i\theta} \in \overline{\mathbb{D}}.
+        \widetilde{h}(r e^{i \theta}) = \int_{-\pi}^{\pi}{h(e^{i \varphi}) \left(\sum_{k = - \infty}^{\infty} r^{|k|} e^{- i k \varphi} e^{i k \theta} \right) \frac{d \varphi}{2 \pi}}, ~~~ r e^{i\theta} \in \overline{\mathbb{D}}.
     \end{equation}
     Zgornji ekspliciten zapis razširitve je le drugače zapis že komentirane rešitve Dirichletovega problema na enotskem disku, za polinom v spremenljivki $e^{i \theta}$, \mbox{$\theta \in [0,2\pi]$}.
     
@@ -490,52 +484,51 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
     \begin{definicija}
         \emph{Poissonovo jedro} je funkcija definirana s predpisom
         $$
-           P_r(\theta) = \sum_{k = -\infty}^{\infty}{r^{|k|} e^{i k \theta}}\text{, kjer je}~\theta \in [-\pi, \pi]~\text{in}~ r < 1.
+           P_r(\theta) = \sum_{k = -\infty}^{\infty}{r^{|k|} e^{i k \theta}}\text{, kjer je}~\theta \in [-\pi, \pi]~\text{in}~ 0 < r < 1.
         $$
     \end{definicija}
     \begin{opomba}
-        Na Poissonovo jedro lahko gledamo kot funkcijo dveh spremenljivk, $\theta$ in $r$, ali pa kot na družino funkcij, indeksiranih s parametrom $r$.
+        Na Poissonovo jedro lahko gledamo kot na funkcijo dveh spremenljivk, $\theta$ in $r$, ali pa kot na družino funkcij, indeksiranih s parametrom $r$.
     \end{opomba}
 
     Smiselno se je vprašati, ali za vsako vrednost iz definicijskega območje Poissonovega jedra vrsta na desni strani definicijske enakosti sploh konvergira. Potencialne strahove pomiri naslednja trditev.
     
     \begin{trditev}
-        Naj bo $\rho < 1$. Vrsta, definirana s Poissonovim jedrom konvergira enakomerno na množici $\{(r,\theta)~|~r \in [0,\rho],~ \theta \in [0,2\pi]\}$.
+        Naj bo $\rho < 1$. Vrsta, definirana s Poissonovim jedrom, konvergira enakomerno na množici $\{(r,\theta)~|~r \in [0,\rho],~ \theta \in [0,2\pi]\}$.
     \end{trditev}
     \begin{dokaz}
         Na množici $\{(r,\theta)~|~r \in [0,\rho],~ \theta \in [0,2\pi]\}$ velja $|r^{|k|} e^{i k \theta}| \leq \rho^{|k|}$. Ker je $\rho < 1$, številska vrsta $\sum_{k = -\infty}^{\infty}{\rho ^{|k|}}$ konvergira. 
         Po Weierstrassovem M-testu zato Poissonovo jedro konvergira enakomerno na množici $\{(r,\theta)~|~r \in [0,\rho],~ \theta \in [0,2\pi]\}$.
     \end{dokaz}
 
-    Poissonovo jedro lahko zapišemo na več načinov. Če vrsto v definiciji Poissonovega jedra razbijemo na tri dele, glede na predznačenost indeksa vrste, dobimo
-    \begin{align}
-        P_r(\theta) &=  1 + \sum_{k = 1}^{\infty}{r^{k} e^{i k \theta}} +  \sum_{j = 1}^{\infty}{r^{j} e^{-i j \theta}}~;  &  &r \in [0,1),~\theta \in [0,2\pi] \label{eq1}\\
-        &= 1 + \sum_{k=1}^{\infty}{z^k} + \sum_{j=1}^{\infty}{\overline{z}^{j}}~;   & &z = r e^{i\theta} \in \mathbb{D}. \notag
-    \end{align}
+    Poissonovo jedro lahko zapišemo na več načinov. Če vrsto v definiciji Poissonovega jedra razbijemo na tri dele, glede na predznačenost indeksa vrste, za $z = r e^{i\theta} \in \mathbb{D}$ dobimo
+    \begin{equation}
+        \label{eq1}
+        P_r(\theta) =  1 + \sum_{k = 1}^{\infty}{r^{k} e^{i k \theta}} +  \sum_{j = 1}^{\infty}{r^{j} e^{-i j \theta}}  = 1 + \sum_{k=1}^{\infty}{z^k} + \sum_{j=1}^{\infty}{\overline{z}^{j}}.
+    \end{equation}
     Ker je Poissonovo jedro definirano na notranjosti enotskega diska, kjer je absolutna vrednost kompleksne spremenljivke manjša od ena, obe vrsti v zapisu \eqref{eq1} konvergirata.
     Ko ju seštejemo s formulo za geometrijsko vrsto dobimo
-
-    \begin{align}
+    \begin{equation}
         \label{eq2}
-        P_r(\theta) &= 1 + \frac{z}{1 - z}+ \frac{\overline{z}}{1 - \overline{z}} = \frac{1 - |z|^2}{|1-z|^2}~;& &z = r e^{i\theta} \in \mathbb{D}.
-    \end{align}
+        P_r(\theta) = 1 + \frac{z}{1 - z}+ \frac{\overline{z}}{1 - \overline{z}} = \frac{1 - |z|^2}{|1-z|^2}~,~~~~z = r e^{i\theta} \in \mathbb{D}.
+    \end{equation}
     Opazimo, da bi \eqref{eq2} lahko zapisali tudi nekoliko drugače. Velja
     \begin{align}
         \label{eq3}
         P_r(\theta) &= 1 + \frac{z}{1 - z}+ \frac{\overline{z}}{1 - \overline{z}} = 1 + \left(\frac{z}{1 - z} \right)+ \overline{\left(\frac{z}{1 - z}\right)} \notag \\
-        &= 1 + 2~\text{Re}\left[\frac{z}{1-z}\right] =\text{Re}\left[\frac{1 + z}{1-z}\right]; & &z = r e^{i\theta} \in \mathbb{D}.
+        &= 1 + 2~\text{Re}\left[\frac{z}{1-z}\right] =\text{Re}\left[\frac{1 + z}{1-z}\right], & &z = r e^{i\theta} \in \mathbb{D}.
     \end{align}
-    Enakost $|1 - z|^2 = (\overline{1 - z})(1 - z) = (1 - \overline{z})(1 - z) = 1 + r^2 - 2r \cos(\theta)$ pa nam omogoči zapis
-    \begin{align}
+    Enakost $|1 - z|^2 = (\overline{1 - z})(1 - z) = (1 - \overline{z})(1 - z) = 1 + r^2 - 2r \cos\theta$ pa nam omogoči zapis
+    \begin{equation}
         \label{eq4}
-        P_r(\theta) & = \frac{1-r^2}{1+ r^2 - 2r \cos(\theta)}~; & &r \in [0,1),~\theta \in [0,2\pi].
-    \end{align}
+        P_r(\theta) = \frac{1-r^2}{1+ r^2 - 2r \cos\theta}~,~~~~r \in [0,1),~\theta \in [0,2\pi].
+    \end{equation}
 
     Preden se lotimo uporabe Poissonovega jedra, si s pomočjo zgornjih zapisov oglejmo še nekaj njegovih lastnosti, ki so zbrane v spodnjih trditvah. 
     
     \begin{trditev}
         \label{lastpk}
-        Poissonovo jedro ima naslednje lastnosti
+        Poissonovo jedro ima naslednje lastnosti:
         \begin{enumerate}[label={\alph*)}]
             \item kot funkcija spremenljivke $\theta$ je periodično s periodo $2\pi$, 
             \item za vsak $r \in [0,1)~\text{in vsak}~\theta \in [0,2\pi]~\text{je}~P_r(-\theta) = P_r(\theta)$,
@@ -556,11 +549,11 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
         Lema \ref{enolicno} nam pove, da je rešitev za tako podan Dirichletov problem enolično določena. Vemo tudi, da je harmonična razširitev eksplicitno podana prek formule \eqref{int1}.
         Velja torej
         $$
-        1 = \int_{-\pi}^{\pi}{\left[\sum_{k=-\infty}^{\infty}{r^{|k|} e^{ik(\theta - \varphi)}}\right] \frac{d \varphi}{2 \pi}} = \int_{-\pi}^{\pi}{P_r(\theta - \varphi)\frac{d \varphi}{2 \pi}}. 
+        1 = \int_{-\pi}^{\pi}{\left(\sum_{k=-\infty}^{\infty}{r^{|k|} e^{ik(\theta - \varphi)}}\right) \frac{d \varphi}{2 \pi}} = \int_{-\pi}^{\pi}{P_r(\theta - \varphi)\frac{d \varphi}{2 \pi}}~. 
         $$
-        Sedaj v integral uvedemo novo spremenljivko $\tau = \theta - \varphi$, ter upoštevamo točko a). Dobimo 
+        Sedaj v integral uvedemo novo spremenljivko $\tau = \theta - \varphi$. Zaradi periodičnosti Poissonovega jedra velja 
         $$
-        1 = \int_{\theta - \pi}^{\theta + \pi}{P_r(\tau)\frac{d \tau}{2 \pi}} = \left(\int_{-\pi}^{\pi} - \int_{-\pi}^{\theta -\pi} + \int_{\pi}^{\theta + \pi}\right)\left[ P_r(\tau)~\frac{d\tau}{2 \pi}\right] = \int_{-\pi}^{\pi}{P_r(\tau)\frac{d \tau}{2 \pi}}.
+        1 = \int_{\theta - \pi}^{\theta + \pi}{P_r(\tau)~\frac{d \tau}{2 \pi}} = \int_{-\pi}^{\pi}{P_r(\tau)~\frac{d \tau}{2 \pi}}.
         $$
     \end{dokaz}
 
@@ -586,7 +579,7 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
     \end{trditev}
     \begin{dokaz}
         Ker je za vsak $r$ Poissonovo jedro v odvisnosti od spremenljivke $\theta$ na intervalu $[-\pi, \pi]$ zvezna funkcija, maksimum na kompaktu $[-\pi, \pi]$ gotovo zavzamemo. Točki a) in b) trditve \ref{lastpk} nam povesta, da bomo za vsak $r$ maksimum zavzeli kar v $\delta$. 
-        Oglejmo si torej $P_r(\delta) = \frac{1 -r^2}{1 + r^2 - 2r \cos(\delta)}$. Ker je $\delta >0 $, bo imenovalec ulomka strogo pozitiven, števec ulomka pa gre proti $0$, ko gre $r \to 1$. 
+        Oglejmo si torej $P_r(\delta) = \frac{1 -r^2}{1 + r^2 - 2r \cos\delta}$. Ker je $\delta >0 $, bo imenovalec ulomka strogo pozitiven, števec ulomka pa gre proti $0$, ko gre $r \to 1$. 
         Sledi, da gre \mbox{$\max\{P_r(\theta)~|~ \delta \leq |\theta| \leq \pi\} = P_r(\delta) \to 0$}, ko gre $r \to 1$.
     \end{dokaz}
     \begin{posledica}
@@ -645,20 +638,20 @@ V zadnjem poglavju bomo s pomočjo orodij, spoznanih v prejšnih poglavjih, nave
     Velja
     \begin{align*}
         \text{Im}\left[\frac{1 + z}{1-z}\right] &= \frac{\frac{1 + z}{1-z} - \left(\overline{\frac{1 + z}{1-z}}\right)}{2i} = \frac{(1 + z)(1 - \overline{z}) - (1 + \overline{z})(1 - z)}{|1 - z|^2~2i} & & \\ 
-        & = \frac{2 (z - \overline{z})}{|1 - z|^2~2i} = \frac{2~\text{Im}z}{|1 - z|^2} = \frac{2 r \sin(\theta)}{1+ r^2 - 2r \cos(\theta)}~; & & z = r e^{i\theta} \in \mathbb{D}.
+        & = \frac{2 (z - \overline{z})}{|1 - z|^2~2i} = \frac{2~\text{Im}z}{|1 - z|^2} = \frac{2 r \sin(\theta)}{1+ r^2 - 2r \cos\theta}~; & & z = r e^{i\theta} \in \mathbb{D}.
     \end{align*}
     Prav to je motivacija za naslednjo definicijo. 
     \begin{definicija}
         \emph{Konjugirano Poissonovo jedro} je funkcija definirana s predpisom
         \begin{align}
-            Q_r(\theta) & = \frac{2 r \sin(\theta)}{1+ r^2 - 2r \cos(\theta)}~;~~r \in [0,1),~\theta \in [0,2\pi].
+            Q_r(\theta) & = \frac{2 r \sin(\theta)}{1+ r^2 - 2r \cos\theta}~;~~r \in [0,1),~\theta \in [0,2\pi].
         \end{align}
     \end{definicija}
 
     \begin{opomba}
         Zapišimo zvezi, ki jih narekujeta zgornji komentar in definicija. Velja
         $$
-        P_r(\theta) + i~Q_r(\theta) = \left[ \frac{1-r^2}{1+ r^2 - 2r \cos(\theta)}\right] + i \left[\frac{2 r \sin(\theta)}{1+ r^2 - 2r \cos(\theta)}\right] = \frac{1 + re^{i\theta}}{1 - re^{i\theta}}~;~~r e^{i\theta} \in \mathbb{D}.
+        P_r(\theta) + i~Q_r(\theta) = \left[ \frac{1-r^2}{1+ r^2 - 2r \cos\theta}\right] + i \left[\frac{2 r \sin(\theta)}{1+ r^2 - 2r \cos\theta}\right] = \frac{1 + re^{i\theta}}{1 - re^{i\theta}}~;~~r e^{i\theta} \in \mathbb{D}.
         $$      
     \end{opomba}
 
