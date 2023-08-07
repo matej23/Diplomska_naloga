@@ -152,7 +152,7 @@ NAPIŠI NOV UVOD!!
     \end{dokaz}
 
     \begin{opomba}
-        Če označimo $u = \text{Re}{f}$ in $v = \text{Im}{f}$, nam zgornja trditev pove, da sta realni in imaginarni del holomorfne funkcije harmonični funkciji. 
+        Če označimo $u = \text{Re}[f]$ in $v = \text{Im}[f]$, nam zgornja trditev pove, da sta realni in imaginarni del holomorfne funkcije harmonični funkciji. 
     \end{opomba}
 
     \begin{definicija}
@@ -564,15 +564,6 @@ NAPIŠI NOV UVOD!!
         Iz zapisa \eqref{eq4} je jasno, da je pri poljubnem $r \in [0,1)$ zapisana funkcija v odvisnosti od $\theta$ zvezna na intervalu $[-\pi, \pi]$, točki d) in e) trditve \ref{lastpk} pa nam dokazujeta, da je na definicijskem območju funkcija strogo pozitivna in se pointegrira v $1$.
     \end{dokaz}
 
-    \begin{definicija}
-        Naj bo $\{F_{\lambda}~|~\lambda \in \Lambda,~\text{kjer je $\Lambda$ povezana podmnožica v $[0, \infty)$}\}$ družina omejenih integrabilnih funkcij, definiranih na $\partial \mathbb{D}$. Pravimo, da je družina funkcij \emph{približna enota}, če velja
-        \begin{enumerate}[label={\Alph*)}]
-            \item $\int_{\partial \mathbb{D}}{F_\lambda} = 1,~\text{za vsak $\lambda \in \Lambda$}$,
-            \item sup\{$\int_{\partial \mathbb{D}}{\left| F_{\lambda}\right|}~|~\lambda \in \Lambda$\} $< \infty$,
-            \item za vsak $\delta > 0$ velja $\lim_{\lambda \to \mu}{\int_{\{|x| > \delta\}}{|F_{\lambda}(x)|~dx}} = 0$, kjer $\mu$ označuje supremum množice $\Lambda$, oziroma $\infty$, če supremum množice $\Lambda$ ne obstaja.
-        \end{enumerate}
-    \end{definicija}
-
     \begin{trditev}
         \label{proti0}
         Naj bo $\delta > 0$. Potem gre $\max\{P_r(\theta)~|~ \delta \leq |\theta| \leq \pi\} \to 0$ ko gre $r \to 1$.
@@ -594,28 +585,39 @@ NAPIŠI NOV UVOD!!
         Sedaj uporabimo trditev \ref{proti0}, ki nam pove, da gre $c_r \to 0$, ko gre $r \to 1$. Sledi, da gre tudi zapisan integral proti $0$, ko gre $r \to 1$.
     \end{dokaz}
 
-    \begin{trditev}
-        Družina funkcij $\{ \frac{1}{2 \pi} P_r~|~r \in [0,1)\}$ je približna enota.
-    \end{trditev}
-    \begin{dokaz}
-        Zahteve glede definicijskega območja, omejenosti in integrabilnosti so izpoljene, zato je dovolj komentirati, da družina zadošča pogojem A), B) in C). 
-        Da družina zadošča pogoju točke A) nam pove točka e) trditve \ref{lastpk}, točka d) trditve \ref{lastpk} pa nam pove, da je s tem zadoščeno tudi pogoju točke B). 
-        Posledica \ref{int_proti0} nam pove, da družina zadošča tudi pogoju iz točke C).
-    \end{dokaz}
-    \begin{opomba}
-        Vredno je, s pomočjo zgoraj zapisanih trditev, komentirati obnašanje funkcije Poissonovega jedra, ko pošljemo $r \to 1$. Trditev \ref{proti0} nam pove, da se vrednosti funkcije, v odvisnosti od spremenljivke $\theta$, ki so poljubno malo oddaljene od izhodišča, približujejo $0$. 
-        Zapisano dodatno potrdi tudi posledica \ref{int_proti0}.
-        Oglejmo si sedaj, kaj se zgodi z vrednostjo funkcije pri $\theta = 0$, ko pošljemo $r \to 1$. Iz zapisa \eqref{eq4} vemo, da velja
-        $$
-        P_r(0) = \frac{1-r^2}{1+ r^2 - 2r} = \frac{1- r^2}{(1 - r)^2} = \frac{1 + r}{1 -r},~~r \in [0,1).
-        $$
-        Ko gre $r \to 1$, gre torej $P_r(0) \to \infty$. Zapisani opažanji nam skupaj z ugotovitvijo iz točke e) trditve \ref{lastpk} nakazujeta, da se funkcija Poissonovega jedra, ko pošljemo $r \to 1$, približuje tako imenovani Diracovi delti. 
-        O tem si bralec več lahko prebere na REFERENCA.
-    \end{opomba}
+    %\begin{definicija}
+    %    Naj bo $\{F_{\lambda}~|~\lambda \in \Lambda,~\text{kjer je $\Lambda$ povezana podmnožica v $[0, \infty)$}\}$ družina omejenih integrabilnih funkcij, definiranih na $\partial \mathbb{D}$. Pravimo, da je družina funkcij \emph{približna enota}, če velja
+    %    \begin{enumerate}[label={\Alph*)}]
+    %        \item $\int_{\partial \mathbb{D}}{F_\lambda} = 1,~\text{za vsak $\lambda \in \Lambda$}$,
+    %        \item sup\{$\int_{\partial \mathbb{D}}{\left| F_{\lambda}\right|}~|~\lambda \in \Lambda$\} $< \infty$,
+    %        \item za vsak $\delta > 0$ velja $\lim_{\lambda \to \mu}{\int_{\{|x| > \delta\}}{|F_{\lambda}(x)|~dx}} = 0$, kjer $\mu$ označuje supremum množice $\Lambda$, oziroma $\infty$, če supremum množice $\Lambda$ ne obstaja.
+    %    \end{enumerate}
+    %\end{definicija}
+%
+    %\begin{trditev}
+    %    Družina funkcij $\{ \frac{1}{2 \pi} P_r~|~r \in [0,1)\}$ je približna enota.
+    %\end{trditev}
+    %\begin{dokaz}
+    %    Zahteve glede definicijskega območja, omejenosti in integrabilnosti so izpoljene, zato je dovolj komentirati, da družina zadošča pogojem A), B) in C). 
+    %    Da družina zadošča pogoju točke A) nam pove točka e) trditve \ref{lastpk}, točka d) trditve \ref{lastpk} pa nam pove, da je s tem zadoščeno tudi pogoju točke B). 
+    %    Posledica \ref{int_proti0} nam pove, da družina zadošča tudi pogoju iz točke C).
+    %\end{dokaz}
+%
 
-    \begin{opomba}
-        Lastnosti Poissonovega jedra, navedene v trditvi \ref{lastpk} in \ref{proti0}, so tudi dobro razvidne na spodnji sliki. 
-    \end{opomba}
+    Oglejmo si lastnosti družine $\left\{ \frac{1}{2 \pi} P_r~|~r \in [0,1)\right\}$. Trditev \ref{lastpk} nam pove, da za vsak $r \in [0,1)$ velja $\frac{1}{2\pi}\int_{\partial \mathbb{D}}{P_r(\theta)} = 1$ in $P_r(\theta) > 0$ za vsak $\theta \in [0, 2 \pi]$.
+    Zato velja tudi sup$\left\{\frac{1}{2 \pi}\int_{\partial \mathbb{D}}{\left| P_{r}\right|}~|~r \in [0,1)\right\}= 1$. Družino funkcij, ki obenem zadošča tudi lastnosti iz posledice \ref{int_proti0} imenujeno približna enota. 
+    Bralec si več lahko prebere na REFERENCA.
+ 
+    Vredno je, s pomočjo zgoraj zapisanih trditev, komentirati tudi obnašanje funkcije Poissonovega jedra, ko pošljemo $r \to 1$. Trditev \ref{proti0} nam pove, da se vrednosti funkcije, v odvisnosti od spremenljivke $\theta$, ki so poljubno malo oddaljene od izhodišča, približujejo $0$. 
+    Zapisano dodatno potrdi tudi posledica \ref{int_proti0}.
+    Oglejmo si sedaj, kaj se zgodi z vrednostjo funkcije pri $\theta = 0$, ko pošljemo $r \to 1$. Iz zapisa \eqref{eq4} vemo, da velja
+    $$
+    P_r(0) = \frac{1-r^2}{1+ r^2 - 2r} = \frac{1- r^2}{(1 - r)^2} = \frac{1 + r}{1 -r},~~r \in [0,1).
+    $$
+    Ko gre $r \to 1$, gre torej $P_r(0) \to \infty$. Zapisani opažanji nam skupaj z ugotovitvijo iz točke e) trditve \ref{lastpk} nakazujeta, da se Poissonovo jedro, ko pošljemo $r \to 1$, približuje tako imenovani Diracovi delti. 
+    O tem si bralec več lahko prebere na REFERENCA.
+
+    Navedene lastnosti Poissonovega jedra so tudi dobro razvidne na spodnji sliki. 
 
     \begin{figure}[H]
         \begin{center}
@@ -638,31 +640,29 @@ NAPIŠI NOV UVOD!!
     Velja
     \begin{align*}
         \text{Im}\left[\frac{1 + z}{1-z}\right] &= \frac{\frac{1 + z}{1-z} - \left(\overline{\frac{1 + z}{1-z}}\right)}{2i} = \frac{(1 + z)(1 - \overline{z}) - (1 + \overline{z})(1 - z)}{|1 - z|^2~2i} & & \\ 
-        & = \frac{2 (z - \overline{z})}{|1 - z|^2~2i} = \frac{2~\text{Im}z}{|1 - z|^2} = \frac{2 r \sin(\theta)}{1+ r^2 - 2r \cos\theta}~; & & z = r e^{i\theta} \in \mathbb{D}.
+        & = \frac{2 (z - \overline{z})}{|1 - z|^2~2i} = \frac{2~\text{Im}z}{|1 - z|^2} = \frac{2 r \sin\theta}{1+ r^2 - 2r \cos\theta}~, & & z = r e^{i\theta} \in \mathbb{D}.
     \end{align*}
     Prav to je motivacija za naslednjo definicijo. 
     \begin{definicija}
         \emph{Konjugirano Poissonovo jedro} je funkcija definirana s predpisom
         \begin{align}
-            Q_r(\theta) & = \frac{2 r \sin(\theta)}{1+ r^2 - 2r \cos\theta}~;~~r \in [0,1),~\theta \in [0,2\pi].
+            Q_r(\theta) & = \frac{2 r \sin\theta}{1+ r^2 - 2r \cos\theta}~,~~r \in [0,1),~\theta \in [0,2\pi].
         \end{align}
     \end{definicija}
 
-    \begin{opomba}
-        Zapišimo zvezi, ki jih narekujeta zgornji komentar in definicija. Velja
-        $$
-        P_r(\theta) + i~Q_r(\theta) = \left[ \frac{1-r^2}{1+ r^2 - 2r \cos\theta}\right] + i \left[\frac{2 r \sin(\theta)}{1+ r^2 - 2r \cos\theta}\right] = \frac{1 + re^{i\theta}}{1 - re^{i\theta}}~;~~r e^{i\theta} \in \mathbb{D}.
-        $$      
-    \end{opomba}
+    Zapišimo zvezi, ki jih narekujeta zgornji komentar in definicija. Velja
+    $$
+    P_r(\theta) + i~Q_r(\theta) = \left( \frac{1-r^2}{1+ r^2 - 2r \cos\theta}\right) + i \left(\frac{2 r \sin\theta}{1+ r^2 - 2r \cos\theta}\right) = \frac{1 + re^{i\theta}}{1 - re^{i\theta}}~,~~r e^{i\theta} \in \mathbb{D}.
+    $$      
 
     Sedaj se vrnimo k reševanju Dirichletovega problema za enotski disk. 
     Spomnimo se, da smo za polinomske funkcije $h$ skonstruirali predpis razširitve, ki je rešila zastavljen problem. 
     Opazimo, da bi si pri zapisu enačbe \eqref{int1} lahko pomagali z definiranim pojmom Poissonovega jedra. Zapišemo lahko
-    
     $$
-    H(r e^{i \theta}) = \int_{-\pi}^{\pi}{h(e^{i \varphi}) \bigg[\sum_{k = - \infty}^{\infty} r^{|k|} e^{- i k \varphi} e^{i k \theta}} \bigg]\frac{d \varphi}{2 \pi} = 
+    H(r e^{i \theta}) = \int_{-\pi}^{\pi}{h(e^{i \varphi}) \left(\sum_{k = - \infty}^{\infty} r^{|k|} e^{- i k \varphi} e^{i k \theta} \right)}\frac{d \varphi}{2 \pi} = 
     \int_{-\pi}^{\pi}{h(e^{i \varphi}) P_r(\theta - \varphi)\frac{d \varphi}{2 \pi}},~~r e^{i \theta} \in \overline{\mathbb{D}}.
     $$
+
     Zgoraj smo z intuitivno izpeljavo nevede že zapisali funkcijo, ki jo bomo sedaj vzeli za definicijo novega pojma. 
     Pokazali bomo, da to tudi pri splošnih zveznih funkcijah omogoča zapis rešitve Dirichletovega problema na enotskem disku.
 
@@ -671,72 +671,71 @@ NAPIŠI NOV UVOD!!
         Naj bo $h(e^{i \theta})$ zvezna funkcija, definirana na robu enotskega diska.
         \emph{Poissonov integral} funkcije $h(e^{i\theta})$, ki ga označimo s $\widetilde{h}(z)$, je funkcija, definirana na notranjosti enotskega diska s predpisom
         $$
-        \widetilde{h}(z) = \int_{0}^{2\pi}{h(e^{i\varphi}) P_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}}~\text{, kjer je}~~z = r e^{i\theta} \in \mathbb{D}.
+        \widetilde{h}(z) = \int_{0}^{2\pi}{h(e^{i\varphi}) P_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}}~,~~z = r e^{i\theta} \in \mathbb{D}.
         $$
      \end{definicija}
      \begin{opomba}
         \label{kom_poiss}
-        Če v zgornji integral uvedemo novo spremenljivko $\tau = \theta - \varphi$, ter upoštevamo točko a) trditve \ref{lastpk}, lahko Poissonov integral funkcije $h$, zapišemo tudi kot
+        Če v zgornji integral uvedemo novo spremenljivko $\tau = \theta - \varphi$, ter upoštevamo periodičnost Poissonovega jedra, lahko Poissonov integral funkcije $h$, zapišemo tudi kot
         $$
-        \widetilde{h}(z) = \int_{0}^{2\pi}{h\big(e^{i(\theta-\varphi)}\big) P_r(\varphi)~\frac{d\varphi}{2 \pi}}~\text{, kjer}~~z = r e^{i\theta} \in \mathbb{D}.
+        \widetilde{h}(z) = \int_{0}^{2\pi}{h\big(e^{i(\theta-\varphi)}\big) P_r(\varphi)~\frac{d\varphi}{2 \pi}}~,~~z = r e^{i\theta} \in \mathbb{D}.
         $$
         Natančneje si opisan postopek, ki pripelje do zgornjega zapisa Poissonovega integrala bralec lahko ogleda v dokazu točke e) trditve \ref{lastpk}.
      \end{opomba}
 
-     \begin{opomba}
-        \label{opomba_konv1}
-        Če definiramo funkcijo $f(w) = h(e^{iw})$, lahko Poissonov integral zapišemo še nekoliko drugače. Velja
-        \begin{align}
-            \label{konv_Pr}
-            \widetilde{h}(z) &= \int_{0}^{2\pi}{h(e^{i\varphi}) P_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}} = \int_{0}^{2\pi}{f(\varphi) P_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}} \notag \\
-            & = \frac{1}{2\pi} \left[(f * P_r)(\theta)\right] = \frac{1}{2\pi} \left[(P_r * f)(\theta)\right];~~z = r e^{i\theta},~\theta \in [0,2\pi],~r\in[0,1).
-        \end{align}
-
-        Zadnja enakost v zgornjem zapisu je posledica komutativnosti konvolucije, ter še na nekoliko drugačen način dokazuje zapis iz opombe \ref{kom_poiss}. Velja namreč
+    Oglejmo si še nekoliko drugačen zapis Poissonovega integrala za zvezno funkcijo $h(e^{i \theta})$.
+    Če definiramo funkcijo $f(w) = h(e^{iw})$, lahko Poissonov integral zapišemo kot
+    \begin{align}
+        \label{konv_Pr}
+        \widetilde{h}(z) &= \int_{0}^{2\pi}{h(e^{i\varphi}) P_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}} = \int_{0}^{2\pi}{f(\varphi) P_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}} \notag \\
+        & = \frac{1}{2\pi} \left[(f * P_r)(\theta)\right] = \frac{1}{2\pi} \left[(P_r * f)(\theta)\right],~~z = r e^{i\theta},~\theta \in [0,2\pi],~r\in[0,1).
+    \end{align}
+    \begin{opomba}
+        Zadnja enakost v zgornjem zapisu je posledica komutativnosti konvolucije ter še na nekoliko drugačen način dokazuje zapis iz opombe \ref{kom_poiss}. Velja namreč
         \begin{align*}
             \widetilde{h}\left(r e^{i \theta}\right) &= \frac{1}{2\pi} \left[(P_r * f)(\theta)\right] =  \frac{1}{2 \pi}\int_{0}^{2\pi}{P_r(\varphi) f(\theta - \varphi) ~d\varphi} \\
             & = \int_{0}^{2\pi}{h\big(e^{i(\theta-\varphi)}\big) P_r(\varphi)~\frac{d\varphi}{2 \pi}};~~z = r e^{i\theta},~\theta \in [0,2\pi],~r\in[0,1). \notag
         \end{align*}
-     \end{opomba}
+    \end{opomba}
 
-     \begin{opomba}
-        \label{opomba_konv2}
-        Ogledali smo si alternativni zapis Poissonovega integrala s konvolucijo Poissonovega jedra. Smiselno se je vprašati, kako na zgornji postopek zapisa s konvolucijo vpliva zamenjava Poissonovega jedra s konjugiranim Poissonovim jedrom. Opazimo, da lahko po enakem postopku tudi integral s konjugiranim Poissonovim jedrom izrazimo kot konvolucijo. 
-        Ponovno definiramo $f(w) = h(e^{i w})$, ki nam omogoča zapis
-        \begin{equation*}
-            \int_{0}^{2\pi}{h(e^{i\varphi}) Q_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}}  = \frac{1}{2\pi}\int_{0}^{2 \pi}{f(\varphi) Q_r(\theta - \varphi)~d\varphi} = \frac{1}{2 \pi}[(f * Q_r)(\theta)],~re^{i\theta} \in \mathbb{D}.
-        \end{equation*}
-     \end{opomba}
-     Konvolucijska zapisa integrala iz opombe \ref{opomba_konv1} in \ref{opomba_konv2} bomo uporabili nekoliko kasneje, sedaj pa se še nekoliko posvetimo lastnostim Poissonovega integrala.
+    Ogledali smo si alternativni zapis Poissonovega integrala s konvolucijo Poissonovega jedra. Smiselno se je vprašati, kako na zgornji postopek zapisa s konvolucijo vpliva zamenjava Poissonovega jedra s konjugiranim Poissonovim jedrom. Opazimo, da lahko po enakem postopku tudi integral s konjugiranim Poissonovim jedrom izrazimo kot konvolucijo. 
+    Ponovno definiramo $f(w) = h(e^{i w})$, ki nam omogoča zapis
+    \begin{align}
+        \label{konv_Qr}
+        \int_{0}^{2\pi}{h(e^{i\varphi}) Q_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}}  &= \frac{1}{2\pi}\int_{0}^{2 \pi}{f(\varphi) Q_r(\theta - \varphi)~d\varphi} \\ 
+        &= \frac{1}{2 \pi}[(f * Q_r)(\theta)]~,~~z = r e^{i\theta},~\theta \in [0,2\pi],~r\in[0,1). \notag
+    \end{align}
+    
+    Konvolucijska zapisa integrala bomo uporabili nekoliko kasneje, sedaj pa se še nekoliko posvetimo lastnostim Poissonovega integrala.
 
-     \begin{trditev}
-        \label{lastpi}
-        Naj bo $\Phi$ preslikava, ki zvezni funkciji $h$, definirani na robu enotskega diska, prireredi njen Poissonov integral $\widetilde{h}$, tj. $\Phi : h \mapsto \widetilde{h}$.
-        Potem velja
-        \begin{enumerate}[label={\alph*)}]
-            \item $\Phi$ je $\mathbb{C}$-linearna preslikava, tj. \mbox{$\text{za vsak}~h_1,h_2 \in C^0(\partial \mathbb{D})~\text{in vsak}~c_1,c_2 \in \mathbb{C}$} velja $\Phi(c_1 h_1 + c_2 h_2) = c_1 \Phi(h_1) + c_2 \Phi(h_2)$,
-            \item $\Phi$ ohranja omejenost, tj. če za $h \in C^0(\partial \mathbb{D})$ in $M \in \mathbb{R}$ velja $|h(z)| \leq M$, za vsak $z \in \partial \mathbb{D}$, potem je $|[\Phi(h)](z)| \leq M$ za vsak $z \in \mathbb{D}$.
-        \end{enumerate}
-     \end{trditev}
-     \begin{dokaz}
-            Dokažimo najprej točko a). Naj bosta $h_1$ in $h_2$ poljubni zvezni funkciji, definirani na robu enotskega diska, ter $c_1, c_2$ poljubni kompleksni števili. 
-            Potem je na robu enotskega diska zvezna tudi funkcija $c_1 h_1 + c_2 h_2$. Oglejmo si sedaj najprej Poissonov integral za zapisano linearno kombinacijo. Velja
-            \begin{align*}
-                [\widetilde{c_1 h_1 + c_2 h_2}](z) &= \int_{-\pi}^{\pi}{\left([c_1 h_1 + c_2 h_2](e^{i\varphi}) \right)P_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}}\\ 
-                & = \int_{-\pi}^{\pi}{\left([c_1 h_1](e^{i\varphi}) + [c_2 h_2](e^{i\varphi})\right)P_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}}\\
-                & = c_1\int_{-\pi}^{\pi}{h_1(e^{i\varphi})P_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}} + c_2\int_{-\pi}^{\pi}{h_2(e^{i\varphi})P_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}}\\
-                & = c_1 \widetilde{h_1}(z) + c_2 \widetilde{h_2}(z) = [c_1 \widetilde{h_1} + c_2 \widetilde{h_2}](z)~,~~~~z \in \mathbb{D}.
-            \end{align*}
-            Po definiciji preslikave $\Phi$ sedaj sledi $\Phi(c_1 h_1 + c_2 h_2) = c_1 \Phi(h_1) + c_2 \Phi(h_2)$.
-
-            Dokažimo še točko b). Naj bo $h$ poljubna omejena zvezna funkcija, definirana na robu enotskega diska. Naj za $M \in \mathbb{R}$ velja $|h(z)| \leq M$, za vsak $z \in \partial \mathbb{D}$.
-            Ponovno si najprej oglejmo Poissonov integral funkcije $h$ in uporabimo zapisano neenakost, ter točki d) in e) trditve \ref{lastpk}. Dobimo
-            \begin{align*}
-                \left|\widetilde{h}(z)\right| &= \left| \int_{-\pi}^{\pi}{h(e^{i\varphi}) P_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}} \right| \leq \int_{-\pi}^{\pi}{\left|h(e^{i\varphi}) \right|P_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}} \\ 
-                &\leq M \int_{-\pi}^{\pi}{P_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}} = M;~~~~z \in \mathbb{D}.& & \\
-            \end{align*}
-            Po definiciji preslikave $\Phi$ zato $|[\Phi(h)](z)| \leq M$, za vsak $z \in \mathbb{D}$.
-     \end{dokaz}
+    \begin{trditev}
+       \label{lastpi}
+       Naj bo $\Phi$ preslikava, ki zvezni funkciji $h$, definirani na robu enotskega diska, prireredi njen Poissonov integral $\widetilde{h}$, tj. $\Phi : h \mapsto \widetilde{h}$.
+       Potem velja
+       \begin{enumerate}[label={\alph*)}]
+           \item $\Phi$ je kompleksno linearna preslikava, tj. $\text{za vsak}~h_1,h_2 \in C^0(\partial \mathbb{D})$ in vsak $c_1,c_2 \in \mathbb{C}$ velja $\Phi(c_1 h_1 + c_2 h_2) = c_1 \Phi(h_1) + c_2 \Phi(h_2)$,
+           \item $\Phi$ ohranja omejenost, tj. če za $h \in C^0(\partial \mathbb{D})$ in $M \in \mathbb{R}$ velja $|h(z)| \leq M$, za vsak $z \in \partial \mathbb{D}$, potem je $|[\Phi(h)](z)| \leq M$ za vsak $z \in \mathbb{D}$.
+       \end{enumerate}
+    \end{trditev}
+    \begin{dokaz}
+           Dokažimo najprej točko a). Naj bosta $h_1$ in $h_2$ poljubni zvezni funkciji, definirani na robu enotskega diska, ter $c_1, c_2$ poljubni kompleksni števili. 
+           Potem je na robu enotskega diska zvezna tudi funkcija $c_1 h_1 + c_2 h_2$. Oglejmo si sedaj najprej Poissonov integral za zapisano linearno kombinacijo. Velja
+           \begin{align*}
+               [\widetilde{c_1 h_1 + c_2 h_2}](z) &= \int_{-\pi}^{\pi}{\left([c_1 h_1 + c_2 h_2](e^{i\varphi}) \right)P_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}}\\ 
+               & = \int_{-\pi}^{\pi}{\left([c_1 h_1](e^{i\varphi}) + [c_2 h_2](e^{i\varphi})\right)P_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}}\\
+               & = c_1\int_{-\pi}^{\pi}{h_1(e^{i\varphi})P_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}} + c_2\int_{-\pi}^{\pi}{h_2(e^{i\varphi})P_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}}\\
+               & = c_1 \widetilde{h_1}(z) + c_2 \widetilde{h_2}(z) = [c_1 \widetilde{h_1} + c_2 \widetilde{h_2}](z)~,~~~z \in \mathbb{D}.
+           \end{align*}
+           Po definiciji preslikave $\Phi$ sedaj sledi $\Phi(c_1 h_1 + c_2 h_2) = c_1 \Phi(h_1) + c_2 \Phi(h_2)$.
+           
+           Dokažimo še točko b). Naj bo $h$ poljubna omejena zvezna funkcija, definirana na robu enotskega diska. Naj za $M \in \mathbb{R}$ velja $|h(z)| \leq M$, za vsak $z \in \partial \mathbb{D}$.
+           Ponovno si najprej oglejmo Poissonov integral funkcije $h$ in uporabimo zapisano neenakost, ter točki d) in e) trditve \ref{lastpk}. Dobimo
+           \begin{align*}
+               \left|\widetilde{h}(z)\right| &= \left| \int_{-\pi}^{\pi}{h(e^{i\varphi}) P_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}} \right| \leq \int_{-\pi}^{\pi}{\left|h(e^{i\varphi}) \right|P_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}} \\ 
+               &\leq M \int_{-\pi}^{\pi}{P_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}} = M~,~~~z \in \mathbb{D}.& & \\
+           \end{align*}
+           Po definiciji preslikave $\Phi$ zato $|[\Phi(h)](z)| \leq M$, za vsak $z \in \mathbb{D}$.
+    \end{dokaz}
 
 \subsection{Schwarzova integralska formula}
      \begin{lema}
@@ -747,8 +746,8 @@ NAPIŠI NOV UVOD!!
         Pomagajmo si z zapisom \eqref{eq3}. Za $z = re^{i\theta} \in \mathbb{D}$ lahko zapišemo
             \begin{align}
                 \label{lema_schwarz}
-                \widetilde{u}(z) &= \widetilde{u}(r e^{i \theta}) = \int_{-\pi}^{\pi}{u(e^{i \varphi}) P_r(\theta - \varphi)\frac{d \varphi}{2 \pi}} = \int_{-\pi}^{\pi}{u(e^{i \varphi})~\text{Re}\bigg(\frac{1+re^{i(\theta - \varphi)}}{1-re^{i(\theta - \varphi)}}\bigg)\frac{d \varphi}{2 \pi}} \notag \\
-                &= \int_{-\pi}^{\pi}{u(e^{i \varphi})~\text{Re}\bigg(\frac{e^{i\varphi}+re^{i\theta}}{e^{i\varphi}-re^{i\theta}}\bigg)\frac{d \varphi}{2 \pi}}=~\text{Re}~\bigg[\int_{-\pi}^{\pi}{u(e^{i \varphi})\bigg(\frac{e^{i\varphi}+z}{e^{i\varphi}-z}\bigg)\frac{d \varphi}{2 \pi}}\bigg].
+                \widetilde{u}(z) &= \widetilde{u}(r e^{i \theta}) = \int_{-\pi}^{\pi}{u(e^{i \varphi}) P_r(\theta - \varphi)\frac{d \varphi}{2 \pi}} = \int_{-\pi}^{\pi}{u(e^{i \varphi})~\text{Re}\left[\frac{1+re^{i(\theta - \varphi)}}{1-re^{i(\theta - \varphi)}}\right]\frac{d \varphi}{2 \pi}} \notag \\
+                &= \int_{-\pi}^{\pi}{u(e^{i \varphi})~\text{Re}\left[\frac{e^{i\varphi}+re^{i\theta}}{e^{i\varphi}-re^{i\theta}}\right]\frac{d \varphi}{2 \pi}}=~\text{Re}\left[\int_{-\pi}^{\pi}{u(e^{i \varphi})\bigg(\frac{e^{i\varphi}+z}{e^{i\varphi}-z}\bigg)\frac{d \varphi}{2 \pi}}\right].
             \end{align}
         Tako smo $\widetilde{u}(z)$ za $z \in \mathbb{D}$ izrazili kot realni del holomorfne funkcije, kar po trditvi \ref{hh} dokazuje harmoničnost Poissonovega integrala funkcije $u$, na notranjosti enotskega diska.
      \end{dokaz}
@@ -758,16 +757,16 @@ NAPIŠI NOV UVOD!!
      Iz realnega dela holomorfne funkcije $F$, torej funkcije $U$, lahko na enak način kot smo to storili v \eqref{lema_schwarz}, konstruiramo holomorfno funkcijo $\widetilde{F}$ s predpisom
      \begin{equation}
         \label{priprav_schwarz}
-        \widetilde{F}(z) = \int_{0}^{2 \pi}{U(e^{i \varphi})\bigg(\frac{e^{i\varphi}+z}{e^{i\varphi}-z}\bigg)\frac{d \varphi}{2 \pi}};~z \in \mathbb{D}.
+        \widetilde{F}(z) = \int_{0}^{2 \pi}{U(e^{i \varphi})\bigg(\frac{e^{i\varphi}+z}{e^{i\varphi}-z}\bigg)\frac{d \varphi}{2 \pi}}~,~~z \in \mathbb{D}.
     \end{equation}
-    Enakost \eqref{lema_schwarz} nam pove, da za $z = r e^{i\theta}\in \mathbb{D}$ velja $\text{Re}[\widetilde{F}](z) = U(z)$. Smiselno se je vprašati ali lahko kaj podobnega na $\mathbb{D}$ trdimo tudi za $\widetilde{F}$ in $F$. 
+    Enakost \eqref{lema_schwarz} nam pove, da za $z = r e^{i\theta}\in \mathbb{D}$ velja $\text{Re}[\widetilde{F}(z)] = U(z)$. Smiselno se je vprašati ali lahko kaj podobnega na $\mathbb{D}$ trdimo tudi za $\widetilde{F}$ in $F$. 
     O tem nam več pove naslednja trditev. 
 
     \begin{trditev}[Schwarzova integralska formula]
         \label{schwarz_int_f}
         Naj bo $F = U + iV$ funkcija, holomorfna na $\mathbb{D}$ in zvezna na $\overline{\mathbb{D}}$. Potem velja
         $$ 
-            F(z) = \int_{0}^{2 \pi}{U(e^{i \varphi})\bigg(\frac{e^{i\varphi}+z}{e^{i\varphi}-z}\bigg)\frac{d \varphi}{2 \pi}} + i V(0),~z \in \mathbb{D}.
+            F(z) = \int_{0}^{2 \pi}{U(e^{i \varphi})\bigg(\frac{e^{i\varphi}+z}{e^{i\varphi}-z}\bigg)\frac{d \varphi}{2 \pi}} + i V(0)~,~~z \in \mathbb{D}.
         $$
     \end{trditev}
     \begin{dokaz}
@@ -775,7 +774,8 @@ NAPIŠI NOV UVOD!!
         $$
         \widetilde{F}(z) = \int_{0}^{2 \pi}{U(e^{i \varphi})\bigg(\frac{e^{i\varphi}+z}{e^{i\varphi}-z}\bigg)\frac{d \varphi}{2 \pi}},~z \in \mathbb{D}.
         $$
-        Komentirali smo že, da po \eqref{lema_schwarz} velja $\text{Re}[\widetilde{F}] \equiv \text{Re}[F]$, oziroma $\text{Re}[\widetilde{F} - F](z) = 0$, za vsak $z \in \mathbb{D}$. Razlika holomorfnih funkcij zadošča Cauchy-Riemannovemu sistem enačb, zato obstaja $C \in \mathbb{C}$, da velja $\text{Im}[\widetilde{F} - F](z) = C$ za vsak $z \in \mathbb{D}$.
+        Komentirali smo že, da po \eqref{lema_schwarz} velja $\text{Re}[\widetilde{F}] \equiv \text{Re}[F]$, oziroma $\text{Re}[(\widetilde{F} - F)(z)] = 0$, za vsak $z \in \mathbb{D}$. 
+        Razlika holomorfnih funkcij zadošča Cauchy-Riemannovemu sistemu enačb, zato obstaja $C \in \mathbb{C}$, da velja $\text{Im}[(\widetilde{F} - F)(z)] = C$ za vsak $z \in \mathbb{D}$.
         Ker je $U$ na $\mathbb{D}$ harmonična, ima na $\mathbb{D}$ lastnost povprečne vrednosti. Zato velja
         $$
         \widetilde{F}(0) = \int_{0}^{2 \pi}{U(e^{i \varphi})\bigg(\frac{e^{i\varphi}+0}{e^{i\varphi}-0}\bigg)\frac{d \varphi}{2 \pi}} = \int_{0}^{2 \pi}{U(e^{i \varphi})\frac{d \varphi}{2 \pi}} = U(0).
@@ -783,25 +783,21 @@ NAPIŠI NOV UVOD!!
         Ker je $F(0) = U(0) + iV(0)$, sledi $\text{Im}[F - \widetilde{F}] \equiv V(0)$.
         Torej velja
         $$ 
-        F(z) = \widetilde{F}(z) + iV(0) = \int_{0}^{2 \pi}{U(e^{i \varphi})\bigg(\frac{e^{i\varphi}+z}{e^{i\varphi}-z}\bigg)\frac{d \varphi}{2 \pi}} + i V(0);~z \in \mathbb{D}.
+        F(z) = \widetilde{F}(z) + iV(0) = \int_{0}^{2 \pi}{U(e^{i \varphi})\bigg(\frac{e^{i\varphi}+z}{e^{i\varphi}-z}\bigg)\frac{d \varphi}{2 \pi}} + i V(0)~,~~z \in \mathbb{D}.
         $$
     \end{dokaz}
 
-    \begin{opomba}
-        Spomnimo se zapisa iz opomb \ref{opomba_konv1} in \ref{opomba_konv2}. Schwarzovo integralsko formulo, iz trditve \ref{schwarz_int_f}, lahko za holomorfno funkcijo $F = U + iV$ alternativno zapišemo kot konvolucijo. Velja
-        $$
-            F(r e^{i \theta}) = \int_{0}^{2 \pi}{U(e^{i \varphi})\left[\frac{e^{i \varphi}+r e^{i \theta}}{e^{i \varphi}-r e^{i \theta}}\right]~\frac{d \varphi}{2 \pi}} + i V(0)~;~~\theta \in [0,2 \pi],~r \in [0,1).
-        $$
-        Sedaj označimo $G(w) = U(e^{iw})$, ter poenostavimo. Dobimo
-        \begin{align*}
-            F(r e^{i \theta}) & = \int_{0}^{2 \pi}{G(\varphi)\left[\frac{1 +r e^{i (\theta-\varphi)}}{1-r e^{i(\theta-\varphi)}}\right]}~\frac{d\varphi}{2 \pi} + iV(0)\\
-            %%& =\int_{0}^{1}{G(s)\left[\text{Re}\left[\frac{1 +r e^{2 \pi i (t-s)}}{1-r e^{2 \pi i(t-s)}}\right] + i~\text{Im}\left[\frac{1 +r e^{2 \pi i (t-s)}}{1-r e^{2 \pi i(t-s)}}\right] \right]}ds + i V(0) \\
-            & = \frac{1}{2 \pi} \left[\int_{0}^{2 \pi}{G(\varphi)[(P_r + i Q_r)(\theta - \varphi)]}~d\varphi\right]+  iV(0) \\
-            & = \frac{1}{2 \pi} \big[G * (P_r + iQ_r)\big](\theta) + iV(0)\\
-            %& = \left[(G * P_r) + i(G*Q_r)\right](t) + iV(0)\\
-            & = \frac{1}{2 \pi}\bigg[(G * P_r)(t) + i\big[(G * Q_r)(t) + 2 \pi V(0)\big]\bigg]~;~~\theta\in [0,2 \pi],~r \in [0,1).
-        \end{align*}
-    \end{opomba}
+    Spomnimo se zapisov \eqref{konv_Pr} in \eqref{konv_Qr}. Schwarzovo integralsko formulo iz trditve \ref{schwarz_int_f}, lahko za holomorfno funkcijo $F = U + iV$ alternativno zapišemo kot konvolucijo. Velja
+    $$
+        F(r e^{i \theta}) = \int_{0}^{2 \pi}{U(e^{i \varphi})\left(\frac{e^{i \varphi}+r e^{i \theta}}{e^{i \varphi}-r e^{i \theta}}\right)\frac{d \varphi}{2 \pi}} + i V(0)~,~~\theta \in [0,2 \pi],~r \in [0,1).
+    $$
+    Sedaj označimo $G(w) = U(e^{iw})$, ter poenostavimo. Dobimo
+    \begin{align*}
+        F(r e^{i \theta}) & = \int_{0}^{2 \pi}{G(\varphi)\left(\frac{1 +r e^{i (\theta-\varphi)}}{1-r e^{i(\theta-\varphi)}}\right)}\frac{d\varphi}{2 \pi} + iV(0)\\
+        & = \frac{1}{2 \pi} \left(\int_{0}^{2 \pi}{G(\varphi)[(P_r + i Q_r)(\theta - \varphi)]}~d\varphi\right)+  iV(0) \\
+        & = \frac{1}{2 \pi} \left[G * (P_r + iQ_r)\right](\theta) + iV(0)\\
+        & = \frac{1}{2 \pi}\left((G * P_r)(t) + i\big[(G * Q_r)(t) + 2 \pi V(0)\big]\right),~~\theta\in [0,2 \pi],~r \in [0,1).
+    \end{align*}
 
 \subsection{Rešitev Dirichletovega problema na enotskem disku}
     Vrnimo se k bistvu razdelka. Za preproste zvezne funkcije smo že dokazali, da rešitev Dirichletovega problema na enotskem disku obstaja. To nas je pripeljalo do definicije Poissonovega jedra in Poissonovega integrala, s pomočjo katerih bomo sedaj pokazali, da za poljubno zvezno funkcijo obstaja rešitev Dirichletovega problema na enotskem disku.
@@ -811,15 +807,14 @@ NAPIŠI NOV UVOD!!
     \end{trditev}
     \begin{opomba}
         \label{opomba_obstoj}
-        Pred dokazom trditve še na nekoliko drugačen način zapišimo, kaj nam trditev v resnici pove. 
         Definirajmo funkcijo $H$, na $\overline{\mathbb{D}}$, kot
         $$
             H(z) = \begin{cases}
-                    h(z);~~z \in \partial \mathbb{D}\\
-                    \widetilde{h}(z);~~z \in \mathbb{D}
-            \end{cases}.
+                    h(z),~~z \in \partial \mathbb{D}\\
+                    \widetilde{h}(z),~~z \in \mathbb{D}
+            \end{cases},~~~~\text{kjer je}~\widetilde{h}~\text{Poissonov integral funkcije}~h.
         $$
-        Trdimo, da je funkcija $H$ na $\overline{\mathbb{D}}$ zvezna, ter na $\mathbb{D}$ harmonična. Po definiciji funkcije $H$ opazimo, da v resnici trdimo, da je na $\mathbb{D}$ harmoničen Poissonov integral funkcije $h$. 
+        Zgornja trditev pravi, da je funkcija $H$ na $\overline{\mathbb{D}}$ zvezna, ter na $\mathbb{D}$ harmonična. Po definiciji funkcije $H$ opazimo, da bo potrebno da je na $\mathbb{D}$ harmoničen Poissonov integral funkcije $h$. 
         Ker se zožitev tako definirane funkcije $H$ na $\partial \mathbb{D}$ ujema s $h$, želimo dokazati, da je ravno funkcija $H$ rešitev za Dirichletov problem na enotskem disku, z robnim pogojem $h$. 
         Formulacijo problema smo predstavili tudi grafično, pa naredimo to še za rešitev problema. 
         \begin{figure}[H]
