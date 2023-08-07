@@ -1036,8 +1036,8 @@ NAPIŠI NOV UVOD!!
 \subsection{Uvod in definicije osnovnih pojmov}
     Nekoliko se še navežimo na prejšno poglavje. 
     Srečali smo se s problemom obstoja in konstrukcije razširitve, podane funkcije, ki bo obenem zadoščala zahtevam problema.  
-    Pri Dirichletovem problemu, smo zahtevali harmoničnost razširitve na notranjosti in zveznost razširitve na zaprtju območja. 
-    Pokazali smo, da lahko na enotskem disku zahtevam problema, z začetnim pogojem $h$, zadostimo s pomočjo Poissonovega integrala podane funkcije, tako da za razširitev definiramo
+    Pri Dirichletovem problemu, smo zahtevali harmoničnost razširitve na notranjost in zveznost razširitve na zaprtju območja. 
+    Pokazali smo, da lahko na enotskem disku zahtevam problema, z robnim pogojem $h$, zadostimo s pomočjo Poissonovega integrala podane funkcije. Definirali smo razširitev
     $$
         H(z) = 
         \begin{cases}
@@ -1045,11 +1045,13 @@ NAPIŠI NOV UVOD!!
             \widetilde{h}(z)~;~~&z \in \mathbb{D}
         \end{cases}.
     $$
-    Problem, ki ga Schwarzov princip zrcaljenja reši, je ne glede na drugačne začetne pogoje iz vidika iskanja harmonične razširitve kljub temu blizu že obdelanemu Dirichletovemu problemu.
-    Pri Dirichletovem problemu, smo podano funkcijo želeli harmonično razširiti na notranjost območja, pri čemer smo poznali le vrednosti funkcije na robu. Tu pa bomo harmoničnost oziroma holomorfnost funkcije na manjšem območju že privzeli, ter iskali harmonično oziroma holomorfno razširitev na novo območju podobne oblike.
+
+    Sedaj si zastavimo nekoliko drugačen problem s podobnim ciljem. Ponovno poskusimo poiskati oziroma skonstruirati razširitev podane funkcije. 
+    Tokrat naj bo začetni podatek problema harmonična oziroma holomorfna funkcija, definirana na manjšem območju. Želeli bi poiskati harmonično oziroma holomorfno razširitev funkcije, ki bo definirana na novem območju podobne oblike.
+    Na hitro opisan problem bomo skozi poglavje rešili s pomočjo Schwarzovega principa zrcaljenja za harmonične oziroma holomorfne funkcije. 
     Kaj točno smatramo za območje podobne oblike bo jasno v nadaljevanju, vendar kot to že nakazuje beseda zrcaljanje v imenu principa, bomo razširitev želeli konstruirati na zrcalni sliki prvotnega območja. 
     
-    Spoznajmo najprej nekaj osnovnih pojmov, ki nam bodo omogočili natančno formulacijo in dokaz glavnega izreka razdelka.
+    Spoznajmo najprej nekaj osnovnih pojmov, ki nam bodo omogočili natančno formulacijo in dokaz glavnega izreka poglavja.
     \begin{definicija}
         Naj bo $U \subseteq \mathbb{C}$ območje. Potem je $U^* = \{\overline{z}~|~z \in U\}$ \emph{zrcalna slika območja U glede na realno os}.
         Če za območje $U$ velja $U^* = U$ pravimo, da je območje $U$ \emph{simetrično glede na realno os}.
@@ -1059,7 +1061,7 @@ NAPIŠI NOV UVOD!!
         Naj bo $u$ funkcija, definirana na območju $U \subseteq \mathbb{C}$. Potem z \emph{$u^*$} označimo funkcijo, definirano na $U^*$, s predpisom $u^*(w) = \overline{u(\overline{w})},~w \in U^*$
     \end{definicija}
 
-    Opazimo, da predpis iz zgornje definicije, za funkcijo $u$ definirano na območju $U$, v resnici ponuja zvezo $u^*(\overline{z}) = (u^* \circ (z \mapsto \overline{z}))(z) = \overline{u(z)},~z \in U$.
+    Opazimo, da predpis iz zgornje definicije, za funkcijo $u$ definirano na območju $U$, ponuja zvezo $u^*(\overline{z}) = \overline{u(\overline{\overline{z}})} = \overline{u(z)},~z \in U$.
     Zapisana zveza nakazuje, da se bodo v veliki meri lastnosti funkcije $u$ prenesle na funkcijo $u^*$.
 
     \begin{opomba}
@@ -1086,7 +1088,7 @@ NAPIŠI NOV UVOD!!
         
         Dokažimo trditev še po definiciji, tj. dokažimo, da $u^*$ na $U^*$ zadošča Laplaceovi parcialni diferencialni enačbi.
         Pomagali si bomo z standardno identifikacijo kompleksne spremenljivke $z = x + iy$ s parom realnega in imaginarnega dela $(x,y)$.
-        Identifikacija nam narekuje zvezo $[u^* \circ ((x,y) \mapsto (x,-y))](x, y) = u(x, y),~ x + iy \in U$.
+        Identifikacija nam narekuje zvezo $u^*(x,-y) = u(x, y),~ x + iy \in U$.
         Sedaj parcialno odvajajmo in dobimo
         \begin{align*}
             \frac{\partial u}{\partial x} &= \frac{\partial u^* }{\partial x}~,~~~~~\frac{\partial u}{\partial y} = - \frac{\partial u^* }{\partial y}, \\
@@ -1108,37 +1110,32 @@ NAPIŠI NOV UVOD!!
         Naj bo $u$ realna zvezna funkcija, definirana na $D^{+} \cup D^0$. Naj bo $u$ na $D^{+}$ harmonična in naj za vsak $z \in D^0$ velja $u(z) = 0$.
         Potem obstaja harmonična razširitev funkcije $u$ na $D$, ki je eksplicitno podana prek zveze $u(\bar{z}) = - u(z),~z \in D$.
     \end{izrek}
-    \begin{opomba}
-        \label{op_spz}
-        Preden se lotimo dokaza izreka, se še nekoliko posvetimo temu kaj nam izrek v resnici pove. 
-        Zapisana zveza za funkcijo $u$, nam v resnici narekuje predpis za funkcijo
-        $$
-        U(z) = 
-        \begin{cases}
-            u(z)~;~~&z \in D^{+}\\
-            -u(\overline{z})~;~~&z \in D^{-}\\
-            0~;~~ &z \in D^0
-        \end{cases}
-        .
-        $$
-        Izrek pravi, da je funkcija $U$ na $D$ harmonična.
-        Zapisano situacijo komentirajmo še s pomočjo spodnje slike. 
-        \begin{figure}[H]
-            \begin{center}
-                \includegraphics[width = \textwidth]{schwarz_harm.png}
-                \caption{Schwarzov princip zrcaljenja za harmonične funkcije.}
-            \end{center}    
-        \end{figure}
+
+    V trditvi zapisano situacijo komentirajmo še s pomočjo spodnje slike. 
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width = \textwidth]{schwarz_harm.png}
+            \caption{Schwarzov princip zrcaljenja za harmonične funkcije.}
+        \end{center}    
+    \end{figure}
 
     Slika prikazuje glede na realno os simetrično območje $D \subseteq \mathbb{C}$. $D^{+}$ označuje območje, na katerem je poznana funkcija $u$ harmonična, $D^{-}$ pa zrcalno sliko območja $D^+$ glede na realno os. 
     Predpis razširitve je na $D^-$ podan s predpisom \mbox{$u(\overline{z}) = - u(z)$}.
     Vodoravna črta prikazuje odsek realne osi. Odsek, ki leži znotraj območja $D$ smo označili z $D^0$. Funkcija $u$ je na tem delu območja po predpostavki izreka ničelna.
-    Točka $z_0$ in majhen disk okoli nje nakazujeta, da se bomo dokaza lotili prek karakterizacije harmoničnih funkcij z lastnostjo povprečne vrednosti.
-    \end{opomba}
+    Točka $z_0$ in majhen disk okoli nje nakazujeta, da se bomo dokaza trditve lotili prek karakterizacije harmoničnih funkcij z lastnostjo povprečne vrednosti.
 
     \begin{dokaz}
         Opazimo, da je $D$ disjunktna unija $D^+$, $D^-$ in $D^0$.
-        Sedaj na območju $D$ definirajmo funkcijo $U$, kot smo to storili v opombi \ref{op_spz}.
+        Na območju $D$ definirajmo funkcijo $U$, katere predpis narekuje eksplicitna zveza iz trditve
+        $$
+        U(z) = 
+        \begin{cases}
+            u(z)~,~~&z \in D^{+}\\
+            -u(\overline{z})~,~~&z \in D^{-}\\
+            0~,~~ &z \in D^0
+        \end{cases}
+        .
+        $$
         Funkcija $U$ je po predpostavkah izreka zvezna na $D^+ \cup D^0$, iz definicije, prek predpisa $u(\overline{z}) = - u(z)$, pa je jasno, da je zvezna kar na $D$. 
         Posvetimo se dokazu harmoničnosti.
         Ker je $U$, oziroma $u$, na $D^+$ harmonična, ima po trditvi \ref{ekvhlp}, na $D^+$ lastnost povprečne vrednosti. 
@@ -1150,9 +1147,9 @@ NAPIŠI NOV UVOD!!
         Sedaj nam preostane le še $D^0$.
         Vzemimo poljubno točko $z_0 \in D^0 \subseteq \mathbb{R}$. Ker je $D$ območje, obstaja $\rho > 0$, da je $\overline{\mathbb{D}}(z_0, \rho) \subseteq D$. Za vsak $0 < r < \rho$ velja
         \begin{align*}
-            \frac{1}{2 \pi} \int_{0}^{2 \pi}{U(z_0 + re^{i \theta}) d\theta} &= \frac{1}{2 \pi} \left[\int_{0}^{\pi}U(z_0 + re^{i \theta})~d\theta + \int_{\pi}^{2\pi} U(z_0 + re^{i \theta})~d\theta\right] \\
-            & = \frac{1}{2 \pi} \left[\int_{0}^{\pi}U(z_0 + re^{i \theta})~d\theta + \int_{0}^{\pi}U(\overline{z_0 + re^{i \theta}})~d\theta\right] \\
-            &= \frac{1}{2 \pi} \left[\int_{0}^{\pi}u(z_0 + re^{i \theta})~d\theta - \int_{0}^{\pi}u(z_0 + re^{i \theta})~d\theta\right] = 0.
+            \frac{1}{2 \pi} \int_{0}^{2 \pi}{U(z_0 + re^{i \theta}) d\theta} &= \frac{1}{2 \pi} \left(\int_{0}^{\pi}U(z_0 + re^{i \theta})~d\theta + \int_{\pi}^{2\pi} U(z_0 + re^{i \theta})~d\theta\right) \\
+            & = \frac{1}{2 \pi} \left(\int_{0}^{\pi}U(z_0 + re^{i \theta})~d\theta + \int_{0}^{\pi}U(\overline{z_0 + re^{i \theta}})~d\theta\right) \\
+            &= \frac{1}{2 \pi} \left(\int_{0}^{\pi}u(z_0 + re^{i \theta})~d\theta - \int_{0}^{\pi}u(z_0 + re^{i \theta})~d\theta\right) = 0.
         \end{align*}        
         Ker je funkcija $U$ na $D^0$ ničelna, smo pokazali, da ima $U$ tudi na $D^0$ lastnost povprečne vrednosti. 
         Dokazali smo, da ima zvezna funkcija $U$ na $D = D^+ \cup D^- \cup D^0$ lastnost povprečne vrednosti, zato je po trditvi \ref{ekvhlp} na $D$ harmonična.
@@ -1189,8 +1186,8 @@ NAPIŠI NOV UVOD!!
         Sedaj dokažimo holomorfnost funkcije $f^*$ še po definiciji. Želimo dokazati, da je $f^*$ v vsaki točki $w \in U^*$ kompleksno odvedljiva. Predpostavka trditve nam pove, da je $f$ kompleksno odvedljiva v vsaki točki $\overline{w} \in U$.
         Naj bo $w \in U^*$. Potem velja
         \begin{align*}
-            \lim_{h \to 0}\left[{\frac{f^*(w + h) - f^*(w)}{h}}\right] &= \lim_{h \to 0}\left[{\frac{\overline{f\left(\overline{w + h}\right)} - \overline{f(\overline{w})}}{h}}\right] = \lim_{h \to 0}{\overline{\left[\frac{f\left(\overline{w + h}\right) - f(\overline{w})}{\overline{h}}\right]}} \\
-            \lim_{h \to 0}{\overline{\left[\frac{f\left(\overline{w} + \overline{h}\right) - f(\overline{w})}{\overline{h}}\right]}} & = \overline{\lim_{\overline{h} \to 0}{\left[\frac{f\left(\overline{w} + \overline{h}\right) - f(\overline{w})}{\overline{h}}\right]}} = \overline{f'(\overline{w})}.
+            \lim_{h \to 0}{~\frac{f^*(w + h) - f^*(w)}{h}} &= \lim_{h \to 0}{~\frac{\overline{f\left(\overline{w + h}\right)} - \overline{f(\overline{w})}}{h}} = \lim_{h \to 0}{~\overline{\frac{f\left(\overline{w + h}\right) - f(\overline{w})}{\overline{h}}}} \\
+            \lim_{h \to 0}{~\overline{\frac{f\left(\overline{w} + \overline{h}\right) - f(\overline{w})}{\overline{h}}}} & = \overline{\lim_{\overline{h} \to 0}{~\frac{f\left(\overline{w} + \overline{h}\right) - f(\overline{w})}{\overline{h}}}} = \overline{f'(\overline{w})}.
         \end{align*}
         Limita diferenčnega kvocienta obstaja v poljubni točki $w \in U^*$, zato je $f^*$ na $U^*$ kompleksno odvedljiva oziroma holomorfna.
     \end{dokaz}
@@ -1209,22 +1206,13 @@ NAPIŠI NOV UVOD!!
         $$
         na območju $D$ holomorfna.
     \end{trditev}
-    \begin{opomba}
-        Trditev nam v resnici pove, da za holomorfno funkcijo $f$ obstaja holomorfna razširitev, podana s predpisom
-        $$
-        F(z) = 
-        \begin{cases}
-            f(z)~;~~&z \in D^{+} \cup D^0\\
-            \overline{f(\overline{z})}~;~~&z \in D^{-} \cup D^0
-        \end{cases}.
-        $$
-        Opazimo, da imata veji predpisa funkcije $F$ neprazen presek, zato se je smiselno vprašati ali je predpis sploh dobro definiran. V resnici je potrebno preveriti ali se funkcijske vrednosti na preseku vej, oziroma $D^0$, ujemajo.  
-        Naj bo $z_0 \in D^0$. Po definiciji sledi $z_0 \in \mathbb{R}$, ter zato $\overline{z_0} = z_0$. Ker funkcija $f$, po predpostavki trditve, na $D^0$ zavzame realne vrednosti, sledi $f(z_0) = f(\overline{z_0}) = \overline{f(\overline{z_0})}$.
-    \end{opomba}
     \begin{dokaz}
+        Opazimo, da imata veji predpisa funkcije $F$ neprazen presek, zato se je smiselno vprašati, ali je predpis sploh dobro definiran. Potrebno je preveriti, ali se funkcijske vrednosti na preseku vej, oziroma $D^0$, ujemajo.  
+        Ker za $z_0 \in D^0$ velja $\overline{z_0} = z_0$, funkcija $f$ pa po predpostavki trditve na $D^0$ zavzame realne vrednosti, sledi $f(z_0) = f(\overline{z_0}) = \overline{f(\overline{z_0})} = f^*(z_0)$.
+        
         Območje $D$ je disjunktna unija $D^+$, $D^-$ in $D^0$. Vemo da je funkcija $F$, oziroma $f$, holomorfna na $D^+$, zato je po trditvi \ref{lemahol} funkcija $f^*$, oziroma $F$, holomorfna na $(D^+)^* = D^-$. 
         Dovolj je torej dokazati, da je $F$ holomorfna v okolici vsake točke iz $D^0$. 
-        Naj bo $z_0 \in D^0$ in $\delta > 0$ tak, da velja $\overline{\mathbb{D}}(z_0,\delta) \subseteq \mathbb{D}$. Spomnimo se opombe \ref{karakterizacija}. 
+        Naj bo $z_0 \in D^0$ in $\delta > 0$ tak, da velja $\overline{\mathbb{D}}(z_0,\delta) \subseteq D$. Sedaj uporabimo karakterizacijo holomorfnih funkcij prek izreka Morera. 
         Funkcija $F$ je očitno zvezna kar na $D$, zato je dovolj pokazati, da za vsak zaprt trikotnik $T$, za katerega velja $T \subseteq \mathbb{D}(z_0, \delta)$ sledi
         $$ 
             \int_{\partial T}{F(\xi)~d\xi} = 0.
@@ -1242,7 +1230,10 @@ NAPIŠI NOV UVOD!!
             \end{center}    
         \end{figure}
 
-        Posvetimo se drugi možnosti, torej možnosti, da presek zaprtega trikotnika $T$ in $D^0$ ni prazen. Tokrat si situacijo najprej oglejmo grafično, ter šele nato natančno dokažimo želeno.
+        Posvetimo se drugi možnosti, torej možnosti, da presek zaprtega trikotnika $T$ in $D^0$ ni prazen. 
+        Ideja je krivuljni integral po robu trikotnika prek $\delta_0 > 0$ dovolj blizu $D^0$ razbiti na krivuljna integrala, ki bosta v celoti znotraj območij $\mathbb{D}(z_0,\delta) \cap D^+$ oziroma $\mathbb{D}(z_0,\delta) \cap D^-$, 
+        ter na krivuljni integral, katerega prispevek bo dovolj majhen.
+        Sedaj definirajmo $P^+ = \{z \in T~|~\text{Im}[z] \geq \delta_0\}$, $P^- = \{z \in T~|~\text{Im}[z] \leq -\delta_0\}$ in $P^0 = \{z \in T~|~|\text{Im}[z]| \leq \delta_0\}$ ter si situacijo oglejmo grafično.
 
         \begin{figure}[H]
             \begin{center}
@@ -1250,11 +1241,8 @@ NAPIŠI NOV UVOD!!
                 \caption{Delitev zaprtega trikotnika $T$ na $P^+$, $P^-$ in $P^0$.}
             \end{center}    
         \end{figure}
-
-        Ideja je krivuljni integral po robu trikotnika dovolj blizu $D^0$ razbiti na krivuljna integrala, ki bosta v celoti znotraj območij $\mathbb{D}(z_0,\delta) \cap D^+$ oziroma $\mathbb{D}(z_0,\delta) \cap D^-$, 
-        ter na krivuljni integral, katerega prispevek bo dovolj majhen.
         
-        Naj bo $\epsilon > 0$. Želimo najti dovolj majhen $\delta > \delta_0 > 0$, za katerega bo delitev zaprtega trikotnika $T$ na $P^+ = \{z \in T~|~\text{Im}[z] \geq \delta_0\}$, $P^- = \{z \in T~|~\text{Im}[z] \leq -\delta_0\}$ in $P^0 = \{z \in T~|~|\text{Im}[z]| \leq \delta_0\}$ zadoščala
+        Naj bo $\epsilon > 0$. Želimo najti dovolj majhen $\delta > \delta_0 > 0$, za katerega bo delitev zaprtega trikotnika $T$ na $P^+$, $P^-$ in $P^0$ zadoščala
         $$ 
             \left|\int_{\partial P^0}{F(\xi)~d\xi}\right| < \epsilon~,~\text{ter zato po Cauchyjevem izreku za funkcijo $F$ na $P^+$ in $P^-$}
         $$
