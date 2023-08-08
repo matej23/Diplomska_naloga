@@ -1230,7 +1230,7 @@ NAPIŠI NOV UVOD!!
             \end{center}    
         \end{figure}
 
-        Posvetimo se drugi možnosti, torej možnosti, da presek zaprtega trikotnika $T$ in $D^0$ ni prazen. 
+        Posvetimo se drugi možnosti, torej možnosti, da presek zaprtega trikotnika $T$ in $D^0$ ni prazen. Brez škode za splošnost lahko predpostavimo, da eno oglišče leži nad realno osjo in preostali oglišči ležita pod realno osjo.
         Ideja je krivuljni integral po robu trikotnika prek $\delta_0 > 0$ dovolj blizu $D^0$ razbiti na krivuljna integrala, ki bosta v celoti znotraj območij $\mathbb{D}(z_0,\delta) \cap D^+$ oziroma $\mathbb{D}(z_0,\delta) \cap D^-$, 
         ter na krivuljni integral, katerega prispevek bo dovolj majhen.
         Sedaj definirajmo $P^+ = \{z \in T~|~\text{Im}[z] \geq \delta_0\}$, $P^- = \{z \in T~|~\text{Im}[z] \leq -\delta_0\}$ in $P^0 = \{z \in T~|~|\text{Im}[z]| \leq \delta_0\}$ ter si situacijo oglejmo grafično.
@@ -1251,21 +1251,40 @@ NAPIŠI NOV UVOD!!
             &\leq \left|\int_{\partial P^+}{F(\xi)~d\xi} \right|+ \left|\int_{\partial P^-}{F(\xi)~d\xi}\right| + \left|\int_{\partial P^0}{F(\xi)~d\xi}\right| \\ 
             & =\left|\int_{\partial P^0}{F(\xi)~d\xi} \right| < \epsilon.
         \end{align*}
-        Sedaj razbijmo še krivuljni integral po robu $\partial P^0$. Ponovno si delitev najprej oglejmo na spodnji sliki, ter jo šele nato uporabimo. 
+        Sedaj razbijmo še krivuljni integral po $\partial P^0$. 
+        Z $z_{ZL}$ oziroma $z_{ZD}$ označimo levo oziroma desno točko v preseku $\partial P^0$ in $\partial P^+$. 
+        Podobno z $z_{SL}$ oziroma $z_{SD}$ označimo levo oziroma desno točko v preseku $\partial P^0$ in $\partial P^-$.
+        S pomočjo $\delta_0 > 0$ označimo še $z_1 = z_{ZL} - 2 \delta_0$ in $z_2 = z_{ZD} - 2 \delta_0$.
+        Označene točke nam ponujajo razbitje roba na neorientirane daljice. Označimo 
+        \begin{align*}
+            S_Z &= \{(1-t)z_{ZD} + t z_{ZL}~|~ t \in [0,1]\}, \\
+            S_D &= \{(1-t)z_{ZL} + t z_{SL}~|~ t \in [0,1]\}, \\
+            S_L &= \{(1-t)z_{SD} + t z_{ZD}~|~ t \in [0,1]\}~\text{in}\\ 
+            S_S &= \{(1-t)z_{SL} + t z_{SD}~|~ t \in [0,1]\}.
+        \end{align*}
+        Nadaljno lahko daljico $S_S$ razdelimo na neorientirane daljice 
+        \begin{align*}
+            &S_1 = \{(1-t)z_{SL} + t z_{1}~|~ t \in [0,1]\}, \\
+            &S_2 = \{(1-t)z_{2} + t z_{SD}~|~ t \in [0,1]\}~\text{in} \\
+            &S_{S'} = \{(1-t)z_{1} + t z_{2}~|~ t \in [0,1]\}.
+        \end{align*}
+        Pred nadaljevanjem si zapisane oznake oglejmo na spodnji sliki. 
         \begin{figure}[H]
             \begin{center}
                 \includegraphics[width = \textwidth]{schwarz_hol_int.png}
                 \caption{Delitev roba $P^0$ na $S_Z$, $S_D$, $S_L$ in $S_S$.}
             \end{center}    
         \end{figure}
-        Slika nam nakazuje delitev krivuljnega integrala po robu na linearne odseke. Velja
+        Sedaj zapisano delitev roba uporabimo pri zapisu krivuljnega integrala. Velja
         \begin{align*}
             \left|\int_{\partial P^0}{F(\xi)~d\xi}\right| &= \left|\int_{S_Z}{F(\xi)~d\xi} - \int_{S_S}{F(\xi)~d\xi} + \int_{S_L}{F(\xi)~d\xi} - \int_{S_D}{F(\xi)~d\xi}\right|\\
             & \leq \left|\int_{S_Z}{F(\xi)~d\xi} - \int_{S_S}{F(\xi)~d\xi} \right| + \left|\int_{S_L}{F(\xi)~d\xi}\right| + \left|\int_{S_D}{F(\xi)~d\xi}\right|.\\
         \end{align*}
-        Opazimo, da bi lahko krivuljna integrala $S_D$ in $S_L$ parametrizirali s pomočjo linearne funkcije. Zato obstaja konstanta $C_1 \in \mathbb{R}$, da velja $|z_{ZL} - z_{SL}| < C_1 \delta_0$ in  \mbox{$|z_{ZD} - z_{SD}| < C_1 \delta_0$}.
-        Ker je $F$ na $D$ zvezna, $P^0$ pa zaprta podmožica, je $|F|$ na $P^0$ omejena. Sedaj opažanji združimo. Ko krivuljni integral parametriziramo, ter integrand navzgor omejimo, opazimo, da je absolutna vrednost integrala lahko poljubno majhna, če bo le $\delta_0$ dovolj majhen. 
-        Zapišimo nekoliko drugače. Obstaja $\delta_1 > 0$, da za $\delta_0 \leq \delta_1$ velja
+        Ker je funkcija $F$ zvezna na $D$ je $|F|$ na $S_L$ in $S_D$ omejena. 
+        Sedaj uporabimo trikotniško neenakost za integral in omejenost funkcije $|F|$ na $S_L$ oziroma $S_D$. 
+        Opazimo, da bo absolutna vrednost integrala poljubno majhna, če bo le dolžina daljic $S_L$ in $S_D$ dovolj majhna. 
+        Dovolj je zahtevati, da bo vrednost $\delta_0$ dovolj majhna. 
+        Zapišimo nekoliko natančneje. Obstaja $\delta_1 > 0$, da za $\delta_0 \leq \delta_1$ velja
         $$ 
         \left|\int_{S_L}{F(\xi)~d\xi}\right| < \frac{\epsilon}{5}~~~\text{in}~~~\left|\int_{S_D}{F(\xi)~d\xi}\right| < \frac{\epsilon}{5}.
         $$
@@ -1273,7 +1292,7 @@ NAPIŠI NOV UVOD!!
         $$ 
         \left|\int_{S_1}{F(\xi)~d\xi}\right| < \frac{\epsilon}{5}~~~\text{in}~~~\left|\int_{S_2}{F(\xi)~d\xi}\right| < \frac{\epsilon}{5}.
         $$
-        Sedaj uporabimo zgornje ocene. Dobimo
+        Ko uporabimo zgornje ocene dobimo
         \begin{align*}
             \left|\int_{\partial P^0}{F(\xi)~d\xi}\right|&< \left|\int_{S_Z}{F(\xi)~d\xi} - \int_{S_{S'}}{F(\xi)~d\xi} - \int_{S_1}{F(\xi)~d\xi} - \int_{S_2}{F(\xi)~d\xi}\right| + \frac{\epsilon}{5} +  \frac{\epsilon}{5}\\
             & \leq \left|\int_{S_Z}{F(\xi)~d\xi} - \int_{S_{S'}}{F(\xi)~d\xi}\right| + \left|\int_{S_1}{F(\xi)~d\xi}\right| + \left|\int_{S_2}{F(\xi)~d\xi}\right| + \frac{2\epsilon}{5}\\
@@ -1286,7 +1305,7 @@ NAPIŠI NOV UVOD!!
             &=\int_{0}^{1}{F((1 -t)z_{ZD} + t z_{ZL})(z_{ZL} - z_{ZD})~dt} - \int_{0}^{1}{F((1 -t)z_{2} + t z_{1})(z_{1} - z_{2})~dt}\\
             &=\int_{0}^{1}{\left[F((1 -t)z_{ZD} + t z_{ZL})(z_{ZL} - z_{ZD}) - F((1 -t)z_{2} + t z_{1})(z_{1} - z_{2})\right]dt}.
         \end{align*}  
-        Opazimo, da velja $z_{ZL} = z_{1} + 2 \delta_0$ in $z_{ZD} = z_2 + 2 \delta_0$, ter zato
+        Ker velja $z_{ZL} = z_{1} + 2 \delta_0$ in $z_{ZD} = z_2 + 2 \delta_0$ lahko zapišemo
         \begin{align*}
             &\int_{S_Z}{F(\xi_Z)~d\xi_Z} - \int_{S_{S'}}{F(\xi_{S'})~d\xi_{S'}}\\
             &=(z_{1} - z_{2})\int_{0}^{1}{\left[F((1 -t)z_{2} + t z_{1} + 2 \delta_0) - F((1 -t)z_{2} + t z_{1})\right]dt}.
@@ -1307,7 +1326,13 @@ NAPIŠI NOV UVOD!!
     \end{dokaz}
 
 \section{Zaključek}
-    TU BO ZAKLJUCEK
+    Pri formulaciji in dokazu Schwarzovega principa zrcaljenja smo razširitev iskali na zrcalni sliki območja glede na realno os. 
+    Odsek realne osi, ki leži znotraj našega območja, bi lahko seveda tudi parametrizirali in ga obravnavali kot krivuljo. 
+    Seveda je tu krivulja, ki določa odsek realne osi dokaj preprosta in zato obvladljiva.
+    Iz tega vidika smo podano harmonično oziroma holomorfno funkcijo eksplicitno razširili na območje prek obvladljive krivulje.
+    Prav takšen pristop nas vodi k posplošitvi Schwarzovega principa zrcaljenja. 
+    Ta nam omogoča razširitev oziroma zrcaljenje podane funkcije tudi čez druge obvladljive krivulje. 
+    Natančno formulacijo omenjenega izreka, ki odgovori tudi na vprašanje kaj točno je zgoraj skrito za besedami obvladljiva krivulja, si bralec lahko ogleda v REF GAM ali v REF DRUGA.
 
 \bibliographystyle{siam}
 \begin{thebibliography}{9}
