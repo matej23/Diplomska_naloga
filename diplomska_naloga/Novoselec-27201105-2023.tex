@@ -38,11 +38,9 @@
 %   organizacije dela, torej v katerem razdelku je kaj, pač pa le opis vsebine.
 \povzetek{
 
-    Funkcija je harmonična če zadošča Laplaceovi parcialni diferencialni enačbi. 
-    V diplomskem delu obravnavamo harmonične funkcije dveh realnih oziroma ene kompleksne spremenljivke. 
-    Realne harmonične funkcije lahko tako smatramo kot realne dele holomorfnih funkcij. 
-    Pristop se izkaže za koristnega pri obravnavo lastnosti harmoničnih funkcij.
-    Tako se na primer lastnost povprečne vrednosti in gladkost holomorfnih funkcij prenese na harmonične funkcije. 
+    Realne harmonične funkcije dveh realnih oziroma ene kompleksne spremenljivke lahko smatramo kot realne dele holomorfnih funkcij. 
+    Pristop je koristen pri obravnavi lastnosti harmoničnih funkcij.
+    Tako se na primer lastnost povprečne vrednosti in gladkost holomorfnih funkcij preneseta na harmonične funkcije. 
     Spoznamo, da tako kot za holomorfne tudi za harmonične funkcije velja princip maksima.
     
     Od obravnave prek holomorfnih funkcij se nekoliko oddaljimo pri formulaciji in reševanju Dirichletovega problema za enotski disk. 
@@ -61,10 +59,8 @@
 % - povzetek v angleščini
 \abstract{
 
-    Function is harmonic if it satisfies Laplace's partial differential equation. 
-    In bachelor's degree we limit our view to harmonic functions of two real or one complex variable.
-    Real harmonic functions can thus be considered as real parts of holomorphic functions.
-    The approach proves useful when we study properties of harmonic functions.
+    Harmonic functions of two real or one complex variable can be viewed as real parts of holomorphic functions.
+    Approach is useful when we want to study properties of harmonic functions.
     Mentioned approach lets us prove, that the mean value property and the smoothness of holomorphic functions are transferred to harmonic functions.
     We also show, that maximum principle holds for harmonic functions as it holds for holomorphic functions.
 
@@ -86,15 +82,48 @@
 \klasifikacija{..., ...}
 
 % - ključne besede, ki nastopajo v delu, ločene s \sep
-\kljucnebesede{...\sep ...}
+\kljucnebesede{harmonična funkcija\sep
+    Laplaceov operator\sep
+    območje\sep
+    enotski disk\sep
+    lastnost povprečne vrednosti\sep
+    princip maksima\sep
+    Dirichletov problem\sep
+    Poissonovo jedro\sep
+    Poissonov integral\sep
+    razširitev\sep
+    Schwarzov princip zrcaljenja}
 
 % - angleški prevod ključnih besed
-\keywords{...\sep ...} % angleški prevod ključnih besed
+\keywords{harmonic function\sep
+    Laplace operator\sep
+    domain\sep
+    unit disk\sep
+    mean value property\sep
+    maximum principle\sep
+    Dirichlet problem\sep
+    Poisson kernel\sep
+    Poisson integral\sep
+    extenstion\sep
+    Schwarz reflection principle} 
 
 % - angleško-slovenski slovar strokovnih izrazov
 \slovar{
-% \geslo{angleški izraz}{slovenski izraz}
-% ...
+
+\geslo{harmonic function}{harmonična funkcija}
+\geslo{holomorphic function}{holomorfna funkcija}
+\geslo{Cauchy-Riemann system of equations}{Cauchy-Riemann sistem enačb}
+\geslo{domain}{območje}
+\geslo{boundary}{rob}
+\geslo{mean value property}{lastnost povprečne vrednosti}
+\geslo{maximum principle}{princip maksima}
+\geslo{Dirichlet problem for unit disk}{Dirichletov problem za enotski disk}
+\geslo{Poisson kernel}{Poissonovo jedro}
+\geslo{Poisson integral}{Poissonov integral}
+\geslo{Schwarz reflection principle}{Schwarzov princip zrcaljenja}
+\geslo{reflection of domain over real axis}{zrcalna slika območja glede na realno os}
+\geslo{extension of function}{razširitev funkcije}
+
 }
 
 % - ime datoteke z viri (vključno s končnico .bib), če uporabljate BibTeX
@@ -150,7 +179,13 @@ Ta nam bo v petem poglavju omogočala dokaz glavnega izreka.
 
 %------------------------------------------------------------
 \section{Harmonične funkcije}
+
+Začetek poglavja je namenjen ponovitvi znanih pojmov, konec pa zapisu glavnih lastnosti na katere se bomo kasneje sklicevali. 
+
 \subsection{Osnovni pojmi}
+
+    Navedimo nekaj osnovnih definicij in komentarjev. 
+
     \begin{definicija}
         \label{harm}
         Naj bo $U$ odprta podmnožica v $\mathbb{R}^n$. Naj bo $u$ funkcija, definirana na $U$ in naj bo na definicijskem območju dvakrat zvezno odvedljiva.  
@@ -181,6 +216,9 @@ Ta nam bo v petem poglavju omogočala dokaz glavnega izreka.
     \end{definicija}
 
 \subsection{Lastnosti harmoničnih funkcij}
+
+    S pomočjo orodij iz kompleksne analize se lotimo obravnave osnovnih lastnosti. 
+
     \begin{trditev}
         \label{hh}
         Naj bo $U \subseteq \mathbb{C}$ odprta množica. Naj bo $f = u + iv$ holomorfna funkcija, $u$ in $v$ pa realni funkciji, definirani na $U$. Potem sta funkciji $u$ in $v$ na $U$ harmonični.
@@ -258,7 +296,13 @@ Ta nam bo v petem poglavju omogočala dokaz glavnega izreka.
     \end{dokaz}
 
 \section{Lastnost povprečne vrednosti}
+
+Na prvi pogled se bodo pojmi, obravnavani v začetku poglavja, zdeli nepovezani s študijo harmoničnih funkcij. Povezava bo razvidna iz drugega razdelka poglavja.
+
 \subsection{Definicija in osnovne lastnosti}
+
+    Za začetek le navedimo definicijo in zapišimo nekaj opazk.
+
     \begin{definicija}  
         Naj bo $h$ kompleksna zvezna funkcija, definirana na območju $D$. Denimo, da za $z_0 \in D$ in $r_0 > 0$ velja $\overline{\mathbb{D}}(z_0, r_0) \subseteq D$. \emph{Povprečje funkcije} $h$ na $\overline{\mathbb{D}}(z_0, r_0)$ definiramo kot
         $$
@@ -318,6 +362,10 @@ Ta nam bo v petem poglavju omogočala dokaz glavnega izreka.
     Omenimo še, da iz linearnosti integrala sledi, da je tudi linearna kombinacija funkcij z lastnostjo povprečne vrednosti funkcija z lastnostjo povprečne vrednosti. 
 
 \subsection{Princip maksima}
+
+    Princip maksima za holomorfne funkcije nam je znan že iz kompleksne analize. 
+    Dokažimo ga še ob nekoliko šibkejših zahtevah.
+
     \begin{trditev}[Princip maksima za funkcije z lastnostjo povprečne vrednosti]
         \label{pm_lpv}
         Naj bo $h$ zvezna kompleksna funkcija, definirana na območju $D$. Naj ima $h$ na $D$ lastnost povprečne vrednosti in naj obstaja $M \in \mathbb{R}$, da velja $|h(z)| \leq M$ za vsak $z \in D$. 
@@ -441,13 +489,18 @@ Ta nam bo v petem poglavju omogočala dokaz glavnega izreka.
     Motivacija za ogled naslednjega poglavja temelji ravno na dokazu omenjenega rezultata. 
 
 \section{Dirichletov problem za enotski disk}
+
+V začetku poglavja bomo zastavili problem, ki bo skozi poglavje motiviral vpeljavo novih pojmov. 
+Prek obravnave njihovih lastnosti bomo zastavljen problem proti koncu poglavja rešili. 
+Obstoj in enoličnost rešitve bosta ključna za dokaz karakterizacije harmoničnih funkcij prek lastnosti povprečne vrednosti v zadnjem razdelku poglavja.
+
 \subsection{Formulacija problema}
     Za začetek navedimo problem, ki ga bomo znotraj poglavja reševali.
     Naj bo $\mathbb{D}$ enotski disk. Zvezno kompleksno funkcijo $h$, definirano na $\partial \mathbb{D}$, bi želeli razširiti do funkcije $H$, ki bo harmonična na $\mathbb{D}$ in zvezna na $\overline{\mathbb{D}}$.
     Opisan problem je grafično prikazan na spodnji sliki. 
     \begin{figure}[H]
         \begin{center}
-            \includegraphics[width = 0.7 \textwidth]{dirichlet_form.png}
+            \includegraphics[width = \textwidth]{dirichlet_form.png}
             \caption{Dirichletov problem za enotski disk, z robnim pogojem $h$.}
         \end{center}    
     \end{figure}
@@ -500,8 +553,8 @@ Ta nam bo v petem poglavju omogočala dokaz glavnega izreka.
         $$
         \int_{-\pi}^{\pi}{e^{ij\theta} e^{-ik\theta}~\frac{d\theta}{2\pi}} = 
         \begin{cases}
-            1~;~&j=k\\
-            0~;~&j \neq k\\
+            1~,~&j=k\\
+            0~,~&j \neq k\\
         \end{cases}
         .$$
     Zgornja relacija nam pri $h(e^{i\theta}) = \sum_{k = -N}^{N}{a_k r^{|k|} e^{ik\theta}}$ omogoča izražavo koeficientov $a_k$ kot
@@ -522,6 +575,9 @@ Ta nam bo v petem poglavju omogočala dokaz glavnega izreka.
     Sedaj bomo zgornjo funkcijo, ki smo jo na intuitiven način konstruirali s pomočjo predpostavljene polinomske oblike funkcije $h$, vzeli za definicijo novega pojma in z njegovo pomočjo prišli do razširitve za splošne zvezne funkcije $h$.
     
 \subsection{Poissonovo jedro}
+
+    Osredotočimo se najprej na vrsto v integralu zapisa \eqref{int1}.
+
     \begin{definicija}
         \emph{Poissonovo jedro} je funkcija definirana s predpisom
         $$
@@ -626,25 +682,6 @@ Ta nam bo v petem poglavju omogočala dokaz glavnega izreka.
         Sedaj uporabimo trditev \ref{proti0}, ki nam pove, da gre $c_r \to 0$, ko gre $r \to 1$. Sledi, da gre tudi zapisan integral proti $0$, ko gre $r \to 1$.
     \end{dokaz}
 
-    %\begin{definicija}
-    %    Naj bo $\{F_{\lambda}~|~\lambda \in \Lambda,~\text{kjer je $\Lambda$ povezana podmnožica v $[0, \infty)$}\}$ družina omejenih integrabilnih funkcij, definiranih na $\partial \mathbb{D}$. Pravimo, da je družina funkcij \emph{približna enota}, če velja
-    %    \begin{enumerate}[label={\Alph*)}]
-    %        \item $\int_{\partial \mathbb{D}}{F_\lambda} = 1,~\text{za vsak $\lambda \in \Lambda$}$,
-    %        \item sup\{$\int_{\partial \mathbb{D}}{\left| F_{\lambda}\right|}~|~\lambda \in \Lambda$\} $< \infty$,
-    %        \item za vsak $\delta > 0$ velja $\lim_{\lambda \to \mu}{\int_{\{|x| > \delta\}}{|F_{\lambda}(x)|~dx}} = 0$, kjer $\mu$ označuje supremum množice $\Lambda$, oziroma $\infty$, če supremum množice $\Lambda$ ne obstaja.
-    %    \end{enumerate}
-    %\end{definicija}
-%
-    %\begin{trditev}
-    %    Družina funkcij $\{ \frac{1}{2 \pi} P_r~|~r \in [0,1)\}$ je približna enota.
-    %\end{trditev}
-    %\begin{dokaz}
-    %    Zahteve glede definicijskega območja, omejenosti in integrabilnosti so izpoljene, zato je dovolj komentirati, da družina zadošča pogojem A), B) in C). 
-    %    Da družina zadošča pogoju točke A) nam pove točka e) trditve \ref{lastpk}, točka d) trditve \ref{lastpk} pa nam pove, da je s tem zadoščeno tudi pogoju točke B). 
-    %    Posledica \ref{int_proti0} nam pove, da družina zadošča tudi pogoju iz točke C).
-    %\end{dokaz}
-%
-
     Oglejmo si lastnosti družine $\left\{ \frac{1}{2 \pi} P_r~|~r \in [0,1)\right\}$. Trditev \ref{lastpk} nam pove, da za vsak $r \in [0,1)$ velja $\frac{1}{2\pi}\int_{\partial \mathbb{D}}{P_r(\theta)} = 1$ in $P_r(\theta) > 0$ za vsak $\theta \in [0, 2 \pi]$.
     Zato velja tudi sup$\left\{\frac{1}{2 \pi}\int_{\partial \mathbb{D}}{\left| P_{r}\right|}~|~r \in [0,1)\right\}= 1$. Družino funkcij, ki obenem zadošča tudi lastnosti iz posledice \ref{int_proti0} imenujeno približna enota. 
     Bralec si več lahko prebere na REFERENCA.
@@ -708,6 +745,9 @@ Ta nam bo v petem poglavju omogočala dokaz glavnega izreka.
     Pokazali bomo, da to tudi pri splošnih zveznih funkcijah omogoča zapis rešitve Dirichletovega problema na enotskem disku.
 
 \subsection{Poissonov integral}
+
+    Tako kot smo to storili v prejšnem razdelku, začnimo z definicijo novega pojma.
+
     \begin{definicija}
         Naj bo $h(e^{i \theta})$ zvezna funkcija, definirana na robu enotskega diska.
         \emph{Poissonov integral} funkcije $h(e^{i\theta})$, ki ga označimo s $\widetilde{h}(z)$, je funkcija, definirana na notranjosti enotskega diska s predpisom
@@ -735,7 +775,7 @@ Ta nam bo v petem poglavju omogočala dokaz glavnega izreka.
         Zadnja enakost v zgornjem zapisu je posledica komutativnosti konvolucije ter še na nekoliko drugačen način dokazuje zapis iz opombe \ref{kom_poiss}. Velja namreč
         \begin{align*}
             \widetilde{h}\left(r e^{i \theta}\right) &= \frac{1}{2\pi} \left[(P_r * f)(\theta)\right] =  \frac{1}{2 \pi}\int_{0}^{2\pi}{P_r(\varphi) f(\theta - \varphi) ~d\varphi} \\
-            & = \int_{0}^{2\pi}{h\big(e^{i(\theta-\varphi)}\big) P_r(\varphi)~\frac{d\varphi}{2 \pi}};~~z = r e^{i\theta},~\theta \in [0,2\pi],~r\in[0,1). \notag
+            & = \int_{0}^{2\pi}{h\big(e^{i(\theta-\varphi)}\big) P_r(\varphi)~\frac{d\varphi}{2 \pi}},~~z = r e^{i\theta},~\theta \in [0,2\pi],~r\in[0,1). \notag
         \end{align*}
     \end{opomba}
 
@@ -779,6 +819,9 @@ Ta nam bo v petem poglavju omogočala dokaz glavnega izreka.
     \end{dokaz}
 
 \subsection{Schwarzova integralska formula}
+
+    Za trenutek se oddaljimo od reševanja Dirichletovega problema, ter vpeljane pojme uporabimo za dokaz Schwarzove integralske formule.
+
      \begin{lema}
         \label{realnidel}
         Naj bo $u$ realna zvezna funkcija, definirana na $\partial \mathbb{D}$. Potem je Poissonov integral funkcije $u$ na $\mathbb{D}$ harmonična funkcija.
@@ -863,7 +906,7 @@ Ta nam bo v petem poglavju omogočala dokaz glavnega izreka.
         Formulacijo problema smo predstavili tudi grafično, pa naredimo to še za rešitev problema. 
         \begin{figure}[H]
             \begin{center}
-                \includegraphics[width = 0.6 \textwidth]{dirichlet_resitev.png}
+                \includegraphics[width = \textwidth]{dirichlet_resitev.png}
                 \caption{Rešitev Dirichletovega problema na enotskem disku, z robnim pogojem $h$.}
             \end{center}    
         \end{figure}
@@ -1013,8 +1056,8 @@ Ta nam bo v petem poglavju omogočala dokaz glavnega izreka.
         Za robni pogoj $h$ obstaja rešitev za Dirichletov problem na disku $\mathbb{D}(a,R)$ in je podana s predpisom
         $$
             H(a + r e^{i \theta}) = \begin{cases}
-                    h(a + R e^{i \theta});~~r = R,~\theta \in [0, 2\pi]\\
-                    \widetilde{h}(a + r e^{i \theta});~~ r \in [0,R),~ \theta \in [0, 2\pi]
+                    h(a + R e^{i \theta}),~~r = R,~\theta \in [0, 2\pi]\\
+                    \widetilde{h}(a + r e^{i \theta}),~~ r \in [0,R),~ \theta \in [0, 2\pi]
             \end{cases},~\text{kjer}
         $$
         $$
@@ -1079,24 +1122,26 @@ Ta nam bo v petem poglavju omogočala dokaz glavnega izreka.
 
 
 \section{Schwarzov princip zrcaljenja}
-\subsection{Uvod in definicije osnovnih pojmov}
-    Nekoliko se še navežimo na prejšno poglavje. 
-    Srečali smo se s problemom obstoja in konstrukcije razširitve, podane funkcije, ki bo obenem zadoščala zahtevam problema.  
-    Pri Dirichletovem problemu, smo zahtevali harmoničnost razširitve na notranjost in zveznost razširitve na zaprtju območja. 
-    Pokazali smo, da lahko na enotskem disku zahtevam problema, z robnim pogojem $h$, zadostimo s pomočjo Poissonovega integrala podane funkcije. Definirali smo razširitev
-    $$
-        H(z) = 
-        \begin{cases}
-            h(z)~;~~&z \in \partial \mathbb{D} \\
-            \widetilde{h}(z)~;~~&z \in \mathbb{D}
-        \end{cases}.
-    $$
 
-    Sedaj si zastavimo nekoliko drugačen problem s podobnim ciljem. Ponovno poskusimo poiskati oziroma skonstruirati razširitev podane funkcije. 
-    Tokrat naj bo začetni podatek problema harmonična oziroma holomorfna funkcija, definirana na manjšem območju. Želeli bi poiskati harmonično oziroma holomorfno razširitev funkcije, ki bo definirana na novem območju podobne oblike.
-    Na hitro opisan problem bomo skozi poglavje rešili s pomočjo Schwarzovega principa zrcaljenja za harmonične oziroma holomorfne funkcije. 
-    Kaj točno smatramo za območje podobne oblike bo jasno v nadaljevanju, vendar kot to že nakazuje beseda zrcaljanje v imenu principa, bomo razširitev želeli konstruirati na zrcalni sliki prvotnega območja. 
-    
+Nekoliko se še navežimo na prejšno poglavje. 
+Srečali smo se s problemom obstoja in konstrukcije razširitve, podane funkcije, ki bo obenem zadoščala zahtevam problema.  
+Pri Dirichletovem problemu, smo zahtevali harmoničnost razširitve na notranjost in zveznost razširitve na zaprtju območja. 
+Pokazali smo, da lahko na enotskem disku zahtevam problema, z robnim pogojem $h$, zadostimo s pomočjo Poissonovega integrala podane funkcije. Definirali smo razširitev
+$$
+    H(z) = 
+    \begin{cases}
+        h(z)~,~~&z \in \partial \mathbb{D} \\
+        \widetilde{h}(z)~,~~&z \in \mathbb{D}
+    \end{cases}.
+$$
+
+Sedaj si zastavimo nekoliko drugačen problem s podobnim ciljem. Ponovno poskusimo poiskati oziroma skonstruirati razširitev podane funkcije. 
+Tokrat naj bo začetni podatek problema harmonična oziroma holomorfna funkcija, definirana na manjšem območju. Želeli bi poiskati harmonično oziroma holomorfno razširitev funkcije, ki bo definirana na novem območju podobne oblike.
+Na hitro opisan problem bomo skozi poglavje rešili s pomočjo Schwarzovega principa zrcaljenja za harmonične oziroma holomorfne funkcije. 
+Kaj točno smatramo za območje podobne oblike bo jasno v nadaljevanju, vendar kot to že nakazuje beseda zrcaljanje v imenu principa, bomo razširitev želeli konstruirati na zrcalni sliki prvotnega območja. 
+
+\subsection{Definicije osnovnih pojmov}
+
     Spoznajmo najprej nekaj osnovnih pojmov, ki nam bodo omogočili natančno formulacijo in dokaz glavnega izreka poglavja.
     \begin{definicija}
         Naj bo $U \subseteq \mathbb{C}$ območje. Potem je $U^* = \{\overline{z}~|~z \in U\}$ \emph{zrcalna slika območja U glede na realno os}.
@@ -1115,10 +1160,13 @@ Ta nam bo v petem poglavju omogočala dokaz glavnega izreka.
     \end{opomba}
 
 \subsection{Schwarzov princip zrcaljenja za harmonične funkcije}
-    \begin{trditev}
+
+    Pripravljeni smo na formulacijo in dokaz glavnega izreka. 
+
+    \begin{lema}
         \label{lemaharm}
         Naj bo $u$ realna funkcija, definirana na območju $U \subseteq \mathbb{C}$. Če je $u$ harmonična na $U$, potem je $u^*$ harmonična na $U^*$. 
-    \end{trditev}
+    \end{lema}
     \begin{proof}
         Trditev dokažimo na dva načina. Dokaz prvega načina temelji na uporabi karakterizacije harmoničnih funkcij z lastnostjo povprečne vrednosti. 
         
@@ -1126,7 +1174,7 @@ Ta nam bo v petem poglavju omogočala dokaz glavnega izreka.
         Ker je funkcija $u$ na $U$ harmonična, ima po trditvi \ref{ekvhlp} na $U$ lastnost povprečne vrednosti. Sledi
         \begin{align*}
             u^*(w_0) & = u(\overline{w_0}) = \frac{1}{2 \pi} \int_{0}^{2 \pi}{u\left(\overline{w_0} + r e^{i \theta}\right) d\theta} = \frac{1}{2 \pi} \int_{0}^{2 \pi}{u\left(\overline{w_0 + r e^{-i \theta}}\right) d\theta}\\
-            &= \frac{1}{2 \pi} \int_{0}^{2 \pi}{u^*\left(w_0 + r e^{-i \theta}\right) d\theta} = \frac{1}{2 \pi} \int_{0}^{2 \pi}{u^*\left(w_0 + r e^{i \theta}\right) d\theta};~r \in (0, \rho).
+            &= \frac{1}{2 \pi} \int_{0}^{2 \pi}{u^*\left(w_0 + r e^{-i \theta}\right) d\theta} = \frac{1}{2 \pi} \int_{0}^{2 \pi}{u^*\left(w_0 + r e^{i \theta}\right) d\theta},~r \in (0, \rho).
         \end{align*} 
         Pokazali smo, da ima funkcija $u^*$ na $U^*$ lastnost povprečne vrednosti. 
         Ker je funkcija $u$ zvezna na $U$, je očitno funkcija $u^*$ zvezna na $U^*$. 
@@ -1146,8 +1194,6 @@ Ta nam bo v petem poglavju omogočala dokaz glavnega izreka.
         $$
         Sledi, da je $u^*$ harmonična na $U^*$.
     \end{proof}
-
-    Sedaj smo pripravljeni na formulacijo in dokaz glavnega izreka.
     
     \begin{izrek}[Schwarzov princip zrcaljenja za harmonične funkcije]
         \label{schwarz_harm}
@@ -1187,7 +1233,7 @@ Ta nam bo v petem poglavju omogočala dokaz glavnega izreka.
         Ker je $U$, oziroma $u$, na $D^+$ harmonična, ima po trditvi \ref{ekvhlp}, na $D^+$ lastnost povprečne vrednosti. 
 
         Opazimo, da funkcijski predpis funkcije $U$ na območju $D^-$ sovpada s predpisom funkcije $- u^*(z)$. 
-        Ker je $U$, oziroma $u$, na $D^+$ harmonična, je po trditvi \ref{lemaharm} $-u^*(z)$, oziroma $U$ harmonična na $(D^+)^* = D^-$.
+        Ker je $U$, oziroma $u$, na $D^+$ harmonična, je po lemi \ref{lemaharm} $-u^*(z)$, oziroma $U$ harmonična na $(D^+)^* = D^-$.
         Po trditvi \ref{ekvhlp} ima $U$ na $D^-$ lastnost povprečne vrednosti. 
         
         Sedaj nam preostane le še $D^0$.
@@ -1202,11 +1248,15 @@ Ta nam bo v petem poglavju omogočala dokaz glavnega izreka.
     \end{dokaz}
 
 \subsection{Schwarzov princip zrcaljenja za holomorfne funkcije}
-    \begin{trditev}
+
+    Schwarzov princip zrcaljenja lahko formuliramo in dokažemo tudi za holomorfne funkcije. 
+    Postopajmo podobno kot v prejšnem razdelku.
+
+    \begin{lema}
         \label{lemahol}
         Naj bo $f$ holomorfna funkcija, definirana na območju $U \subseteq \mathbb{C}$.
         Potem je funkcija $f^*$ holomorfna na $U^*$.
-    \end{trditev}
+    \end{lema}
     \begin{dokaz}
         Trditev ponovno dokažimo na dva načina. Dokaza se najprej lotimo s pomočjo Cauchy-Riemannovega sistema, nato pa holomorfnost funkcije $f^*$ dokažimo še po definiciji.
 
@@ -1246,8 +1296,8 @@ Ta nam bo v petem poglavju omogočala dokaz glavnega izreka.
         $$
         F(z) = 
         \begin{cases}
-            f(z)~;~~&z \in D^{+} \cup D^0\\
-            f^*(z)~;~~&z \in D^{-} \cup D^0
+            f(z)~,~~&z \in D^{+} \cup D^0\\
+            f^*(z)~,~~&z \in D^{-} \cup D^0
         \end{cases}~,
         $$
         na območju $D$ holomorfna.
@@ -1256,7 +1306,7 @@ Ta nam bo v petem poglavju omogočala dokaz glavnega izreka.
         Opazimo, da imata veji predpisa funkcije $F$ neprazen presek, zato se je smiselno vprašati, ali je predpis sploh dobro definiran. Potrebno je preveriti, ali se funkcijske vrednosti na preseku vej, oziroma $D^0$, ujemajo.  
         Ker za $z_0 \in D^0$ velja $\overline{z_0} = z_0$, funkcija $f$ pa po predpostavki trditve na $D^0$ zavzame realne vrednosti, sledi $f(z_0) = f(\overline{z_0}) = \overline{f(\overline{z_0})} = f^*(z_0)$.
         
-        Območje $D$ je disjunktna unija $D^+$, $D^-$ in $D^0$. Vemo da je funkcija $F$, oziroma $f$, holomorfna na $D^+$, zato je po trditvi \ref{lemahol} funkcija $f^*$, oziroma $F$, holomorfna na $(D^+)^* = D^-$. 
+        Območje $D$ je disjunktna unija $D^+$, $D^-$ in $D^0$. Vemo da je funkcija $F$, oziroma $f$, holomorfna na $D^+$, zato je po lemi \ref{lemahol} funkcija $f^*$, oziroma $F$, holomorfna na $(D^+)^* = D^-$. 
         Dovolj je torej dokazati, da je $F$ holomorfna v okolici vsake točke iz $D^0$. 
         Naj bo $z_0 \in D^0$ in $\delta > 0$ tak, da velja $\overline{\mathbb{D}}(z_0,\delta) \subseteq D$. Sedaj uporabimo karakterizacijo holomorfnih funkcij prek izreka Morera. 
         Funkcija $F$ je očitno zvezna kar na $D$, zato je dovolj pokazati, da za vsak zaprt trikotnik $T$, za katerega velja $T \subseteq \mathbb{D}(z_0, \delta)$ sledi
