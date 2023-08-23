@@ -38,7 +38,7 @@
 %   organizacije dela, torej v katerem razdelku je kaj, pač pa le opis vsebine.
 \povzetek{
 
-    Realne harmonične funkcije dveh realnih oziroma ene kompleksne spremenljivke lahko smatramo kot realne dele holomorfnih funkcij. 
+    Realne harmonične funkcije dveh realnih oziroma ene kompleksne spremenljivke so realni deli holomorfnih funkcij. 
     Pristop je koristen pri obravnavi njihovih lastnosti.
     Tako se na primer lastnost povprečne vrednosti in gladkost holomorfnih funkcij preneseta na harmonične funkcije. 
     Spoznamo, da tako kot za holomorfne tudi za harmonične funkcije velja princip maksima.
@@ -84,27 +84,21 @@
 % - ključne besede, ki nastopajo v delu, ločene s \sep
 \kljucnebesede{harmonična funkcija\sep
     Laplaceov operator\sep
-    območje\sep
-    enotski disk\sep
     lastnost povprečne vrednosti\sep
     princip maksima\sep
     Dirichletov problem\sep
     Poissonovo jedro\sep
     Poissonov integral\sep
-    razširitev\sep
     Schwarzov princip zrcaljenja}
 
 % - angleški prevod ključnih besed
 \keywords{harmonic function\sep
     Laplace operator\sep
-    domain\sep
-    unit disk\sep
     mean value property\sep
     maximum principle\sep
     Dirichlet problem\sep
     Poisson kernel\sep
     Poisson integral\sep
-    extenstion\sep
     Schwarz reflection principle} 
 
 % - angleško-slovenski slovar strokovnih izrazov
@@ -167,7 +161,7 @@
 
 Dotični matematični objekt diplomske naloge bodo harmonične funkcije. 
 Kot rešitve Laplaceove parcialne diferencialne enačbe igrajo pomembno vlogo v številnih področjih matematike, predvsem kompleksni in harmonični analizi, fiziki ter inženirstvu. 
-Ena izmed glavnih matematičnih motivacij za preučevanje harmoničnih funkcij, se skriva v dejstvu, da lahko realne harmonične funkcije dveh realnih spremenljivk obravnavamo kot realni del holomorfne funkcije.
+Ena izmed glavnih matematičnih motivacij za preučevanje harmoničnih funkcij, se skriva v dejstvu, da lahko na zvezdastih območjih realne harmonične funkcije dveh realnih spremenljivk obravnavamo kot realni del holomorfne funkcije.
 Cilj diplomskega dela je za omenjen razred funkcij dokazati Schwarzov princip zrcaljenja.
 Zasluge za izrek so, kot to že nakazuje samo ime, pripisane nemškemu matematiku Hermannu Schwarzu.
 Izrek igra pomembno vlogo predvsem pri razumevanju obnašanja harmoničnih funkcij. 
@@ -514,7 +508,7 @@ Opisan pristop je povzet po \cite[poglavje 10.1.]{gamelin}, bralec pa si lahko n
 
     Kot smo že komentirali po definiciji \ref{harm}, so funkcije harmonične natanko tedaj ko zadoščajo Laplaceovi parcialni diferencialni enačbi.   
     Vredno je omeniti, da lahko na Dirichletov problem za enotski disk gledamo tudi iz stališča teorije diferencialnih enačb. Gre za problem iskanja funkcije, ki na notranjosti območja reši Laplaceovo diferencialno enačbo ob robnem pogoju, ki ga določa v naprej podana funkcija na robu območja.     
-    V našem primeru je notranjost območja kar notranjost enotskega diska, robni pogoj zvezne funkcije pa podaja začetna zvezna funkcija, podana na enotski krožnici.
+    V našem primeru je notranjost območja kar notranjost enotskega diska, robni pogoj zvezne funkcije pa podaja zvezna funkcija, podana na enotski krožnici.
     Navadno se v teoriji parcialnih diferencialnih enačb srečamo s tako imenovanimi dobro postavljenimi matematičnimi problemi.     
     V nadaljevanju se bomo seznanili z njihovo definicijo, ki je navedena v \cite[stran 7]{evans}, ter pokazali, da zgoraj zastavljen Dirichletov problem za enotski disk ustreza definiciji. 
 
@@ -586,7 +580,7 @@ Opisan pristop je povzet po \cite[poglavje 10.1.]{gamelin}, bralec pa si lahko n
     Osredotočimo se najprej na vrsto v integralu zapisa \eqref{int1}.
 
     \begin{definicija}
-        \emph{Poissonovo jedro} je funkcija definirana s predpisom
+        \emph{Poissonovo jedro} je funkcija, definirana s predpisom
         $$
            P_r(\theta) = \sum_{k = -\infty}^{\infty}{r^{|k|} e^{i k \theta}}\text{, kjer je}~\theta \in [-\pi, \pi]~\text{in}~ 0 < r < 1.
         $$
@@ -636,7 +630,7 @@ Opisan pristop je povzet po \cite[poglavje 10.1.]{gamelin}, bralec pa si lahko n
         \begin{enumerate}[label={\alph*)}]
             \item kot funkcija spremenljivke $\theta$ je periodično s periodo $2\pi$, 
             \item za vsak $r \in [0,1)~\text{in vsak}~\theta \in [0,2\pi]~\text{je}~P_r(-\theta) = P_r(\theta)$,
-            \item za vsak $r \in [0,1)~\text{funkcija}~P_r(\theta)~\text{za}~\theta \in [-\pi, 0 ]~\text{narašča in za}~\theta \in [0, \pi ]~\text{pada}$,
+            \item za vsak $r \in [0,1)$ je funkcija $P_r$ na intervalu $\theta \in [-\pi, 0 ]$ naraščajoča in na intervalu $\theta \in [0, \pi ]$ padajoča,
             \item za vsak $r \in [0,1)~\text{in vsak}~\theta\in [0,2\pi]~\text{je}~P_r(\theta) > 0$,
             \item za vsak $r \in [0,1)~\text{velja}~\int_{-\pi}^{\pi}{P_r(\theta) \frac{d\theta}{2\pi}} = 1$.
         \end{enumerate}
@@ -649,7 +643,7 @@ Opisan pristop je povzet po \cite[poglavje 10.1.]{gamelin}, bralec pa si lahko n
         Sledi, da sta števec in imenovalec v zapisu strogo pozitivna, kar dokazuje trditev. 
 
         Pri dokazu točke e), si pomagajmo z izpeljavo rešitve za Dirichletov problem na enotskem disku. 
-        Za robni pogoj, bomo na robu enotskega diska vzeli funkcijo, ki je identično enaka $1$. Označimo torej $h(z) \equiv 1,~ z \in \partial \mathbb{D}$. Opazimo, da je \mbox{$H(z) \equiv 1,~z \in \overline{\mathbb{D}}$} trivialna rešitev tako postavljenega Dirichletovega problema za enotski disk.
+        Za robni pogoj, bomo na robu enotskega diska vzeli funkcijo, ki je identično enaka $1$. Označimo torej $h(z) = 1,~ z \in \partial \mathbb{D}$. Opazimo, da je \mbox{$H(z) = 1,~z \in \overline{\mathbb{D}}$} trivialna rešitev tako postavljenega Dirichletovega problema za enotski disk.
         Lema \ref{enolicno} nam pove, da je rešitev za tako podan Dirichletov problem enolično določena. Vemo tudi, da je harmonična razširitev eksplicitno podana prek formule \eqref{int1}.
         Velja torej
         $$
@@ -671,23 +665,24 @@ Opisan pristop je povzet po \cite[poglavje 10.1.]{gamelin}, bralec pa si lahko n
 
     \begin{trditev}
         \label{proti0}
-        Naj bo $\delta > 0$. Potem gre $\max\{P_r(\theta)~|~ \delta \leq |\theta| \leq \pi\} \to 0$ ko gre $r \to 1$.
+        Naj bo $\delta > 0$. Potem je $\lim_{r \to 1}{\max\{P_r(\theta)~|~ \delta \leq |\theta| \leq \pi\}} = 0$.
     \end{trditev}
     \begin{dokaz}
         Ker je za vsak $r$ Poissonovo jedro v odvisnosti od spremenljivke $\theta$ na intervalu $[-\pi, \pi]$ zvezna funkcija, maksimum na kompaktu $[-\pi, \pi]$ gotovo zavzamemo. Točki a) in b) trditve \ref{lastpk} nam povesta, da bomo za vsak $r$ maksimum zavzeli kar v $\delta$. 
-        Oglejmo si torej $P_r(\delta) = \frac{1 -r^2}{1 + r^2 - 2r \cos\delta}$. Ker je $\delta >0 $, bo imenovalec ulomka strogo pozitiven, števec ulomka pa gre proti $0$, ko gre $r \to 1$. 
+        Oglejmo si torej $P_r(\delta) = \frac{1 -r^2}{1 + r^2 - 2r \cos\delta}$. 
+        Ker je $\delta >0 $, bo imenovalec ulomka strogo pozitiven, števec ulomka pa gre proti $0$, ko gre $r$ proti $1$. 
         Sledi, da gre \mbox{$\max\{P_r(\theta)~|~ \delta \leq |\theta| \leq \pi\} = P_r(\delta) \to 0$}, ko gre $r \to 1$.
     \end{dokaz}
     \begin{posledica}
         \label{int_proti0}
-        Naj bo $\delta > 0$. Potem gre ${\int_{\{\pi \geq |\theta| \geq \delta\}}{P_{r}(\theta)~\frac{d\theta}{2 \pi}}} \to 0$, ko gre $r \to 1$.
+        Naj bo $\delta > 0$. Potem je $\lim_{r \to 1}{\int_{\{\pi \geq |\theta| \geq \delta\}}{P_{r}(\theta)~\frac{d\theta}{2 \pi}}} = 0$.
     \end{posledica}
     \begin{dokaz}
         Ker je interval po katerem integriramo zaprt, Poissonovo jedro pa v odvisnosti od spremenljivke $\theta$ zvezna funkcija, za vsak $r \in [0,1)$ obstaja $c_r \in \mathbb{R}$, da velja $c_r = \max\{P_r(\theta)~|~ \delta \leq |\theta| \leq \pi\}$. Zato velja
         $$
         {\int_{\{\pi \geq |\theta| \geq \delta\}}{P_{r}(\theta)~\frac{d\theta}{2 \pi}}} \leq {\int_{\{\pi \geq |\theta| \geq \delta\}}{c_r~\frac{d\theta}{2 \pi}}} \leq c_r.
         $$
-        Sedaj uporabimo trditev \ref{proti0}, ki nam pove, da gre $c_r \to 0$, ko gre $r \to 1$. Sledi, da gre tudi zapisan integral proti $0$, ko gre $r \to 1$.
+        Sedaj uporabimo trditev \ref{proti0}, ki nam pove, da gre $c_r$ proti $0$, ko gre $r$ proti $1$. Sledi, da gre tudi zapisan integral proti $0$, ko gre $r \to 1$.
     \end{dokaz}
 
     Oglejmo si lastnosti družine $\left\{ \frac{1}{2 \pi} P_r~|~r \in [0,1)\right\}$. Trditev \ref{lastpk} nam pove, da za vsak $r \in [0,1)$ velja $\frac{1}{2\pi}\int_{\partial \mathbb{D}}{P_r(\theta)} = 1$ in $P_r(\theta) > 0$ za vsak $\theta \in [0, 2 \pi]$.
@@ -730,7 +725,7 @@ Opisan pristop je povzet po \cite[poglavje 10.1.]{gamelin}, bralec pa si lahko n
     \end{align*}
     Prav to je motivacija za naslednjo definicijo. 
     \begin{definicija}
-        \emph{Konjugirano Poissonovo jedro} je funkcija definirana s predpisom
+        \emph{Konjugirano Poissonovo jedro} je funkcija, definirana s predpisom
         \begin{align}
             Q_r(\theta) & = \frac{2 r \sin\theta}{1+ r^2 - 2r \cos\theta}~,~~r \in [0,1),~\theta \in [0,2\pi].
         \end{align}
@@ -757,8 +752,8 @@ Opisan pristop je povzet po \cite[poglavje 10.1.]{gamelin}, bralec pa si lahko n
     Tako kot smo to storili v prejšnem razdelku, začnimo z definicijo novega pojma.
 
     \begin{definicija}
-        Naj bo $h(e^{i \theta})$ zvezna funkcija, definirana na robu enotskega diska.
-        \emph{Poissonov integral} funkcije $h(e^{i\theta})$, ki ga označimo s $\widetilde{h}(z)$, je funkcija, definirana na notranjosti enotskega diska s predpisom
+        Naj bo $h$ zvezna funkcija, definirana na robu enotskega diska.
+        \emph{Poissonov integral} funkcije $h$, ki ga označimo s $\widetilde{h}$, je funkcija, definirana na notranjosti enotskega diska s predpisom
         $$
         \widetilde{h}(z) = \int_{0}^{2\pi}{h(e^{i\varphi}) P_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}}~,~~z = r e^{i\theta} \in \mathbb{D}.
         $$
@@ -772,7 +767,7 @@ Opisan pristop je povzet po \cite[poglavje 10.1.]{gamelin}, bralec pa si lahko n
         Natančneje si opisan postopek, ki pripelje do zgornjega zapisa Poissonovega integrala bralec lahko ogleda v dokazu točke e) trditve \ref{lastpk}.
      \end{opomba}
 
-    Oglejmo si še nekoliko drugačen zapis Poissonovega integrala za zvezno funkcijo $h(e^{i \theta})$.
+    Oglejmo si še nekoliko drugačen zapis Poissonovega integrala za zvezno funkcijo $h$.
     Če definiramo funkcijo $f(w) = h(e^{iw})$, lahko Poissonov integral zapišemo kot
     \begin{align}
         \label{konv_Pr}
@@ -1020,7 +1015,7 @@ Opisan pristop je povzet po \cite[poglavje 10.1.]{gamelin}, bralec pa si lahko n
     Sedaj označimo $z = re^{i \theta}$ in v integral vpeljimo $w = e^{i \varphi}$. Velja
     \begin{align}
         \label{pi_kompl}
-        \widetilde{h}(z) &= \frac{1}{2\pi}\int_{0}^{2\pi}{h(e^{i\varphi}) \left(\frac{|1 - |z|^2}{|e^{i \varphi} - z|^2}\right)\frac{d\varphi}{2 \pi}}= \frac{1}{2\pi i}\int_{\partial \mathbb{D}}{h(w) \left(\frac{1 - |z|^2}{|w - z|^2}\right)\frac{dw}{w}}~,~~ z \in \mathbb{D}.
+        \widetilde{h}(z) &= \frac{1}{2\pi}\int_{0}^{2\pi}{h(e^{i\varphi}) \left(\frac{|1 - |z|^2}{|e^{i \varphi} - z|^2}\right) d\varphi}= \frac{1}{2\pi i}\int_{\partial \mathbb{D}}{h(w) \left(\frac{1 - |z|^2}{|w - z|^2}\right)\frac{dw}{w}}~,~~ z \in \mathbb{D}.
     \end{align}
 
 \subsection{Dirichletov problem na splošnejših območjih}
@@ -1040,16 +1035,16 @@ Opisan pristop je povzet po \cite[poglavje 10.1.]{gamelin}, bralec pa si lahko n
     $$
     Sedaj v integral uvedimo novo spremenljivko, $\tau = \Psi(w)$, da bomo integrirali po $\partial \Omega$. Dobimo
     $$
-    [\widetilde{f \circ \Psi}](z) = \frac{1}{2\pi i}\int_{\partial \Omega}{f(\tau) \left(\frac{1 - |z|^2}{|\Phi(\tau) - z|^2}\right)\frac{|\Phi'(\tau)|}{\Phi(\tau)}~d \tau}~,~~z \in \mathbb{D}. 
+    [\widetilde{f \circ \Psi}](z) = \frac{1}{2\pi i}\int_{\partial \Omega}{f(\tau) \left(\frac{1 - |z|^2}{|\Phi(\tau) - z|^2}\right)\frac{\Phi'(\tau)}{\Phi(\tau)}~d \tau}~,~~z \in \mathbb{D}. 
     $$
     Sedaj z biholomorfizmom slikajmo v drugo smer. Označimo $\xi = \Psi(z)$ oziroma $z = \Phi(\xi)$. Sledi
     \begin{equation}
         \label{eno_pov_obm}
-        [\widetilde{f \circ \Psi} \circ \Phi](\xi) = \widetilde{f}(\xi) = \frac{1}{2\pi i}\int_{\partial \Omega}{f(\tau) \left(\frac{1 - |\Phi(\xi)|^2}{|\Phi(\tau) - \Phi(\xi)|^2}\right)\frac{|\Phi'(\tau)|}{\Phi(\tau)}~d \tau}~,~~\xi \in \Omega. 
+        [\widetilde{f \circ \Psi} \circ \Phi](\xi) = \widetilde{f}(\xi) = \frac{1}{2\pi i}\int_{\partial \Omega}{f(\tau) \left(\frac{1 - |\Phi(\xi)|^2}{|\Phi(\tau) - \Phi(\xi)|^2}\right)\frac{\Phi'(\tau)}{\Phi(\tau)}~d \tau}~,~~\xi \in \Omega. 
     \end{equation}
     Zapisana funkcija se na $\partial \Omega$ ujema s $f$, na $\overline{\Omega}$ je zvezna in na $\Omega$ po posledici \ref{komp_s_hol_komp} harmonična. Zato je rešitev za Dirichletov problem na $\Omega$ pri začetnem pogoju $f$.
 
-    Koraki izpeljave so nekoliko bolj jasni če sledimo puščicam na spodnji sliki. 
+    Koraki izpeljave so nekoliko bolj jasni, če sledimo puščicam na spodnji sliki. 
     \begin{figure}[H]
         \begin{center}
             \includegraphics[width = \textwidth]{dirichlet_splosno.png}
@@ -1388,9 +1383,9 @@ Kaj točno smatramo za območje podobne oblike bo jasno v nadaljevanju, vendar k
             \left|\int_{\partial P^0}{F(\xi)~d\xi}\right| &= \left|\int_{S_Z}{F(\xi)~d\xi} - \int_{S_S}{F(\xi)~d\xi} + \int_{S_L}{F(\xi)~d\xi} - \int_{S_D}{F(\xi)~d\xi}\right|\\
             & \leq \left|\int_{S_Z}{F(\xi)~d\xi} - \int_{S_S}{F(\xi)~d\xi} \right| + \left|\int_{S_L}{F(\xi)~d\xi}\right| + \left|\int_{S_D}{F(\xi)~d\xi}\right|.\\
         \end{align*}
-        Ker je funkcija $F$ zvezna na $D$ je $|F|$ na $S_L$ in $S_D$ omejena. 
+        Ker je funkcija $F$ zvezna na $D$ je $|F|$ na $T$ omejena. 
         Sedaj uporabimo trikotniško neenakost za integral in omejenost funkcije $|F|$ na $S_L$ oziroma $S_D$. 
-        Opazimo, da bo absolutna vrednost integrala poljubno majhna, če bo le dolžina daljic $S_L$ in $S_D$ dovolj majhna. 
+        Opazimo, da bo absolutna vrednost integrala poljubno majhna, če bo le dolžina $\partial T$ dovolj majhna. 
         Dovolj je zahtevati, da bo vrednost $\delta_0 > 0$ dovolj majhna. 
         Zapišimo nekoliko natančneje. Obstaja $\delta_1 > 0$, da za $\delta_0 \leq \delta_1$ velja
         $$ 
@@ -1444,7 +1439,7 @@ Kaj točno smatramo za območje podobne oblike bo jasno v nadaljevanju, vendar k
     Iz tega vidika smo podano harmonično oziroma holomorfno funkcijo eksplicitno razširili na območje prek obvladljive krivulje.
     Prav takšen pristop nas vodi k posplošitvi Schwarzovega principa zrcaljenja. 
     Ta nam omogoča razširitev oziroma zrcaljenje podane funkcije tudi čez druge obvladljive krivulje. 
-    Natančno formulacijo omenjenega izreka, ki odgovori tudi na vprašanje kaj točno je zgoraj skrito za besedami obvladljiva krivulja, si bralec lahko ogleda v \cite[stran 284, 285 in 286]{gamelin} ali v \cite[stran 102 in 103]{bak_newman}.
+    Natančno formulacijo omenjenega izreka, ki odgovori tudi na vprašanje, kaj točno je zgoraj skrito za besedami obvladljiva krivulja, si bralec lahko ogleda v \cite[stran 284, 285 in 286]{gamelin} ali v \cite[stran 102 in 103]{bak_newman}.
 
     %\cite{garrett} %11 harmonic
     %\cite{skripta_ana2} %analiza2
