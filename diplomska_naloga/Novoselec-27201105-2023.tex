@@ -39,7 +39,7 @@
 \povzetek{
 
     Realne harmonične funkcije, dveh realnih oziroma ene kompleksne spremenljivke, so na zvezdastih območjih realni deli holomorfnih funkcij. 
-    Lastnost povprečne vrednosti in gladkost holomorfnih funkcij se tako na zvezdastih območjih preneseta tudi na harmonične funkcije.  
+    Lastnost povprečne vrednosti in gladkost holomorfnih funkcij se tako, na zvezdastih območjih preneseta, na harmonične funkcije.  
     Zapisani lastnosti uporabimo pri reševanju Dirichletovega problema za enotski disk. 
     Problem je osnova za vpeljavo pojmov Poissonovega jedra in Poissonovega integrala. 
     Enoličnost in obstoj rešitve Dirichletovega problema, na omejenih enostavno povezanih območji, pa nam omogoča karakterizacijo harmoni\-čnih funkcij prek lastnosti povprečne vrednosti. 
@@ -144,12 +144,12 @@
 Dotični matematični objekt diplomske naloge bodo harmonične funkcije. 
 Kot rešitve Laplaceove parcialne diferencialne enačbe igrajo pomembno vlogo v številnih področjih matematike, predvsem kompleksni in harmonični analizi, fiziki ter inženirstvu. 
 Ena izmed glavnih matematičnih motivacij za preučevanje harmoničnih funkcij, se skriva v dejstvu, da lahko na zvezdastih območjih realne harmonične funkcije dveh realnih spremenljivk obravnavamo kot realni del holomorfne funkcije.
-Cilj diplomskega dela je za omenjen razred funkcij dokazati Schwarzov princip zrcaljenja.
+Cilj diplomskega dela, je za omenjen razred funkcij dokazati Schwarzov princip zrcaljenja.
 Zasluge za izrek so, kot to že nakazuje samo ime, pripisane nemškemu matematiku Hermannu Schwarzu.
 Izrek igra pomembno vlogo predvsem pri razumevanju obnašanja harmoničnih funkcij. 
 Njegove posplošitve, zapisane v zaključku diplomskega dela, pa so pomembno orodje za vzpostavljanje povezav med različnimi območji v kompleksni ravnini.
 
-Začetna poglavja diplomskega dela omogočajo uporabo spoznanih pojmov in dejstev v šestim poglavju.
+Začetna poglavja diplomskega dela omogočajo uporabo spoznanih pojmov in dejstev v šestem poglavju.
 V drugem poglavju bomo spoznali nekatere osnovne lastnosti harmoničnih funkcij, tretje poglavje pa je namenjeno vpeljavi pojma lastnosti povprečne vrednosti. 
 Spoznali bomo, da je omenjena lastnost ena ključnih za preučevanje harmoničnih funkcij. 
 Sledi četrto poglavje, katerega vsebina se bo na prvi pogled nekoliko oddaljila od naslova diplomskega dela. 
@@ -313,7 +313,7 @@ Na prvi pogled se bodo pojmi, obravnavani v začetku poglavja, zdeli nepovezani 
     \end{definicija}
 
     Smiselno se je vprašati, zakaj je pogoj, da ima funkcija lastnost povprečne vrednosti, definiran prek krivuljnega integrala po robu diska in ne dvojnega integrala po območju, ki ga omejuje rob diska.
-    Naslednja trditev nam pove, da funkcija ki ima lastnost povprečne vrednosti, zadošča tudi pogoju, da je vrednost v središču enaka povprečju vrednosti na celotnem disku.
+    Naslednja trditev nam pove, da funkcija, ki ima lastnost povprečne vrednosti zadošča tudi pogoju, da je vrednost v središču enaka povprečju vrednosti na celotnem disku.
 
     \begin{trditev}
         Naj bo $u$ kompleksna zvezna funkcija, definirana na območju $D$. Naj ima $u$ na $D$ lastnost povprečne vrednosti ter denimo, da za $z_0 \in D$ in $r>0$ velja $\overline{\mathbb{D}}(z_0,r) \subseteq D$. Potem velja
@@ -355,23 +355,23 @@ Na prvi pogled se bodo pojmi, obravnavani v začetku poglavja, zdeli nepovezani 
         Ker je funkcija $H$ na $D$ zvezna, $\{H(z_0)\}$ pa zaprta množica, je njena praslika \mbox{$A = \{z \in D~|~H(z) = H(z_0) = M\}$} prav tako zaprta množica. 
         
         Po definiciji dokažimo, da je $A$ tudi odprta množica. 
-        Naj bo $z_1 \in A$. Ker je $D$ odprta, obstaja $\rho_{z_1}$, da je za vsak $0 < r < \rho_{z_1}$ tudi $\overline{\mathbb{D}}(z_1, r) \subseteq D$. 
+        Naj bo $z_1 \in A$. Ker je $D$ odprta, obstaja $\rho_{z_1}$, da je za vsak $0 \leq r < \rho_{z_1}$ tudi $\overline{\mathbb{D}}(z_1, r) \subseteq D$. 
         Funkcija $H$ ima na $D$ lastnost povprečne vrednosti, zato velja
         $$
-            H(z_1) = \int_{0}^{2\pi}{H(z_1 + re^{i\theta}) \frac{d\theta}{2\pi}},~\text{za vsak}~0<r<\rho_{z_1}.
+            H(z_1) = \int_{0}^{2\pi}{H(z_1 + re^{i\theta}) \frac{d\theta}{2\pi}},~\text{za vsak}~0 \leq r<\rho_{z_1}.
         $$
         Ker je $z_1 \in A$, velja $H(z_1) = M$ ter zato $\text{Re}[H(z_1)] = H(z_1)$. 
         Sledi
         $$
-        H(z_1) = \text{Re}[H(z_1)] = \int_{0}^{2\pi}{\text{Re}[H(z_1 + re^{i\theta})]~\frac{d\theta}{2\pi}},~\text{za vsak}~0<r<\rho_{z_1},
+        H(z_1) = \text{Re}[H(z_1)] = \int_{0}^{2\pi}{\text{Re}[H(z_1 + re^{i\theta})]~\frac{d\theta}{2\pi}},~\text{za vsak}~0 \leq r<\rho_{z_1},
         $$
         oziroma
         $$
-        0 = \int_{0}^{2\pi}{\left(H(z_1) - \text{Re}[H(z_1 + re^{i\theta})] \right)\frac{d\theta}{2\pi}},~\text{za vsak}~0<r<\rho_{z_1}.
+        0 = \int_{0}^{2\pi}{\left(H(z_1) - \text{Re}[H(z_1 + re^{i\theta})] \right)\frac{d\theta}{2\pi}},~\text{za vsak}~0 \leq r<\rho_{z_1}.
         $$
         Vemo, da za vsak $z \in D$ velja $|H(z)| \leq M = H(z_1)$, zato za vsak $z \in D$ velja $\text{Re}[H(z)] \leq |H(z)| \leq H(z_1)$.
         Sedaj opazimo, da je integrand integrala nenegativen in zvezen, integral pa enak nič. Zato je integrand enak nič. 
-        Sledi, da je \mbox{$H(z_1) = \text{Re}[H(z_1 + r e^{i \theta})]$} za vsak $\theta \in [0,~2\pi]$ in vsak $0 < r < \rho_{z_1}$. Definicija absolutne vrednosti nam da $|H(z)| = \sqrt{\text{Re}[H(z)]^2 + \text{Im}[H(z)]^2}$. 
+        Sledi, da je \mbox{$H(z_1) = \text{Re}[H(z_1 + r e^{i \theta})]$} za vsak $\theta \in [0,~2\pi]$ in vsak $0 \leq r < \rho_{z_1}$. Definicija absolutne vrednosti nam da $|H(z)| = \sqrt{\text{Re}[H(z)]^2 + \text{Im}[H(z)]^2}$. 
         Ker vemo, da za vsak $z \in D$ velja $|H(z)| \leq H(z_1) = M$, za vsak $w \in \mathbb{D}(z_1,\rho_{z_1})$ pa $H(z_1) = \text{Re}[H(w)]$ sledi, da za vsak $w \in \mathbb{D}(z_1,\rho_{z_1})$ velja $\text{Im}[H(w)] = 0$, oziroma $H(w) = H(z_1)$. 
         Poljuben $z_1 \in A$ ima torej odprto okolico, $ \mathbb{D}(z_1, \rho_{z_1}) \subseteq A$. Torej je $A$ odprta.
         
@@ -518,12 +518,12 @@ Opisan pristop je povzet po \cite[poglavje 10.1.]{gamelin}, bralec pa si lahko n
     Lema \ref{enolicno} nam pove, da je rešitev problema največ ena. Zato se je dovolj posvetiti konstrukciji potencialne rešitve. 
     Opazimo, da lahko točke $z \in \partial \mathbb{D}$ zapišemo z \mbox{$e^{i \theta} \in \partial \mathbb{D}$}, kjer $\theta \in [0,2\pi]$. Funkcijo $h(z),~z \in \partial \mathbb{D}$ lahko tako pišemo kot kompozitum $h(e^{i \theta}),~\theta \in [0,2\pi]$.
 
-    Poskusimo skonstruirati harmonično razširitev, ki bo zadoščala Dirichletovemu problemu na enotskem disku za zvezno funkcijo $h(e^{i \theta})$.
+    Poskusimo skonstruirati harmonično razširitev, ki bo zadoščala Dirichletovemu problemu na enotskem disku za zvezno funkcijo $h$.
     Za začetek se posvetimo enostavnim primerom in si šele za tem teorijo oziroma konstrukcijo oglejmo v splošnem. 
     
     Naravno je za enostavne zvezne funkcije, definirane na $\partial \mathbb{D}$, vzeti kar polinome. Zgornji komentar nam pove, da je polinomska spremenljivka lahko kar $e^{i\theta}$, kjer \mbox{$\theta \in [0,2\pi]$}. 
     Zaradi linearnosti Laplaceovega operatorja se problem prevede na iskanje rešitve za monome. 
-    Zato si oglejmo funkcije oblike $h(e^{i \theta}) = e^{i k \theta}, k \in \mathbb{Z}$ ter za njih poskusimo skonstruirati želeno razširitev. 
+    Zato si oglejmo funkcije oblike $h(e^{i \theta}) = e^{i k \theta},~k \in \mathbb{Z}$ ter za njih poskusimo skonstruirati želeno razširitev. 
     Hitro opazimo, da se nam v tem primeru pojavlja preprosta eksplicitna razširitev s predpisom $H(r e^{i \theta}) = r^{|k|}e^{i k \theta}$, za \mbox{$r \in [0, 1]$} in $\theta \in [0, 2\pi]$. 
     Tako predpisana razširitev je za $k \geq 0$ na $\mathbb{D}$ harmonična, saj je $r^k e^{ik\theta} = z^k$ celo holomorfna funkcija in zato harmonična. Pri $k < 0$ dobimo razširitev $r^{-k} e^{ik\theta} = \overline{z}^{-k}$, ki v splošnem ni holomorfna, a je \mbox{kljub} temu harmonična. 
     Gre namreč za monom v konjugirani spremenljivki, harmoničnost katerega lahko preverimo po definiciji prek parcialnih odvodov.
@@ -564,7 +564,7 @@ Opisan pristop je povzet po \cite[poglavje 10.1.]{gamelin}, bralec pa si lahko n
     \begin{definicija}
         \emph{Poissonovo jedro} je funkcija, definirana s predpisom
         $$
-           P_r(\theta) = \sum_{k = -\infty}^{\infty}{r^{|k|} e^{i k \theta}}\text{, kjer je}~\theta \in [-\pi, \pi]~\text{in}~ 0 < r < 1.
+           P_r(\theta) = \sum_{k = -\infty}^{\infty}{r^{|k|} e^{i k \theta}}\text{, kjer je}~\theta \in [-\pi, \pi]~\text{in}~ 0 \leq r < 1.
         $$
     \end{definicija}
     \begin{opomba}
@@ -639,7 +639,7 @@ Opisan pristop je povzet po \cite[poglavje 10.1.]{gamelin}, bralec pa si lahko n
     \end{dokaz}
 
     \begin{posledica}
-        Za vsak $r \in [0, 1)$ funkcija $\frac{1}{2 \pi} P_r(\theta),~ \theta \in [-\pi, \pi]$ določa gostoto zvezno porazdeljene slučajne spremenljivke.
+        Za vsak $r \in [0, 1)$ funkcija $\frac{1}{2 \pi} P_r$ določa gostoto zvezno porazdeljene slučajne spremenljivke.
     \end{posledica}
     \begin{dokaz}
         Iz zapisa \eqref{eq4} je jasno, da je pri poljubnem $r \in [0,1)$ zapisana funkcija v odvisnosti od $\theta$ zvezna na intervalu $[-\pi, \pi]$, točki d) in e) trditve \ref{lastpk} pa nam dokazujeta, da je na definicijskem območju funkcija strogo pozitivna in se pointegrira v $1$.
@@ -667,7 +667,7 @@ Opisan pristop je povzet po \cite[poglavje 10.1.]{gamelin}, bralec pa si lahko n
         Sedaj uporabimo trditev \ref{proti0}, ki nam pove, da gre $c_r$ proti $0$, ko gre $r$ proti $1$. Sledi, da gre tudi zapisan integral proti $0$, ko gre $r$ proti $1$.
     \end{dokaz}
 
-    Oglejmo si lastnosti družine $\left\{ \frac{1}{2 \pi} P_r~|~r \in [0,1)\right\}$. Trditev \ref{lastpk} nam pove, da za vsak $r \in [0,1)$ velja $\frac{1}{2\pi}\int_{\partial \mathbb{D}}{P_r(\theta)} = 1$ in $P_r(\theta) > 0$ za vsak $\theta \in [0, 2 \pi]$.
+    Oglejmo si lastnosti družine $\left\{ \frac{1}{2 \pi} P_r~|~r \in [0,1)\right\}$. Trditev \ref{lastpk} nam pove, da za vsak $r \in [0,1)$ velja $\frac{1}{2\pi}\int_{\partial \mathbb{D}}{P_r} = 1$ in $P_r(\theta) > 0$ za vsak $\theta \in [0, 2 \pi]$.
     Zato velja tudi sup$\left\{\frac{1}{2 \pi}\int_{\partial \mathbb{D}}{\left| P_{r}\right|}~|~r \in [0,1)\right\}= 1$. Družino funkcij, ki obenem zadošča tudi lastnosti iz posledice \ref{int_proti0} imenujeno približna enota. 
     Bralec si o tem lahko nekoliko več prebere v \cite{kumaresan}.
  
@@ -750,7 +750,7 @@ Opisan pristop je povzet po \cite[poglavje 10.1.]{gamelin}, bralec pa si lahko n
      \end{opomba}
 
     Oglejmo si še nekoliko drugačen zapis Poissonovega integrala za zvezno funkcijo $h$.
-    Če definiramo funkcijo $f(w) = h(e^{iw})$, lahko Poissonov integral zapišemo kot
+    Če definiramo funkcijo $f(w) = h(e^{iw}),~ w \in [0,2 \pi]$, lahko Poissonov integral zapišemo kot
     \begin{align}
         \label{konv_Pr}
         \widetilde{h}(z) &= \int_{0}^{2\pi}{h(e^{i\varphi}) P_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}} = \int_{0}^{2\pi}{f(\varphi) P_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}} \notag \\
@@ -765,7 +765,7 @@ Opisan pristop je povzet po \cite[poglavje 10.1.]{gamelin}, bralec pa si lahko n
     \end{opomba}
 
     Ogledali smo si alternativni zapis Poissonovega integrala s konvolucijo Poissonovega jedra. Smiselno se je vprašati, kako na zgornji postopek zapisa s konvolucijo vpliva zamenjava Poissonovega jedra s konjugiranim Poissonovim jedrom. Opazimo, da lahko po enakem postopku tudi integral s konjugiranim Poissonovim jedrom izrazimo kot konvolucijo. 
-    Ponovno definiramo $f(w) = h(e^{i w})$, ki nam omogoča zapis
+    Ponovno definiramo $f(w) = h(e^{i w}),~ w \in [0,2 \pi]$, ki nam omogoča zapis
     \begin{align}
         \label{konv_Qr}
         \int_{0}^{2\pi}{h(e^{i\varphi}) Q_r(\theta - \varphi)~\frac{d\varphi}{2 \pi}}  &= \frac{1}{2\pi}\int_{0}^{2 \pi}{f(\varphi) Q_r(\theta - \varphi)~d\varphi} \\ 
@@ -861,7 +861,7 @@ Opisan pristop je povzet po \cite[poglavje 10.1.]{gamelin}, bralec pa si lahko n
     $$
         F(r e^{i \theta}) = \int_{0}^{2 \pi}{U(e^{i \varphi})\left(\frac{e^{i \varphi}+r e^{i \theta}}{e^{i \varphi}-r e^{i \theta}}\right)\frac{d \varphi}{2 \pi}} + i V(0)~,~~\theta \in [0,2 \pi],~r \in [0,1).
     $$
-    Sedaj označimo $G(w) = U(e^{iw})$ in poenostavimo. Dobimo
+    Sedaj označimo $G(w) = U(e^{iw}), ~ w \in [0,2 \pi]$ in poenostavimo. Dobimo
     \begin{align*}
         F(r e^{i \theta}) & = \int_{0}^{2 \pi}{G(\varphi)\left(\frac{1 +r e^{i (\theta-\varphi)}}{1-r e^{i(\theta-\varphi)}}\right)}\frac{d\varphi}{2 \pi} + iV(0)\\
         & = \frac{1}{2 \pi} \left(\int_{0}^{2 \pi}{G(\varphi)[(P_r + i Q_r)(\theta - \varphi)]}~d\varphi\right)+  iV(0) \\
@@ -1058,13 +1058,13 @@ Opisan pristop je povzet po \cite[poglavje 10.1.]{gamelin}, bralec pa si lahko n
         $$
         Sedaj v integral uvedemo novo spremenljivko $\tau = a + Re^{i \varphi},~\varphi \in [0,2\pi]$, ter označimo $\xi = a + z,~z \in \mathbb{D}(0, R)$. Dobimo
         \begin{align*}
-            \widetilde{h}(a + z) &= \frac{1}{2\pi i}\int_{0}^{2 \pi}{h(a + R e^{i \varphi}) \left(\frac{1 - \frac{1}{R}|z|^2}{|e^{i \varphi} - \frac{1}{R} z|^2}\right)~\frac{(i R e^{i \varphi}) d \varphi}{R e^{i \varphi}}}\\
-            & = \frac{1}{2 \pi}\int_{0}^{2 \pi}{h(a + R e^{i \varphi}) \left(\frac{1 - \frac{1}{R}|z|^2}{|e^{i \varphi} - \frac{1}{R} z|^2}\right)~d\varphi}\\
-            & = \frac{1}{2 \pi}\int_{0}^{2 \pi}{h(a + R e^{i \varphi}) \left(\frac{R^2 - |z|^2}{|R e^{i \varphi} - z|^2}\right)~d\varphi}~,~~z \in \mathbb{D}(0,R).
+            \widetilde{h}(a + z) &= \frac{1}{2\pi i}\int_{0}^{2 \pi}{h(a + R e^{i \varphi}) \left(\frac{1 - \frac{1}{R}|z|^2}{|e^{i \varphi} - \frac{1}{R} z|^2}\right)\frac{(i R e^{i \varphi}) d \varphi}{R e^{i \varphi}}}\\
+            & = \frac{1}{2 \pi}\int_{0}^{2 \pi}{h(a + R e^{i \varphi}) \left(\frac{1 - \frac{1}{R}|z|^2}{|e^{i \varphi} - \frac{1}{R} z|^2}\right)d\varphi}\\
+            & = \frac{1}{2 \pi}\int_{0}^{2 \pi}{h(a + R e^{i \varphi}) \left(\frac{R^2 - |z|^2}{|R e^{i \varphi} - z|^2}\right)d\varphi}~,~~z \in \mathbb{D}(0,R).
         \end{align*}
         Parametrizirajmo še $z \in \mathbb{D}(0,R)$, kot $z = r e^{i \theta},~r \in [0,R),~\theta \in [0,2 \pi]$. Sledi
         \begin{align*}
-            \widetilde{h}(a + r e^{i \theta}) &= \frac{1}{2 \pi}\int_{0}^{2 \pi}{h(a + R e^{i \varphi}) \left(\frac{|R|^2 - |r e^{i \theta}|^2}{|R e^{i \varphi} - r e^{i \theta}|^2}\right)~d\varphi} \\
+            \widetilde{h}(a + r e^{i \theta}) &= \frac{1}{2 \pi}\int_{0}^{2 \pi}{h(a + R e^{i \varphi}) \left(\frac{|R|^2 - |r e^{i \theta}|^2}{|R e^{i \varphi} - r e^{i \theta}|^2}\right)d\varphi} \\
             & = \frac{1}{2 \pi}\int_{0}^{2 \pi}{h(a + R e^{i \varphi}) \left(\frac{R^2 - r^2}{R^2 - 2Rr \cos(\theta - \varphi) + r^2}\right)d\varphi},~r e^{i \theta} \in \mathbb{D}(0,R).
         \end{align*}
         Prišli smo do želenega predpisa na notranjosti diska $\mathbb{D}(a,R)$. 
@@ -1366,7 +1366,7 @@ Kaj točno smatramo za območje podobne oblike bo jasno v nadaljevanju, vendar k
             & \leq \left|\int_{S_Z}{F(\xi)~d\xi} - \int_{S_S}{F(\xi)~d\xi} \right| + \left|\int_{S_L}{F(\xi)~d\xi}\right| + \left|\int_{S_D}{F(\xi)~d\xi}\right|.\\
         \end{align*}
         Ker je funkcija $F$ zvezna na $D$ je $|F|$ na $T$ omejena. 
-        Sedaj uporabimo trikotniško neenakost za integral in omejenost funkcije $|F|$ na $S_L$ oziroma $S_D$. 
+        Sedaj uporabimo trikotniško neenakost za integral in omejenost funkcije $|F|$. 
         Opazimo, da bo absolutna vrednost integrala poljubno majhna, če bo le dolžina $\partial T$ dovolj majhna. 
         Dovolj je zahtevati, da bo vrednost $\delta_0 > 0$ dovolj majhna. 
         Zapišimo nekoliko natančneje. Obstaja $\delta_1 > 0$, da za $\delta_0 \leq \delta_1$ velja
