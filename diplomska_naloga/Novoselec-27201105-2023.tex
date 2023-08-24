@@ -38,42 +38,24 @@
 %   organizacije dela, torej v katerem razdelku je kaj, pač pa le opis vsebine.
 \povzetek{
 
-    Realne harmonične funkcije dveh realnih oziroma ene kompleksne spremenljivke so realni deli holomorfnih funkcij. 
-    Pristop je koristen pri obravnavi njihovih lastnosti.
-    Tako se na primer lastnost povprečne vrednosti in gladkost holomorfnih funkcij preneseta na harmonične funkcije. 
-    Spoznamo, da tako kot za holomorfne tudi za harmonične funkcije velja princip maksima.
-    
-    Od obravnave prek holomorfnih funkcij se nekoliko oddaljimo pri formulaciji in reševanju Dirichletovega problema za enotski disk. 
-    Problem najprej rešimo za preproste zvezne funkcije. 
-    Rešitev za splošno zvezno funkcijo iščemo s pomočjo intuitivno izpeljanih zapisov pri enostavnih primerih. 
-    Tako vpeljemo pojem Poissonovega jedra in Poissonovega integrala. 
-    Natančneje spoznamo nekaj lastnosti vsakega izmed pojmom in izpeljemo Schwarzovo integralsko formulo. 
-    Prek Poissonovega integrala nato rešimo zastavljen Dirichletov problem za enotski disk.
-
-    Rešitev Dirichletovega problema nam priskoči na pomoč pri dokazu karakterizacije harmoničnih funkcij z lastnostjo povprečne vrednosti. 
-    Omenjeno karakterizacijo lahko primerjamo s karakterizacijo holomorfnih funkcij prek izreka Morera. 
-    Karakterizaciji uporabimo pri dokazu Schwarzovega principa zrcaljenja za harmonične oziroma holomorfne funkcije.
+    Realne harmonične funkcije, dveh realnih oziroma ene kompleksne spremenljivke, so na zvezdastih območjih realni deli holomorfnih funkcij. 
+    Lastnost povprečne vrednosti in gladkost holomorfnih funkcij se tako na zvezdastih območjih preneseta tudi na harmonične funkcije.  
+    Zapisani lastnosti uporabimo pri reševanju Dirichletovega problema za enotski disk. 
+    Problem je osnova za vpeljavo pojmov Poissonovega jedra in Poissonovega integrala. 
+    Enoličnost in obstoj rešitve Dirichletovega problema, na omejenih enostavno povezanih območji, pa nam omogoča karakterizacijo harmoni\-čnih funkcij prek lastnosti povprečne vrednosti. 
+    Omenjena karakterizacija je ključna pri dokazu Schwarzovega principa zrcaljenja za harmonične funkcije. 
 
 }
 
 % - povzetek v angleščini
 \abstract{
 
-    Harmonic functions of two real or one complex variable can be viewed as real parts of holomorphic functions.
-    Approach is useful when we want to study their properties.
-    Mentioned approach lets us prove, that the mean value property and the smoothness of holomorphic functions are transferred to harmonic functions.
-    We also show, that maximum principle holds for harmonic functions as it holds for holomorphic functions.
-
-    We step away from study through holomorphic functions to formulate and solve Dirichlet problem for unit disk.
-    First we solve the problem for simple continuous functions.
-    In search for solution in general case, we look into intuitively derived notations for simple cases.
-    Thus we introduce the concept of Poisson kernel and Poisson integral.
-    We investigate some properties of each concept and prove Schwarz's integral formula.
-    Using Poisson integral we then solve Dirichlet problem for unit disk in general case. 
-
-    Solution of the Dirichlet problem helps us prove the characterization of harmonic functions with the mean value property.
-    Mentioned characterization is similar to the characterization of holomorphic functions through Morera's theorem.
-    We exploit characterizations to prove Schwarz reflection principle for harmonic and holomorphic functions respectively.
+    Harmonic functions of two real or one complex variable, defined on star-shaped domains, are real parts of holomorphic functions.
+    Mean value property and smooth\-ness of holomorphic functions are thus, on star-shaped domains, transferred to harmonic functions.
+    We use mentioned properties to solve Dirichlet problem for unit disk. 
+    Problem is the basis for introduction of Poisson kernel and Poisson integral.
+    Uniqueness and existence of solution for Dirichlet problem, on bounded simply connected domains, lets us prove characterization of harmonic functions with mean value property. 
+    Mentioned characterization is crucial in proof of Schwarz reflection principle for harmonic functions. 
 
 }
 
@@ -671,7 +653,7 @@ Opisan pristop je povzet po \cite[poglavje 10.1.]{gamelin}, bralec pa si lahko n
         Ker je za vsak $r$ Poissonovo jedro v odvisnosti od spremenljivke $\theta$ na intervalu $[-\pi, \pi]$ zvezna funkcija, maksimum na kompaktu $[-\pi, \pi]$ gotovo zavzamemo. Točki a) in b) trditve \ref{lastpk} nam povesta, da bomo za vsak $r$ maksimum zavzeli kar v $\delta$. 
         Oglejmo si torej $P_r(\delta) = \frac{1 -r^2}{1 + r^2 - 2r \cos\delta}$. 
         Ker je $\delta >0 $, bo imenovalec ulomka strogo pozitiven, števec ulomka pa gre proti $0$, ko gre $r$ proti $1$. 
-        Sledi, da gre \mbox{$\max\{P_r(\theta)~|~ \delta \leq |\theta| \leq \pi\} = P_r(\delta) \to 0$}, ko gre $r \to 1$.
+        Sledi, da gre \mbox{$\max\{P_r(\theta)~|~ \delta \leq |\theta| \leq \pi\} = P_r(\delta)$} proti $0$, ko gre $r$ proti $1$.
     \end{dokaz}
     \begin{posledica}
         \label{int_proti0}
@@ -682,20 +664,20 @@ Opisan pristop je povzet po \cite[poglavje 10.1.]{gamelin}, bralec pa si lahko n
         $$
         {\int_{\{\pi \geq |\theta| \geq \delta\}}{P_{r}(\theta)~\frac{d\theta}{2 \pi}}} \leq {\int_{\{\pi \geq |\theta| \geq \delta\}}{c_r~\frac{d\theta}{2 \pi}}} \leq c_r.
         $$
-        Sedaj uporabimo trditev \ref{proti0}, ki nam pove, da gre $c_r$ proti $0$, ko gre $r$ proti $1$. Sledi, da gre tudi zapisan integral proti $0$, ko gre $r \to 1$.
+        Sedaj uporabimo trditev \ref{proti0}, ki nam pove, da gre $c_r$ proti $0$, ko gre $r$ proti $1$. Sledi, da gre tudi zapisan integral proti $0$, ko gre $r$ proti $1$.
     \end{dokaz}
 
     Oglejmo si lastnosti družine $\left\{ \frac{1}{2 \pi} P_r~|~r \in [0,1)\right\}$. Trditev \ref{lastpk} nam pove, da za vsak $r \in [0,1)$ velja $\frac{1}{2\pi}\int_{\partial \mathbb{D}}{P_r(\theta)} = 1$ in $P_r(\theta) > 0$ za vsak $\theta \in [0, 2 \pi]$.
     Zato velja tudi sup$\left\{\frac{1}{2 \pi}\int_{\partial \mathbb{D}}{\left| P_{r}\right|}~|~r \in [0,1)\right\}= 1$. Družino funkcij, ki obenem zadošča tudi lastnosti iz posledice \ref{int_proti0} imenujeno približna enota. 
     Bralec si o tem lahko nekoliko več prebere v \cite{kumaresan}.
  
-    Vredno je, s pomočjo zgoraj zapisanih trditev, komentirati tudi obnašanje funkcije Poissonovega jedra, ko pošljemo $r \to 1$. Trditev \ref{proti0} nam pove, da se vrednosti funkcije, v odvisnosti od spremenljivke $\theta$, ki so poljubno malo oddaljene od izhodišča, približujejo $0$. 
+    Vredno je, s pomočjo zgoraj zapisanih trditev, komentirati tudi obnašanje funkcije Poissonovega jedra, ko pošljemo $r$ proti $1$. Trditev \ref{proti0} nam pove, da se vrednosti funkcije, v odvisnosti od spremenljivke $\theta$, ki so poljubno malo oddaljene od izhodišča, približujejo $0$. 
     Zapisano dodatno potrdi tudi posledica \ref{int_proti0}.
-    Oglejmo si sedaj, kaj se zgodi z vrednostjo funkcije pri $\theta = 0$, ko pošljemo $r \to 1$. Iz zapisa \eqref{eq4} vemo, da velja
+    Oglejmo si sedaj, kaj se zgodi z vrednostjo funkcije pri $\theta = 0$, ko pošljemo $r$ proti $1$. Iz zapisa \eqref{eq4} vemo, da velja
     $$
     P_r(0) = \frac{1-r^2}{1+ r^2 - 2r} = \frac{1- r^2}{(1 - r)^2} = \frac{1 + r}{1 -r},~~r \in [0,1).
     $$
-    Ko gre $r \to 1$, gre torej $P_r(0) \to \infty$. Zapisani opažanji nam skupaj z ugotovitvijo iz točke e) trditve \ref{lastpk} nakazujeta, da se Poissonovo jedro, ko pošljemo $r \to 1$, približuje tako imenovani Diracovi delti. 
+    Ko gre $r$ proti $1$, gre torej $P_r(0)$ proti $\infty$. Zapisani opažanji nam skupaj z ugotovitvijo iz točke e) trditve \ref{lastpk} nakazujeta, da se Poissonovo jedro, ko pošljemo $r$ proti $1$, približuje tako imenovani Diracovi delti. 
     O tem si bralec več lahko prebere na \cite{math_world_dd} in \cite{wiki_dd}.
 
     Navedene lastnosti Poissonovega jedra so tudi dobro razvidne na spodnji sliki. 
