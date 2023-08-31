@@ -39,33 +39,34 @@
 %---------------------------------
 \begin{frame}{Harmonične funkcije}
     \begin{block}{Definicija}
-     Funkcija $u(x_1, x_2, \dots, x_n)$ je harmonična, če velja
-     $$
-     \frac{\partial^2 u}{\partial x_1 ^ 2} +  \frac{\partial^2 u}{\partial x_2 ^ 2} + \dots + \frac{\partial^2 u}{\partial x_n ^ 2} = 0.
-     $$
-     Operatorju $\Delta  = \frac{\partial^2}{\partial x_1 ^ 2} +  \frac{\partial^2}{\partial x_2 ^ 2} + \dots + \frac{\partial^2}{\partial x_n ^ 2}$ pravimo Laplaceov operator in pišemo
-     $$
-     \Delta u = 0.
-     $$
+        Naj bo $U$ odprta podmnožica v $\mathbb{R}^n$. Naj bo $u$ funkcija, definirana na $U$ in naj bo na definicijskem območju dvakrat zvezno odvedljiva.  
+        Pravimo, da je funkcija $u(x_1, x_2, \dots, x_n)$ \textbf{harmonična}, če velja
+        $$
+        \frac{\partial^2 u}{\partial x_1 ^ 2} +  \frac{\partial^2 u}{\partial x_2 ^ 2} + \dots + \frac{\partial^2 u}{\partial x_n ^ 2} = 0.
+        $$
+        Operatorju $\Delta  = \frac{\partial^2}{\partial x_1 ^ 2} +  \frac{\partial^2}{\partial x_2 ^ 2} + \dots + \frac{\partial^2}{\partial x_n ^ 2}$ pravimo \textbf{Laplaceov operator} in pišemo
+        $$
+        \Delta u = 0.
+        $$
     \end{block}
  \end{frame}
 
-\begin{frame}{Holomorfne funkcije}
-   \begin{alertblock}{Izrek (Cauchyjeva formula)}
-    Naj bo $D$ območje, ki zadošča pogojem za Greenovo formulo. 
-    Naj bo $f \in \mathcal{O}(D) \cap \mathcal{C}^1(\overline{D})$. 
-    Potem za $z \in D$ velja 
-    $$
-    f(z) = \frac{1}{2 \pi i} \int_{\partial D}{\frac{f(\xi)}{\xi - z}~d\xi}.
-    $$
-   \end{alertblock}
-   \pause
-    \begin{alertblock}{Izrek (Princip maksima za holomorfne funkcije)}
-        Naj bo $f$ kompleksna holomorfna funkcija, definirana na območju $D$. 
-        Naj obstaja $M \in \mathbb{R}$, da za vsak $z \in D$ velja $|f(z)| \leq M $. 
-        Če obstaja $z_0 \in D$, da velja $|f(z_0)| = M$, potem je $f$ na $D$ konstantna.  
-   \end{alertblock}
-\end{frame}
+%\begin{frame}{Holomorfne funkcije}
+%   \begin{alertblock}{Izrek (Cauchyjeva formula)}
+%    Naj bo $D$ območje, ki zadošča pogojem za Greenovo formulo. 
+%    Naj bo $f \in \mathcal{O}(D) \cap \mathcal{C}^1(\overline{D})$. 
+%    Potem za $z \in D$ velja 
+%    $$
+%    f(z) = \frac{1}{2 \pi i} \int_{\partial D}{\frac{f(\xi)}{\xi - z}~d\xi}.
+%    $$
+%   \end{alertblock}
+%   \pause
+%    \begin{alertblock}{Izrek (Princip maksima za holomorfne funkcije)}
+%        Naj bo $f$ kompleksna holomorfna funkcija, definirana na območju $D$. 
+%        Naj obstaja $M \in \mathbb{R}$, da za vsak $z \in D$ velja $|f(z)| \leq M $. 
+%        Če obstaja $z_0 \in D$, da velja $|f(z_0)| = M$, potem je $f$ na $D$ konstantna.  
+%   \end{alertblock}
+%\end{frame}
 %----------------------------------
 \begin{frame}{Lastnost povprečne vrednosti}
     \begin{block}{Definicija (Lastnost povprečne vrednosti)}
