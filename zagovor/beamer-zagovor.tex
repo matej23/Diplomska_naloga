@@ -37,19 +37,19 @@
 \end{frame}
 %----------------------------------
 %---------------------------------
-\begin{frame}{Harmonične funkcije}
-    \begin{block}{Definicija}
-        Naj bo $U$ odprta podmnožica v $\mathbb{R}^n$. Naj bo $u$ funkcija, definirana na $U$ in naj bo na definicijskem območju dvakrat zvezno odvedljiva.  
-        Pravimo, da je funkcija $u(x_1, x_2, \dots, x_n)$ \textbf{harmonična}, če velja
-        $$
-        \frac{\partial^2 u}{\partial x_1 ^ 2} +  \frac{\partial^2 u}{\partial x_2 ^ 2} + \dots + \frac{\partial^2 u}{\partial x_n ^ 2} = 0.
-        $$
-        Operatorju $\Delta  = \frac{\partial^2}{\partial x_1 ^ 2} +  \frac{\partial^2}{\partial x_2 ^ 2} + \dots + \frac{\partial^2}{\partial x_n ^ 2}$ pravimo \textbf{Laplaceov operator} in pišemo
-        $$
-        \Delta u = 0.
-        $$
-    \end{block}
- \end{frame}
+%\begin{frame}{Harmonične funkcije}
+%    \begin{block}{Definicija}
+%        Naj bo $U$ odprta podmnožica v $\mathbb{R}^n$. Naj bo $u$ funkcija, definirana na $U$ in naj bo na definicijskem območju dvakrat zvezno odvedljiva.  
+%        Pravimo, da je funkcija $u(x_1, x_2, \dots, x_n)$ \textbf{harmonična}, če velja
+%        $$
+%        \frac{\partial^2 u}{\partial x_1 ^ 2} +  \frac{\partial^2 u}{\partial x_2 ^ 2} + \dots + \frac{\partial^2 u}{\partial x_n ^ 2} = 0.
+%        $$
+%        Operatorju $\Delta  = \frac{\partial^2}{\partial x_1 ^ 2} +  \frac{\partial^2}{\partial x_2 ^ 2} + \dots + \frac{\partial^2}{\partial x_n ^ 2}$ pravimo \textbf{Laplaceov operator} in pišemo
+%        $$
+%        \Delta u = 0.
+%        $$
+%    \end{block}
+% \end{frame}
 
 %\begin{frame}{Holomorfne funkcije}
 %   \begin{alertblock}{Izrek (Cauchyjeva formula)}
@@ -143,7 +143,16 @@
         Naj bo $D \subseteq \mathbb{C}$ območje, simetrično glede na realno os. 
         Označimo $D^{+} = \{z \in D~|~\text{Im}[z] > 0\},~D^{-} = \{z \in D~|~\text{Im}[z] < 0\}$ in $D^{0} = \{z \in D~|~\text{Im}[z] = 0\}$.
         Naj bo $u$ realna zvezna funkcija, definirana na $D^{+} \cup D^0$. Naj bo $u$ na $D^{+}$ harmonična in naj za vsak $z \in D^0$ velja $u(z) = 0$.
-        Potem obstaja harmonična razširitev funkcije $u$ na $D$, ki je eksplicitno podana prek zveze $u(\bar{z}) = - u(z),~z \in D$.
+        Potem je funkcija $U$, definirana s predpisom
+        $$
+        U(z) = 
+        \begin{cases}
+            u(z)~~~,~~z \in D^{+}\\
+            ~0~~~~~~,~~z \in D^0\\
+            -u(\overbar{z})~,~~z \in D^{-}
+        \end{cases},
+        $$
+        na območju $D$ harmonična.
     \end{exampleblock}
 \end{frame}
 
@@ -155,8 +164,8 @@
    \end{figure}
 \end{frame}
 
-\begin{frame}{Schwarzov princip zrcaljenja za harmonične funkcije}
-    \begin{exampleblock}{Izrek (Schwarzov princip zrcaljenja za harmonične funckije)}
+\begin{frame}{Schwarzov princip zrcaljenja za holomorfne funkcije}
+    \begin{exampleblock}{Izrek (Schwarzov princip zrcaljenja za holomorfne funckije)}
         Naj bo $D \subseteq \mathbb{C}$ območje, simetrično glede na realno os. 
         Označimo $D^{+} = \{z \in D~|~\text{Im}[z] > 0\},~D^{-} = \{z \in D~|~\text{Im}[z] < 0\}$ in $D^{0} = \{z \in D~|~\text{Im}[z] = 0\}$.
         Naj bo $f$ zvezna funkcija, definirana na $D^{+} \cup D^0$. Naj bo $f$ na $D^{+}$ holomorfna in naj $f$ na $D^0$ zavzame realne vrednosti.
